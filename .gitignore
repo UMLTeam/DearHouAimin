@@ -23,6 +23,17 @@
 
 out/
 
+# eclipse ignore
+.settings/
+.project
+.classpath
+catalina.*/
+
+# idea ignore
 .idea/
+*.ipr
+*.iml
+*.iws
 
 target/
+classes/
