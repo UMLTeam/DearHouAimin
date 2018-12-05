@@ -18,14 +18,14 @@
 包括以下子功能：课程负责人，课程简介，课程特色，课程动态，教师团队（滚动展示），教学资源链接，友情链接。登录。
 
 ### 用例图
-![总用例图](DearHouAimin/docs/img/1.jpg)  
+![总用例图](img/1.jpg)  
 
 
 ## 课程概况
 ### 功能描述
 包括以下子功能：课程简介，课程特色，教材与参考资料，历史沿革。
 ### 用例图
-![课程概况](docs/img/courseOverview.png)
+![课程概况](img/courseOverview.png)
 
 ## 教师队伍
 ### 功能描述
@@ -43,7 +43,7 @@
 ### 功能描述
 包括以下子功能：教学改革措施，教学改革立项，教学改革成果，教学表彰和奖励。
 ### 用例图
-![课程概况](docs/img/TeachingResearchReform.png)
+![课程概况](img/TeachingResearchReform.png)
 
 ## 教学资源
 ### 功能描述
@@ -55,14 +55,14 @@
 ### 功能描述
 包括以下子功能：开课计划，上课班级，班级花名册，班级成绩单，学生作业案例。
 ### 用例图
-![教学管理](docs/img/teachingEffect.jpg)
+![教学管理](img/teachingEffect.jpg)
 
 ## 教学效果
 ### 功能描述
 包括以下子功能：校外专家评价，校内督导评价，教师自我评价，校内学生评价，社会评价，教学评估及相关文件。
 ### 用例图
 
-![教学效果](docs/img/educationManage.png)
+![教学效果](img/educationManage.png)
 
 ## 教学互动
 ### 功能描述
