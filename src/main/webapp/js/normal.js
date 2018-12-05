@@ -73,18 +73,16 @@ function Rendering(){
 			<section class=\"nav yahei\">\
 				<ul id=\"nav\">\
 					<li class=\"title\"><a href=\"index.html\">首页</a></li>\
-					<li class=\"title\"><a href=\"http://news.tsinghua.edu.cn/publish/thunews/index.html\">课程概况</a></li>\
 					<li class=\"title\" onmouseover=\"extend('1')\" onmouseout=\"out('1')\">\
-						<a href=\"index.html\">教师队伍</a>\
+						<a href=\"courseDetail-1.html\">课程概况</a>\
 						<ul style=\"display: none;\" id=\"first\">\
-							<li class=\"detail\"><a href=\"indexDetail-1.html\" style=\"color: #fff;\">校长致辞</a></li>\
-							<li class=\"detail\"><a href=\"indexDetail-2.html\" style=\"color: #fff;\">学校沿革</a></li>\
-							<li class=\"detail\"><a href=\"indexDetail-3.html\" style=\"color: #fff;\">历任领导</a></li>\
-							<li class=\"detail\"><a href=\"indexDetail-4.html\" style=\"color: #fff;\">现任领导</a></li>\
-							<li class=\"detail\"><a href=\"indexDetail-5.html\" style=\"color: #fff;\">组织机构</a></li>\
-							<li class=\"detail\"><a href=\"indexDetail-6.html\" style=\"color: #fff;\">统计资料</a></li>\
+							<li class=\"detail\"><a href=\"courseDetail-1.html\" style=\"color: #fff;\">课程简介</a></li>\
+							<li class=\"detail\"><a href=\"courseDetail-2.html\" style=\"color: #fff;\">课程特色</a></li>\
+							<li class=\"detail\"><a href=\"courseDetail-3.html\" style=\"color: #fff;\">教材与参考资料</a></li>\
+							<li class=\"detail\"><a href=\"courseDetail-4.html\" style=\"color: #fff;\">历史沿革</a></li>\
 						</ul>\
 					</li>\
+					<li class=\"title\"><a href=\"http://news.tsinghua.edu.cn/publish/thunews/index.html\">教师队伍</a></li>\
 					<li class=\"title\"><a href=\"yuanxi.html\">教学安排</a></li>\
 					<li class=\"title\"><a href=\"teacherTeam.html\">教学研究改革</a></li>\
 					<li class=\"title\" onmouseover=\"extend('2')\" onmouseout=\"out('2')\">\
@@ -116,14 +114,12 @@ function Rendering(){
 
 	document.getElementById("bottom").innerHTML="<div class=\"inner\">\
 			<ul>\
-				<li><a href=\"index.html\">课程概况</a>\
+				<li><a href=\"courseDetail-1.html\">课程概况</a>\
 					<div class=\"detail\">\
-						<div><a href=\"indexDetail-1.html\">校长致辞</a></div>\
-						<div><a href=\"indexDetail-2.html\">学校沿革</a></div>\
-						<div><a href=\"indexDetail-3.html\">历任领导</a></div>\
-						<div><a href=\"indexDetail-4.html\">现任领导</a></div>\
-						<div><a href=\"indexDetail-5.html\">组织机构</a></div>\
-						<div><a href=\"indexDetail-6.html\">统计资料</a></div>\
+						<div><a href=\"courseDetail-1.html\">课程简介</a></div>\
+						<div><a href=\"courseDetail-2.html\">课程特色</a></div>\
+						<div><a href=\"courseDetail-3.html\">教材与参考资料</a></div>\
+						<div><a href=\"courseDetail-4.html\">历史沿革</a></div>\
 					</div>\
 				</li>\
 				<li><a href=\"yuanxi.html\">教师队伍</a></li>\
