@@ -68,7 +68,7 @@
 ### 功能描述
 包括以下子功能：微信群，QQ群，网站内的师生互动。
 ### 用例图
-![教学互动] (img/teachingInteraction.png)
+![image](https://github.com/UMLTeam/DearHouAimin/blob/master/docs/img/teachingInteraction.png)
 
 ## 登录及权限管理
 ### 功能描述
