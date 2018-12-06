@@ -25,10 +25,19 @@ function extend(num){
 		var obj = document.getElementById('fifth');
 		obj.style.display = "block";
 	}
-	else{
+	else if(num==6){
 		var obj = document.getElementById('sixth');
 		obj.style.display = "block";
 	}
+	else if(num==7){
+		var obj = document.getElementById('seven');
+		obj.style.display = "block";
+	}
+	else{
+		var obj = document.getElementById('eight');
+		obj.style.display = "block";
+	}
+
 }
 
 function out(num){
@@ -46,17 +55,28 @@ function out(num){
 	{
 		var obj = document.getElementById('third');
 		obj.style.display = "none";
-	}else if(num==4)
+	}
+	else if(num==4)
 	{
 		var obj = document.getElementById('fourth');
 		obj.style.display = "none";
-	}else if(num==5)
+	}
+	else if(num==5)
 	{
 		var obj = document.getElementById('fifth');
 		obj.style.display = "none";
-	}else if(num==6)
+	}
+	else if(num==6)
 	{
 		var obj = document.getElementById('sixth');
+		obj.style.display = "none";
+	}
+	else if(num==7){
+		var obj = document.getElementById('seven');
+		obj.style.display = "none";
+	}
+	else{
+		var obj = document.getElementById('eight');
 		obj.style.display = "none";
 	}
 }
@@ -82,27 +102,35 @@ function Rendering(){
 							<li class=\"detail\"><a href=\"courseDetail-4.html\" style=\"color: #fff;\">历史沿革</a></li>\
 						</ul>\
 					</li>\
-					<li class=\"title\"><a href=\"http://news.tsinghua.edu.cn/publish/thunews/index.html\">教师队伍</a></li>\
+					<li class=\"title\" onmouseover=\"extend('2')\" onmouseout=\"out('2')\">\
+						<a href=\"teacherDetail-1.html\">教师队伍</a>\
+						<ul style=\"display: none;\" id=\"second\">\
+							<li class=\"detail\"><a href=\"teacherTeamDetail-1.html\" style=\"color: #fff;\">课程负责人</a></li>\
+							<li class=\"detail\"><a href=\"teacherTeamDetail-2.html\" style=\"color: #fff;\">课程教学团队</a></li>\
+							<li class=\"detail\"><a href=\"teacherTeamDetail-3.html\" style=\"color: #fff;\">主讲教师</a></li>\
+							<li class=\"detail\"><a href=\"teacherTeamDetail-4.html\" style=\"color: #fff;\">青年教师培养</a></li>\
+						</ul>\
+					</li>\
 					<li class=\"title\"><a href=\"yuanxi.html\">教学安排</a></li>\
 					<li class=\"title\"><a href=\"teacherTeam.html\">教学研究改革</a></li>\
-					<li class=\"title\" onmouseover=\"extend('2')\" onmouseout=\"out('2')\">\
+					<li class=\"title\" onmouseover=\"extend('5')\" onmouseout=\"out('5')\">\
 						<a href=\"education.html\">教学资源</a>\
 					</li>\
-					<li class=\"title\" onmouseover=\"extend('3')\" onmouseout=\"out('3')\">\
+					<li class=\"title\" onmouseover=\"extend('6')\" onmouseout=\"out('6')\">\
 						<a href=\"scienceStudy.html\">教学管理</a>\
 					</li>\
-					<li class=\"title\" onmouseover=\"extend('4')\" onmouseout=\"out('4')\">\
+					<li class=\"title\" onmouseover=\"extend('7')\" onmouseout=\"out('7')\">\
 						<a href=\"admission.html\">教学效果</a>\
-						<ul style=\"display: none; \" id=\"fourth\">\
+						<ul style=\"display: none; \" id=\"seven\">\
 							<li class=\"detail\"><a href=\"admissionDetail-1.html\" style=\"color: #fff;\">本科生招生</a></li>\
 							<li class=\"detail\"><a href=\"admissionDetail-2.html\" style=\"color: #fff;\">研究生招生</a></li>\
 							<li class=\"detail\"><a href=\"admissionDetail-3.html\" style=\"color: #fff;\">国际学生招生</a></li>\
 							<li class=\"detail\"><a href=\"admissionDetail-4.html\" style=\"color: #fff;\">学生职业发展</a></li>\
 						</ul>\
 					</li>\
-					<li class=\"title\" onmouseover=\"extend('5')\" onmouseout=\"out('5')\">\
+					<li class=\"title\" onmouseover=\"extend('8')\" onmouseout=\"out('8')\">\
 						<a href=\"employment.html\">教学互动</a>\
-						<ul style=\"display: none;\" id=\"fifth\">\
+						<ul style=\"display: none;\" id=\"eight\">\
 							<li class=\"detail\"><a href=\"employment.html\" style=\"color: #fff;\">招聘计划</a></li>\
 							<li class=\"detail\"><a href=\"http://www.tsinghua.edu.cn/publish/newthu/newthu_cnt/employ/employ-2.html\" style=\"color: #fff;\">招聘信息</a></li>\
 							<li class=\"detail\"><a href=\"http://zhaopin.rsc.tsinghua.edu.cn/zpgl/user/goToLogin.dox\" style=\"color: #fff;\">我要招聘</a></li>\
@@ -122,7 +150,14 @@ function Rendering(){
 						<div><a href=\"courseDetail-4.html\">历史沿革</a></div>\
 					</div>\
 				</li>\
-				<li><a href=\"yuanxi.html\">教师队伍</a></li>\
+				<li><a href=\"teacherTeam.html\">教师队伍</a>\
+					<div class=\"detail\">\
+						<div><a href=\"teacherTeamDetail-1.html\">课程负责人</a></div>\
+						<div><a href=\"teacherTeamDetail-2.html\">课程教学团队</a></div>\
+						<div><a href=\"teacherTeamDetail-3.html\">主讲教师</a></div>\
+						<div><a href=\"teacherTeamDetail-4.html\">青年教师培养</a></div>\
+					</div>\
+				</li>\
 				<li><a href=\"teacherTeam.html\">教学安排</a>\
 					<div class=\"detail\">\
 						<div><a href=\"teacherTeam.html\">概况</a></div>\
