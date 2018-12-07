@@ -131,9 +131,9 @@ function Rendering(){
 					<li class=\"title\" onmouseover=\"extend('8')\" onmouseout=\"out('8')\">\
 						<a href=\"employment.html\">教学互动</a>\
 						<ul style=\"display: none;\" id=\"eight\">\
-							<li class=\"detail\"><a href=\"employment.html\" style=\"color: #fff;\">招聘计划</a></li>\
-							<li class=\"detail\"><a href=\"http://www.tsinghua.edu.cn/publish/newthu/newthu_cnt/employ/employ-2.html\" style=\"color: #fff;\">招聘信息</a></li>\
-							<li class=\"detail\"><a href=\"http://zhaopin.rsc.tsinghua.edu.cn/zpgl/user/goToLogin.dox\" style=\"color: #fff;\">我要招聘</a></li>\
+							<li class=\"detail\"><a href=\"QQ.html\" style=\"color: #fff;\">QQ群</a></li>\
+							<li class=\"detail\"><a href=\"WeChat.html\" style=\"color: #fff;\">微信群</a></li>\
+							<li class=\"detail\"><a href=\"leavenote.html\" style=\"color: #fff;\">师生互动</a></li>\
 						</ul>\
 					</li>\
 				</ul>\
@@ -183,9 +183,9 @@ function Rendering(){
 				</li>\
 				<li><a href=\"go.html\">教学互动</a>\
 					<div class=\"detail\">\
-						<div><a href=\"http://www.tsinghua.edu.cn/publish/newthu/newthu_cnt/intothu/intothu-1.html\">校园生活</a></div>\
-						<div><a href=\"http://www.tsinghua.edu.cn/publish/newthu/newthu_cnt/intothu/intothu-2.html\">校园生活</a></div>\
-						<div><a href=\"http://www.tsinghua.edu.cn/publish/newthu/newthu_cnt/intothu/intothu-3.html\">实用信息</a></div>\
+						<div><a href=\"QQ.html\">QQ群</a></div>\
+						<div><a href=\"WeChat.html\">微信群</a></div>\
+						<div><a href=\"leavenote.html\">师生互动</a></div>\
 					</div>\
 				</li>\
 			</ul>\

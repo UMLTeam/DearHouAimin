@@ -25,6 +25,10 @@ function extend(num){
 		var obj = document.getElementById('fifth');
 		obj.style.display = "block";
 	}
+	else if(num==8){
+		var obj = document.getElementById('eight');
+		obj.style.display = "block";
+	}
 	else{
 		var obj = document.getElementById('sixth');
 		obj.style.display = "block";
@@ -57,6 +61,9 @@ function out(num){
 	}else if(num==6)
 	{
 		var obj = document.getElementById('sixth');
+		obj.style.display = "none";
+	}else if(num==8){
+		var obj = document.getElementById('eight');
 		obj.style.display = "none";
 	}
 }
