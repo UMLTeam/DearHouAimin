@@ -30,11 +30,11 @@ function extend(num){
 		obj.style.display = "block";
 	}
 	else if(num==7){
-		var obj = document.getElementById('seven');
+		var obj = document.getElementById('seventh');
 		obj.style.display = "block";
 	}
 	else{
-		var obj = document.getElementById('eight');
+		var obj = document.getElementById('eighth');
 		obj.style.display = "block";
 	}
 
@@ -72,11 +72,11 @@ function out(num){
 		obj.style.display = "none";
 	}
 	else if(num==7){
-		var obj = document.getElementById('seven');
+		var obj = document.getElementById('seventh');
 		obj.style.display = "none";
 	}
 	else{
-		var obj = document.getElementById('eight');
+		var obj = document.getElementById('eighth');
 		obj.style.display = "none";
 	}
 }
@@ -130,7 +130,7 @@ function Rendering(){
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('8')\" onmouseout=\"out('8')\">\
 						<a href=\"employment.html\">教学互动</a>\
-						<ul style=\"display: none;\" id=\"eight\">\
+						<ul style=\"display: none;\" id=\"eighth\">\
 							<li class=\"detail\"><a href=\"QQ.html\" style=\"color: #fff;\">QQ群</a></li>\
 							<li class=\"detail\"><a href=\"WeChat.html\" style=\"color: #fff;\">微信群</a></li>\
 							<li class=\"detail\"><a href=\"leavenote.html\" style=\"color: #fff;\">师生互动</a></li>\

@@ -22,14 +22,14 @@ function extend(num){
 	}
 	else if(num==5)
 	{
-		var obj = document.getElementById('fifth');
+		var obj = document.getElementById('fiveth');
 		obj.style.display = "block";
 	}
 	else if(num==7){
-		var obj = document.getElementById('seventh');
+		var obj = document.getElementById('seven');
 		obj.style.display = "block";
 	}
-	else{
+	else if(num==8){
 		var obj = document.getElementById('eighth');
 		obj.style.display = "block";
 	}
@@ -62,8 +62,11 @@ function out(num){
 	{
 		var obj = document.getElementById('sixth');
 		obj.style.display = "none";
+	}else if(num==7){
+		var obj = document.getElementById('seven');
+		obj.style.display = "none";
 	}else if(num==8){
-		var obj = document.getElementById('eight');
+		var obj = document.getElementById('eighth');
 		obj.style.display = "none";
 	}
 }
