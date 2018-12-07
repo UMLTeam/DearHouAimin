@@ -25,12 +25,12 @@ function extend(num){
 		var obj = document.getElementById('fifth');
 		obj.style.display = "block";
 	}
-	else if(num==8){
-		var obj = document.getElementById('eight');
+	else if(num==7){
+		var obj = document.getElementById('seventh');
 		obj.style.display = "block";
 	}
 	else{
-		var obj = document.getElementById('sixth');
+		var obj = document.getElementById('eighth');
 		obj.style.display = "block";
 	}
 }
