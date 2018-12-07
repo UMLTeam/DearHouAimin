@@ -142,7 +142,7 @@ a,a:link{
     margin: 0px auto 0px auto;
     background: rgba(224,224,224,1.0);
 }
-
+/*
 #bottom .inner{
     width: 1000px;
     height: 100%;
@@ -175,7 +175,7 @@ a,a:link{
 #bottom .inner li .detail a:hover{
     color: #5d6d94;
 }
-
+*/
 #container {
     position: relative;
     width: 770px;
