@@ -12,7 +12,7 @@
  - 命名要规范 (驼峰)  
  - 请不要将.idea/ 等文件传上来
  
-### git
+### git教程
  -  [Git教程- 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)  
  -  [GitHub团队项目合作流程](https://www.cnblogs.com/schaepher/p/4933873.html)
 
