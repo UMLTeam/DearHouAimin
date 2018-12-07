@@ -194,7 +194,7 @@
 	clear: both;
 	width: 100%;
 	height: 240px;
-	margin: 800px auto 0px auto;
+	margin: 100px auto 0px auto;
 	background: rgba(224,224,224,1.0);
 }
 
@@ -205,7 +205,7 @@
 
 #bottom .inner li{
 	float: left;
-	margin: 20px 30px 20px 30px;
+	margin: 20px 20px 20px 30px;
 	text-align: justify;
 }
 
@@ -245,7 +245,7 @@
 	margin: auto;
 }
 
-.mainWrap ul li{
+.mainWrap .link ul li{
 	float: left;
 	margin: 30px 20px 30px 20px;
 }
@@ -258,11 +258,32 @@
 
 .final .left{
 	float: left;
-	padding-bottom: 10px；
+	padding-bottom: 10px;
 }
 
 .final .right{
 	float: right;
-	padding-bottom: 10px；
+	padding-bottom: 10px;
 }
 
+#marquee{
+	width: 1000px;
+	margin: 20px auto;
+}
+
+.marqueeTitle{
+	clear: both;
+	color: rgb(92,48,125);
+	font-size: 24px;
+	border-bottom: 2px solid #ccc;
+	height: 70px;
+	line-height: 70px;
+}
+
+.marqueeItem{
+	float: left;
+	width: 100%;
+	height: 150px;
+	background: rgba(204,204,204,0.3);
+	margin: 20px 0px 60px 0px;
+}
