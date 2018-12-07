@@ -213,3 +213,40 @@
 #bottom .inner li .detail a:hover{
 	color: #5d6d94;
 }
+
+#top2{
+	background: url(images/bg.jpg) repeat-x top;
+}
+
+#top2 .header{
+	width: 1000px;
+	margin: auto;
+	min-width: 320px;
+}
+
+#top2 .header .topLine{
+	border-top: 7px solid #5c307d;
+}
+
+#top2 .header .topwrap{
+	height: 102px;
+}
+
+#top2.header .topwrap .logo{
+	float: left;
+	margin: 20px 0px 0px 0px;
+}
+
+#top2 .topwrap .logo img{
+	vertical-align: bottom;
+	border: 0px;
+}
+
+#top2 .header .search{
+	float: right;
+}
+
+#top2 .header .search .ext{
+	padding: 16px 0 10px 0px;
+	text-align: right;
+}

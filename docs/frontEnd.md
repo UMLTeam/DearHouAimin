@@ -18,7 +18,7 @@
 包括以下子功能：课程负责人，课程简介，课程特色，课程动态，教师团队（滚动展示），教学资源链接，友情链接。登录。
 
 ### 用例图
-![总用例图](img/1.jpg)  
+![总用例图](img/1.jpg) 
 
 
 ## 课程概况
@@ -68,7 +68,7 @@
 ### 功能描述
 包括以下子功能：微信群，QQ群，网站内的师生互动。
 ### 用例图
-> 将自己画好的用例图粘贴在这里  
+![image](https://github.com/UMLTeam/DearHouAimin/blob/master/docs/img/teachingInteraction.png)
 
 ## 登录及权限管理
 ### 功能描述
