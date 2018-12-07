@@ -31,7 +31,7 @@
 ### 功能描述
 包括以下子功能：课程负责人，课程教学团队，主讲教师，青年教师培养。
 ### 用例图
-> 将自己画好的用例图粘贴在这里  
+![课程概况](img/teacherTeam.png) 
 
 ## 教学安排
 ### 功能描述
@@ -68,7 +68,7 @@
 ### 功能描述
 包括以下子功能：微信群，QQ群，网站内的师生互动。
 ### 用例图
-![image](https://github.com/UMLTeam/DearHouAimin/tree/master/docs/img/teachingInteraction.png)
+![教学效果](img/teachingInteraction.png)
 
 ## 登录及权限管理
 ### 功能描述
