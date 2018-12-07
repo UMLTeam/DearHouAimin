@@ -34,7 +34,7 @@ function extend(num){
         obj.style.display = "block";
     }
     else{
-    	var obj = document.getElementById("eight");
+    	var obj = document.getElementById("eighth");
     	obj.style.display = "block"
     }
 }

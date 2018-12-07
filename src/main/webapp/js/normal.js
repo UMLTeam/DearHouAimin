@@ -30,7 +30,7 @@ function extend(num){
 		obj.style.display = "block";
 	}
 	else if(num==7){
-		var obj = document.getElementById('seventh');
+		var obj = document.getElementById('seven');
 		obj.style.display = "block";
 	}
 	else{
@@ -72,7 +72,7 @@ function out(num){
 		obj.style.display = "none";
 	}
 	else if(num==7){
-		var obj = document.getElementById('seventh');
+		var obj = document.getElementById('seven');
 		obj.style.display = "none";
 	}
 	else{
@@ -131,7 +131,7 @@ function Rendering(){
 						</ul>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('8')\" onmouseout=\"out('8')\">\
-						<a href=\"employment.html\">教学互动</a>\
+						<a href=\"QQ.html\">教学互动</a>\
 						<ul style=\"display: none;\" id=\"eighth\">\
 							<li class=\"detail\"><a href=\"QQ.html\" style=\"color: #fff;\">QQ群</a></li>\
 							<li class=\"detail\"><a href=\"WeChat.html\" style=\"color: #fff;\">微信群</a></li>\
