@@ -164,7 +164,7 @@
 
 }
 
-.item1,.item2,.item3,.item4,.item5,.item6,.item7{
+.item1,.item2,.item3,.item4,.item5,.item6{
 	float: left;
 	width: 310px;
 	height: 280px;
@@ -190,39 +190,17 @@
 	margin: 0px 10px 10px 30px;
 }
 
-#marquee{
-	width: 1000px;
-	margin: 20px auto;
-}
-
-.marqueeTitle{
-	clear: both;
-	color: rgb(92,48,125);
-	font-size: 24px;
-	border-bottom: 2px solid #ccc;
-	height: 70px;
-	line-height: 70px;
-}
-
-.marqueeItem{
-	float: left;
-	width: 100%;
-	height: 100px;
-	background: rgba(204,204,204,0.3);
-	margin: 20px 0px 30px 0px;
-}
-
 #bottom{
 	clear: both;
 	width: 100%;
 	height: 240px;
-	margin: 80px auto 0px auto;
+	margin: 800px auto 0px auto;
 	background: rgba(224,224,224,1.0);
 }
 
 #bottom .inner{
 	width: 1050px;	
-	margin: 70px auto 0px auto;
+	margin: 0px auto 0px auto;
 }
 
 #bottom .inner li{
