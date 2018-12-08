@@ -1,4 +1,4 @@
-function extend(num){
+﻿function extend(num){
 	
 	if(num==1)
 	{
@@ -87,8 +87,8 @@ function Rendering(){
 				<a href=\"index.html\" class=\"logo\"><img src=\"../images/logo.png\"><h2 class=\"title\">在线开放课程平台</h2></a>\
 			</section>\
 			<section class=\"logininAndUp\">\
-				<a href=\"index.html\">登录</a>\
-				<a href=\"index.html\">注册</a>\
+				<a href=\"login.html\">登录</a>\
+				<a href=\"register.html\">注册</a>\
 			</section>\
 			<section class=\"nav yahei\">\
 				<ul id=\"nav\">\
