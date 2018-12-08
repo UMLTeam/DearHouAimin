@@ -1,0 +1,22 @@
+version: "2"
+services:
+    db:
+       image: mysql:5
+       container_name: team_db
+       environment:
+          MYSQL_DATABASE: uml_db
+          MYSQL_ROOT_PASSWORD: 654321
+       volumes:
+         - ./srv/db:/var/lib/mysql
+         - ./db/mysql:/etc/mysql
+       restart: always
+#       ports:
+#         - "3307:3306"
+    web:
+        build: .
+        container_name: team_web
+        restart: always
+        links:
+          - db
+        ports:
+          - "80:8080"
