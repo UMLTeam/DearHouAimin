@@ -7,11 +7,11 @@ services:
           MYSQL_DATABASE: uml_db
           MYSQL_ROOT_PASSWORD: 654321
        volumes:
-         - ./db/srv/db:/var/lib/mysql
+         - ./srv/db:/var/lib/mysql
          - ./db/mysql:/etc/mysql
        restart: always
-       ports:
-         - "3307:3306"
+#       ports:
+#         - "3307:3306"
     web:
         build: .
         container_name: team_web
