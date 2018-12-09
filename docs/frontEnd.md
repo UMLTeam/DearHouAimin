@@ -37,7 +37,7 @@ png
 ### 功能描述
 包括以下子功能：教学大纲，教学日历，教学内容，授课计划，教学难重点，教学方法与手段。
 ### 用例图
-![教学安排-普通访客](img/teaching-arrangement/educationManagement.)
+![教学安排-普通访客](img/teaching-arrangement/educationManagement.png)
 ![教学计划-管理员](img/teaching-arrangement/education-plan-admin.jpg)
 #### 用例描述  
 - 用例名称：查看教学大纲
