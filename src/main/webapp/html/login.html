@@ -2,10 +2,16 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>login</title>
-<link href="../style/login/login.css" rel="stylesheet" type="text/css">
+    <title>登录</title>
+	<meta charset="utf-8">
+	<link rel="icon" href="/images/dgut.jpg">
+	<link rel="stylesheet" type="text/css" href="../style/normal.css">
+	<link rel="stylesheet" type="text/css" href="../style/index/index.css">
+    <link rel="stylesheet" type="text/css" href="../style/login/login.css">
+	<script type="text/javascript" src="../js/normal.js"></script>
 </head>
-<body>
+<body onload="Rendering();">
+    <div id="top"></div>
 	<div class="outlineDiv">
 		<form>
 			<div class="titleDiv">用户登录</div>
@@ -30,6 +36,9 @@
 			<div class="bottomRight"><a href="register.html" target="_self">立即注册</a></div>
 		</div>
 	</div>
-	
+	 <!-- 通过js渲染，js代码在normal.js里 -->
+    <div id="bottom"></div>
+    <!-- 通过js渲染，js代码在normal.js里 -->
+    <div id="copyrights"></div>
 </body>
 </html>
