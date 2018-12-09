@@ -1,4 +1,4 @@
-function extend(num){
+﻿function extend(num){
 	
 	if(num==1)
 	{
@@ -34,7 +34,7 @@ function extend(num){
 		obj.style.display = "block";
 	}
 	else{
-		var obj = document.getElementById('eight');
+		var obj = document.getElementById('eighth');
 		obj.style.display = "block";
 	}
 
@@ -76,7 +76,7 @@ function out(num){
 		obj.style.display = "none";
 	}
 	else{
-		var obj = document.getElementById('eight');
+		var obj = document.getElementById('eighth');
 		obj.style.display = "none";
 	}
 }
@@ -87,8 +87,8 @@ function Rendering(){
 				<a href=\"index.html\" class=\"logo\"><img src=\"../images/logo.png\"><h2 class=\"title\">在线开放课程平台</h2></a>\
 			</section>\
 			<section class=\"logininAndUp\">\
-				<a href=\"index.html\">登录</a>\
-				<a href=\"index.html\">注册</a>\
+				<a href=\"login.html\">登录</a>\
+				<a href=\"register.html\">注册</a>\
 			</section>\
 			<section class=\"nav yahei\">\
 				<ul id=\"nav\">\
@@ -103,7 +103,7 @@ function Rendering(){
 						</ul>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('2')\" onmouseout=\"out('2')\">\
-						<a href=\"teacherDetail-1.html\">教师队伍</a>\
+						<a href=\"teacherTeamDetail-1.html\">教师队伍</a>\
 						<ul style=\"display: none;\" id=\"second\">\
 							<li class=\"detail\"><a href=\"teacherTeamDetail-1.html\" style=\"color: #fff;\">课程负责人</a></li>\
 							<li class=\"detail\"><a href=\"teacherTeamDetail-2.html\" style=\"color: #fff;\">课程教学团队</a></li>\
@@ -120,20 +120,22 @@ function Rendering(){
 						<a href=\"scienceStudy.html\">教学管理</a>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('7')\" onmouseout=\"out('7')\">\
-						<a href=\"admission.html\">教学效果</a>\
+						<a href=\"teachEffectDetail-1.html\">教学效果</a>\
 						<ul style=\"display: none; \" id=\"seven\">\
-							<li class=\"detail\"><a href=\"admissionDetail-1.html\" style=\"color: #fff;\">本科生招生</a></li>\
-							<li class=\"detail\"><a href=\"admissionDetail-2.html\" style=\"color: #fff;\">研究生招生</a></li>\
-							<li class=\"detail\"><a href=\"admissionDetail-3.html\" style=\"color: #fff;\">国际学生招生</a></li>\
-							<li class=\"detail\"><a href=\"admissionDetail-4.html\" style=\"color: #fff;\">学生职业发展</a></li>\
+							<li class=\"detail\"><a href=\"teachEffectDetail-1.html\" style=\"color: #fff;\">校外专家评价</a></li>\
+							<li class=\"detail\"><a href=\"teachEffectDetail-2.html\" style=\"color: #fff;\">校内督导评价</a></li>\
+							<li class=\"detail\"><a href=\"teachEffectDetail-3.html\" style=\"color: #fff;\">教师自我评价</a></li>\
+							<li class=\"detail\"><a href=\"teachEffectDetail-4.html\" style=\"color: #fff;\">校内学生评价</a></li>\
+							<li class=\"detail\"><a href=\"teachEffectDetail-5.html\" style=\"color: #fff;\">社会评价</a></li>\
+    						<li class=\"detail\"><a href=\"teachEffectDetail-6.html\" style=\"color: #fff;\">教学评估及相关文件</a></li>\
 						</ul>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('8')\" onmouseout=\"out('8')\">\
-						<a href=\"employment.html\">教学互动</a>\
-						<ul style=\"display: none;\" id=\"eight\">\
-							<li class=\"detail\"><a href=\"employment.html\" style=\"color: #fff;\">招聘计划</a></li>\
-							<li class=\"detail\"><a href=\"http://www.tsinghua.edu.cn/publish/newthu/newthu_cnt/employ/employ-2.html\" style=\"color: #fff;\">招聘信息</a></li>\
-							<li class=\"detail\"><a href=\"http://zhaopin.rsc.tsinghua.edu.cn/zpgl/user/goToLogin.dox\" style=\"color: #fff;\">我要招聘</a></li>\
+						<a href=\"QQ.html\">教学互动</a>\
+						<ul style=\"display: none;\" id=\"eighth\">\
+							<li class=\"detail\"><a href=\"QQ.html\" style=\"color: #fff;\">QQ群</a></li>\
+							<li class=\"detail\"><a href=\"WeChat.html\" style=\"color: #fff;\">微信群</a></li>\
+							<li class=\"detail\"><a href=\"leavenote.html\" style=\"color: #fff;\">师生互动</a></li>\
 						</ul>\
 					</li>\
 				</ul>\
@@ -176,16 +178,19 @@ function Rendering(){
 				</li>\
 				<li><a href=\"employment.html\">教学效果</a>\
 					<div class=\"detail\">\
-						<div><a href=\"employment.html\">招聘计划</a></div>\
-						<div><a href=\"http://www.tsinghua.edu.cn/publish/newthu/newthu_cnt/employ/employ-2.html\">招聘计划</a></div>\
-						<div><a href=\"http://zhaopin.rsc.tsinghua.edu.cn/zpgl/user/goToLogin.dox\">我要应聘</a></div>\
+						<div><a href=\"teachEffectDetail-1.html\">校外专家评价</a></div>\
+    					<div><a href=\"teachEffectDetail-2.html\">校内督导评价</a></div>\
+    					<div><a href=\"teachEffectDetail-3.html\">教师自我评价</a></div>\
+    					<div><a href=\"teachEffectDetail-4.html\">校内学生评价</a></div>\
+    					<div><a href=\"teachEffectDetail-1.html\">社会评价</a></div>\
+    					<div><a href=\"teachEffectDetail-2.html\">教学评估及相关文件</a></div>\
 					</div>\
 				</li>\
-				<li><a href=\"go.html\">教学互动</a>\
+				<li><a href=\"QQ.html\">教学互动</a>\
 					<div class=\"detail\">\
-						<div><a href=\"http://www.tsinghua.edu.cn/publish/newthu/newthu_cnt/intothu/intothu-1.html\">校园生活</a></div>\
-						<div><a href=\"http://www.tsinghua.edu.cn/publish/newthu/newthu_cnt/intothu/intothu-2.html\">校园生活</a></div>\
-						<div><a href=\"http://www.tsinghua.edu.cn/publish/newthu/newthu_cnt/intothu/intothu-3.html\">实用信息</a></div>\
+						<div><a href=\"QQ.html\">QQ群</a></div>\
+						<div><a href=\"WeChat.html\">微信群</a></div>\
+						<div><a href=\"leavenote.html\">师生互动</a></div>\
 					</div>\
 				</li>\
 			</ul>\
