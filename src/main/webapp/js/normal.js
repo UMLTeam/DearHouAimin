@@ -122,7 +122,15 @@ function Rendering(){
 					      <li class=\"detail\"><a href=\"educationalDetail-7.html\" style=\"color: #fff;\">教学方法与手段</a></li>\
 					    </ul>\
 					</li>\
-					<li class=\"title\"><a href=\"teacherTeam.html\">教学研究改革</a></li>\
+					<li class=\"title\" onmouseover=\"extend('4')\" onmouseout=\"out('4')\">\
+						<a href=\"educationReformDetail-1.html\">教学研究改革</a>\
+						<ul style=\"display: none;\" id=\"fourth\">\
+							<li class=\"detail\"><a href=\"educationReformDetail-1.html\" style=\"color: #fff;\">教学改革措施</a></li>\
+							<li class=\"detail\"><a href=\"educationReformDetail-2.html\" style=\"color: #fff;\">教学改革立项</a></li>\
+							<li class=\"detail\"><a href=\"educationReformDetail-3.html\" style=\"color: #fff;\">教学改革成果</a></li>\
+							<li class=\"detail\"><a href=\"educationReformDetail-4.html\" style=\"color: #fff;\">教学改革表彰和奖励</a></li>\
+						</ul>\
+					</li>\
 					<li class=\"title\" onmouseover=\"extend('5')\" onmouseout=\"out('5')\">\
 						<a href=\"education.html\">教学资源</a>\
 					</li>\
@@ -176,7 +184,14 @@ function Rendering(){
 						<div><a href=\"teacherTeam.html\">杰出人才</a></div>\
 					</div>\
 				</li>\
-				<li><a href=\"education.html\">教学研究改革</a></li>\
+				<li><a href=\"educationReformDetail-1.html\">教学研究改革</a>\
+                    <div class=\"detail\">\
+                        <div><a href=\"educationReformDetail-1.html\">改革措施</a></div>\
+                        <div><a href=\"educationReformDetail-2.html\">改革立项</a></div>\
+                        <div><a href=\"educationReformDetail-3.html\">改革成果</a></div>\
+                        <div><a href=\"educationReformDetail-4.html\">改革表彰和奖励</a></div>\
+                    </div>\
+				</li>\
 				<li><a href=\"scienceStudy.html\">教学资源</a></li>\
 				<li><a href=\"admission.html\">教学管理</a>\
 					<div class=\"detail\">\
