@@ -76,7 +76,34 @@ UML课程设计(前端)
 
 ### 用例图
 
-![课程概况](img/courseOverview.png)
+![课程概况](img/course-overview/courseOverview.png)
+
+### 用例描述
+
+- 用例名称：查看课程简介
+
+> 参与者：普通访客\
+> 用例描述：普通访客查看课程简介\
+> 活动图：![查看课程简介](img/course-overview/status1.png)
+
+- 用例名称：查看课程特色
+
+> 参与者：普通访客\
+> 用例描述：普通访客查看课程特色\
+> 活动图：![查看课程特色](img/course-overview/status2.png)
+
+- 用例名称：查看教材与参考资料
+
+> 参与者：普通访客\
+> 用例描述：普通访客查看教材与参考资料\
+> 活动图：![查看教材与参考资料](img/course-overview/status3.png)
+
+- 用例名称：查看历史沿革
+
+> 参与者：普通访客\
+> 用例描述：普通访客查看历史沿革\
+> 活动图：![查看历史沿革](img/course-overview/status4.png)
+
 
 教师队伍(方勇)
 --------------
