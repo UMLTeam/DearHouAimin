@@ -111,8 +111,20 @@ function Rendering(){
 							<li class=\"detail\"><a href=\"teacherTeamDetail-4.html\" style=\"color: #fff;\">青年教师培养</a></li>\
 						</ul>\
 					</li>\
-					<li class=\"title\"><a href=\"yuanxi.html\">教学安排</a></li>\
-					<li class=\"title\"><a href=\"teacherTeam.html\">教学研究改革</a></li>\
+					<li class=\"title\" onmouseover=\"extend('3')\" onmouseout=\"out('3')\">\
+						<a href=\"yuanxi.html\">教学安排</a>\
+						<ul style=\"display: none;\" id=\"third\">\
+							<li class=\"detail\"><a href=\"educationalDetail-1.html\" style=\"color: #fff;\">教学大纲</a></li>\
+							<li class=\"detail\"><a href=\"educationalDetail-2.html\" style=\"color: #fff;\">教学大纲</a></li>\
+							<li class=\"detail\"><a href=\"educationalDetail-3.html\" style=\"color: #fff;\">教学日历</a></li>\
+							<li class=\"detail\"><a href=\"educationalDetail-4.html\" style=\"color: #fff;\">教育教学</a></li>\
+							<li class=\"detail\"><a href=\"educationalDetail-5.html\" style=\"color: #fff;\">教学难重点</a></li>\
+							<li class=\"detail\"><a href=\"educationalDetail-6.html\" style=\"color: #fff;\">教学方法与手段</a></li>\
+						</ul>\
+					</li>\
+					<li class=\"title\">\
+						<a href=\"teacherTeam.html\">教学研究改革</a>\
+					</li>\
 					<li class=\"title\" onmouseover=\"extend('5')\" onmouseout=\"out('5')\">\
 						<a href=\"education.html\">教学资源</a>\
 					</li>\
