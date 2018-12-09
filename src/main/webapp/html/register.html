@@ -4,10 +4,13 @@
 <meta charset="utf-8">
 <title>register</title>
 <link href="../style/register/register.css" rel="stylesheet" type="text/css">
-	
+<link rel="icon" href="/images/dgut.jpg">
+	<link rel="stylesheet" type="text/css" href="../style/normal.css">
+	<link rel="stylesheet" type="text/css" href="../style/index/index.css">
+	<script type="text/javascript" src="../js/normal.js"></script>	
 </head>
-<body>
-	
+<body onload="Rendering();">
+    <div id="top"></div>
 	<div class="outlineDiv">
 		<form>
 			<div class="titleDiv">用户注册</div>
@@ -60,7 +63,10 @@
 		  <div ><input class="login" type="submit" value="提交注册信息"/></div>
 		</form>		
 	</div>
-	
+	<!-- 通过js渲染，js代码在normal.js里 -->
+    <div id="bottom"></div>
+    <!-- 通过js渲染，js代码在normal.js里 -->
+    <div id="copyrights"></div>
 </body>
 <script type="text/javascript">
 		function emailCheck(){
