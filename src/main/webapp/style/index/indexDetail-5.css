@@ -3,7 +3,7 @@
 }
 
 #top .header{
-	width: 1000px;
+	width: 1200px;
 	margin: auto;
 	min-width: 320px;
 }
@@ -18,16 +18,18 @@
 
 #top .header .topwrap .logo{
 	float: left;
-	margin: 20px 0px 0px 0px;
+	margin: 5px 0px 0px 0px;
+	height: 50px;
 }
 
-#top .topwrap .logo img{
-	vertical-align: bottom;
-	border: 0px;
-}
-
-#top .header .search{
+#top .header .topwrap .title{
+	margin: 50px 0px 0px 10px;
 	float: right;
+}
+
+#top .header .logininAndUp{
+	float: right;
+	margin: 15px 10px 15px 10px;
 }
 
 #top .header .search .ext{
@@ -35,20 +37,14 @@
 	text-align: right;
 }
 
-/*头部*/
-
 .nav{
 	display: table;
 	border-top: 1px solid #dedede;
 	padding: 10px 2px 0px 2px;
 }
 
-.yahei{
-	font-family: "\5FAE\8F6F\96C5\9ED1";
-}
-
 #nav{
-	margin-top: 5px;
+	margin: 5px 0px 0px 0px;
 }
 
 #nav li{
@@ -96,14 +92,13 @@
 	line-height: 42px;
 }
 
-
 #nav ul li a{
 	color: #fff;
 	line-height: 42px;
 	height: 42px;
 	font-size: 14px;
-	padding: 0px 0px 0px 20px;
 }
+
 
 /*导航*/
 
@@ -256,14 +251,13 @@ a,a:link{
 }
 
 #bottom .inner{
-	width: 1000px;
-	height: 100%;	
-	margin: 0 auto;
+	width: 1050px;
+	margin: 0px auto 0px auto;
 }
 
 #bottom .inner li{
 	float: left;
-	margin: 20px 30px 20px 30px;
+	margin: 20px 20px 20px 30px;
 	text-align: justify;
 }
 
@@ -286,4 +280,62 @@ a,a:link{
 
 #bottom .inner li .detail a:hover{
 	color: #5d6d94;
+}
+
+#copyrights{
+	width: 100%;
+	background: #22132d;
+	margin: 0 auto;
+}
+
+.mainWrap{
+	color: black;
+}
+
+.mainWrap .link{
+	width: 750px;
+	margin: auto;
+}
+
+.mainWrap .link ul li{
+	float: left;
+	margin: 30px 20px 30px 20px;
+}
+
+.final{
+	clear: both;
+	width: 800px;
+	margin: 0px auto 50px auto;
+}
+
+.final .left{
+	float: left;
+	padding-bottom: 10px;
+}
+
+.final .right{
+	float: right;
+	padding-bottom: 10px;
+}
+
+#marquee{
+	width: 1000px;
+	margin: 20px auto;
+}
+
+.marqueeTitle{
+	clear: both;
+	color: rgb(92,48,125);
+	font-size: 24px;
+	border-bottom: 2px solid #ccc;
+	height: 70px;
+	line-height: 70px;
+}
+
+.marqueeItem{
+	float: left;
+	width: 100%;
+	height: 150px;
+	background: rgba(204,204,204,0.3);
+	margin: 20px 0px 60px 0px;
 }
