@@ -55,7 +55,7 @@ docker logs -f team_web
 ```{.bash}
 docker stop team_web
 docker rm team_web
-docker images rmi dearhouaimin
+docker rmi dearhouaimin
 docker rmi $(docker images | grep "^" | awk "{print $3}")
 ```
 
