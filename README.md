@@ -16,7 +16,7 @@ UML课程设计
 重要文档链接
 ------------
 
--   [前端设计书](docs/frontEnd.md)
+-   [项目规格说明书](docs/demand-specification.md)
 -   [项目需求说明书](docs/README.md)
 
 如何团队项目保持同步(重要)
@@ -50,6 +50,13 @@ docker-compose up -d web
 
 ``` {.bash}
 docker logs -f team_web
+```
+-   删除
+```{.bash}
+docker stop team_web
+docker rm team_web
+docker rmi dearhouaimin
+docker rmi $(docker images | grep "^" | awk "{print $3}")
 ```
 
 项目规范及各种教程
