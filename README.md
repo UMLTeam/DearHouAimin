@@ -16,7 +16,7 @@ UML课程设计
 重要文档链接
 ------------
 
--   [前端设计书](docs/frontEnd.md)
+-   [项目规格说明书](docs/demand-specification.md)
 -   [项目需求说明书](docs/README.md)
 
 如何团队项目保持同步(重要)
