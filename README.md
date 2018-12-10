@@ -51,6 +51,13 @@ docker-compose up -d web
 ``` {.bash}
 docker logs -f team_web
 ```
+-   删除
+```{.bash}
+docker stop team_web
+docker rm team_web
+docker rmi dearhouaimin
+docker rmi $(docker images | grep "^" | awk "{print $3}")
+```
 
 项目规范及各种教程
 ------------------
