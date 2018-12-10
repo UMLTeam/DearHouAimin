@@ -1,4 +1,4 @@
-UML课程设计(前端)
+﻿UML课程设计(前端)
 =================
 
 目录
@@ -114,7 +114,7 @@ UML课程设计(前端)
 
 ### 用例图
 
-![课程概况](img/teacherTeam.png)
+![课程概况](img/teacher-team/teacherTeam.png)
 
 ### 用例描述
 
@@ -122,25 +122,25 @@ UML课程设计(前端)
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看课程负责人\
-> 活动图： ![查看课程负责人活动图](img/teacher-team/status1.PNG)
+> 活动图： ![查看课程负责人活动图](img/teacher-team/status1.png)
 
 -   用例名称：查看课程教学团队
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看课程教学团队\
-> 活动图： ![查看课程教学团队状态图](img/teacher-team/status2.PNG)
+> 活动图： ![查看课程教学团队状态图](img/teacher-team/status2.png)
 
 -   用例名称：查看主讲教师
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看主讲教师\
-> 活动图： ![查看主讲教师活动图](img/teacher-team/status3.PNG)
+> 活动图： ![查看主讲教师活动图](img/teacher-team/status3.png)
 
--   用例名称：查看教材与参考资料
+-   用例名称：查看青年教师培养
 
 > 参与者：普通访客\
-> 用例描述：普通访客查看教材与参考资料\
-> 活动图： ![查看授课计划活动图](img/teacher-team/status4.PNG)
+> 用例描述：普通访客查看青年教师培养\
+> 活动图： ![查看青年教师培养活动图](img/teacher-team/status4.png)
 
 
 
@@ -383,6 +383,40 @@ UML课程设计(前端)
 
 ![教学管理](img/educationManage.png)
 
+### 用例描述
+
+-   用例名称：开课计划
+
+> 参与者：管理员\
+> 用例描述：展示已有的开课计划，提供浏览，创建，修改功能，完成编辑后分配课程给教师与班级\
+
+> 活动图： ![开课计划活动图](img/educationManage/eduManage-status1.jpg)
+
+-   用例名称：浏览上课班级
+
+> 参与者：教师\
+> 用例描述：展示一名教师所负责的上课班级列表，能查看对应班级的信息\
+> 活动图： ![浏览上课班级活动图](img/educationManage/eduManage-status2.jpg)
+
+-   用例名称：学生成绩增删改查
+
+> 参与者：教师\
+> 用例描述：展示一名教师所负责的上课班级列表，能查看，导入，修改，删除对应班级的学生成绩\
+> 活动图： ![学生成绩增删改查活动图](img/educationManage/eduManage-status3.jpg )
+
+-   用例名称：班级名册增删改查
+
+> 参与者：教师\
+> 用例描述：展示一名教师所负责的上课班级列表，能查看，导入，修改，删除对应班级的学生名册\
+> 活动图： ![班级名册增删改查活动图](img/educationManage/eduManage-status4.jpg )
+
+-   用例名称：学生作业案例增删改查
+
+> 参与者：教师\
+> 用例描述：展示已有的学生作业案例，能查看，导入，修改，删除学生作业案例\
+> 活动图： ![学生作业案例增删改查活动图](img/educationManage/eduManage-status5.jpg)
+
+
 教学效果(庭辉)
 --------------
 
@@ -392,7 +426,7 @@ UML课程设计(前端)
 
 ### 用例图
 
-![教学效果](img/teachingEffect.jpg)
+![教学效果](img/teaching-effect/teachingEffect.jpg)
 
 ### 用例描述
 
@@ -400,38 +434,38 @@ UML课程设计(前端)
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看校外专家评价\
-> 活动图： ![查看校外专家评价活动图](img/teaching-effect/status1.PNG)
+> 活动图： ![查看校外专家评价活动图](img/teaching-effect/status1.png)
 
 -   用例名称：查看校内监督评价
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看校内监督评价\
-> 活动图： ![查看校内监督评价状态图](img/teaching-effect/status2.PNG)
+> 活动图： ![查看校内监督评价状态图](img/teaching-effect/status2.png)
 
 -   用例名称：查看教师自我评价
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看教师自我评价\
-> 活动图： ![查看教师自我评价活动图](img/teaching-effect/status3.PNG)
+> 活动图： ![查看教师自我评价活动图](img/teaching-effect/status3.png)
 
 -   用例名称：查看校内学生评价
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看校内学生评价\
-> 活动图： ![查看校内学生评价活动图](img/teaching-effect/status4.PNG)
+> 活动图： ![查看校内学生评价活动图](img/teaching-effect/status4.png)
 
 -   用例名称：查看社会评价
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看社会评价\
-> 活动图： ![查看社会评价活动图](img/teaching-effect/status5.PNG)
+> 活动图： ![查看社会评价活动图](img/teaching-effect/status5.png)
 
 -   用例名称：查看教学评估及相关文件
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看教学评估及相关文件\
 > 活动图：
-> ![查看教学评估及相关文件活动图](img/teaching-effect/status6.PNG)
+> ![查看教学评估及相关文件活动图](img/teaching-effect/status6.png)
 
 
 教学互动(锦坚)
