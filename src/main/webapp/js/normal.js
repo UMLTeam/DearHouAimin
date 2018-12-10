@@ -111,13 +111,38 @@ function Rendering(){
 							<li class=\"detail\"><a href=\"teacherTeamDetail-4.html\" style=\"color: #fff;\">青年教师培养</a></li>\
 						</ul>\
 					</li>\
-					<li class=\"title\"><a href=\"yuanxi.html\">教学安排</a></li>\
-					<li class=\"title\"><a href=\"teacherTeam.html\">教学研究改革</a></li>\
+					<li class=\"title\" onmouseover=\"extend('3')\" onmouseout=\"out('3')\">\
+					    <a href=\"educationalDetail-1.html\">教学安排</a>\
+					    <ul style=\"display: none;\" id=\"third\">\
+					      <li class=\"detail\"><a href=\"educationalDetail-2.html\" style=\"color: #fff;\">教学大纲</a></li>\
+					      <li class=\"detail\"><a href=\"educationalDetail-3.html\" style=\"color: #fff;\">教学日历</a></li>\
+					      <li class=\"detail\"><a href=\"educationalDetail-4.html\" style=\"color: #fff;\">教学内容</a></li>\
+					      <li class=\"detail\"><a href=\"educationalDetail-5.html\" style=\"color: #fff;\">授课计划</a></li>\
+					      <li class=\"detail\"><a href=\"educationalDetail-6.html\" style=\"color: #fff;\">教学难重点</a></li>\
+					      <li class=\"detail\"><a href=\"educationalDetail-7.html\" style=\"color: #fff;\">教学方法与手段</a></li>\
+					    </ul>\
+					</li>\
+					<li class=\"title\" onmouseover=\"extend('4')\" onmouseout=\"out('4')\">\
+						<a href=\"educationReformDetail-1.html\">教学研究改革</a>\
+						<ul style=\"display: none;\" id=\"fourth\">\
+							<li class=\"detail\"><a href=\"educationReformDetail-1.html\" style=\"color: #fff;\">教学改革措施</a></li>\
+							<li class=\"detail\"><a href=\"educationReformDetail-2.html\" style=\"color: #fff;\">教学改革立项</a></li>\
+							<li class=\"detail\"><a href=\"educationReformDetail-3.html\" style=\"color: #fff;\">教学改革成果</a></li>\
+							<li class=\"detail\"><a href=\"educationReformDetail-4.html\" style=\"color: #fff;\">教学改革表彰和奖励</a></li>\
+						</ul>\
+					</li>\
 					<li class=\"title\" onmouseover=\"extend('5')\" onmouseout=\"out('5')\">\
 						<a href=\"education.html\">教学资源</a>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('6')\" onmouseout=\"out('6')\">\
 						<a href=\"scienceStudy.html\">教学管理</a>\
+						<ul style=\"display: none; \" id=\"sixth\">\
+							<li class=\"detail\"><a href=\"eduManageDetail-1.html\" style=\"color: #fff;\">开课计划</a></li>\
+							<li class=\"detail\"><a href=\"eduManageDetail-2.html\" style=\"color: #fff;\">上课班级</a></li>\
+							<li class=\"detail\"><a href=\"eduManageDetail-3.html\" style=\"color: #fff;\">学生成绩</a></li>\
+							<li class=\"detail\"><a href=\"eduManageDetail-4.html\" style=\"color: #fff;\">班级名册</a></li>\
+							<li class=\"detail\"><a href=\"eduManageDetail-4.html\" style=\"color: #fff;\">学生作业案例</a></li>\
+						</ul>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('7')\" onmouseout=\"out('7')\">\
 						<a href=\"teachEffectDetail-1.html\">教学效果</a>\
@@ -166,7 +191,14 @@ function Rendering(){
 						<div><a href=\"teacherTeam.html\">杰出人才</a></div>\
 					</div>\
 				</li>\
-				<li><a href=\"education.html\">教学研究改革</a></li>\
+				<li><a href=\"educationReformDetail-1.html\">教学研究改革</a>\
+                    <div class=\"detail\">\
+                        <div><a href=\"educationReformDetail-1.html\">改革措施</a></div>\
+                        <div><a href=\"educationReformDetail-2.html\">改革立项</a></div>\
+                        <div><a href=\"educationReformDetail-3.html\">改革成果</a></div>\
+                        <div><a href=\"educationReformDetail-4.html\">改革表彰和奖励</a></div>\
+                    </div>\
+				</li>\
 				<li><a href=\"scienceStudy.html\">教学资源</a></li>\
 				<li><a href=\"admission.html\">教学管理</a>\
 					<div class=\"detail\">\
