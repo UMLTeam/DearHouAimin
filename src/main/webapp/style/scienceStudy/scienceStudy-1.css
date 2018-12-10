@@ -1,0 +1,63 @@
+.newitem {
+	width: 100%;
+	height: 770px;
+	position:relative;
+}
+.newItemFunction{
+	width:190px;
+	height:260px;
+	position:absolute;
+	top:-20px;
+	left:-45px;
+}
+.newItemFunction li{
+	list-style: none;
+	width:90%;
+	height:50px;
+	border-bottom: 1px white solid;
+	border-top: 1px white solid;
+	line-height:50px;
+	text-align:center;
+	float:right;
+}
+.newItemFunction ul{
+	position:absolute;
+	right:5px;
+	bottom:0;
+}
+.newItemContent{
+	width:80%;
+	height:100%;
+	position:absolute;
+	top:0px;
+	right:0px;
+	background-color:#dbe4ee;
+}
+.disCenter{
+	margin:0 auto;
+	text-align:center;
+}
+.planTable{
+	margin-top:20px;
+	text-align:center;
+	width:90%;
+	border: 1px grey solid;
+}
+.planTable td{
+	border: 1px grey solid;
+}
+.addButton{
+	margin-top:50px;
+	width:94%;
+	height:20px;
+}
+.selected{
+	border-left:3px #c2dafc solid;
+	background-color:#c2dafc;
+}
+.contentHeader{
+	position:absolute;
+	top:0;
+	height:100px;
+	width:500px;
+}

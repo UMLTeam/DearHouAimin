@@ -136,6 +136,13 @@ function Rendering(){
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('6')\" onmouseout=\"out('6')\">\
 						<a href=\"scienceStudy.html\">教学管理</a>\
+						<ul style=\"display: none; \" id=\"sixth\">\
+							<li class=\"detail\"><a href=\"eduManageDetail-1.html\" style=\"color: #fff;\">开课计划</a></li>\
+							<li class=\"detail\"><a href=\"eduManageDetail-2.html\" style=\"color: #fff;\">上课班级</a></li>\
+							<li class=\"detail\"><a href=\"eduManageDetail-3.html\" style=\"color: #fff;\">学生成绩</a></li>\
+							<li class=\"detail\"><a href=\"eduManageDetail-4.html\" style=\"color: #fff;\">班级名册</a></li>\
+							<li class=\"detail\"><a href=\"eduManageDetail-4.html\" style=\"color: #fff;\">学生作业案例</a></li>\
+						</ul>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('7')\" onmouseout=\"out('7')\">\
 						<a href=\"teachEffectDetail-1.html\">教学效果</a>\
