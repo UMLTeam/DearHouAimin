@@ -114,7 +114,7 @@ UML课程设计(前端)
 
 ### 用例图
 
-![课程概况](img/teacherTeam.png)
+![课程概况](img/teacher-team/teacherTeam.png)
 
 ### 用例描述
 
@@ -122,25 +122,25 @@ UML课程设计(前端)
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看课程负责人\
-> 活动图： ![查看课程负责人活动图](img/teacher-team/status1.PNG)
+> 活动图： ![查看课程负责人活动图](img/teacher-team/status1.png)
 
 -   用例名称：查看课程教学团队
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看课程教学团队\
-> 活动图： ![查看课程教学团队状态图](img/teacher-team/status2.PNG)
+> 活动图： ![查看课程教学团队状态图](img/teacher-team/status2.png)
 
 -   用例名称：查看主讲教师
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看主讲教师\
-> 活动图： ![查看主讲教师活动图](img/teacher-team/status3.PNG)
+> 活动图： ![查看主讲教师活动图](img/teacher-team/status3.png)
 
--   用例名称：查看教材与参考资料
+-   用例名称：查看青年教师培养
 
 > 参与者：普通访客\
-> 用例描述：普通访客查看教材与参考资料\
-> 活动图： ![查看授课计划活动图](img/teacher-team/status4.PNG)
+> 用例描述：普通访客查看青年教师培养\
+> 活动图： ![查看青年教师培养活动图](img/teacher-team/status4.png)
 
 
 
@@ -367,7 +367,7 @@ UML课程设计(前端)
 
 ### 用例图
 
-![教学效果](img/teachingEffect.jpg)
+![教学效果](img/teaching-effect/teachingEffect.jpg)
 
 ### 用例描述
 
@@ -375,38 +375,38 @@ UML课程设计(前端)
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看校外专家评价\
-> 活动图： ![查看校外专家评价活动图](img/teaching-effect/status1.PNG)
+> 活动图： ![查看校外专家评价活动图](img/teaching-effect/status1.png)
 
 -   用例名称：查看校内监督评价
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看校内监督评价\
-> 活动图： ![查看校内监督评价状态图](img/teaching-effect/status2.PNG)
+> 活动图： ![查看校内监督评价状态图](img/teaching-effect/status2.png)
 
 -   用例名称：查看教师自我评价
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看教师自我评价\
-> 活动图： ![查看教师自我评价活动图](img/teaching-effect/status3.PNG)
+> 活动图： ![查看教师自我评价活动图](img/teaching-effect/status3.png)
 
 -   用例名称：查看校内学生评价
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看校内学生评价\
-> 活动图： ![查看校内学生评价活动图](img/teaching-effect/status4.PNG)
+> 活动图： ![查看校内学生评价活动图](img/teaching-effect/status4.png)
 
 -   用例名称：查看社会评价
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看社会评价\
-> 活动图： ![查看社会评价活动图](img/teaching-effect/status5.PNG)
+> 活动图： ![查看社会评价活动图](img/teaching-effect/status5.png)
 
 -   用例名称：查看教学评估及相关文件
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看教学评估及相关文件\
 > 活动图：
-> ![查看教学评估及相关文件活动图](img/teaching-effect/status6.PNG)
+> ![查看教学评估及相关文件活动图](img/teaching-effect/status6.png)
 
 
 教学互动(锦坚)
