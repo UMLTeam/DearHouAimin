@@ -1,20 +1,20 @@
-version: "2"
+version: "3"
 services:
     db:
        image: mysql:5
-       container_name: team_db
+       container_name: open_course_db
        environment:
-          MYSQL_DATABASE: uml_db
+          MYSQL_DATABASE: open_course_db
           MYSQL_ROOT_PASSWORD: 654321
        volumes:
          - ./srv/db:/var/lib/mysql
          - ./db/mysql:/etc/mysql
        restart: always
-#       ports:
-#         - "3307:3306"
+       ports:
+         - "3307:3306"
     web:
-        build: .
-        container_name: team_web
+        images: open_course
+        container_name: open_course_web
         restart: always
         links:
           - db
