@@ -137,13 +137,47 @@ UMLCourse：中文意思是UML课程，作为本项目的数据库名字。
 
 | 功能类别   | 功能名称，标识符   | 描述   | 
 |:----|:----|:----|
-| Function A   | Function A.1   |    | 
-|    | Function A.2   |    | 
-| Function B   | Function B.1   |    | 
-|    | Function B.2   |    | 
-| Function C   | Function C.1   |    | 
-|    | Function C.2   |    | 
-
+| 登录  | login.html |登录 | 
+| 注册  | register.html |注册 | 
+| 网站主页  | index.html |平台的主页，可以跳转其他模块 | 
+| 课程概况  | courseDetail-1.html |课程简介| 
+|   | courseDetail-2.html |课程特色| 
+|   | courseDetail-3.html |教材与参考资料 | 
+|   | courseDetail-4.html |历史沿革  | 
+| 教师队伍  | teacherTeam-1.html | 课程负责人| 
+|   | teacherTeam-2.html | 课程教学团队| 
+|   | teacherTeam-3.html | 主讲教师| 
+|   | teacherTeam-4.html | 青年教师培养| 
+| 教学安排  | educationalDetail-1.html | 教学大纲| 
+|   | educationalDetail-2.html | 教学日历|
+|   | educationalDetail-3.html | 教学内容|
+|   | educationalDetail-4.html | 授课计划|
+|   | educationalDetail-5.html | 教学难重点|
+|   | educationalDetail-6.html | 教学方法与手段|
+| 教学研究改革  | educationReformDetail-1.html | 教学改革措施| 
+|   | educationReformDetail-2.html | 教学改革立项| 
+|   | educationReformDetail-3.html | 教学改革成果| 
+|   | educationReformDetail-4.html | 教学表彰和奖励| 
+| 教学资源  | eduSource-1.html | 课程课件（可以观看PPT、PDF、WORD）| 
+|   | eduSource-2.html | 教学录像（可以播放视频）| 
+|   | eduSource-3.html | 习题库（单选题、多选题、是非题、填空题、简答题、简单分析题、系统分析题、计算机水平考试题集）| 
+|   | eduSource-4.html | 案例库（实验环境，实验系统代码，实验安装操作手册）| 
+|   | eduSource-5.html | 实验任务| 
+|   | eduSource-6.html | 技术文档范本|
+| 教学管理  | eduManageDetail-1.html | 开课计划| 
+|   | eduManageDetail-2.html | 上课班级| 
+|   | eduManageDetail-3.html | 班级花名册| 
+|   | eduManageDetail-4.html | 班级成绩单| 
+|   | eduManageDetail-5.html | 学生作业案例| 
+| 教学效果  | teachEffectDetail-1.html | 校外专家评价|
+|   | teachEffectDetail-2.html | 校内督导评价| 
+|   | teachEffectDetail-3.html | 教师自我评价| 
+|   | teachEffectDetail-4.html | 校内学生评价| 
+|   | teachEffectDetail-5.html | 社会评价| 
+|   | teachEffectDetail-6.html | 教学评估及相关文件|   
+| 教学互动  | leavenote.html | 网站内的师生互动| 
+|   | QQ.html | QQ群| 
+|   | weChat.html | 微信群| 
 请参考下面的内容，填写表格1。
 
 1、网站首页。包括以下子功能：课程负责人，课程简介，课程特色，课程动态，教师团队（滚动展示），教学资源链接，友情链接。登录。
@@ -388,24 +422,60 @@ UMLCourse：中文意思是UML课程，作为本项目的数据库名字。
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看课程简介\
+> 前置条件：参与者必须已经登录。当参与者希望查看课程简介时，该用例开始执行\
+> 后置条件：如果该用例成功结束，则返回课程简介\
+> 主事件流：\
+>  ①参与者点击课程简介\
+>  ②系统与数据库连接查找课程简介信息，若连接数据库失败，则执行异常事件流e1\
+>  ③数据库连接成功，则返回课程简介信息。本用例结束\
+>  异常事件流e1：\
+>  ①提示参与者数据库连接不上\
+>  ②系统自动关闭，用例结束\
 > 活动图：![查看课程简介](img/course-overview/status1.png)
 
 - 用例名称：查看课程特色
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看课程特色\
+> 前置条件：参与者必须已经登录。当参与者希望查看课程特色时，该用例开始执行\
+> 后置条件：如果该用例成功结束，则返回课程特色\
+> 主事件流：\
+>  ①参与者点击课程特色\
+>  ②系统与数据库连接查找课程特色信息，若连接数据库失败，则执行异常事件流e1\
+>  ③数据库连接成功，则返回课程特色信息。本用例结束\
+>  异常事件流e1：\
+>  ①提示参与者数据库连接不上\
+>  ②系统自动关闭，用例结束\
 > 活动图：![查看课程特色](img/course-overview/status2.png)
 
 - 用例名称：查看教材与参考资料
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看教材与参考资料\
+> 前置条件：参与者必须已经登录。当参与者希望查看教材与参考资料时，该用例开始执行\
+> 后置条件：如果该用例成功结束，则返回教材与参考资料\
+> 主事件流：\
+>  ①参与者点击教材与参考资料\
+>  ②系统与数据库连接查找教材与参考资料信息，若连接数据库失败，则执行异常事件流e1\
+>  ③数据库连接成功，则返回教材与参考资料信息。本用例结束\
+>  异常事件流e1：\
+>  ①提示参与者数据库连接不上\
+>  ②系统自动关闭，用例结束\
 > 活动图：![查看教材与参考资料](img/course-overview/status3.png)
 
 - 用例名称：查看历史沿革
 
 > 参与者：普通访客\
 > 用例描述：普通访客查看历史沿革\
+> 前置条件：参与者必须已经登录。当参与者希望查看历史沿革时，该用例开始执行\
+> 后置条件：如果该用例成功结束，则返回历史沿革\
+> 主事件流：\
+>  ①参与者点击历史沿革\
+>  ②系统与数据库连接查找历史沿革信息，若连接数据库失败，则执行异常事件流e1\
+>  ③数据库连接成功，则返回历史沿革信息。本用例结束\
+>  异常事件流e1：\
+>  ①提示参与者数据库连接不上\
+>  ②系统自动关闭，用例结束\
 > 活动图：![查看历史沿革](img/course-overview/status4.png)
 
 
