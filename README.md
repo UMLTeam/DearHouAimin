@@ -41,7 +41,7 @@ docker部署说明
 -   部署命令
 
 ``` {.bash}
-docker build -t  dearhouaimin .
+docker build --no-cache open_course .
 docker-compose up -d db
 docker-compose up -d web
 ```
