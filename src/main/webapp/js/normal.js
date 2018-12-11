@@ -132,7 +132,14 @@ function Rendering(){
 						</ul>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('5')\" onmouseout=\"out('5')\">\
-						<a href=\"education.html\">教学资源</a>\
+						<a href=\"teachResDetail-1.html\">教学资源</a>\
+						<ul style=\"display: none;\" id=\"fifth\">\
+    						<li class=\"detail\"><a href=\"teachResDetail-1.html\" style=\"color: #fff;\">课程课件</a></li>\
+							<li class=\"detail\"><a href=\"teachResDetail-2.html\" style=\"color: #fff;\">教学录像</a></li>\
+    						<li class=\"detail\"><a href=\"teachResDetail-3.html\" style=\"color: #fff;\">习题库</a></li>\
+    						<li class=\"detail\"><a href=\"teachResDetail-4.html\" style=\"color: #fff;\">案例库</a></li>\
+    						<li class=\"detail\"><a href=\"teachResDetail-5.html\" style=\"color: #fff;\">实验任务</a></li>\
+    					</ul>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('6')\" onmouseout=\"out('6')\">\
 						<a href=\"scienceStudy.html\">教学管理</a>\
@@ -141,7 +148,7 @@ function Rendering(){
 							<li class=\"detail\"><a href=\"eduManageDetail-2.html\" style=\"color: #fff;\">上课班级</a></li>\
 							<li class=\"detail\"><a href=\"eduManageDetail-3.html\" style=\"color: #fff;\">学生成绩</a></li>\
 							<li class=\"detail\"><a href=\"eduManageDetail-4.html\" style=\"color: #fff;\">班级名册</a></li>\
-							<li class=\"detail\"><a href=\"eduManageDetail-4.html\" style=\"color: #fff;\">学生作业案例</a></li>\
+							<li class=\"detail\"><a href=\"eduManageDetail-5.html\" style=\"color: #fff;\">学生作业案例</a></li>\
 						</ul>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('7')\" onmouseout=\"out('7')\">\
