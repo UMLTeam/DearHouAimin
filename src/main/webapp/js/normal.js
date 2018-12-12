@@ -192,10 +192,13 @@ function Rendering(){
 						<div><a href=\"teacherTeamDetail-4.html\">青年教师培养</a></div>\
 					</div>\
 				</li>\
-				<li><a href=\"teacherTeam.html\">教学安排</a>\
+				<li><a href=\"educationalDetail-1.html\">教学安排</a>\
 					<div class=\"detail\">\
-						<div><a href=\"teacherTeam.html\">概况</a></div>\
-						<div><a href=\"teacherTeam.html\">杰出人才</a></div>\
+						<div><a href=\"educationalDetail-2.html\">教学日历</a></div>\
+						<div><a href=\"educationalDetail-3.html\">教学内容</a></div>\
+						<div><a href=\"educationalDetail-4.html\">授课计划</a></div>\
+						<div><a href=\"educationalDetail-5.html\">教学重难点</a></div>\
+						<div><a href=\"educationalDetail-6.html\">教学方法与手段</a></div>\
 					</div>\
 				</li>\
 				<li><a href=\"educationReformDetail-1.html\">教学研究改革</a>\
