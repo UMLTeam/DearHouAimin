@@ -1,5 +1,5 @@
 ---
-name: bug_report
+name: BUG模板
 about: 创建一份报告以帮助我们改进
 title: ''
 labels: ''
