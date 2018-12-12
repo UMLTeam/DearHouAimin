@@ -37,4 +37,4 @@ catalina.*/
 
 target/
 classes/
-srv/db/
+srv/db/*
