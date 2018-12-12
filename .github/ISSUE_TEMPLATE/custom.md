@@ -1,9 +1,9 @@
 ---
-name: Custom issue template
-about: Describe this issue template's purpose here.
-title: ''
-labels: ''
-assignees: ''
+名称：自定义问题模板
+关于：在此处描述此问题模板的用途。
+标题：''
+标签： ''
+负责人：''
 
 ---
 

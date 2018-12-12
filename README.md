@@ -72,8 +72,9 @@ docker rmi $(docker images | grep "^" | awk "{print $3}")
 ### git教程
 
 -   [Git教程-
-    廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)\
+    廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 -   [GitHub团队项目合作流程](https://www.cnblogs.com/schaepher/p/4933873.html)
+-   [Github issues 使用指南](http://note.openmindclub.com/power/github-issue.html)
 
 ### processon
 
