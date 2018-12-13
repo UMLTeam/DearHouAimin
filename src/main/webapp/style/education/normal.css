@@ -10,7 +10,7 @@
 }
 
 #top .header .topLine{
-    border-top: 7px solid #015249;
+    border-top: 7px solid #04837e;
 }
 
 #top .header .topwrap{
@@ -147,7 +147,7 @@
 }
 
 #bottom .inner li .detail a:hover{
-    color: #04837e;
+    color: #5d6d94;
 }
 
 #copyrights{
