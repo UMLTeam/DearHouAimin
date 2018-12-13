@@ -252,7 +252,7 @@
 
 .detailContent .leftNav li.current a{
 	position: relative;
-	border-left: 4px solid rgba(4,131,126,1.0);
+	border-left: 4px solid #a5a5af;
 	left: -4px;
 	color: #04837e;
 }
