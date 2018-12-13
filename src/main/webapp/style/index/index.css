@@ -1,5 +1,5 @@
 #top{
-	background: url(images/bg.jpg) repeat-x top;
+	background: url(../../images/bg.jpg) repeat-x top;
 }
 
 #top .header{
@@ -9,7 +9,7 @@
 }
 
 #top .header .topLine{
-	border-top: 7px solid #5c307d;
+	border-top: 7px solid #04837e;
 }
 
 #top .header .topwrap{
@@ -17,14 +17,15 @@
 }
 
 #top .header .topwrap .logo{
-	float: left;
-	margin: 5px 0px 0px 0px;
-	height: 50px;
-}
+	 float: left;
+	 margin: 5px 0px 0px 0px;
+	 height: 50px;
+ }
 
 #top .header .topwrap .title{
 	margin: 50px 0px 0px 10px;
 	float: right;
+    color: #04837e;
 }
 
 #top .header .logininAndUp{
@@ -70,12 +71,12 @@
 }
 
 #nav li a:hover{
-	background: #5c307d;
+	background: #04837e;
 	color: #fff;
 }
 
 #nav ul{
-	background: #3d1c55;
+	background: #015249;
 	position: absolute;
 	top: 56px;
 	width: 180px;
@@ -87,7 +88,7 @@
 #nav ul li{
 	float: none;
 	display: block;
-	background: #3d1c55;
+	background: #015249;
 	height: 42px;
 	line-height: 42px;
 }
@@ -113,12 +114,12 @@
 #banner .summary{
 	width: 400px;
 	height: 247px;
-	background: rgba(92,48,125,0.9);
+	background: rgba(1, 82, 73, 0.7);
 	color: #fff;
 	position: absolute;
 	right: 160px;
 	top: 235px;
-	border-bottom: 6px solid rgba(255,150,0,1);
+	border-bottom: 6px solid rgb(165, 165, 175);
 }
 
 #banner .summary .top{
@@ -151,7 +152,7 @@
 }
 
 #summary .summaryTitle{
-	color: rgb(92,48,125);
+	color: rgb(1, 82, 73);
 	font-size: 24px;
 	border-bottom: 2px solid #ccc;
 	height: 70px;
@@ -231,12 +232,13 @@
 
 #copyrights{
 	width: 100%;
-	background: #22132d;
+	background: #015249;
 	margin: 0 auto;
 }
 
 .mainWrap{
-	color: #fff;
+    background: #015249;
+	color: #acacac;
 }
 
 .mainWrap .link{
@@ -247,6 +249,7 @@
 .mainWrap .link ul li{
 	float: left;
 	margin: 30px 20px 30px 20px;
+    color: #dfdfdf;
 }
 
 .final{
@@ -272,7 +275,7 @@
 
 .marqueeTitle{
 	clear: both;
-	color: rgb(92,48,125);
+	color: rgb(1, 82, 73);
 	font-size: 24px;
 	border-bottom: 2px solid #ccc;
 	height: 70px;
