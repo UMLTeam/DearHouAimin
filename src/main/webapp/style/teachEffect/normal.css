@@ -10,7 +10,7 @@
 }
 
 #top .header .topLine{
-    border-top: 7px solid #5c307d;
+    border-top: 7px solid #015249;
 }
 
 #top .header .topwrap{
@@ -75,12 +75,12 @@
 }
 
 #nav li a:hover{
-    background: #5c307d;
+    background: #04837e;
     color: #fff;
 }
 
 #nav ul{
-    background: #3d1c55;
+    background: #015249;
     position: absolute;
     top: 56px;
     width: 180px;
@@ -92,7 +92,7 @@
 #nav ul li{
     float: none;
     display: block;
-    background: #3d1c55;
+    background: #015249;
     height: 42px;
     line-height: 42px;
 }
@@ -147,12 +147,12 @@
 }
 
 #bottom .inner li .detail a:hover{
-    color: #5d6d94;
+    color: #04837e;
 }
 
 #copyrights{
     width: 100%;
-    background: #22132d;
+    background: #015249;
     margin: 0 auto;
 }
 

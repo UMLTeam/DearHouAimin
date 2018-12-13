@@ -27,7 +27,7 @@
 	width: 350px;
 	height: 40px;
 	margin-left: 100px;
-	background-color: #F23838;
+	background-color: #04837ed1;
 	color: #FFFFFF;
 	font-size: large;
 	border-radius: 5PX;
@@ -51,7 +51,6 @@
 	float: left;
 	width: 50px;
 	height: 40px;
-	background-image: url(../Image/%E4%BA%BA.png);
 }
 .partRight {
 	float: left;
