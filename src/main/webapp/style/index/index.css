@@ -102,8 +102,10 @@
 
 #banner{
 	width: 1200px;
+	height: 320px;
 	margin: 0px auto;
 	z-index: 2;
+	background: url(../../images/index/bigimg.jpg)
 }
 
 #banner img{
@@ -116,9 +118,9 @@
 	height: 247px;
 	background: rgba(1, 82, 73, 0.7);
 	color: #fff;
-	position: absolute;
-	right: 160px;
-	top: 235px;
+	position: relative;
+	left: 750px;
+	top: 73px;
 	border-bottom: 6px solid rgb(165, 165, 175);
 }
 
