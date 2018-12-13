@@ -9,7 +9,7 @@
 }
 
 #top .header .topLine{
-	border-top: 7px solid #5c307d;
+	border-top: 7px solid #04837e;
 }
 
 #top .header .topwrap{
@@ -70,12 +70,12 @@
 }
 
 #nav li a:hover{
-	background: #5c307d;
+	background: #04837e;
 	color: #fff;
 }
 
 #nav ul{
-	background: #3d1c55;
+	background: #015249;
 	position: absolute;
 	top: 56px;
 	width: 180px;
@@ -87,7 +87,7 @@
 #nav ul li{
 	float: none;
 	display: block;
-	background: #3d1c55;
+	background: #015249;
 	height: 42px;
 	line-height: 42px;
 }
@@ -147,7 +147,7 @@
 }
 
 .detailContent .leftNav{
-	border-left: 12px solid #5c307d;
+	border-left: 12px solid #04837e;
     position: relative;
     top: -34px;
     left: -12px;
@@ -155,7 +155,7 @@
 }
 
 .detailContent .leftNav h3{
-	background: #5c307d;
+	background: #04837e;
 	color: #fff;
 	font-size: 22px;
 	line-height: 68px;
@@ -177,21 +177,21 @@
 }
 
 .detailContent .leftNav li a{
-	color: #22132d;
+	color: #015249;
 	display: block;
 	padding: 1em 0 1em 22px;
 	margin-right: 28px;
 }
 
 .detailContent .leftNav li a:hover{
-	color: #4f608c;
+	color: #04837e;
 }
 
 .detailContent .leftNav li.current a{
 	position: relative;
-	border-left: 4px solid #ff9600;
+	border-left: 4px solid rgb(165, 165, 175);
 	left: -4px;
-	color: #5c307d;
+	color: #04837e;
 }
 
 .detailContent .column_2{
@@ -221,7 +221,7 @@
 
 a,a:link{
 	text-decoration: none;
-	color: #4f608c;
+	color: #04837e;
 }
 
 .detailContent .contentNav h1{
@@ -231,7 +231,7 @@ a,a:link{
 
 .contentNav h1{
 	font-size: 28px;
-	color: #5c307d;
+	color: #04837e;
 	line-height: 1.25em;
 	padding: 0.4em 0 0.6em 0;
 }
@@ -347,7 +347,7 @@ a,a:link{
 
 #copyrights{
 	width: 100%;
-	background: #22132d;
+	background: #015249;
 	margin: 0 auto;
 }
 
