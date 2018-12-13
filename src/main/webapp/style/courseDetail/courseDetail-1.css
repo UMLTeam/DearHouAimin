@@ -44,7 +44,7 @@
 }
 
 .detailContent .leftNav{
-    border-left: 12px solid #5c307d;
+    border-left: 12px solid #04837e;
     position: relative;
     top: -34px;
     left: -12px;
@@ -52,7 +52,7 @@
 }
 
 .detailContent .leftNav h3{
-    background: #5c307d;
+    background: #04837e;
     color: #fff;
     font-size: 22px;
     line-height: 68px;
@@ -82,14 +82,14 @@
 }
 
 .detailContent .leftNav li a:hover{
-    color: #4f608c;
+    color: #04837e;
 }
 
 .detailContent .leftNav li.current a{
     position: relative;
-    border-left: 4px solid #ff9600;
+    border-left: 4px solid rgb(165, 165, 175);
     left: -4px;
-    color: #5c307d;
+    color: #04837e;
 }
 
 .detailContent .column_2{
@@ -116,7 +116,7 @@
 }
 a,a:link{
     text-decoration: none;
-    color: #4f608c;
+    color: #04837e;
 }
 
 .detailContent .contentNav h1{
@@ -126,7 +126,7 @@ a,a:link{
 
 .contentNav h1{
     font-size: 28px;
-    color: #5c307d;
+    color: #04837e;
     line-height: 1.25em;
     padding: 0.4em 0 0.6em 0;
 }
