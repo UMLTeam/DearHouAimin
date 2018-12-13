@@ -87,7 +87,7 @@
 
 .detailContent .leftNav li.current a{
     position: relative;
-    border-left: 4px solid rgb(165, 165, 175);
+    border-left: 4px solid #a5a5af;
     left: -4px;
     color: #04837e;
 }
@@ -111,7 +111,7 @@
 }
 
 .contentNav .nav a{
-    color: #999;
+    color: #04837e;
     font-size: 12px;
 }
 a,a:link{

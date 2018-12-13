@@ -33,7 +33,7 @@ function onload_ui() {
 					<a href=\"education.html\">教育教学</a>\
 				</li>\
 				<li class=\"title\" onmouseover=\"extend('3')\" onmouseout=\"out('3')\">\
-					<a href=\"scienceStudy.html\">科学研究</a>\
+					<a href=\"eduManage.html\">科学研究</a>\
 				</li>\
 				<li class=\"title\" onmouseover=\"extend('4')\" onmouseout=\"out('4')\">\
 					<a href=\"admission.html\">招生就业</a>\
@@ -88,7 +88,7 @@ function onload_ui() {
 				</div>\
 			</li>\
 			<li><a href=\"education\">教育教学</a></li>\
-			<li><a href=\"scienceStudy.html\">科学研究</a></li>\
+			<li><a href=\"eduManage.html\">科学研究</a></li>\
 			<li><a href=\"admission.html\">招生就业</a>\
 				<div class=\"detail\">\
 					<div><a href=\"admissionDetail-1.html\">本科生招生</a></div>\
