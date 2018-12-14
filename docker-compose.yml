@@ -1,4 +1,4 @@
-version: "3"
+version: "2"
 services:
     db:
        image: mysql:5
@@ -13,7 +13,7 @@ services:
        ports:
          - "3307:3306"
     web:
-        images: open_course
+        image: open_course
         container_name: open_course_web
         restart: always
         links:
