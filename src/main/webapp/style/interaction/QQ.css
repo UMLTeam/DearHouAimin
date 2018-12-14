@@ -44,7 +44,7 @@
 }
 
 .detailContent .leftNav{
-    border-left: 12px solid #015249;
+    border-left: 12px solid #04837e;
     position: relative;
     top: -34px;
     left: -12px;
@@ -52,7 +52,7 @@
 }
 
 .detailContent .leftNav h3{
-    background: #015249;
+    background: #04837e;
     color: #fff;
     font-size: 22px;
     line-height: 68px;
@@ -67,7 +67,7 @@
 }
 
 .detailContent .leftNav li{
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #04837e;
     font-size: 15px;
     line-height: 22px;
     position: relative;
@@ -75,19 +75,19 @@
 }
 
 .detailContent .leftNav li a{
-    color: #04837e;
+    color: #22132d;
     display: block;
     padding: 1em 0 1em 22px;
     margin-right: 28px;
 }
 
 .detailContent .leftNav li a:hover{
-    color: #4f608c;
+    color: #04837e;
 }
 
 .detailContent .leftNav li.current a{
     position: relative;
-    border-left: 4px solid #04837e;
+    border-left: 4px solid #a5a5af;
     left: -4px;
     color: #04837e;
 }
@@ -101,7 +101,7 @@
 }
 
 .contentNav{
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #04837e;
     margin-bottom: 30px;
 }
 .contentNav .nav{
@@ -111,7 +111,7 @@
 }
 
 .contentNav .nav a{
-    color: #999;
+    color: #04837e;
     font-size: 12px;
 }
 
