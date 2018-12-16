@@ -1,114 +1,18 @@
 /*整体布局*/
 .ny-container{
-	width:900px;
+	width:100%;
 	height:auto;
 }
 
 /*内页侧栏*/
 .ny-content {
-	width: 880px;
+	width: 630px;
 }
-
-.ny-left {
-	width: 230px;
-	overflow: hidden;
-	float: left;
-	background: #fff;
-	margin-right: 20px;
-}
-
-.ny-left-title {
-	width: 210px;
-	height: 35px;
-	color: #fff;
-	font-size: 14px;
-	line-height: 35px;
-	font-weight: bold;
-	overflow: hidden;
-	background: url(../images/ny-left-title.jpg) no-repeat;
-	padding-left: 20px;
-	font-family: \5FAE\8F6F\96C5\9ED1;
-}
-
-.ny-left-content {
-	min-height: 200px;
-	_height: 200px;
-	overflow: hidden;
-	padding-bottom: 30px;
-	padding-top: 10px;
-}
-
-.ny-left-content ul li {
-	width: 200px;
-	float: left;
-	overflow: hidden;
-	margin-bottom: 5px;
-}
-
-.ny-left-content li a {
-	display: block;
-	width: 210px;
-	height: 35px;
-	line-height: 35px;
-	font-size: 12px;
-	color: #333;
-	border-bottom: 1px dotted #C6C6C6;
-	padding-left: 20px;
-	background: url(../images/ny-left-li.png) no-repeat 0px center;
-}
-
-.ny-left-content li a:hover {
-	text-decoration: none;
-	color: #333;
-}
-
-.ny-left-content ul .cur a {
-	color: #333;
-	font-weight: bold;
-}
-
-.ny-left-content li ul {
-	display: none;
-	overflow: hidden;
-	width: 175px;
-	margin-left: 20px;
-}
-
-.ny-left-content li ul li {
-	margin-bottom: 0px;
-	background: none;
-	border: none;
-}
-
-.ny-left-content li ul li a {
-	width: 155px;
-	height: 30px;
-	line-height: 30px;
-	background: url(../images/icon3.png) no-repeat 0px center;
-	padding-left: 20px;
-	font-weight: normal;
-	border: none;
-	color: #666;
-	font-size: 12px;
-}
-
-.ny-left-content li.cur ul {
-	display: block;
-}
-
-.ny-left-content li ul li ul {
-	display: none;
-	overflow: hidden;
-	padding: 0;
-	margin: 0;
-	padding-left: 15px;
-}
-
 /*内页侧栏*/
 
 /*内页右边内容区*/
 .ny-right {
-	width: 880px;
+	width:100%;
 	overflow: hidden;
 	float: left;
 	background: #fff;
@@ -133,7 +37,7 @@
 	min-height: 400px;
 	_height: 400px;
 	line-height: 24px;
-	width: 880px;
+	width:100%;
 	position: relative;
 	float: left;
 	display: inline;
@@ -152,9 +56,8 @@
 	margin-left:8px;
 	margin-right:8px;
 }
-.lFloat{
-	float:left;
-	clear:both;
+.fRight{
+	float:right;
 }
 .paging {
 	width: 100%;
@@ -207,7 +110,6 @@
 	line-height: 35px;
 	border-bottom: 1px dashed #D7D7D7;
 	padding-left: 13px;
-	background: url(../images/news-list02-icon.png) no-repeat left center;
 }
 
 .news-list01 li a {
