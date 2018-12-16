@@ -1,0 +1,43 @@
+.case_library{
+    width: 800px;
+    height: 420px;
+    float: left;
+}
+
+.case_library .case_list{
+    width: 740px;
+    height: 350px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.case_library .case_list li{
+    height: 35px;
+    line-height: 35px;
+    color: #030303;
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.case_library .case_list a{
+    color: #000;
+}
+
+.case_library .case_list span{
+    float: right;
+}
+
+.case_library .case_bottom{
+    width: 740px;
+    height: 70px;
+    text-align: center;
+}
+
+.case_library .case_bottom .case_bottom_menu{
+    width: 100%;
+    padding-top: 30px;
+}
+.case_library .case_bottom .case_bottom_menu span{
+    color: black;
+    padding: 5px;
+}
