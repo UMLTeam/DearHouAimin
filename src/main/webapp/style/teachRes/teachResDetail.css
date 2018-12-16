@@ -137,7 +137,9 @@ a,a:link{
     color: #444;
     text-align: justify;
 }
-
+.article{
+	position:relative;
+}
 .content .mainContent .article p {
     padding: 0.75em 0;
 }

@@ -1,0 +1,220 @@
+/*整体布局*/
+.ny-container{
+	width:900px;
+	height:auto;
+}
+
+/*内页侧栏*/
+.ny-content {
+	width: 880px;
+}
+
+.ny-left {
+	width: 230px;
+	overflow: hidden;
+	float: left;
+	background: #fff;
+	margin-right: 20px;
+}
+
+.ny-left-title {
+	width: 210px;
+	height: 35px;
+	color: #fff;
+	font-size: 14px;
+	line-height: 35px;
+	font-weight: bold;
+	overflow: hidden;
+	background: url(../images/ny-left-title.jpg) no-repeat;
+	padding-left: 20px;
+	font-family: \5FAE\8F6F\96C5\9ED1;
+}
+
+.ny-left-content {
+	min-height: 200px;
+	_height: 200px;
+	overflow: hidden;
+	padding-bottom: 30px;
+	padding-top: 10px;
+}
+
+.ny-left-content ul li {
+	width: 200px;
+	float: left;
+	overflow: hidden;
+	margin-bottom: 5px;
+}
+
+.ny-left-content li a {
+	display: block;
+	width: 210px;
+	height: 35px;
+	line-height: 35px;
+	font-size: 12px;
+	color: #333;
+	border-bottom: 1px dotted #C6C6C6;
+	padding-left: 20px;
+	background: url(../images/ny-left-li.png) no-repeat 0px center;
+}
+
+.ny-left-content li a:hover {
+	text-decoration: none;
+	color: #333;
+}
+
+.ny-left-content ul .cur a {
+	color: #333;
+	font-weight: bold;
+}
+
+.ny-left-content li ul {
+	display: none;
+	overflow: hidden;
+	width: 175px;
+	margin-left: 20px;
+}
+
+.ny-left-content li ul li {
+	margin-bottom: 0px;
+	background: none;
+	border: none;
+}
+
+.ny-left-content li ul li a {
+	width: 155px;
+	height: 30px;
+	line-height: 30px;
+	background: url(../images/icon3.png) no-repeat 0px center;
+	padding-left: 20px;
+	font-weight: normal;
+	border: none;
+	color: #666;
+	font-size: 12px;
+}
+
+.ny-left-content li.cur ul {
+	display: block;
+}
+
+.ny-left-content li ul li ul {
+	display: none;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	padding-left: 15px;
+}
+
+/*内页侧栏*/
+
+/*内页右边内容区*/
+.ny-right {
+	width: 880px;
+	overflow: hidden;
+	float: left;
+	background: #fff;
+}
+
+/*.ny-right-title a {
+	color: #fff;
+}
+
+.ny-right-title {
+	width: 920px;
+	padding-left: 30px;
+	height: 35px;
+	line-height: 35px;
+	color: #fff;
+	font-size: 12px;
+	background: url(../images/ny-right-title.jpg) no-repeat;
+	overflow: hidden;
+}*/
+
+.ny-right-content {
+	min-height: 400px;
+	_height: 400px;
+	line-height: 24px;
+	width: 880px;
+	position: relative;
+	float: left;
+	display: inline;
+	padding: 19px 0;
+}
+.ny-right-content img{
+	width:16px;
+	height:16px;
+}
+.ny-right-inner{
+	width:35px;
+	margin:0 auto;
+	line-height:25px;
+}
+.ny-right-inner span{
+	margin-left:8px;
+	margin-right:8px;
+}
+.lFloat{
+	float:left;
+	clear:both;
+}
+.paging {
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 10px;
+}
+
+/*内页右边内容区 - 文字内容*/
+.right-main-title {
+	font-size: 18px;
+	line-height: 30px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.right-sub-title {
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px dotted #cacaca;
+	text-align: center;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+
+.right-sub-title span {
+	margin: 0 20px;
+	color: #999;
+}
+
+.right-main-show {
+	line-height: 24px;
+	margin-bottom: 20px;
+}
+
+.next-page {
+	margin-top: 20px;
+	line-height: 24px;
+}
+
+/*内页右边内容区 - 文字内容*/
+.img-center {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+/*文字列表01*/
+.news-list01 li {
+	height: 35px;
+	line-height: 35px;
+	border-bottom: 1px dashed #D7D7D7;
+	padding-left: 13px;
+	background: url(../images/news-list02-icon.png) no-repeat left center;
+}
+
+.news-list01 li a {
+	float: left;
+}
+
+.news-list01 li span {
+	float: right;
+	color: #999;
+}
