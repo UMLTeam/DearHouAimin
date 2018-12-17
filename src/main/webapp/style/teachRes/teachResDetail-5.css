@@ -48,8 +48,9 @@
 	height:16px;
 }
 .ny-right-inner{
-	width:35px;
-	margin:0 auto;
+	width:70px;
+	margin:20px auto auto ;
+	padding-top: 7px;
 	line-height:25px;
 }
 .ny-right-inner span{
@@ -119,4 +120,12 @@
 .news-list01 li span {
 	float: right;
 	color: #999;
+}
+.ny-right-inner  img {
+	float:right;
+}
+
+.bottonDiv{
+	margin-top:  50px;
+	margin-left: 260px;
 }
