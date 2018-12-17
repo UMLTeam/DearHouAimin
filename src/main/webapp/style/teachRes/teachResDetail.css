@@ -139,6 +139,7 @@ a,a:link{
 }
 .article{
 	position:relative;
+    min-height: 400px;
 }
 .content .mainContent .article p {
     padding: 0.75em 0;
@@ -163,3 +164,4 @@ a,a:link{
 .detailContent .president img {
     margin:0px 0px 15px 0px;
 }
+
