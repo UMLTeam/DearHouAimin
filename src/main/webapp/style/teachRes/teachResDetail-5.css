@@ -6,6 +6,7 @@
 	color: #444;
 	text-align: justify;
 }
+
 .searchInput{
 	width: 150px;
 	border: 1px solid #04837e;
@@ -17,6 +18,7 @@
 	border: 1px solid #fff;
 	border-radius: 3px;
 }
+
 .searchSubmit:hover{
 	background-color:#04837e;
 }
