@@ -241,3 +241,12 @@ td img{
 .embed{
     padding-top: 10px;
 }
+/*索引页表格样式结束*/
+
+/*翻页样式*/
+.tranPage{
+    margin: 100px 0 0 300px;
+}
+.tranPage img{
+    margin-right: 5px;
+}

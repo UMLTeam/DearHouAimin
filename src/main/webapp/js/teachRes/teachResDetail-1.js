@@ -19,3 +19,20 @@ function Preview(e) {
         "<embed src=\""+src+"\" width=\"800\" height=\"800\">\n" +
         "</div>";
 }
+
+function upPage_hover(e) {
+    var target=e.target;
+    target.setAttribute("src","..\\images\\teachResource\\up_hover.png");
+}
+function upPage_out(e) {
+    var target=e.target;
+    target.setAttribute("src","..\\images\\teachResource\\up.png");
+}
+function downPage_hover(e) {
+    var target=e.target;
+    target.setAttribute("src","..\\images\\teachResource\\down_hover.png");
+}
+function downPage_out(e) {
+    var target=e.target;
+    target.setAttribute("src","..\\images\\teachResource\\down.png");
+}
