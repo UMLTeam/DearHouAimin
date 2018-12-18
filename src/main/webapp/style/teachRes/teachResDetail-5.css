@@ -49,16 +49,28 @@
 }
 .ny-right-inner{
 	width:70px;
-	margin:20px auto auto ;
+	height:17px;
+	margin:10px auto;
 	padding-top: 7px;
 	line-height:25px;
+	text-align:center;
+}
+.ny-right-title01{
+	text-align:center;
+	padding-right:240px;
 }
 .ny-right-inner span{
 	margin-left:8px;
 	margin-right:8px;
 }
+.ny-right-file{
+	display:none;
+}
 .fRight{
 	float:right;
+}
+.fLeft{
+	float:left;
 }
 .paging {
 	width: 100%;
