@@ -28,6 +28,10 @@
     border: 1px;
     padding: 4px;
 }
+.table .tll{
+    text-align: left;
+    padding-left: 50px;
+}
 .firstRow{
     background-color:#04837e;
 }
@@ -35,7 +39,7 @@
     color: #fff;
 }
 .trOdd{
-    background-color: #d3d3d3;
+    background-color: #ededed;
 }
 td img{
     margin-bottom: 4px;
