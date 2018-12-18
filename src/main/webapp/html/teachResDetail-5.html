@@ -7,9 +7,11 @@
 <link rel="stylesheet" type="text/css" href="../style/normal.css">
 <link rel="stylesheet" type="text/css" href="../style/teachRes/normal.css">
 <link rel="stylesheet" type="text/css" href="../style/teachRes/teachResDetail.css">
+
 <link rel="stylesheet" type="text/css" href="../style/teachRes/teachResDetail-5.css">
 <script type="text/javascript" src="../js/normal.js"></script>
 <script type="text/javascript" src="../js/teachRes/teachResDetail-5.js"></script>
+
 </head>
 <body onload="Rendering();">
 	<!-- 通过js渲染，js代码在normal.js里 -->
@@ -43,92 +45,109 @@
 							</nav>
 							<h1>实验任务</h1>
 						</header>
-						<section class="article">
-							<div class="ny-container">
-								<div class="content ny-content">
-									<div class="ny-right">
-										<div class="ny-right-content news-list01">
-											<ul>
-												<li>
-													<span class="fRight">上传日期</span>
-													<span class="fRight ny-right-title01">操作</span>
-													<span class="fRight ny-right-title01">文件名</span>
-													</li>
-												<li><a href="../resource/experimentalTask/UML---实验操作指南.docx" >《UML---实验操作指南》</a>
-													<span class="fRight">2018-07-24</span>
-													<div class="ny-right-inner">
-														<span class="dow-img"><a href="../resource/experimentalTask/UML---实验操作指南.docx" >
-																				<img alt="" src="../images/teachResource/download-1.png"></a>
-														</span>
-														<span class="pre-img"><a  onclick="Preview()"><img alt="" src="../images/teachResource/preview-1.png"></a></span>
-													</div></li>
-												<li><a href="../resource/experimentalTask/UML---实验操作指南.docx" >《UML实验1---建立用例图》</a>
-													<span class="fRight">2018-07-24</span>
-													<div class="ny-right-inner">
-														<span class="pre-img"><a href="../resource/experimentalTask/UML实验1---建立用例图.docx" >
-																				<img alt="" src="../images/teachResource/download-1.png"></a>
-														</span>
-														<span class="dow-img"><img alt="" src="../images/teachResource/preview-1.png"></span>
-												<li><a href="#" target="_self">《UML实验2---建立类图》</a>
-													<span class="fRight">2018-07-24</span>
-													<div class="ny-right-inner">
-														<span class="pre-img"><img alt="" src="../images/teachResource/download-1.png"></span>
-														<span class="dow-img"><img alt="" src="../images/teachResource/preview-1.png"></span>
-													</div></li>
-												<li><a href="#" target="_self">《UML实验3---建立顺序图和协作图》</a>
-													<span class="fRight">2018-07-24</span>
-													<div class="ny-right-inner">
-														<span class="pre-img"><img alt="" src="../images/teachResource/download-1.png"></span>
-														<span class="dow-img"><img alt="" src="../images/teachResource/preview-1.png"></span>
-													</div></li>
-												<li><a href="#" target="_self">《UML实验4---建立状态图和活动图》</a>
-													<span class="fRight">2018-07-24</span>
-													<div class="ny-right-inner">
-														<span class="pre-img"><img alt="" src="../images/teachResource/download-1.png"></span>
-														<span class="dow-img"><img alt="" src="../images/teachResource/preview-1.png"></span>
-													</div></li>
-												<li><a href="#" target="_self">《UML实验6---综合设计文档》</a>
-													<span class="fRight">2018-07-24</span>
-													<div class="ny-right-inner">
-														<span class="pre-img"><img alt="" src="../images/teachResource/download-1.png"></span>
-														<span class="dow-img"><img alt="" src="../images/teachResource/preview-1.png"></span>
-													</div></li>
-												<li><a href="#" target="_self">《软件需求分析与设计》综合实践(第2版)</a>
-													<span class="fRight">2018-07-24</span>
-													<div class="ny-right-inner">
-														<span class="pre-img"><img alt="" src="../images/teachResource/download-1.png"></span>
-														<span class="dow-img"><img alt="" src="../images/teachResource/preview-1.png"></span>
-													</div></li>
-											</ul>
-											<div class="bottonDiv">
-												<button id="lastPage">上一页</button>&nbsp;&nbsp;&nbsp;&nbsp;
-												<a href="teachResDetail-5-2.html" target="_self"><button id="nextPage">下一页</button></a>
-											</div>
-											<div class="clear"></div>
-											<div class="paging right">
-												<div class="manu"></div>
-											</div>
-										</div>
-										<div class="ny-right-file">
-											<div class="file-top"><a onclick="Preview()">返回</a></div>
-											<div class="file-show">
-											      <embed src="../resource/2017-18-1--面向对象分析与设计(UML)--期中考试试卷A-答案.pdf" width="800" height="800">    
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</section>
+         
+						<div id="resource">
+							<form class="search" action="" method="post">
+								<input class="searchInput" type="search" name="search">
+								<input class="searchSubmit" type="submit" value="文件搜索">
+							</form>
+							<table class="table" border="0" width="800px" cellpadding="2" cellspacing="1">
+								<tr class="firstRow">
+									<td>序号</td>
+									<td>文件名称</td>
+									<td>文件大小</td>
+									<td>上传时间</td>
+									<td>操作</td>
+								</tr>
+								<tr class="trOdd">
+									<td>1</td>
+									<td><img src="../images/teachResource/WORD.png">UML实验1---建立用例图.docx</td>
+									<td>1.2M</td>
+									<td>2018-12-17</td>
+									<td>
+										<a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
+										<a href="../resource/experimentalTask/UML---实验操作指南.docx" UML---实验操作指南.docx">
+											<img src="../images/teachResource/download.png">
+										</a>
+									</td>
+								</tr>
+								<tr class="tr">
+									<td>2</td>
+									<td><img src="../images/teachResource/WORD.png">UML实验2---建立类图.docx</td>
+									<td>1.2M</td>
+									<td>2018-12-17</td>
+									<td>
+										<a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
+										<a href="../resource/experimentalTask/UML---实验操作指南.docx" UML---实验操作指南.docx">
+										<img src="../images/teachResource/download.png">
+										</a>
+									</td>
+								</tr>
+								<tr class="trOdd">
+									<td>3</td>
+									<td><img src="../images/teachResource/WORD.png">UML实验3---建立顺序图和协作图.docx</td>
+									<td>1.6M</td>
+									<td>2018-12-17</td>
+									<td>
+										<a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
+										<a href="../resource/experimentalTask/UML---实验操作指南.docx" UML---实验操作指南.docx">
+										<img src="../images/teachResource/download.png">
+										</a>
+									</td>
+								</tr>
+								<tr class="tr">
+									<td>4</td>
+									<td><img src="../images/teachResource/WORD.png">UML实验4---建立状态图和活动图.docx</td>
+									<td>1.3M</td>
+									<td>2018-12-17</td>
+									<td>
+										<a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
+										<a href="../resource/experimentalTask/UML---实验操作指南.docx" UML---实验操作指南.docx">
+										<img src="../images/teachResource/download.png">
+										</a>
+									</td>
+								</tr>
+								<tr class="trOdd">
+									<td>5</td>
+									<td><img src="../images/teachResource/WORD.png">UML实验6---综合设计文档.docx</td>
+									<td>2.5M</td>
+									<td>2018-12-17</td>
+									<td>
+										<a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
+										<a href="../resource/experimentalTask/UML---实验操作指南.docx" UML---实验操作指南.docx">
+										<img src="../images/teachResource/download.png">
+										</a>
+									</td>
+								</tr>
+								<tr class="tr">
+									<td>6</td>
+									<td><img src="../images/teachResource/WORD.png">软件需求分析与设计 综合实践.docx</td>
+									<td>1.2M</td>
+									<td>2018-12-17</td>
+									<td>
+										<a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
+										<a href="../resource/experimentalTask/UML---实验操作指南.docx" UML---实验操作指南.docx">
+										<img src="../images/teachResource/download.png">
+										</a>
+									</td>
+								</tr>
+								<tr class="trOdd">
+									<td>7</td>
+									<td><img src="../images/teachResource/WORD.png">UML---实验操作指南.docx</td>
+									<td>2.7M</td>
+									<td>2018-12-17</td>
+									<td>
+										<a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
+										<a href="../resource/experimentalTask/UML---实验操作指南.docx" UML---实验操作指南.docx">
+										<img src="../images/teachResource/download.png">
+										</a>
+									</td>
+								</tr>
+							</table>
+						</div>
 
 					</article>
 				</div>
-				<!--<div class="column_3">-->
-				<!--<figure class="present">-->
-				<!--<img src="../images/teacherTeam/1.jpg" class="portrait">-->
-				<!--<figcaption style="text-align: center">郑玉梅</figcaption>-->
-				<!--&lt;!&ndash;<img src="../images/index/President-z.gif">&ndash;&gt;-->
-				<!--</figure>-->
-				<!--</div>-->
 			</div>
 		</section>
 	</article>
@@ -137,5 +156,5 @@
 	<div id="bottom"></div>
 	<!-- 通过js渲染，js代码在normal.js里 -->
 	<div id="copyrights"></div>
-</body>
+	</body>
 </html>
