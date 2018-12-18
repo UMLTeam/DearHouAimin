@@ -18,21 +18,6 @@
 	background: #fff;
 }
 
-/*.ny-right-title a {
-	color: #fff;
-}
-
-.ny-right-title {
-	width: 920px;
-	padding-left: 30px;
-	height: 35px;
-	line-height: 35px;
-	color: #fff;
-	font-size: 12px;
-	background: url(../images/ny-right-title.jpg) no-repeat;
-	overflow: hidden;
-}*/
-
 .ny-right-content {
 	min-height: 400px;
 	_height: 400px;
@@ -62,9 +47,6 @@
 .ny-right-inner span{
 	margin-left:8px;
 	margin-right:8px;
-}
-.ny-right-file{
-	display:none;
 }
 .fRight{
 	float:right;
@@ -140,4 +122,15 @@
 .bottonDiv{
 	margin-top:  50px;
 	margin-left: 260px;
+}
+/*文件预览内容*/
+.ny-right-file{
+	width:800px;
+	display:none;
+}
+.file-show-title{
+	border-bottom:2px grey solid;
+}
+.file-show-title h1{
+	font-weight: 900;
 }
