@@ -13,26 +13,9 @@ function Preview(e) {
     else{
         var src="https://view.officeapps.live.com/op/view.aspx?src=http://www.niracler.com/resource/"+fileName;
     }
-    document.getElementById("resource").innerHTML="<a href=\"teachResDetail-1.html\"><img src=\"../images/teachResource/返回.png\">返回</a>\n" +"<br>"+
+    document.getElementById("resource").innerHTML="<a href=\"teachResDetail-3.html\"><img src=\"../images/teachResource/返回.png\">返回</a>\n" +"<br>"+
         "<b style=\"font-size: 25px;\">"+fileName+"</b>\n" +
         "<div class=\"embed\\\">\n" +
         "<embed src=\""+src+"\" width=\"800\" height=\"800\">\n" +
         "</div>";
-}
-
-function upPage_hover(e) {
-    var target=e.target;
-    target.setAttribute("src","..\\images\\teachResource\\up_hover.png");
-}
-function upPage_out(e) {
-    var target=e.target;
-    target.setAttribute("src","..\\images\\teachResource\\up.png");
-}
-function downPage_hover(e) {
-    var target=e.target;
-    target.setAttribute("src","..\\images\\teachResource\\down_hover.png");
-}
-function downPage_out(e) {
-    var target=e.target;
-    target.setAttribute("src","..\\images\\teachResource\\down.png");
 }

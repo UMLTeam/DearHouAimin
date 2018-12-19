@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../style/teachRes/normal.css">
     <link rel="stylesheet" type="text/css" href="../style/teachRes/teachResDetail.css">
     <link rel="stylesheet" type="text/css" href="../style/teachRes/teachResDetail-4.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
     <script type="text/javascript" src="../js/teachRes/teachResDetail-4.js"></script>
     <script type="text/javascript" src="../js/normal.js"></script>
 </head>
@@ -54,70 +54,107 @@
                         </div>
                     </section>
                     -->
+                    <div id="resource">
+                        <form class="search" action="" method="post">
+                            <input class="searchInput" type="search" name="search">
+                            <input class="searchSubmit" type="submit" value="文件搜索">
+                        </form>
+                        <table class="table" border="0" width="800px" cellpadding="2" cellspacing="1">
+                            <tr class="firstRow">
+                                <td>序号</td>
+                                <td>文件名称</td>
+                                <td>文件大小</td>
+                                <td>上传时间</td>
+                                <td>操作</td>
+                            </tr>
+                            <tr class="trOdd">
+                                <td>1</td>
+                                <td><img src="../images/teachResource/WORD.png">uml实例.doc</td>
+                                <td>1.2M</td>
+                                <td>2018-12-17</td>
+                                <td>
+                                    <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
+                                    <a href="../resource/UML实验6---综合设计文档.doc" download="UML实验6---综合设计文档.doc">
+                                        <img src="../images/teachResource/download.png">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="tr">
+                                <td>2</td>
+                                <td><img src="../images/teachResource/WORD.png">uml实例.doc</td>
+                                <td>1.3M</td>
+                                <td>2018-12-17</td>
+                                <td>
+                                    <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
+                                    <a href="../resource/《软件需求分析与设计》--第1章---第1部分.pptx" download="UML实验6---综合设计文档.doc">
+                                        <img src="../images/teachResource/download.png">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="trOdd">
+                                <td>3</td>
+                                <td><img src="../images/teachResource/WORD.png">uml实例.doc</td>
+                                <td>0.3M</td>
+                                <td>2018-12-17</td>
+                                <td>
+                                    <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
+                                    <a href="../resource/UML实验6---综合设计文档.doc" download="UML实验6---综合设计文档.doc">
+                                        <img src="../images/teachResource/download.png">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="tr">
+                                <td>4</td>
+                                <td><img src="../images/teachResource/WORD.png">uml实例.doc</td>
+                                <td>1.3M</td>
+                                <td>2018-12-17</td>
+                                <td>
+                                    <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
+                                    <a href="../resource/UML实验6---综合设计文档.doc" download="UML实验6---综合设计文档.doc">
+                                        <img src="../images/teachResource/download.png">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="trOdd">
+                                <td>5</td>
+                                <td><img src="../images/teachResource/WORD.png">uml实例.doc</td>
+                                <td>1.3M</td>
+                                <td>2018-12-17</td>
+                                <td>
+                                    <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
+                                    <a href="../resource/UML实验6---综合设计文档.doc" download="UML实验6---综合设计文档.doc">
+                                        <img src="../images/teachResource/download.png">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="tr">
+                                <td>6</td>
+                                <td><img src="../images/teachResource/WORD.png">uml实例.doc</td>
+                                <td>1.3M</td>
+                                <td>2018-12-17</td>
+                                <td>
+                                    <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
+                                    <a href="../resource/UML实验6---综合设计文档.doc" download="UML实验6---综合设计文档.doc">
+                                        <img src="../images/teachResource/download.png">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="trOdd">
+                                <td>7</td>
+                                <td><img src="../images/teachResource/WORD.png">uml实例.doc</td>
+                                <td>1.3M</td>
+                                <td>2018-12-17</td>
+                                <td>
+                                    <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
+                                    <a href="../resource/UML实验6---综合设计文档.doc" download="UML实验6---综合设计文档.doc">
+                                        <img src="../images/teachResource/download.png">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </article>
             </div>
-
-            <div class="case_library">
-                <div class="case_list">
-                    <ul>
-                        <li class="resource">
-                            <a href="../resource/案例资源/UML建模案例——我的一位朋友结婚了.docx" download="案例资源">第一章 合同法</a>
-                            <span class="">2018/12/15</span>
-                        </li>
-                        <li class="resource">
-                            <a href="../resource/案例资源/UML建模案例——我的一位朋友结婚了.docx" download="案例资源">第一章 合同法</a>
-                            <span class="">2018/12/15</span>
-                        </li>
-                        <li class="resource">
-                            <a href="../resource/案例资源/UML建模案例——我的一位朋友结婚了.docx" download="案例资源">第一章 合同法</a>
-                            <span class="">2018/12/15</span>
-                        </li>
-                        <li class="resource">
-                            <a href="../resource/案例资源/UML建模案例——我的一位朋友结婚了.docx" download="案例资源">第一章 合同法</a>
-                            <span class="">2018/12/15</span>
-                        </li>
-                        <li class="resource">
-                            <a href="../resource/案例资源/UML建模案例——我的一位朋友结婚了.docx" download="案例资源">第一章 合同法</a>
-                            <span class="">2018/12/15</span>
-                        </li>
-                        <li class="resource">
-                            <a href="../resource/案例资源/UML建模案例——我的一位朋友结婚了.docx" download="案例资源">第一章 合同法</a>
-                            <span class="">2018/12/15</span>
-                        </li>
-                        <li class="resource">
-                            <a href="../resource/案例资源/UML建模案例——我的一位朋友结婚了.docx" download="案例资源">第一章 合同法</a>
-                            <span class="">2018/12/15</span>
-                        </li>
-                        <li class="resource">
-                            <a href="../resource/案例资源/UML建模案例——我的一位朋友结婚了.docx" download="案例资源">第一章 合同法</a>
-                            <span class="">2018/12/15</span>
-                        </li>
-                        <li class="resource">
-                            <a href="../resource/案例资源/UML建模案例——我的一位朋友结婚了.docx" download="案例资源">第一章 合同法</a>
-                            <span class="">2018/12/15</span>
-                        </li>
-                        <li class="resource">
-                            <a href="../resource/案例资源/UML建模案例——我的一位朋友结婚了.docx" download="案例资源">第一章 合同法</a>
-                            <span class="">2018/12/15</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="case_bottom">
-                    <div class="case_bottom_menu">
-                        <span id="num"></span>
-                        <button id="lastPage">上一页</button>
-                        <button id="nextPage">下一页</button>
-                    </div>
-
-                </div>
-            </div>
-            <!--<div class="column_3">-->
-            <!--<figure class="present">-->
-            <!--<img src="../images/teacherTeam/1.jpg" class="portrait">-->
-            <!--<figcaption style="text-align: center">郑玉梅</figcaption>-->
-            <!--&lt;!&ndash;<img src="../images/index/President-z.gif">&ndash;&gt;-->
-            <!--</figure>-->
-            <!--</div>-->
         </div>
     </section>
 </article>
