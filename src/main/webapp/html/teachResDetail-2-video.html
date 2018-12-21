@@ -15,12 +15,15 @@
 	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 	<script src="https://cdn.bootcss.com/flv.js/1.5.0/flv.js"></script>
     <style>
-    	#dplayer{
-            position: relative;
-			max-width:820px;
-			/*height:500px;*/
-			margin:0 auto;
-		}
+        .detailContent .column_2{
+            width: 620px;
+        }
+        /*.dplayer_wrap{*/
+            /*!*position: relative;*!*/
+			/*!*max-width:700px;*!*/
+			/*!*height:500px;*!*/
+			/*!*margin:0 auto;*!*/
+		/*}*/
 	</style>
 </head>
 <body onload="Rendering();">
@@ -58,8 +61,9 @@
                     </header>
                    <div id="resource">
                         <a href="teachResDetail-2.html"><img src="../images/teachResource/返回.png">返回</a><br><br>
-                      	<div id="dplayer"></div>
-
+                      	<div class="dplayer_wrap">
+                            <div id="dplayer"></div>
+                        </div>
 						<script src="https://cdn.bootcss.com/dplayer/1.25.0/DPlayer.min.js"></script>
 						<script>
 							var dp = new DPlayer({
