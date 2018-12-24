@@ -2,12 +2,12 @@ package service.Impl;
 
 import dao.impl.DBConnectionImpl;
 import domian.ErrorMess;
-import service.IAddTeachingVideoService;
+import service.IAddResService;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class AddTeachingVideoServiceImpl implements IAddTeachingVideoService {
+public class AddResServiceImpl implements IAddResService {
 
     public static void add(String name) throws ErrorMess{
         try {
