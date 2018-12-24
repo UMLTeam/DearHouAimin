@@ -82,7 +82,7 @@ docker部署说明
 -   部署命令
 
 ``` {.bash}
-docker build --no-cache -t open_course .
+docker build  -t open_course .
 docker-compose up -d db
 docker-compose up -d web
 ```

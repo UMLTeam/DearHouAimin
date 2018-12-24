@@ -1,131 +1,48 @@
-/*整体布局*/
-.ny-container{
-	width:100%;
-	height:auto;
-}
-
-/*内页侧栏*/
-.ny-content {
-	width: 630px;
-}
-/*内页侧栏*/
-
-/*内页右边内容区*/
-.ny-right {
-	width:100%;
-	overflow: hidden;
-	float: left;
-	background: #fff;
-}
-
-/*.ny-right-title a {
-	color: #fff;
-}
-
-.ny-right-title {
-	width: 920px;
-	padding-left: 30px;
-	height: 35px;
-	line-height: 35px;
-	color: #fff;
-	font-size: 12px;
-	background: url(../images/ny-right-title.jpg) no-repeat;
-	overflow: hidden;
-}*/
-
-.ny-right-content {
+#resource{
+	position:relative;
 	min-height: 400px;
-	_height: 400px;
+	font-size: 14px;
 	line-height: 24px;
-	width:100%;
-	position: relative;
-	float: left;
-	display: inline;
-	padding: 19px 0;
-}
-.ny-right-content img{
-	width:16px;
-	height:16px;
-}
-.ny-right-inner{
-	width:70px;
-	margin:20px auto auto ;
-	padding-top: 7px;
-	line-height:25px;
-}
-.ny-right-inner span{
-	margin-left:8px;
-	margin-right:8px;
-}
-.fRight{
-	float:right;
-}
-.paging {
-	width: 100%;
-	height: 30px;
-	line-height: 30px;
-	margin-top: 10px;
+	color: #444;
+	text-align: justify;
 }
 
-/*内页右边内容区 - 文字内容*/
-.right-main-title {
-	font-size: 18px;
-	line-height: 30px;
-	margin-top: 10px;
-	text-align: center;
+.searchInput{
+	width: 150px;
+	border: 1px solid #04837e;
+	font-size: large;
+	outline: none;
+	border-radius: 3px;
+}
+.searchSubmit:hover{
+	border: 1px solid #fff;
+	border-radius: 3px;
 }
 
-.right-sub-title {
-	height: 30px;
-	line-height: 30px;
-	border-bottom: 1px dotted #cacaca;
-	text-align: center;
-	padding-bottom: 10px;
-	margin-bottom: 20px;
+.searchSubmit:hover{
+	background-color:#04837e;
 }
-
-.right-sub-title span {
-	margin: 0 20px;
-	color: #999;
-}
-
-.right-main-show {
-	line-height: 24px;
-	margin-bottom: 20px;
-}
-
-.next-page {
+.table{
 	margin-top: 20px;
-	line-height: 24px;
 }
-
-/*内页右边内容区 - 文字内容*/
-.img-center {
-	display: block;
-	width: 100%;
+.table tr td{
 	text-align: center;
+	border: 1px;
+	padding: 4px;
 }
-/*文字列表01*/
-.news-list01 li {
-	height: 35px;
-	line-height: 35px;
-	border-bottom: 1px dashed #D7D7D7;
-	padding-left: 13px;
+.firstRow{
+	background-color:#04837e;
 }
-
-.news-list01 li a {
-	float: left;
+.firstRow td{
+	color: #fff;
 }
-
-.news-list01 li span {
-	float: right;
-	color: #999;
+.trOdd{
+	background-color: #d3d3d3;
 }
-.ny-right-inner  img {
-	float:right;
+td img{
+	margin-bottom: 4px;
+	margin-right: 5px;
 }
-
-.bottonDiv{
-	margin-top:  50px;
-	margin-left: 260px;
+.embed{
+	padding-top: 10px;
 }
