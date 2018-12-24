@@ -67,4 +67,17 @@ public class Resource {
     public void setIsCheck(String isCheck) {
         this.isCheck = isCheck;
     }
+
+    @Override
+    public String toString() {
+        return "Resource{" +
+                "id=" + id +
+                ", resName='" + resName + '\'' +
+                ", resTime=" + resTime +
+                ", resPath='" + resPath + '\'' +
+                ", resType='" + resType + '\'' +
+                ", resTag='" + resTag + '\'' +
+                ", isCheck='" + isCheck + '\'' +
+                '}';
+    }
 }

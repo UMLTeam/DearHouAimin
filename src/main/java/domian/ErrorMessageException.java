@@ -5,15 +5,15 @@ package domian;
  *
  * @author wt
  */
-public class ErrorMess extends Exception {
+public class ErrorMessageException extends Exception {
 
-    private String Message;  //异常信息
+    private String Message;
 
-    public ErrorMess(String mess) {
+    public ErrorMessageException(String mess) {
         super();
         Message = mess;
     }
-
+    @Override
     public String getMessage() {
         return Message;
     }
