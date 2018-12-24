@@ -2,7 +2,7 @@ package service;
 
 import domian.ErrorMess;
 
-public interface IAddTeachingVideoService {
+public interface IAddResService {
 
     /**
      * 添加教学视频
