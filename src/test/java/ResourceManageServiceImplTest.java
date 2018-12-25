@@ -20,16 +20,16 @@ public class ResourceManageServiceImplTest {
         //logger.info("查询成功");
         Resource resource = new Resource();
         Date date = new Date();
-        resource.setId(2);
+        resource.setId(3);
         resource.setResTime(new Timestamp(date.getTime()));
         resource.setResPath("test2");
         resource.setResName("test");
         resource.setResType("test");
-        resource.setResTag("test");
+        //resource.setResTag("test");
         resource.setIsCheck("test");
        // resourceManageService.insert(resource);
         logger.info(resource.toString());
-        resourceManageService.update(resource);
+        resourceManageService.insert(resource);
         logger.info("end");
     }
 }

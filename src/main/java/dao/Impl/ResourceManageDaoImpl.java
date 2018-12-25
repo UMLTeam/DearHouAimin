@@ -39,7 +39,7 @@ public class ResourceManageDaoImpl implements IResourceManageDao {
                 resource.setResTime(resultSet.getTimestamp("resTime"));
                 resource.setResPath(resultSet.getString("resPath"));
                 resource.setResType(resultSet.getString("resType"));
-                resource.setResTag(resultSet.getString("resTag"));
+//                resource.setResTag(resultSet.getString("resTag"));
                 resource.setIsCheck(resultSet.getString("isCheck"));
                 list.add(resource);
             }
@@ -56,7 +56,7 @@ public class ResourceManageDaoImpl implements IResourceManageDao {
     public boolean updateResource(Resource resource) {
         DataBaseConnectionImpl dataBaseConnection = new DataBaseConnectionImpl();
         connection = dataBaseConnection.getConnection();
-        String sql = "update resource set id = ?, resName = ?, resTime = ?, resPath = ?, resType = ?, resTag = ?, isCheck = ? where id = ?";
+        String sql = "update resource set id = ?, resName = ?, resTime = ?, resPath = ?, resType = ?, isCheck = ? where id = ?";
         try {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, resource.getId());
@@ -64,9 +64,9 @@ public class ResourceManageDaoImpl implements IResourceManageDao {
             preparedStatement.setTimestamp(3, resource.getResTime());
             preparedStatement.setString(4, resource.getResPath());
             preparedStatement.setString(5, resource.getResType());
-            preparedStatement.setString(6, resource.getResTag());
-            preparedStatement.setString(7, resource.getIsCheck());
-            preparedStatement.setInt(8, resource.getId());
+            //preparedStatement.setString(6, resource.getResTag());
+            preparedStatement.setString(6, resource.getIsCheck());
+            preparedStatement.setInt(7, resource.getId());
             preparedStatement.executeUpdate();
             return true;
         } catch (Exception e) {
@@ -81,7 +81,7 @@ public class ResourceManageDaoImpl implements IResourceManageDao {
     public boolean insertResource(Resource resource) {
         DataBaseConnectionImpl dataBaseConnection = new DataBaseConnectionImpl();
         connection = dataBaseConnection.getConnection();
-        String sql = "INSERT INTO resource VALUES(?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO resource VALUES(?,?,?,?,?,?)";
         try {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, resource.getId());
@@ -89,8 +89,8 @@ public class ResourceManageDaoImpl implements IResourceManageDao {
             preparedStatement.setTimestamp(3, resource.getResTime());
             preparedStatement.setString(4, resource.getResPath());
             preparedStatement.setString(5, resource.getResType());
-            preparedStatement.setString(6, resource.getResTag());
-            preparedStatement.setString(7, resource.getIsCheck());
+//            preparedStatement.setString(6, resource.getResTag());
+            preparedStatement.setString(6, resource.getIsCheck());
             preparedStatement.executeUpdate();
             return true;
         } catch (Exception e) {
