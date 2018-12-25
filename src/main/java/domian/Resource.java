@@ -8,8 +8,8 @@ public class Resource {
     private String resName;
     private Timestamp resTime;
     private String resPath;
-    private String resType;
-    private String resTag;
+    private String resType; //栏目类型, 例如习题库,
+//    private String resTag;  //后缀名,如ppt
     private String isCheck;
 
     public int getId() {
@@ -52,13 +52,13 @@ public class Resource {
         this.resType = resType;
     }
 
-    public String getResTag() {
-        return resTag;
-    }
+//    public String getResTag() {
+//        return resTag;
+//    }
 
-    public void setResTag(String resTag) {
-        this.resTag = resTag;
-    }
+//    public void setResTag(String resTag) {
+//        this.resTag = resTag;
+//    }
 
     public String getIsCheck() {
         return isCheck;
@@ -66,5 +66,18 @@ public class Resource {
 
     public void setIsCheck(String isCheck) {
         this.isCheck = isCheck;
+    }
+
+    @Override
+    public String toString() {
+        return "Resource{" +
+                "id=" + id +
+                ", resName='" + resName + '\'' +
+                ", resTime=" + resTime +
+                ", resPath='" + resPath + '\'' +
+                ", resType='" + resType + '\'' +
+//                ", resTag='" + resTag + '\'' +
+                ", isCheck='" + isCheck + '\'' +
+                '}';
     }
 }

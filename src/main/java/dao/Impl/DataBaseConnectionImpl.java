@@ -1,4 +1,4 @@
-package dao.impl;
+package dao.Impl;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,35 +6,45 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import dao.IDBConnectionDao;
+import dao.IDataBaseConnectionDao;
+/**
+ * Demo class
+ *
+ * @author wt
+ * @date 2018/12/24
+ */
+public class DataBaseConnectionImpl implements IDataBaseConnectionDao {
 
-public class DBConnectionImpl implements IDBConnectionDao {
-
-    //private static String url = "jdbc:sqlserver://127.0.0.1:1433;databaseName=BaiduFace;integratedSecurity=true;characterEncoding=utf-8;";
-    //private static String driverName = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static String url = "jdbc:mysql://niracler.com:3307/uml_open_course_db?user=root&password=dgutdev#uml&useUnicode=true&characterEncoding=UTF8";
-    private static String driverName = "com.mysql.jdbc.Driver";
+    private final static String URL = "jdbc:mysql://niracler.com:3307/uml_open_course_db?useUnicode=true&characterEncoding=UTF8";
+    private final static String DRIVERNAME = "com.mysql.cj.jdbc.Driver";
+    private final static String USER = "root";
+    private final static String PASSWORD = "dgutdev#uml";
 
     static {
         try {
-            Class.forName(driverName);  //加载JDBC驱动程序
+            //加载JDBC驱动程序
+            Class.forName(DRIVERNAME);
         } catch(ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
-
-    public static Connection getConnection() {
+    @Override
+    public Connection getConnection() {
         try {
-            Connection con = DriverManager.getConnection(url); //创建数据库连接
-            return con;
+            //创建数据库连接
+            Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            return connection;
         } catch(SQLException e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    //关闭JDBC对象
-    public static void free(Connection con , PreparedStatement ps , ResultSet rs) {
+    /**
+     *     关闭JDBC对象
+     */
+    @Override
+    public void free(Connection con , PreparedStatement ps , ResultSet rs) {
         try {
             if(con != null) {
                 con.close();
