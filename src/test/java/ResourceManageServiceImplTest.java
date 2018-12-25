@@ -25,7 +25,7 @@ public class ResourceManageServiceImplTest {
         resource.setResPath("test2");
         resource.setResName("test");
         resource.setResType("test");
-        resource.setResTag("test");
+        //resource.setResTag("test");
         resource.setIsCheck("test");
        // resourceManageService.insert(resource);
         logger.info(resource.toString());
