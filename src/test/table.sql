@@ -7,7 +7,6 @@ create table resource
   resTime timestamp default CURRENT_TIMESTAMP not null comment '上传时间',
   resPath varchar(255)                        not null comment '上传路径',
   resType varchar(255)                        not null comment '资源类型',
-  resTag  varchar(255)                        not null comment '标签',
   isCheck varchar(255)                        not null comment '发布状态'
 )
   charset = utf8;
