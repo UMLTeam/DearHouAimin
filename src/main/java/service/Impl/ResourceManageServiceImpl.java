@@ -1,11 +1,15 @@
 package service.Impl;
 
+import dao.Impl.DataBaseConnectionImpl;
 import dao.Impl.ResourceManageDaoImpl;
 import domian.Resource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import service.IResourceManageService;
+import tools.PageInformation;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,6 +24,16 @@ public class ResourceManageServiceImpl implements IResourceManageService {
         ResourceManageDaoImpl resourceManageDao = new ResourceManageDaoImpl();
         return resourceManageDao.findAllResource();
     }
+
+    @Override
+    public List<Resource> getOnePage(PageInformation pageInformation){
+        List<Resource> resources=new ArrayList<Resource>();
+        DataBaseConnectionImpl databaseDao=new DataBaseConnectionImpl();
+        ResourceManageDaoImpl resourceManageDao = new ResourceManageDaoImpl();
+        resources = resourceManageDao.getOnePage(pageInformation,databaseDao);
+        return resources;
+    }
+
 
     @Override
     public boolean update(Resource resource) {

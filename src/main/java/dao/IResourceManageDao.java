@@ -1,6 +1,8 @@
 package dao;
 
+import dao.Impl.DataBaseConnectionImpl;
 import domian.Resource;
+import tools.PageInformation;
 
 import java.util.List;
 
@@ -35,4 +37,16 @@ public interface IResourceManageDao {
      * @return
      */
     boolean deleteResource(Resource resource);
+
+    /**
+     * 查询符合条件的记录的数目
+     * @return
+     */
+    int getCount(String sql);
+
+    /**
+     * 从数据库中查找所有资源的信息
+     * @return List<Resource>
+     */
+    List<Resource> getOnePage(PageInformation pageInformation, DataBaseConnectionImpl databaseDao);
 }
