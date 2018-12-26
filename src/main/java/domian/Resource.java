@@ -12,6 +12,17 @@ public class Resource {
 //    private String resTag;  //后缀名,如ppt
     private String isCheck;
 
+    public Resource(){}
+
+    public Resource(int id, String resName, Timestamp resTime, String resPath, String resType, String isCheck) {
+        this.id = id;
+        this.resName = resName;
+        this.resTime = resTime;
+        this.resPath = resPath;
+        this.resType = resType;
+        this.isCheck = isCheck;
+    }
+
     public int getId() {
         return id;
     }

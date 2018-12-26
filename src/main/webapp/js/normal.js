@@ -132,9 +132,9 @@ function Rendering(){
 						</ul>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('5')\" onmouseout=\"out('5')\">\
-						<a href=\"teachResDetail-1.html\">教学资源</a>\
+						<a href=\"courseWareServlet?type=show\">教学资源</a>\
 						<ul style=\"display: none;\" id=\"fifth\">\
-    						<li class=\"detail\"><a href=\"teachResDetail-1.html\" style=\"color: #fff;\">课程课件</a></li>\
+    						<li class=\"detail\"><a href=\"courseWareServlet?type=show\" style=\"color: #fff;\">课程课件</a></li>\
 							<li class=\"detail\"><a href=\"teachResDetail-2.html\" style=\"color: #fff;\">教学录像</a></li>\
     						<li class=\"detail\"><a href=\"teachResDetail-3.html\" style=\"color: #fff;\">习题库</a></li>\
     						<li class=\"detail\"><a href=\"teachResDetail-4.html\" style=\"color: #fff;\">案例库</a></li>\
@@ -209,9 +209,9 @@ function Rendering(){
                         <div><a href=\"educationReformDetail-4.html\">改革表彰和奖励</a></div>\
                     </div>\
 				</li>\
-				<li><a href=\"teachResDetail-1.html\">教学资源</a>\
+				<li><a href=\"courseWareServlet?type=show\">教学资源</a>\
 					<div class=\"detail\">\
-						<div><a href=\"teachResDetail-1.html\">课程课件</a></div>\
+						<div><a href=\"courseWareServlet?type=show\">课程课件</a></div>\
 						<div><a href=\"teachResDetail-2.html\">教学录像</a></div>\
 						<div><a href=\"teachResDetail-3.html\">习题库</a></div>\
 						<div><a href=\"teachResDetail-4.html\">案例库</a></div>\
