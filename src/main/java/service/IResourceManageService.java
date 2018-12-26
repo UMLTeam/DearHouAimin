@@ -18,6 +18,12 @@ public interface IResourceManageService {
     List<Resource> find();
 
     /**
+     * 根据资源类型来
+     *
+     */
+    List<Resource> findByType(String type);
+
+    /**
      * 得到一页资源信息
      *  @return List<Resource>
      */

@@ -20,9 +20,19 @@ public class ResourceManageServiceImplTest {
         test.testInsert();
         test.testUpdate();
         test.testDelete();
+        test.testFindByType();
     }
 
-    Logger logger = LogManager.getLogger(ResourceManageServiceImpl.class);
+    private void testFindByType() {
+        Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
+        logger.info("测试ResourceManageServiceImpl根据类型查询");
+        ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
+        List<Resource> resourceList = resourceManageService.findByType("习题库");
+        for (Resource resource : resourceList) {
+            logger.info(resource.toString());
+        }
+        logger.info("end\n");
+    }
 
     public void testFind() {
         Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);

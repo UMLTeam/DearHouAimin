@@ -26,6 +26,12 @@ public class ResourceManageServiceImpl implements IResourceManageService {
     }
 
     @Override
+    public List<Resource> findByType(String type) {
+        ResourceManageDaoImpl resourceManageDao = new ResourceManageDaoImpl();
+        return resourceManageDao.findResourceByType(type);
+    }
+
+    @Override
     public List<Resource> getOnePage(PageInformation pageInformation){
         List<Resource> resources=new ArrayList<Resource>();
         DataBaseConnectionImpl databaseDao=new DataBaseConnectionImpl();
