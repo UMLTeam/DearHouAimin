@@ -67,7 +67,6 @@ public class ResourceManageServiceImplTest {
         Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
         logger.info("测试ResourceManageServiceImpl插入");
         ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
-        //logger.info("查询成功");
         Resource resource = new Resource();
         Date date = new Date();
         resource.setId(6);
