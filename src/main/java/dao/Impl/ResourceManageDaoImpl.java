@@ -34,6 +34,7 @@ public class ResourceManageDaoImpl implements IResourceManageDao {
             preparedStatement = connection.prepareStatement(sql);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
+                resource = new Resource();
                 resource.setId(resultSet.getInt("id"));
                 resource.setResName(resultSet.getString("resName"));
                 resource.setResTime(resultSet.getTimestamp("resTime"));
