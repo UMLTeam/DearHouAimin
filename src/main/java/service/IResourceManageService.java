@@ -1,6 +1,8 @@
 package service;
 
+import dao.Impl.DataBaseConnectionImpl;
 import domian.Resource;
+import tools.PageInformation;
 
 import java.util.List;
 
@@ -14,6 +16,12 @@ public interface IResourceManageService {
      * @return List<Resource>
      */
     List<Resource> find();
+
+    /**
+     * 得到一页资源信息
+     *  @return List<Resource>
+     */
+    List<Resource> getOnePage(PageInformation pageInformation);
 
     /**
      * 删除资源信息
@@ -34,4 +42,6 @@ public interface IResourceManageService {
      * @return
      */
     boolean update(Resource resource);
+
+
 }
