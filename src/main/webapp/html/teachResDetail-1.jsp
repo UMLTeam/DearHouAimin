@@ -58,48 +58,58 @@
                             <input class="searchInput" type="search" name="search">
                             <input class="searchSubmit" type="submit" value="文件搜索">
                         </form>
-                        <table class="table" border="0" width="800px" cellpadding="2" cellspacing="1">
-                            <tr class="firstRow">
-                                <td>序号</td>
-                                <td>文件名称</td>
-                                <td>文件大小</td>
-                                <td>上传时间</td>
-                                <td>操作</td>
-                            </tr>
-                            <c:set var="trType" scope="session" value="${0}"/>
-                            <c:forEach items="${requestScope.resources}"  var="resource">
-                                <c:choose>
-                                    <c:when test="${trType==0}">
-                                        <tr class="trOdd">
-                                        <c:set var="trType" scope="session" value="${1}"/>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <tr class="tr">
-                                        <c:set var="trType" scope="session" value="${0}"/>
-                                    </c:otherwise>
-                                </c:choose>
-                                            <td><c:out value="${resource.id}"/></td>
-                                            <td><c:out value="${resource.resName}"/></td>
-                                            <td><c:out value="${10000}"/></td>
-                                            <td><c:out value="${resource.resTime}"/></td>
-                                            <td>
-                                                <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
-                                                <a href="../resource/《软件需求分析与设计》课程简介.pptx" download="《软件需求分析与设计》课程简介.pptx">
-                                                    <img src="../images/teachResource/download.png">
-                                                </a>
-                                            </td>
+                        <form id="myform" method="post">
+                            <table class="table" border="0" width="800px" cellpadding="2" cellspacing="1">
+                                <tr class="firstRow">
+                                    <td>序号</td>
+                                    <td>文件名称</td>
+                                    <td>文件大小</td>
+                                    <td>上传时间</td>
+                                    <td>操作</td>
+                                </tr>
+                                <c:set var="trType" scope="session" value="${0}"/>
+                                <c:forEach items="${requestScope.resources}"  var="resource">
+                                    <c:choose>
+                                        <c:when test="${trType==0}">
+                                            <tr class="trOdd">
+                                            <c:set var="trType" scope="session" value="${1}"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <tr class="tr">
+                                            <c:set var="trType" scope="session" value="${0}"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                                <td><c:out value="${resource.id}"/></td>
+                                                <td><c:out value="${resource.resName}"/></td>
+                                                <td><c:out value="${10000}"/></td>
+                                                <td><c:out value="${resource.resTime}"/></td>
+                                                <td>
+                                                    <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
+                                                    <a href="../resource/《软件需求分析与设计》课程简介.pptx" download="《软件需求分析与设计》课程简介.pptx">
+                                                        <img src="../images/teachResource/download.png">
+                                                    </a>
+                                                </td>
 
-                                        </tr>
-                            </c:forEach>
-                        </table>
-                        <div class="tranPage">
-                            <img onmouseover="upPage_hover(event)" onmouseout="upPage_out(event)" src="..\images\teachResource\up.png">
-                            <img src="..\images\teachResource\1.png">
-                            <img src="..\images\teachResource\2.png">
-                            <img src="..\images\teachResource\ellipsis.png">
-                            <img onmouseover="downPage_hover(event)" onmouseout="downPage_out(event)" class="downPage" src="..\images\teachResource\down.png">
-                        </div>
-
+                                            </tr>
+                                </c:forEach>
+                            </table>
+                            <div class="tranPage">
+                                <img onmouseover="upPage_hover(event)" onmouseout="upPage_out(event)" src="..\images\teachResource\up.png">
+                                <img src="..\images\teachResource\1.png">
+                                <img src="..\images\teachResource\2.png">
+                                <img src="..\images\teachResource\ellipsis.png">
+                                <img onmouseover="downPage_hover(event)" onmouseout="downPage_out(event)" class="downPage" src="..\images\teachResource\down.png">
+                            </div>
+                            <input type="hidden" name="page" id="page" value="${requestScope.pageInformation.page}">
+                            <input type="hidden" name="pageSize" id="pageSize" value="${requestScope.pageInformation.pageSize}">
+                            <input type="hidden" name="totalPageCount" id="totalPageCount" value="${requestScope.pageInformation.totalPageCount}">
+                            <input type="hidden" name="allRecordCount" id="allRecordCount" value="${requestScope.pageInformation.allRecordCount}">
+                            <input type="hidden" name="orderField" id="orderField" value="${requestScope.pageInformation.orderField}">
+                            <input type="hidden" name="order" id="order" value="${requestScope.pageInformation.order}">
+                            <input type="hidden" name="ids" id="ids" value="${requestScope.pageInformation.ids}">
+                            <input type="hidden" name="searchSql" id="searchSql" value="${requestScope.pageInformation.searchSql}">
+                            <input type="hidden" name="result" id="result" value="${requestScope.pageInformation.result}">
+                        </form>
                     </div>
                 </article>
             </div>
