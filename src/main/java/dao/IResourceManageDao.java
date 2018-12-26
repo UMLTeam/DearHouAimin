@@ -49,4 +49,6 @@ public interface IResourceManageDao {
      * @return List<Resource>
      */
     List<Resource> getOnePage(PageInformation pageInformation, DataBaseConnectionImpl databaseDao);
+
+    List<Resource> findResourceByType(String type);
 }

@@ -26,32 +26,7 @@ public class ResourceManageDaoImpl implements IResourceManageDao {
 
     @Override
     public List<Resource> findAllResource() {
-        List<Resource> list = new ArrayList<>();
-        Resource resource = new Resource();
-        DataBaseConnectionImpl dataBaseConnection = new DataBaseConnectionImpl();
-        connection = dataBaseConnection.getConnection();
-        String sql = "select * from resource";
-        try {
-            preparedStatement = connection.prepareStatement(sql);
-            resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                resource = new Resource();
-                resource.setId(resultSet.getInt("id"));
-                resource.setResName(resultSet.getString("resName"));
-                resource.setResTime(resultSet.getTimestamp("resTime"));
-                resource.setResPath(resultSet.getString("resPath"));
-                resource.setResType(resultSet.getString("resType"));
-//                resource.setResTag(resultSet.getString("resTag"));
-                resource.setIsCheck(resultSet.getString("isCheck"));
-                list.add(resource);
-            }
-            return list;
-        } catch (Exception e) {
-            logger.error(e.toString());
-        } finally {
-            dataBaseConnection.free(connection, preparedStatement, resultSet);
-        }
-        return null;
+        return findResourceByType("%%");
     }
 
     @Override
@@ -173,5 +148,36 @@ public class ResourceManageDaoImpl implements IResourceManageDao {
         }
         return null;
 
+    }
+
+    @Override
+    public List<Resource> findResourceByType(String type) {
+        List<Resource> list = new ArrayList<>();
+        Resource resource;
+        DataBaseConnectionImpl dataBaseConnection = new DataBaseConnectionImpl();
+        connection = dataBaseConnection.getConnection();
+        String sql = "select * from resource where resType like ?";
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, type);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                resource = new Resource();
+                resource.setId(resultSet.getInt("id"));
+                resource.setResName(resultSet.getString("resName"));
+                resource.setResTime(resultSet.getTimestamp("resTime"));
+                resource.setResPath(resultSet.getString("resPath"));
+                resource.setResType(resultSet.getString("resType"));
+//                resource.setResTag(resultSet.getString("resTag"));
+                resource.setIsCheck(resultSet.getString("isCheck"));
+                list.add(resource);
+            }
+            return list;
+        } catch (Exception e) {
+            logger.error(e.toString());
+        } finally {
+            dataBaseConnection.free(connection, preparedStatement, resultSet);
+        }
+        return null;
     }
 }
