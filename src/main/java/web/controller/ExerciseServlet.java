@@ -16,6 +16,9 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * POST请求都要返回Boolean已提示是否操作成功  以便后续工作的进行
+ */
 @WebServlet(value = "/ExerciseServlet.do")
 public class ExerciseServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,7 +32,6 @@ public class ExerciseServlet extends HttpServlet {
                 Resource resource = new Resource(1, "hello2", new Timestamp(date.getTime()), "/", "习题库", "0");
                 logger.info(resource.toString());
                 resourceManageService.update(resource);
-
                 break;
             }
             case "update": {

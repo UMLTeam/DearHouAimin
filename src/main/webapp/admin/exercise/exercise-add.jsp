@@ -53,7 +53,7 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文件上传：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="file" name="file" class="webuploader-element-invisible" multiple="multiple">
+                <input type="file" name="file" class="" multiple="multiple" placeholder="选择文件" />
             </div>
         </div>
         <div class="row cl">
@@ -88,8 +88,37 @@
 <script type="text/javascript">
     function article_save(){
         alert("刷新父级的时候会自动关闭弹层。")
-        window.parent.location.reload();
+        $.ajax({
+            url: '/ExerciseServlet.do?type=save',
+            method: 'POST',
+            data: $("#form-article-add").serialize(),
+            success: function(res){
+                if(res.data){
+                    window.parent.location.reload();
+                }
+                else{
+                    alert("保存失败");
+                }
+            }
+        })
     }
+
+    function article_save_submit(){
+        $.ajax({
+            url: '/ExerciseServlet.do?type=insert',
+            method: 'POST',
+            data: $("#form-article-add").serialize(),
+            success: function(res){
+                if(res.data){
+                    window.parent.location.reload();
+                }
+                else{
+                    alert("发布失败");
+                }
+            }
+        })
+    }
+
 
     $(function(){
         $('.skin-minimal input').iCheck({
@@ -101,7 +130,6 @@
         $list = $("#fileList"),
             $btn = $("#btn-star"),
             state = "pending",
-            uploader;
 
         var uploader = WebUploader.create({
             auto: true,
@@ -196,7 +224,6 @@
                 uploader.upload();
             }
         });
-
     });
 
     (function( $ ){
