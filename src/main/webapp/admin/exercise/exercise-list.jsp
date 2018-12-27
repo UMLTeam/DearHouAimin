@@ -53,7 +53,7 @@
     <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="data_del()"
                                                                 class="btn btn-danger radius"><i
             class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius"
-                                                          onclick="courseware_add('添加习题','exercise-add.jsp')"
+                                                          onclick="courseware_add('添加习题','/admin/exercise/exercise-add.jsp')"
                                                           href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加习题</a></span>
         <span class="r">共有数据：<strong>2</strong> 条</span>
     </div>
@@ -63,11 +63,8 @@
             <tr class="text-c">
                 <th width="40"><input type="checkbox" name="box" value="1"></th>
                 <th width="80">ID</th>
-                <th width="70">文件类型</th>
+                <th width="70">文件名称</th>
                 <th width="70">文件大小</th>
-                <%--<th width="70">上传用户</th>--%>
-                <th>习题名称</th>
-                <%--<th width="150">标签</th>--%>
                 <th width="150">更新时间</th>
                 <th width="60">发布状态</th>
                 <th width="100">操作</th>
@@ -78,27 +75,21 @@
                 <tr class="text-c">
                     <td><input type="checkbox" name="box" value="1"></td>
                     <td>${resource.id}</td>
-                    <td><img src="/images/teachResource/PPT.png"><c:out
-                            value="${resource.resName}"/></td>
+                    <td style="text-align: left">
+                        <img src="/images/teachResource/PPT.png">
+                        <a href="${resource.resPath}" download="${resource.resName}">${resource.resName}</a>
+                    </td>
                     <td><c:out value="${10000}"/></td>
-                        <%--<td>侯爱民</td>--%>
-                    <td class="text-l"><a
-                            href="https://view.officeapps.live.com/op/view.aspx?src=http://www.niracler.com/resource/《软件需求分析与设计》课程简介.pptx"
-                            target="_blank">《软件需求分析与设计》课程简介</a></td>
-                        <%--<td class="text-c">UML Web</td>--%>
                     <td><c:out value="${resource.resTime}"/></td>
                     <td class="td-status"><span class="label label-success radius">已发布</span></td>
                     <td class="td-manage">
-                        <a style="text-decoration:none" onClick="courseware_stop(this,'10001')" href="javascript:;"
-                           title="下架">
+                        <a style="text-decoration:none" onClick="courseware_stop(this,${resource.id})" href="javascript:;" title="下架">
                             <i class="Hui-iconfont">&#xe6de;</i>
                         </a>
-                        <a style="text-decoration:none" class="ml-5"
-                           onClick="courseware_edit('图库编辑','courseware-add.html','10001')" href="javascript:;" title="编辑">
+                        <a style="text-decoration:none" class="ml-5" onClick="courseware_edit('图库编辑','/admin/exercise/exercise-add.jsp',${resource.id})" href="javascript:;" title="编辑">
                             <i class="Hui-iconfont">&#xe6df;</i>
                         </a>
-                        <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this,'002')"
-                           href="javascript:;" title="删除">
+                        <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this,${resource.id})" href="javascript:;" title="删除">
                             <i class="Hui-iconfont">&#xe6e2;</i>
                         </a>
                     </td>
@@ -130,7 +121,7 @@
             //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
             {
                 "orderable": false,
-                "aTargets": [0, 7]
+                "aTargets": [0, 5]
             } // 制定列不参与排序
         ]
     });
@@ -144,6 +135,12 @@
                 checkedbox[i].parents('tr').remove();
             }
         }
+
+        // $.ajax({
+        //     url: '/ExerciseServlet.do?'
+        //     mothod: POST,
+        //
+        // })
     }
 
     /*文件-添加*/
@@ -200,12 +197,24 @@
             $(obj).parents("tr").find(".td-manage").prepend(
                 '<a style="text-decoration:none" onClick="courseware_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>'
             );
-            $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
-            $(obj).remove();
-            layer.msg('已下架!', {
-                icon: 5,
-                time: 1000
-            });
+            $.ajax({
+                url: '/ExerciseServlet.do?type=updateCheck&id='+id,
+                method: 'POST',
+                success: function (res) {
+                    console.log(res)
+                    if(res.data){
+                        $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已下架</span>');
+                        $(obj).remove();
+                        layer.msg('已下架!', {
+                            icon: 5,
+                            time: 1000
+                        });
+                    }
+                    else{
+
+                    }
+                }
+            })
         });
     }
 
@@ -215,12 +224,24 @@
             $(obj).parents("tr").find(".td-manage").prepend(
                 '<a style="text-decoration:none" onClick="courseware_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>'
             );
-            $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
-            $(obj).remove();
-            layer.msg('已发布!', {
-                icon: 6,
-                time: 1000
-            });
+            $.ajax({
+                url: '/ExerciseServlet.do?type=updateCheck&id='+id,
+                method: 'POST',
+                success: function (res) {
+                    console.log(res)
+                    if(res.data){
+                        $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
+                        $(obj).remove();
+                        layer.msg('已发布!', {
+                            icon: 5,
+                            time: 1000
+                        });
+                    }
+                    else{
+
+                    }
+                }
+            })
         });
     }
 
@@ -247,11 +268,23 @@
     /*文件-删除*/
     function courseware_del(obj, id) {
         layer.confirm('确认要删除吗？', function (index) {
-            $(obj).parents("tr").remove();
-            layer.msg('已删除!', {
-                icon: 1,
-                time: 1000
-            });
+            $.ajax({
+                url: '/ExerciseServlet.do?type=delete&id='+id,
+                method: 'POST',
+                success: function(res){
+                    if(res.data){
+                        $(obj).parents("tr").remove();
+                        layer.msg('已删除!', {
+                            icon: 1,
+                            time: 1000
+                        });
+                    }
+                    else{
+
+                    }
+                }
+            })
+
         });
     }
 </script>
