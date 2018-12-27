@@ -10,16 +10,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
-@WebServlet(name = "TeachingCaseServlet")
-public class TeachingCaseServlet extends HttpServlet {
+@WebServlet(value = "/ExerciseServlet.do")
+public class ExerciseServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String type = request.getParameter("type");
-        Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
+        Logger logger = LogManager.getLogger(ExerciseServlet.class);
         ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
 
         switch (type) {
@@ -64,12 +65,17 @@ public class TeachingCaseServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
+        Logger logger = LogManager.getLogger(ExerciseServlet.class);
         ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
         List<Resource> resourceList = resourceManageService.find();
-        for (Resource resource : resourceList) {
-            logger.info(resource.toString());
+        HttpSession session = request.getSession();
+
+        if(resourceList == null) {
+            session.setAttribute("message", "没有找到相关信息!");
+        } else {
+            session.setAttribute("resourceList", resourceList);
         }
-        logger.info("end\n");
+
+        request.getRequestDispatcher("/html/teachResDetail-3.jsp").forward(request, response);
     }
 }
