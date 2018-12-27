@@ -30,7 +30,10 @@ public class ResourceManageServiceImpl implements IResourceManageService {
         ResourceManageDaoImpl resourceManageDao = new ResourceManageDaoImpl();
         return resourceManageDao.findResourceByType(type);
     }
-
+    public List<Resource> findByKey(String key, String value) {
+        ResourceManageDaoImpl resourceManageDao = new ResourceManageDaoImpl();
+        return resourceManageDao.findResourceByKey(key, value);
+    }
     @Override
     public List<Resource> getOnePage(PageInformation pageInformation){
         DataBaseConnectionImpl databaseDao=new DataBaseConnectionImpl();
