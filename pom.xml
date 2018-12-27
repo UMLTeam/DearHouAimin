@@ -50,11 +50,11 @@
       <version>2.11.1</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
-    <dependency>
-      <groupId>javax.servlet.jsp.jstl</groupId>
-      <artifactId>jstl</artifactId>
-      <version>1.0</version>
-    </dependency>
+    <!--<dependency>-->
+    <!--<groupId>javax.servlet.jsp.jstl</groupId>-->
+    <!--<artifactId>jstl</artifactId>-->
+    <!--<version>1.2</version>-->
+  <!--</dependency>-->
     <!-- https://mvnrepository.com/artifact/jstl/jstl -->
     <dependency>
       <groupId>jstl</groupId>
