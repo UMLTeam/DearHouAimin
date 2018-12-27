@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
 
-@WebServlet(name = "courseWareServlet")
+@WebServlet("/courseWareServlet")
 public class courseWareServlet extends HttpServlet {
 
     public courseWareServlet(){
@@ -24,6 +24,7 @@ public class courseWareServlet extends HttpServlet {
     public void destroy(){
         super.destroy();
     }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String operationType = request.getParameter("type");
         ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
@@ -60,7 +61,7 @@ public class courseWareServlet extends HttpServlet {
                 }
             }
             request.setAttribute("resources",resultList);
-            getServletContext().getRequestDispatcher("/html/teachResDetail-1.jsp").forward(request,response);
+            getServletContext().getRequestDispatcher("/html/teachResDetail-2.jsp").forward(request,response);
         }
     }
 
