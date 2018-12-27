@@ -35,15 +35,15 @@ public class experimentalTaskServlet extends HttpServlet {
 			List<Resource> resTaskList = new ArrayList<Resource>();
 			// 挑选实验任务资源
 			for (Resource res : resList) {
-				if ("实验任务".equals(res.getResType())) {
+				//if ("实验任务".equals(res.getResType())) {
 					resTaskList.add(res);
-				}
+				//}
 			}
 			resList = null;
 			// 保存为全局
 			request.setAttribute("resTaskList", resTaskList);
 			// 重定向至实验任务浏览页面
-			String url = "../html/teachResDetail-5.html";
+			String url = "../html/teachResDetail-5.jsp";
 			if (manage != null) {
 				url = "../html/admin-list.html";
 			}
