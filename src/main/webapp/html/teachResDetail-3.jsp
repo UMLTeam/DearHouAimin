@@ -81,7 +81,7 @@
                                 <td><c:out value="${resource.resTime}"/></td>
                                 <td>
                                     <a onclick="Preview(event)"><img src="/images/teachResource/preview.png"></a>
-                                    <a href="/resource/《软件需求分析与设计》课程简介.pptx" download="《软件需求分析与设计》课程简介.pptx">
+                                    <a href="${resource.resPath}" download="${resource.resName}">
                                         <img src="/images/teachResource/download.png">
                                     </a>
                                 </td>
