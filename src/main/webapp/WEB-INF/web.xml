@@ -18,6 +18,6 @@
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
     <!--<welcome-file-list>-->
-    <!--<welcome-file>/html/index.html</welcome-file>-->
+    <!--<welcome-file>/html/index.jsp</welcome-file>-->
   <!--</welcome-file-list>-->
 </web-app>
