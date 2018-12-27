@@ -62,10 +62,9 @@
                                 <td>上传时间</td>
                                 <td>操作</td>
                             </tr>
-
+                            <%--循环遍历资源--%>
                             <c:set var="trType" scope="session" value="${0}"/>
-                            <c:forEach items="${requestScope.resExampleList}"   var="resource" varStatus="status">
-
+                            <c:forEach items="${sessionScope.resourceList}" var="resource" varStatus="status">
                                 <c:choose>
                                     <c:when test="${status.index%2==0}">
                                         <tr class="trOdd">
@@ -77,13 +76,14 @@
                                     </c:otherwise>
                                 </c:choose>
                                 <td>${resource.id}</td>
-                                <td class="tll"><img src="../images/teachResource/PPT.png"><c:out value="${resource.resName}"/></td>
+                                <td class="tll"><img src="/images/teachResource/PPT.png"><c:out
+                                        value="${resource.resName}"/></td>
                                 <td><c:out value="${10000}"/></td>
                                 <td><c:out value="${resource.resTime}"/></td>
                                 <td>
-                                    <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
-                                    <a href="../resource/《软件需求分析与设计》课程简介.pptx" download="《软件需求分析与设计》课程简介.pptx">
-                                        <img src="../images/teachResource/download.png">
+                                    <a onclick="Preview(event)"><img src="/images/teachResource/preview.png"></a>
+                                    <a href="${resource.resPath}" download="${resource.resName}">
+                                        <img src="/images/teachResource/download.png">
                                     </a>
                                 </td>
                                 </tr>

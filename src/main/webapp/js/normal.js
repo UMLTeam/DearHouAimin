@@ -214,7 +214,7 @@ function Rendering(){
 						<div><a href=\"courseWareServlet?type=show\">课程课件</a></div>\
 						<div><a href=\"teachResDetail-2.html\">教学录像</a></div>\
 						<div><a href=\"teachResDetail-3.jsp\">习题库</a></div>\
-						<div><a href=\"teachResDetail-4.html\">案例库</a></div>\
+						<div><a href=\"CheckResourceServlet.do?type=4\">案例库</a></div>\
 						<div><a href=\"teachResDetail-5.html\">实验任务</a></div>\
 					</div>\
 				</li>\

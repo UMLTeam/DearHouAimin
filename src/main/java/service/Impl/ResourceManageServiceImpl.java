@@ -8,7 +8,6 @@ import org.apache.logging.log4j.Logger;
 import service.IResourceManageService;
 import tools.PageInformation;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
