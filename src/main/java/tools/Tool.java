@@ -76,7 +76,7 @@ public class Tool {
             }
             //排序,默认按主键的降序排列
             if(pageInformation.getOrderField()==null || pageInformation.getOrderField().isEmpty()){
-                sql+=" ORDER BY "+pageInformation.getTableName()+"Id "+" desc ";
+                sql+=" ORDER BY id "+" desc ";
             }else{
                 sql+=" ORDER BY "+pageInformation.getOrderField()+" "+pageInformation.getOrder()+" ";
             }
