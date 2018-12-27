@@ -10,3 +10,6 @@ create table resource
   isCheck varchar(255)                        not null comment '发布状态'
 )
   charset = utf8;
+
+
+select * from resource where resType like 'test2';
