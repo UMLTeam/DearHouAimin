@@ -50,7 +50,7 @@
                         <h1>实验任务</h1>
                     </header>
                     <div id="resource">
-                        <form class="search" action="../experimentalTaskServlet?type=searchByKey&page=1&pageSize=4" method="post">
+                        <form class="search" action="/DearHouAimin/experimentalTaskServlet?type=searchByKey&page=1&pageSize=10" method="post">
                             <input class="searchInput" type="search" name="key">
                             <input class="searchSubmit" type="submit" value="文件搜索">
                         </form>
@@ -91,6 +91,8 @@
                                 </c:forEach>
                             </table>
                             <div class="tranPage">
+                            <c:set var="type" scope="session" value="${requestScope.type}"/>
+                            <c:if test="${type != searchByKey}">
                                 <table>
                                     <tr>
                                         <td><a href="javascript:void(0);" onclick="getOnePage('pre','');">上一页</a></td>
@@ -98,6 +100,7 @@
                                         <td><a href="javascript:void(0);" onclick="getOnePage('next','');">下一页</a></td>
                                     </tr>
                                 </table>
+                            </c:if>
                             </div>
                             <input type="hidden" name="page" id="page" value="${requestScope.pageInformation.page}">
                             <input type="hidden" name="pageSize" id="pageSize" value="${requestScope.pageInformation.pageSize}">

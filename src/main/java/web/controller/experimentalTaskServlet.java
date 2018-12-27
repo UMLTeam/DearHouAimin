@@ -87,9 +87,16 @@ public class experimentalTaskServlet extends HttpServlet {
 			String url = "/experimentalTaskServlet?type=showPages&manage=1";
 			this.getServletContext().getRequestDispatcher(url).forward(request, response);
 		}else if("searchByKey".equals(type)){
+			//获取查询字段
 			String resName = request.getParameter("key");
-			List<Resource> resTaskList = service.findByKey("resName", resName);
+			//初始化页面信息及查询语句
+			PageInformation pageInformation = new PageInformation();
+			Tool.getPageInformation("resource", request, pageInformation);
+			pageInformation.setSearchSql("resName like '%"+resName+"%'");
+			List<Resource> resTaskList = service.getOnePage(pageInformation);
+			//保存为全局
 			request.setAttribute("resTaskList", resTaskList);
+			request.setAttribute("pageInformation", pageInformation);
 			// 重定向至实验任务浏览页面
 			String url = "/html/teachResDetail-5.jsp";
 			if (manage != null) {

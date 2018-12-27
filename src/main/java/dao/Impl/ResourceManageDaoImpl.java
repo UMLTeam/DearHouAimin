@@ -180,34 +180,4 @@ public class ResourceManageDaoImpl implements IResourceManageDao {
         }
         return null;
     }
-    public List<Resource> findResourceByKey(String key, String value) {
-        List<Resource> list = new ArrayList<>();
-        Resource resource;
-        DataBaseConnectionImpl dataBaseConnection = new DataBaseConnectionImpl();
-        connection = dataBaseConnection.getConnection();
-        String sql = "select * from resource where ? like %?%";
-        try {
-            preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, key);
-            preparedStatement.setString(2, value);
-            resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                resource = new Resource();
-                resource.setId(resultSet.getInt("id"));
-                resource.setResName(resultSet.getString("resName"));
-                resource.setResTime(resultSet.getTimestamp("resTime"));
-                resource.setResPath(resultSet.getString("resPath"));
-                resource.setResType(resultSet.getString("resType"));
-//                resource.setResTag(resultSet.getString("resTag"));
-                resource.setIsCheck(resultSet.getString("isCheck"));
-                list.add(resource);
-            }
-            return list;
-        } catch (Exception e) {
-            logger.error(e.toString());
-        } finally {
-            dataBaseConnection.free(connection, preparedStatement, resultSet);
-        }
-        return null;
-    }
 }
