@@ -1,3 +1,9 @@
+package service.Impl;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
 import domian.Resource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,11 +22,11 @@ public class ResourceManageServiceImplTest {
     public static void main(String[] args) {
         ResourceManageServiceImplTest test = new ResourceManageServiceImplTest();
 
-        test.testFind();
+//        test.testFind();
         test.testInsert();
-        test.testUpdate();
-        test.testDelete();
-        test.testFindByType();
+//        test.testUpdate();
+//        test.testDelete();
+//        test.testFindByType();
     }
 
     private void testFindByType() {
@@ -34,7 +40,7 @@ public class ResourceManageServiceImplTest {
         logger.info("end\n");
     }
 
-    public void testFind() {
+    private void testFind() {
         Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
         logger.info("测试ResourceManageServiceImpl查询");
         ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
@@ -45,7 +51,7 @@ public class ResourceManageServiceImplTest {
         logger.info("end\n");
     }
 
-    public void testUpdate() {
+    private void testUpdate() {
         Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
         logger.info("测试ResourceManageServiceImpl更新");
         ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
@@ -62,7 +68,7 @@ public class ResourceManageServiceImplTest {
         logger.info("end\n");
     }
 
-    public void testDelete() {
+    private void testDelete() {
         Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
         logger.info("测试ResourceManageServiceImpl删除");
         ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
@@ -73,18 +79,18 @@ public class ResourceManageServiceImplTest {
         logger.info("end\n");
     }
 
-    public void testInsert() {
+    private void testInsert() {
         Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
         logger.info("测试ResourceManageServiceImpl插入");
         ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
         Resource resource = new Resource();
         Date date = new Date();
-        resource.setId(6);
+        resource.setId(9);
         resource.setResTime(new Timestamp(date.getTime()));
-        resource.setResPath("test2");
-        resource.setResName("test5");
-        resource.setResType("test");
-        resource.setIsCheck("test");
+        resource.setResPath("/resource/《软件需求分析与设计》综合实践.pdf");
+        resource.setResName("《软件需求分析与设计》综合实践.pdf");
+        resource.setResType("习题库");
+        resource.setIsCheck("1");
         logger.info(resource.toString());
         resourceManageService.insert(resource);
         logger.info("end\n");

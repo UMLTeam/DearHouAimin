@@ -67,7 +67,7 @@ public class ExerciseServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Logger logger = LogManager.getLogger(ExerciseServlet.class);
         ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
-        List<Resource> resourceList = resourceManageService.find();
+        List<Resource> resourceList = resourceManageService.findByType("习题库");
         HttpSession session = request.getSession();
 
         if(resourceList == null) {
@@ -76,8 +76,8 @@ public class ExerciseServlet extends HttpServlet {
             session.setAttribute("resourceList", resourceList);
         }
 
-//        request.getRequestDispatcher("/html/teachResDetail-3.jsp").forward(request, response);
-        request.getRequestDispatcher("/admin/exercise/exercise-list.jsp").forward(request, response);
+        request.getRequestDispatcher("/html/teachResDetail-3.jsp").forward(request, response);
+//        request.getRequestDispatcher("/admin/exercise/exercise-list.jsp").forward(request, response);
 
     }
 }
