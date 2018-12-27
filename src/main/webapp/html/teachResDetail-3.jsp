@@ -40,7 +40,7 @@
                 <article class="mainContent">
                     <header class="contentNav">
                         <nav class="nav">
-                            <a href="index.html">首页</a>·
+                            <a href="index.jsp">首页</a>·
                             <a href="teachResDetail-1.html">教学资源</a>·
                             <a href="teachResDetail-3.jsp">习题库</a>
                         </nav>
@@ -53,98 +53,127 @@
                             <input class="searchSubmit" type="submit" value="文件搜索">
                         </form>
                         <table class="table" border="0" width="800px" cellpadding="2" cellspacing="1">
-                        <tr class="firstRow">
-                            <td>序号</td>
-                            <td>文件名称</td>
-                            <td>文件大小</td>
-                            <td>上传时间</td>
-                            <td>操作</td>
-                        </tr>
-                        <tr class="trOdd">
-                            <td>1</td>
-                            <td class="tll"><img src="../images/teachResource/PPT.png">《软件需求分析与设计》课程简介.pptx</td>
-                            <td>1.2M</td>
-                            <td>2018-12-17</td>
-                            <td>
-                                <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
-                                <a href="../resource/《软件需求分析与设计》课程简介.pptx" download="《软件需求分析与设计》课程简介.pptx">
-                                    <img src="../images/teachResource/download.png">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="tr">
-                            <td>2</td>
-                            <td class="tll"><img src="../images/teachResource/WORD.png">西方经济学.pptx</td>
-                            <td>1.3M</td>
-                            <td>2018-12-17</td>
-                            <td>
-                                <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
-                                <a href="../resource/2017-18-1--面向对象分析与设计(UML)--期中考试试卷A-答案.pdf" download="2017-18-1--面向对象分析与设计(UML)--期中考试试卷A-答案.pdf">
-                                    <img src="../images/teachResource/download.png">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="trOdd">
-                            <td>3</td>
-                            <td class="tll"><img src="../images/teachResource/PDF.png">计算机操作系统.pdf</td>
-                            <td>0.3M</td>
-                            <td>2018-12-17</td>
-                            <td>
-                                <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
-                                <a href="../resource/《软件需求分析与设计》综合实践.pdf" download="《软件需求分析与设计》综合实践.pdf">
-                                    <img src="../images/teachResource/download.png">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="tr">
-                            <td>4</td>
-                            <td class="tll"><img src="../images/teachResource/WORD.png">大学物理.doc</td>
-                            <td>1.3M</td>
-                            <td>2018-12-17</td>
-                            <td>
-                                <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
-                                <a href="../resource/《软件需求分析与设计》综合实践.pdf" download="《软件需求分析与设计》综合实践.pdf">
-                                    <img src="../images/teachResource/download.png">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="trOdd">
-                            <td>5</td>
-                            <td class="tll"><img src="../images/teachResource/WORD.png">西方经济学.doc</td>
-                            <td>1.3M</td>
-                            <td>2018-12-17</td>
-                            <td>
-                                <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
-                                <a href="../resource/《软件需求分析与设计》综合实践.pdf" download="《软件需求分析与设计》综合实践.pdf">
-                                    <img src="../images/teachResource/download.png">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="tr">
-                            <td>6</td>
-                            <td class="tll"><img src="../images/teachResource/WORD.png">西方经济学.doc</td>
-                            <td>1.3M</td>
-                            <td>2018-12-17</td>
-                            <td>
-                                <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
-                                <a href="../resource/《软件需求分析与设计》综合实践.pdf" download="《软件需求分析与设计》综合实践.pdf">
-                                    <img src="../images/teachResource/download.png">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="trOdd">
-                            <td>7</td>
-                            <td class="tll" ><img src="../images/teachResource/xls.png">西方经济学.xls</td>
-                            <td>1.3M</td>
-                            <td>2018-12-17</td>
-                            <td>
-                                <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
-                                <a href="../resource/《软件需求分析与设计》综合实践.pdf" download="《软件需求分析与设计》综合实践.pdf">
-                                    <img src="../images/teachResource/download.png">
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
+                            <tr class="firstRow">
+                                <td>序号</td>
+                                <td>文件名称</td>
+                                <td>文件大小</td>
+                                <td>上传时间</td>
+                                <td>操作</td>
+                            </tr>
+
+                            <%--循环遍历资源--%>
+                            <c:set var="trType" scope="session" value="${0}"/>
+                            <c:forEach items="${sessionScope.resourceList}" var="resource" varStatus="status">
+                                <c:choose>
+                                    <c:when test="${status.index%2==0}">
+                                        <tr class="trOdd">
+                                        <c:set var="trType" scope="session" value="${1}"/>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <tr class="tr">
+                                        <c:set var="trType" scope="session" value="${0}"/>
+                                    </c:otherwise>
+                                </c:choose>
+                                <td>${resource.id}</td>
+                                <td class="tll"><img src="/images/teachResource/PPT.png"><c:out
+                                        value="${resource.resName}"/></td>
+                                <td><c:out value="${10000}"/></td>
+                                <td><c:out value="${resource.resTime}"/></td>
+                                <td>
+                                    <a onclick="Preview(event)"><img src="/images/teachResource/preview.png"></a>
+                                    <a href="/resource/《软件需求分析与设计》课程简介.pptx" download="《软件需求分析与设计》课程简介.pptx">
+                                        <img src="/images/teachResource/download.png">
+                                    </a>
+                                </td>
+                                </tr>
+                            </c:forEach>
+
+                            <%--<tr class="trOdd">--%>
+                                <%--<td>1</td>--%>
+                                <%--<td class="tll"><img src="/images/teachResource/PPT.png">《软件需求分析与设计》课程简介.pptx</td>--%>
+                                <%--<td>1.2M</td>--%>
+                                <%--<td>2018-12-17</td>--%>
+                                <%--<td>--%>
+                                    <%--<a onclick="Preview(event)"><img src="/images/teachResource/preview.png"></a>--%>
+                                    <%--<a href="/resource/《软件需求分析与设计》课程简介.pptx" download="《软件需求分析与设计》课程简介.pptx">--%>
+                                        <%--<img src="/images/teachResource/download.png">--%>
+                                    <%--</a>--%>
+                                <%--</td>--%>
+                            <%--</tr>--%>
+                            <%--<tr class="tr">--%>
+                                <%--<td>2</td>--%>
+                                <%--<td class="tll"><img src="/images/teachResource/WORD.png">西方经济学.pptx</td>--%>
+                                <%--<td>1.3M</td>--%>
+                                <%--<td>2018-12-17</td>--%>
+                                <%--<td>--%>
+                                    <%--<a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>--%>
+                                    <%--<a href="/resource/2017-18-1--面向对象分析与设计(UML)--期中考试试卷A-答案.pdf"--%>
+                                       <%--download="2017-18-1--面向对象分析与设计(UML)--期中考试试卷A-答案.pdf">--%>
+                                        <%--<img src="/images/teachResource/download.png">--%>
+                                    <%--</a>--%>
+                                <%--</td>--%>
+                            <%--</tr>--%>
+                            <%--<tr class="trOdd">--%>
+                                <%--<td>3</td>--%>
+                                <%--<td class="tll"><img src="/images/teachResource/PDF.png">计算机操作系统.pdf</td>--%>
+                                <%--<td>0.3M</td>--%>
+                                <%--<td>2018-12-17</td>--%>
+                                <%--<td>--%>
+                                    <%--<a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>--%>
+                                    <%--<a href="/resource/《软件需求分析与设计》综合实践.pdf" download="《软件需求分析与设计》综合实践.pdf">--%>
+                                        <%--<img src="/images/teachResource/download.png">--%>
+                                    <%--</a>--%>
+                                <%--</td>--%>
+                            <%--</tr>--%>
+                            <%--<tr class="tr">--%>
+                                <%--<td>4</td>--%>
+                                <%--<td class="tll"><img src="/images/teachResource/WORD.png">大学物理.doc</td>--%>
+                                <%--<td>1.3M</td>--%>
+                                <%--<td>2018-12-17</td>--%>
+                                <%--<td>--%>
+                                    <%--<a onclick="Preview(event)"><img src="/images/teachResource/preview.png"></a>--%>
+                                    <%--<a href="/resource/《软件需求分析与设计》综合实践.pdf" download="《软件需求分析与设计》综合实践.pdf">--%>
+                                        <%--<img src="/images/teachResource/download.png">--%>
+                                    <%--</a>--%>
+                                <%--</td>--%>
+                            <%--</tr>--%>
+                            <%--<tr class="trOdd">--%>
+                                <%--<td>5</td>--%>
+                                <%--<td class="tll"><img src="/images/teachResource/WORD.png">西方经济学.doc</td>--%>
+                                <%--<td>1.3M</td>--%>
+                                <%--<td>2018-12-17</td>--%>
+                                <%--<td>--%>
+                                    <%--<a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>--%>
+                                    <%--<a href="/resource/《软件需求分析与设计》综合实践.pdf" download="《软件需求分析与设计》综合实践.pdf">--%>
+                                        <%--<img src="/images/teachResource/download.png">--%>
+                                    <%--</a>--%>
+                                <%--</td>--%>
+                            <%--</tr>--%>
+                            <%--<tr class="tr">--%>
+                                <%--<td>6</td>--%>
+                                <%--<td class="tll"><img src="/images/teachResource/WORD.png">西方经济学.doc</td>--%>
+                                <%--<td>1.3M</td>--%>
+                                <%--<td>2018-12-17</td>--%>
+                                <%--<td>--%>
+                                    <%--<a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>--%>
+                                    <%--<a href="/resource/《软件需求分析与设计》综合实践.pdf" download="《软件需求分析与设计》综合实践.pdf">--%>
+                                        <%--<img src="/images/teachResource/download.png">--%>
+                                    <%--</a>--%>
+                                <%--</td>--%>
+                            <%--</tr>--%>
+                            <%--<tr class="trOdd">--%>
+                                <%--<td>7</td>--%>
+                                <%--<td class="tll"><img src="/images/teachResource/xls.png">西方经济学.xls</td>--%>
+                                <%--<td>1.3M</td>--%>
+                                <%--<td>2018-12-17</td>--%>
+                                <%--<td>--%>
+                                    <%--<a onclick="Preview(event)"><img src="/images/teachResource/preview.png"></a>--%>
+                                    <%--<a href="/resource/《软件需求分析与设计》综合实践.pdf" download="《软件需求分析与设计》综合实践.pdf">--%>
+                                        <%--<img src="/images/teachResource/download.png">--%>
+                                    <%--</a>--%>
+                                <%--</td>--%>
+                            <%--</tr>--%>
+                        </table>
                     </div>
 
                 </article>
