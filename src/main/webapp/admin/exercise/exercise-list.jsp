@@ -11,41 +11,49 @@
     <meta charset="utf-8">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <!--[if lt IE 9]>
     <script type="text/javascript" src="/lib/html5shiv.js"></script>
     <script type="text/javascript" src="/lib/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="/static/h-ui/css/H-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/css/H-ui.admin.css" />
-    <link rel="stylesheet" type="text/css" href="/lib/Hui-iconfont/1.0.8/iconfont.css" />
-    <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/skin/default/skin.css" id="skin" />
-    <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/static/h-ui/css/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/css/H-ui.admin.css"/>
+    <link rel="stylesheet" type="text/css" href="/lib/Hui-iconfont/1.0.8/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/skin/default/skin.css" id="skin"/>
+    <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/css/style.css"/>
     <!--[if IE 6]>
-    <script type="text/javascript" src="/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script type="text/javascript" src="/lib/DD_belatedPNG_0.0.8a-min.js"></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
     <title>习题列表</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 课程概况 <span class="c-gray en">&gt;</span>
-    课程简介 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 课程概况 <span
+        class="c-gray en">&gt;</span>
+    课程简介 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
+            href="javascript:location.replace(location.href);"
             title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
     <div class="text-c"> 日期范围：
-        <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}' })" id="logmin" class="input-text Wdate"
+        <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}' })" id="logmin"
+               class="input-text Wdate"
                style="width:120px;">
         -
-        <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d' })" id="logmax" class="input-text Wdate"
+        <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d' })" id="logmax"
+               class="input-text Wdate"
                style="width:120px;">
         <input type="text" name="" placeholder=" 习题名称" style="width:250px" class="input-text">
         <button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜习题</button>
     </div>
     <!-- TO-DO:实现批量删除 -->
-    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="data_del()" class="btn btn-danger radius"><i
-            class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="courseware_add('添加习题','exercise-add.jsp')"
-                                                          href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加习题</a></span> <span class="r">共有数据：<strong>2</strong> 条</span>
+    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="data_del()"
+                                                                class="btn btn-danger radius"><i
+            class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius"
+                                                          onclick="courseware_add('添加习题','exercise-add.jsp')"
+                                                          href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加习题</a></span>
+        <span class="r">共有数据：<strong>2</strong> 条</span>
     </div>
     <div class="mt-20">
         <table id="coursewrae-table" class="table table-border table-bordered table-bg table-hover table-sort">
@@ -70,18 +78,23 @@
                 <td>PPT</td>
                 <td>1.1M</td>
                 <%--<td>侯爱民</td>--%>
-                <td class="text-l"><a href="https://view.officeapps.live.com/op/view.aspx?src=http://www.niracler.com/resource/《软件需求分析与设计》课程简介.pptx" target="_blank">《软件需求分析与设计》课程简介</a></td>
+                <td class="text-l"><a
+                        href="https://view.officeapps.live.com/op/view.aspx?src=http://www.niracler.com/resource/《软件需求分析与设计》课程简介.pptx"
+                        target="_blank">《软件需求分析与设计》课程简介</a></td>
                 <%--<td class="text-c">UML Web</td>--%>
                 <td>2018-12-11 13:19:42</td>
                 <td class="td-status"><span class="label label-success radius">已发布</span></td>
                 <td class="td-manage">
-                    <a style="text-decoration:none" onClick="courseware_stop(this,'10001')" href="javascript:;" title="下架">
+                    <a style="text-decoration:none" onClick="courseware_stop(this,'10001')" href="javascript:;"
+                       title="下架">
                         <i class="Hui-iconfont">&#xe6de;</i>
                     </a>
-                    <a style="text-decoration:none" class="ml-5" onClick="courseware_edit('图库编辑','courseware-add.html','10001')" href="javascript:;" title="编辑">
+                    <a style="text-decoration:none" class="ml-5"
+                       onClick="courseware_edit('图库编辑','courseware-add.html','10001')" href="javascript:;" title="编辑">
                         <i class="Hui-iconfont">&#xe6df;</i>
                     </a>
-                    <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this,'002')"href="javascript:;" title="删除">
+                    <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this,'002')"
+                       href="javascript:;" title="删除">
                         <i class="Hui-iconfont">&#xe6e2;</i>
                     </a>
                 </td>
@@ -92,11 +105,21 @@
                 <td>pdf</td>
                 <td>1.3M</td>
                 <%--<td>侯爱民</td>--%>
-                <td class="text-l"><a href="https://view.officeapps.live.com/op/view.aspx?src=http://www.niracler.com/resource/《软件需求分析与设计》综合实践.pdf" target="_blank">《软件需求分析与设计》综合实践</a></td>
+                <td class="text-l"><a
+                        href="https://view.officeapps.live.com/op/view.aspx?src=http://www.niracler.com/resource/《软件需求分析与设计》综合实践.pdf"
+                        target="_blank">《软件需求分析与设计》综合实践</a></td>
                 <%--<td>UML 大纲</td>--%>
                 <td>2018-6-11 11:11:42</td>
                 <td class="td-status"><span class="label label-success radius">草稿</span></td>
-                <td class="f-14 td-manage"><a style="text-decoration:none" onClick="courseware_shenhe(this,'002')" href="javascript:;" title="审核">审核</a> <a style="text-decoration:none" class="ml-5" onClick="courseware_edit('资讯编辑','courseware-add.html','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this,'002')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+                <td class="f-14 td-manage"><a style="text-decoration:none" onClick="courseware_shenhe(this,'002')"
+                                              href="javascript:;" title="审核">审核</a> <a style="text-decoration:none"
+                                                                                       class="ml-5"
+                                                                                       onClick="courseware_edit('资讯编辑','courseware-add.html','10001')"
+                                                                                       href="javascript:;" title="编辑"><i
+                        class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5"
+                                                                 onClick="courseware_del(this,'002')"
+                                                                 href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a>
+                </td>
             </tr>
             </tbody>
         </table>
@@ -124,17 +147,17 @@
             //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
             {
                 "orderable": false,
-                "aTargets": [0, 8]
+                "aTargets": [0, 7]
             } // 制定列不参与排序
         ]
     });
 
 
     /*批量删除*/
-    function data_del(){
+    function data_del() {
         var checkedbox = $("[name=box]");
-        for(var i=0;i<checkedbox.length;i++){
-            if(checkedbox[i].checked){
+        for (var i = 0; i < checkedbox.length; i++) {
+            if (checkedbox[i].checked) {
                 checkedbox[i].parents('tr').remove();
             }
         }
