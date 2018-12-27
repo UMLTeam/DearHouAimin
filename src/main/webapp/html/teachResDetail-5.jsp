@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,9 +31,9 @@
 					<ul>
 						<li><a href="teachResDetail-1.html">课程课件</a></li>
 						<li><a href="teachResDetail-2.html">教学录像</a></li>
-						<li><a href="teachResDetail-3.html">习题库</a></li>
+						<li><a href="teachResDetail-3.jsp">习题库</a></li>
 						<li><a href="teachResDetail-4.html">案例库</a></li>
-						<li class="current"><a href="teachResDetail-5.html">实验任务</a></li>
+						<li class="current"><a href="../experimentalTaskServlet?type=showPages">实验任务</a></li>
 					</ul>
 				</section>
 			</div>
@@ -40,14 +41,14 @@
 				<article class="mainContent">
 					<header class="contentNav">
 						<nav class="nav">
-							<a href="index.html">首页</a>·
+							<a href="index.jsp">首页</a>·
 							<a href="teachResDetail-1.html">教学资源</a>·
 							<a href="teachResDetail-1.html">实验任务</a>
 						</nav>
 						<h1>实验任务</h1>
 					</header>
 					<div id="resource">
-						<form class="search" action="" method="post">
+						<form class="search" action="../experimentalTaskServlet?type=search" method="post">
 							<input class="searchInput" type="search" name="search">
 							<input class="searchSubmit" type="submit" value="文件搜索">
 						</form>
@@ -59,10 +60,12 @@
 								<td>上传时间</td>
 								<td>操作</td>
 							</tr>
+
+
 							<c:set var="trType" scope="session" value="${0}"/>
-							<c:forEach items="${requestScope.resTaskList}"  var="resource">
+							<c:forEach items="${requestScope.resTaskList}"  var="resource" varStatus="status">
                                 <c:choose>
-                                    <c:when test="${trType==0}">
+                                    <c:when test="${status.index%2==0}">
                                         <tr class="trOdd">
                                         <c:set var="trType" scope="session" value="${1}"/>
                                     </c:when>
@@ -71,7 +74,7 @@
                                         <c:set var="trType" scope="session" value="${0}"/>
                                     </c:otherwise>
                                 </c:choose>
-                                <td><c:out value="${resource.id}"/></td>
+                                <td>${resource.id}</td>
                                 <td class="tll"><img src="../images/teachResource/PPT.png"><c:out value="${resource.resName}"/></td>
                                 <td><c:out value="${10000}"/></td>
                                 <td><c:out value="${resource.resTime}"/></td>

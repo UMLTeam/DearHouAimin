@@ -1,11 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: fang
-  Date: 2018-12-25
-  Time: 8:06
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="utf-8">
@@ -14,32 +7,32 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="/lib/html5shiv.js"></script>
-    <script type="text/javascript" src="/lib/respond.min.js"></script>
+    <script type="text/javascript" src="lib/html5shiv.js"></script>
+    <script type="text/javascript" src="lib/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="/static/h-ui/css/H-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/css/H-ui.admin.css" />
-    <link rel="stylesheet" type="text/css" href="/lib/Hui-iconfont/1.0.8/iconfont.css" />
-    <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/skin/default/skin.css" id="skin" />
-    <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../static/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="../lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/style.css" />
     <!--[if IE 6]>
-    <script type="text/javascript" src="/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <title>新增习题</title>
-    <link href="/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+    <title>添加实验任务</title>
+    <link href="lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div class="page-container">
     <form class="form form-horizontal" id="form-article-add">
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文件标题：</label>
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>课件标题：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <input type="text" class="input-text" value="" placeholder="" id="" name="">
             </div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文件类型：</label>
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>课件类型：</label>
             <div class="formControls col-xs-8 col-sm-9">
 				<span class="select-box">
 				<select name="" class="select">
@@ -51,9 +44,9 @@
             </div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文件上传：</label>
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>课件上传：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="file" name="file" class="" multiple="multiple" placeholder="选择文件" />
+                <input type="file" name="file" class="webuploader-element-invisible" multiple="multiple">
             </div>
         </div>
         <div class="row cl">
@@ -75,50 +68,21 @@
 
 
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer /作为公共模版分离出去-->
+<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="../static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="../static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer /作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
-<script type="text/javascript" src="/lib/jquery.validation/1.14.0/validate-methods.js"></script>
-<script type="text/javascript" src="/lib/jquery.validation/1.14.0/messages_zh.js"></script>
-<script type="text/javascript" src="/lib/webuploader/0.1.5/webuploader.min.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="../lib/webuploader/0.1.5/webuploader.min.js"></script>
 <script type="text/javascript">
     function article_save(){
         alert("刷新父级的时候会自动关闭弹层。")
-        $.ajax({
-            url: '/ExerciseServlet.do?type=save',
-            method: 'POST',
-            data: $("#form-article-add").serialize(),
-            success: function(res){
-                if(res.data){
-                    window.parent.location.reload();
-                }
-                else{
-                    alert("保存失败");
-                }
-            }
-        })
+        window.parent.location.reload();
     }
-
-    function article_save_submit(){
-        $.ajax({
-            url: '/ExerciseServlet.do?type=insert',
-            method: 'POST',
-            data: $("#form-article-add").serialize(),
-            success: function(res){
-                if(res.data){
-                    window.parent.location.reload();
-                }
-                else{
-                    alert("发布失败");
-                }
-            }
-        })
-    }
-
 
     $(function(){
         $('.skin-minimal input').iCheck({
@@ -130,6 +94,7 @@
         $list = $("#fileList"),
             $btn = $("#btn-star"),
             state = "pending",
+            uploader;
 
         var uploader = WebUploader.create({
             auto: true,
@@ -224,6 +189,7 @@
                 uploader.upload();
             }
         });
+
     });
 
     (function( $ ){
