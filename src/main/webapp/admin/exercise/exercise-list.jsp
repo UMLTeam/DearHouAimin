@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -72,55 +74,36 @@
             </tr>
             </thead>
             <tbody>
-            <tr class="text-c">
-                <td><input type="checkbox" name="box" value="1"></td>
-                <td>001</td>
-                <td>PPT</td>
-                <td>1.1M</td>
-                <%--<td>侯爱民</td>--%>
-                <td class="text-l"><a
-                        href="https://view.officeapps.live.com/op/view.aspx?src=http://www.niracler.com/resource/《软件需求分析与设计》课程简介.pptx"
-                        target="_blank">《软件需求分析与设计》课程简介</a></td>
-                <%--<td class="text-c">UML Web</td>--%>
-                <td>2018-12-11 13:19:42</td>
-                <td class="td-status"><span class="label label-success radius">已发布</span></td>
-                <td class="td-manage">
-                    <a style="text-decoration:none" onClick="courseware_stop(this,'10001')" href="javascript:;"
-                       title="下架">
-                        <i class="Hui-iconfont">&#xe6de;</i>
-                    </a>
-                    <a style="text-decoration:none" class="ml-5"
-                       onClick="courseware_edit('图库编辑','courseware-add.html','10001')" href="javascript:;" title="编辑">
-                        <i class="Hui-iconfont">&#xe6df;</i>
-                    </a>
-                    <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this,'002')"
-                       href="javascript:;" title="删除">
-                        <i class="Hui-iconfont">&#xe6e2;</i>
-                    </a>
-                </td>
-            </tr>
-            <tr class="text-c">
-                <td><input name="box" type="checkbox" value="2"></td>
-                <td>002</td>
-                <td>pdf</td>
-                <td>1.3M</td>
-                <%--<td>侯爱民</td>--%>
-                <td class="text-l"><a
-                        href="https://view.officeapps.live.com/op/view.aspx?src=http://www.niracler.com/resource/《软件需求分析与设计》综合实践.pdf"
-                        target="_blank">《软件需求分析与设计》综合实践</a></td>
-                <%--<td>UML 大纲</td>--%>
-                <td>2018-6-11 11:11:42</td>
-                <td class="td-status"><span class="label label-success radius">草稿</span></td>
-                <td class="f-14 td-manage"><a style="text-decoration:none" onClick="courseware_shenhe(this,'002')"
-                                              href="javascript:;" title="审核">审核</a> <a style="text-decoration:none"
-                                                                                       class="ml-5"
-                                                                                       onClick="courseware_edit('资讯编辑','courseware-add.html','10001')"
-                                                                                       href="javascript:;" title="编辑"><i
-                        class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5"
-                                                                 onClick="courseware_del(this,'002')"
-                                                                 href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a>
-                </td>
-            </tr>
+            <c:forEach items="${sessionScope.resourceList}" var="resource" varStatus="status">
+                <tr class="text-c">
+                    <td><input type="checkbox" name="box" value="1"></td>
+                    <td>${resource.id}</td>
+                    <td><img src="/images/teachResource/PPT.png"><c:out
+                            value="${resource.resName}"/></td>
+                    <td><c:out value="${10000}"/></td>
+                        <%--<td>侯爱民</td>--%>
+                    <td class="text-l"><a
+                            href="https://view.officeapps.live.com/op/view.aspx?src=http://www.niracler.com/resource/《软件需求分析与设计》课程简介.pptx"
+                            target="_blank">《软件需求分析与设计》课程简介</a></td>
+                        <%--<td class="text-c">UML Web</td>--%>
+                    <td><c:out value="${resource.resTime}"/></td>
+                    <td class="td-status"><span class="label label-success radius">已发布</span></td>
+                    <td class="td-manage">
+                        <a style="text-decoration:none" onClick="courseware_stop(this,'10001')" href="javascript:;"
+                           title="下架">
+                            <i class="Hui-iconfont">&#xe6de;</i>
+                        </a>
+                        <a style="text-decoration:none" class="ml-5"
+                           onClick="courseware_edit('图库编辑','courseware-add.html','10001')" href="javascript:;" title="编辑">
+                            <i class="Hui-iconfont">&#xe6df;</i>
+                        </a>
+                        <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this,'002')"
+                           href="javascript:;" title="删除">
+                            <i class="Hui-iconfont">&#xe6e2;</i>
+                        </a>
+                    </td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
     </div>
