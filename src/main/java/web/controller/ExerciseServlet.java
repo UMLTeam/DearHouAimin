@@ -78,8 +78,10 @@ public class ExerciseServlet extends HttpServlet {
             session.setAttribute("resourceList", resourceList);
         }
 
-        request.getRequestDispatcher("/html/teachResDetail-3.jsp").forward(request, response);
-//        request.getRequestDispatcher("/admin/exercise/exercise-list.jsp").forward(request, response);
-
+        if(!request.getParameter("type").equals("admin-list")){
+            request.getRequestDispatcher("/html/teachResDetail-3.jsp").forward(request, response);
+        }else {
+            request.getRequestDispatcher("/admin/exercise/exercise-list.jsp").forward(request, response);
+        }
     }
 }
