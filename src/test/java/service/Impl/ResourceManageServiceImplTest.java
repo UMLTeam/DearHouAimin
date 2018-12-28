@@ -20,13 +20,17 @@ import java.util.List;
  */
 public class ResourceManageServiceImplTest {
     public static void main(String[] args) {
+        Logger logger = LogManager.getLogger(ResourceManageServiceImplTest.class);
         ResourceManageServiceImplTest test = new ResourceManageServiceImplTest();
 
-//        test.testFind();
-        test.testInsert();
+        test.testFind();
+        //test.testInsert();
 //        test.testUpdate();
 //        test.testDelete();
 //        test.testFindByType();
+        ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
+        List<Resource> list = resourceManageService.findByType("4");
+        logger.info(list.toString());
     }
 
     private void testFindByType() {
