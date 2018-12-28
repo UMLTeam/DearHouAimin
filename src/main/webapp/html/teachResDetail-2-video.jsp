@@ -1,5 +1,11 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
+<%
+	String path=request.getParameter("path");
+	request.setAttribute("path", path);
+ %>
 <head>
     <title>教学资源-教学录像</title>
     <meta charset="utf-8">
@@ -41,8 +47,8 @@
                 <section class="leftNav">
                     <h3>教学资源</h3>
                     <ul>
-                        <li><a href="teachResDetail-1.html">课程课件</a></li>
-                        <li class="current"><a href="teachResDetail-2.html">教学录像</a></li>
+                        <li><a href="/courseWareServlet?type=show&page=1&pageSize=3">课程课件</a></li>
+                        <li class="current"><a href="/videoServlet?type=show&page=1&pageSize=3">教学录像</a></li>
                         <li><a href="teachResDetail-3.jsp">习题库</a></li>
                         <li><a href="teachResDetail-4.html">案例库</a></li>
                         <li><a href="teachResDetail-5.html">实验任务</a></li>
@@ -53,38 +59,30 @@
                 <article class="mainContent">
                     <header class="contentNav">
                         <nav class="nav">
-                            <a href="index.jsp">首页</a>·
-                            <a href="teachResDetail-1.html">教学资源</a>·
-                            <a href="teachResDetail-2.html">教学录像</a>
+                            <a href="/html/index.jsp">首页</a>·
+                            <a href="/courseWareServlet?type=show&page=1&pageSize=3">教学资源</a>·
+                            <a href="/videoServlet?type=show&page=1&pageSize=3">教学录像</a>
                         </nav>
                         <h1>教学录像</h1>
                     </header>
                    <div id="resource">
-                        <a href="teachResDetail-2.html"><img src="../images/teachResource/返回.png">返回</a><br><br>
+                        <a href="teachResDetail-2.html"><img src="/images/teachResource/返回.png">返回</a><br><br>
                       	<div class="dplayer_wrap">
                             <div id="dplayer"></div>
                         </div>
 						<script src="https://cdn.bootcss.com/dplayer/1.25.0/DPlayer.min.js"></script>
 						<script>
+							//console.log('${path}');
 							var dp = new DPlayer({
 								container: document.getElementById('dplayer'),
     							screenshot: true,
                                 allowfullscreen: true,
     							video: {
-            					quality: [{
-            						name: '标清',
-            						url:'../resource/teachResDetail-2/video/video1.flv',
-           							type: 'flv'
-           						}, {
-           							name: '高清(假)',
-            						url: 	'https://doubanzyv1.tyswmp.com/2018/10/04/HCr9GtzqaK5DVGoC/playlist.m3u8',
-            						type: 'hls'
-        						}],
-        						defaultQuality: 0,
-    							pic: '../resource/teachResDetail-2/picture/1.png',
-       	 						thumbnails:'../resource/teachResDetail-2/picture/1.png'
-							}
-						});
+        							url: '${path}',
+    							},
+    							//pic: '/resource/teachResDetail-2/picture/1.png',
+       	 						//thumbnails:'/resource/teachResDetail-2/picture/1.png',
+							});
 					 </script>  
                    </div>
                 </article>

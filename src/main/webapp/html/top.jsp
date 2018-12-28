@@ -141,7 +141,7 @@
                 <a href="<c:url value='/courseWareServlet?type=show&page=1&pageSize=3'/> ">教学资源</a>
                 <ul style="display: none;" id="fifth">
                     <li class="detail"><a href="<c:url value='/courseWareServlet?type=show&page=1&pageSize=3'/>" style="color: #fff;">课程课件</a></li>
-                    <li class="detail"><a href="<c:url value='/html/teachResDetail-2.html'/>" style="color: #fff;">教学录像</a></li>
+                    <li class="detail"><a href="<c:url value='/videoServlet?type=show&page=1&pageSize=3'/>" style="color: #fff;">教学录像</a></li>
                     <li class="detail"><a href="teachResDetail-3.html" style="color: #fff;">习题库</a></li>
                     <li class="detail"><a href="teachResDetail-4.html" style="color: #fff;">案例库</a></li>
                     <li class="detail"><a href="teachResDetail-5.html" style="color: #fff;">实验任务</a></li>
