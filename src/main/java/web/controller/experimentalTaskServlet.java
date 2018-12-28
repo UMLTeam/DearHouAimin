@@ -32,21 +32,19 @@ public class experimentalTaskServlet extends HttpServlet {
 		String manage = request.getParameter("manage");
 		ResourceManageServiceImpl service = new ResourceManageServiceImpl();
 		if ("showPages".equals(type)) {
-			//获取浏览页的参数格式
-			List<Resource> resTaskList = service.find();
-			//PageInformation pageInformation = new PageInformation();
-			//Tool.getPageInformation("resource", request, pageInformation);
-			// 找到所有实验资源
-			//List<Resource> resTaskList = service.getOnePage(pageInformation);
-			// 保存为全局
+			PageInformation pageInformation = new PageInformation();
+			Tool.getPageInformation("resource", request, pageInformation);
+			// 获取某页的信息
+			List<Resource> resTaskList = service.getOnePage(pageInformation);
+			// 更新页面数据
+			request.setAttribute("pageInformation", pageInformation);
 			request.setAttribute("resTaskList", resTaskList);
-			//request.setAttribute("pageInformation", pageInformation);
-			// 重定向至实验任务浏览页面
-			String url = "../html/teachResDetail-5.jsp";
+			// 跳转实验任务显示页面
+			String url = "/html/teachResDetail-5.jsp";
 			if (manage != null) {
-				url = "../html/admin-list.html";
+				url = "/html/admin-list.html";
 			}
-			this.getServletContext().getRequestDispatcher(url).forward(request, response);
+			getServletContext().getRequestDispatcher(url).forward(request, response);
 		} else if ("delete".equals(type)) {
 			// 获取要操作资源的id
 			String id = request.getParameter("ids");
@@ -55,7 +53,7 @@ public class experimentalTaskServlet extends HttpServlet {
 			// 删除
 			service.delete(res);
 			// 重定向至实验任务浏览页面
-			String url = "../experimentalTaskServlet?type=showPages&manage=1";
+			String url = "/experimentalTaskServlet?type=showPages&manage=1";
 			this.getServletContext().getRequestDispatcher(url).forward(request, response);
 		} else if ("update".equals(type)) {
 			// 获取表单数据
@@ -67,7 +65,7 @@ public class experimentalTaskServlet extends HttpServlet {
 			// 更新
 			service.update(res);
 			// 重定向至实验任务浏览页面
-			String url = "../experimentalTaskServlet?type=showPages&manage=1";
+			String url = "/experimentalTaskServlet?type=showPages&manage=1";
 			this.getServletContext().getRequestDispatcher(url).forward(request, response);
 		} else if ("add".equals(type)) {
 			// 获取表单数据
@@ -86,10 +84,25 @@ public class experimentalTaskServlet extends HttpServlet {
 			// 插入
 			service.insert(res);
 			// 重定向至实验任务浏览页面
-			String url = "../experimentalTaskServlet?type=showPages&manage=1";
+			String url = "/experimentalTaskServlet?type=showPages&manage=1";
 			this.getServletContext().getRequestDispatcher(url).forward(request, response);
-		}else if("search".equals(type)){
-			
+		}else if("searchByKey".equals(type)){
+			//获取查询字段
+			String resName = request.getParameter("key");
+			//初始化页面信息及查询语句
+			PageInformation pageInformation = new PageInformation();
+			Tool.getPageInformation("resource", request, pageInformation);
+			pageInformation.setSearchSql("resName like '%"+resName+"%'");
+			List<Resource> resTaskList = service.getOnePage(pageInformation);
+			//保存为全局
+			request.setAttribute("resTaskList", resTaskList);
+			request.setAttribute("pageInformation", pageInformation);
+			// 重定向至实验任务浏览页面
+			String url = "/html/teachResDetail-5.jsp";
+			if (manage != null) {
+				url = "/html/admin-list.html";
+			}
+			this.getServletContext().getRequestDispatcher(url).forward(request, response);
 		}
 	}
 

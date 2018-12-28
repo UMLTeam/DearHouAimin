@@ -138,7 +138,7 @@ function Rendering(){
 							<li class=\"detail\"><a href=\"teachResDetail-2.html\" style=\"color: #fff;\">教学录像</a></li>\
     						<li class=\"detail\"><a href=\"teachResDetail-3.html\" style=\"color: #fff;\">习题库</a></li>\
     						<li class=\"detail\"><a href=\"teachResDetail-4.html\" style=\"color: #fff;\">案例库</a></li>\
-    						<li class=\"detail\"><a href=\"../experimentalTaskServlet?type=showPages\" style=\"color: #fff;\">实验任务</a></li>\
+    						<li class=\"detail\"><a href=\"../experimentalTaskServlet?type=showPages&page=1&pageSize=4\" style=\"color: #fff;\">实验任务</a></li>\
     					</ul>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('6')\" onmouseout=\"out('6')\">\
@@ -213,8 +213,8 @@ function Rendering(){
 					<div class=\"detail\">\
 						<div><a href=\"../courseWareServlet?type=show&page=1&pageSize=3\">课程课件</a></div>\
 						<div><a href=\"teachResDetail-2.html\">教学录像</a></div>\
-						<div><a href=\"teachResDetail-3.html\">习题库</a></div>\
-						<div><a href=\"teachResDetail-4.html\">案例库</a></div>\
+						<div><a href=\"teachResDetail-3.jsp\">习题库</a></div>\
+						<div><a href=\"CheckResourceServlet.do?type=4\">案例库</a></div>\
 						<div><a href=\"teachResDetail-5.html\">实验任务</a></div>\
 					</div>\
 				</li>\

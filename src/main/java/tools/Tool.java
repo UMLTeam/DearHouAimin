@@ -37,10 +37,14 @@ public class Tool {
             pageInformation.setAllRecordCount(Integer.parseInt(info));
 
         //排序字段
-        pageInformation.setOrderField(request.getParameter("orderField"));
+        String orderField = request.getParameter("orderField");
+        if(orderField!=null) pageInformation.setOrderField(orderField);
+        else pageInformation.setOrderField("");
 
         //升序还是降序
-        pageInformation.setOrder(request.getParameter("order"));
+        String order = request.getParameter("order");
+        if(order!=null) pageInformation.setOrder(order);
+        else  pageInformation.setOrder("id");
 
         //主键id，逗号隔开，如：3,5,9  用于删除操作
         pageInformation.setIds(request.getParameter("ids"));
@@ -76,7 +80,7 @@ public class Tool {
             }
             //排序,默认按主键的降序排列
             if(pageInformation.getOrderField()==null || pageInformation.getOrderField().isEmpty()){
-                sql+=" ORDER BY id "+" desc ";
+                sql+=" ORDER BY id "+" asc ";
             }else{
                 sql+=" ORDER BY "+pageInformation.getOrderField()+" "+pageInformation.getOrder()+" ";
             }

@@ -8,7 +8,6 @@ import org.apache.logging.log4j.Logger;
 import service.IResourceManageService;
 import tools.PageInformation;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +29,7 @@ public class ResourceManageServiceImpl implements IResourceManageService {
         ResourceManageDaoImpl resourceManageDao = new ResourceManageDaoImpl();
         return resourceManageDao.findResourceByType(type);
     }
-
+  
     @Override
     public List<Resource> getOnePage(PageInformation pageInformation){
         DataBaseConnectionImpl databaseDao=new DataBaseConnectionImpl();
