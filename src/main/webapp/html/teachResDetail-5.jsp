@@ -90,8 +90,7 @@
                                             </tr>
                                 </c:forEach>
                             </table>
-                            <div class="tranPage">
-
+                            <div class="tranPage">                          
                                 <table>
                                     <tr>
                                         <td><a href="javascript:void(0);" onclick="getOnePage('pre','');">上一页</a></td>
