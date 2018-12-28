@@ -17,13 +17,13 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/normal.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail-1.css'/>">
-    <%--<script type="text/javascript" src="<c:url value='/js/normal.js'/>"></script>--%>
+    <script type="text/javascript" src="<c:url value='/js/normal.js'/>"></script>
     <script type="text/javascript" src="<c:url value='/js/teachRes/teachResDetail-1.js'/>"></script>
 </head>
 <body onload="Rendering();">
 <!-- 通过js渲染，js代码在normal.js里 -->
 <div id="top">
-    <jsp:include page="/html/top.jsp"/>
+    <%--<jsp:include page="/html/top.jsp"/>--%>
 </div>
 
 <article class="content">
@@ -38,8 +38,8 @@
                     <h3>教学资源</h3>
                     <ul>
                         <li class="current"><a href="teachResDetail-1.html">课程课件</a></li>
-                        <li><a href="/DearHouAimin/videoServlet?type=show&page=1&pageSize=3">教学录像</a></li>
-                        <li><a href="teachResDetail-3.html">习题库</a></li>
+                        <li><a href="/videoServlet?type=show&page=1&pageSize=3">教学录像</a></li>
+                        <li><a href="/ExerciseServlet.do?type=front-list">习题库</a></li>
                         <li><a href="teachResDetail-4.html">案例库</a></li>
                         <li><a href="teachResDetail-5.html">实验任务</a></li>
                     </ul>
@@ -61,7 +61,7 @@
                             <input class="searchSubmit" type="submit" value="文件搜索">
                         </form>
                         <%--<c:out value="${requestScope.pageInformation.allRecordCount}"/>--%>
-                        <form id="myform" method="post" action="/DearHouAimin/courseWareServlet?type=show">
+                        <form id="myform" method="post" action="/courseWareServlet?type=show">
                             <table class="table" border="0" width="800px" cellpadding="2" cellspacing="1">
                                 <tr class="firstRow">
                                     <td>序号</td>
@@ -88,7 +88,7 @@
                                                 <td><c:out value="${resource.resTime}"/></td>
                                                 <td>
                                                     <a onclick="Preview(event)"><img src="<c:url value='/images/teachResource/preview.png'/>"></a>
-                                                    <a href="/DearHouAimin<c:out value="${resource.resPath}"/>" download="<c:out value="${resource.resName}"/>">
+                                                    <a href="<c:out value="${resource.resPath}"/>" download="<c:out value="${resource.resName}"/>">
                                                         <img src="<c:url value='/images/teachResource/download.png'/>">
                                                     </a>
                                                 </td>

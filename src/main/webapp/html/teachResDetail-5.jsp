@@ -33,7 +33,7 @@
                     <ul>
                         <li><a href="teachResDetail-1.html">课程课件</a></li>
                         <li><a href="teachResDetail-2.html">教学录像</a></li>
-                        <li><a href="teachResDetail-3.html">习题库</a></li>
+                        <li><a href="/ExerciseServlet.do?type=front-list">习题库</a></li>
                         <li><a href="teachResDetail-4.html">案例库</a></li>
                         <li class="current"><a href="teachResDetail-5.html">实验任务</a></li>
                     </ul>
@@ -91,8 +91,7 @@
                                 </c:forEach>
                             </table>
                             <div class="tranPage">
-                            <c:set var="type" scope="session" value="${requestScope.type}"/>
-                            <c:if test="${type != searchByKey}">
+
                                 <table>
                                     <tr>
                                         <td><a href="javascript:void(0);" onclick="getOnePage('pre','');">上一页</a></td>
@@ -100,7 +99,6 @@
                                         <td><a href="javascript:void(0);" onclick="getOnePage('next','');">下一页</a></td>
                                     </tr>
                                 </table>
-                            </c:if>
                             </div>
                             <input type="hidden" name="page" id="page" value="${requestScope.pageInformation.page}">
                             <input type="hidden" name="pageSize" id="pageSize" value="${requestScope.pageInformation.pageSize}">
