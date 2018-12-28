@@ -30,8 +30,8 @@
                 <section class="leftNav">
                     <h3>教学资源</h3>
                     <ul>
-                        <li><a href="/DearHouAimin/courseWareServlet?type=show&page=1&pageSize=3">课程课件</a></li>
-                        <li class="current"><a href="/DearHouAimin/videoServlet?type=show&page=1&pageSize=3">教学录像</a></li>
+                        <li><a href="/courseWareServlet?type=show&page=1&pageSize=3">课程课件</a></li>
+                        <li class="current"><a href="/videoServlet?type=show&page=1&pageSize=3">教学录像</a></li>
                         <li><a href="/ExerciseServlet.do?type=front-list">习题库</a></li>
                         <li><a href="teachResDetail-4.html">案例库</a></li>
                         <li><a href="teachResDetail-5.html">实验任务</a></li>
@@ -43,13 +43,13 @@
                     <header class="contentNav">
                         <nav class="nav">
                             <a href="index.jsp">首页</a>·
-                            <a href="/DearHouAimin/courseWareServlet?type=show&page=1&pageSize=3">教学资源</a>·
-                            <a href="/DearHouAimin/videoServlet?type=show&page=1&pageSize=3">教学录像</a>
+                            <a href="/courseWareServlet?type=show&page=1&pageSize=3">教学资源</a>·
+                            <a href="/videoServlet?type=show&page=1&pageSize=3">教学录像</a>
                         </nav>
                         <h1>教学录像</h1>
                     </header>
                    <div id="resource">
-                        <form class="search" action="/DearHouAimin/videoServlet?type=searchRes&page=1&pageSize=3" method="post">
+                        <form class="search" action="/videoServlet?type=searchRes&page=1&pageSize=3" method="post">
                             <input class="searchInput" type="search" name="search">
                             <input class="searchSubmit" type="submit" value="文件搜索">
                         </form>
@@ -78,8 +78,8 @@
                                                 <td><c:out value="${10000}"/></td>
                                                 <td><c:out value="${resource.resTime}"/></td>
                                                 <td>
-                                                    <a onclick="Preview(event)"><img src="<c:url value='/images/teachResource/preview.png'/>"></a>
-                                                    <a href="/DearHouAimin<c:out value="${resource.resPath}"/>" download="<c:out value="${resource.resName}"/>">
+                                                    <a href="/html/teachResDetail-2-video.jsp?path=<c:out value="${resource.resPath}" />"><img src="<c:url value='/images/teachResource/preview.png'/>"></a>
+                                                    <a href="<c:out value="${resource.resPath}"/>" download="<c:out value="${resource.resName}"/>">
                                                         <img src="<c:url value='/images/teachResource/download.png'/>">
                                                     </a>
                                                 </td>

@@ -56,7 +56,7 @@
                         <h1>课程课件</h1>
                     </header>
                     <div id="resource">
-                        <form class="search" action="DearHouAimin/web.controller/courseWareServlet?type=searchResRes&page=1&pageSize=10" method="post">
+                        <form class="search" action="/courseWareServlet?type=searchResRes&page=1&pageSize=10" method="post">
                             <input class="searchInput" type="search" name="search">
                             <input class="searchSubmit" type="submit" value="文件搜索">
                         </form>

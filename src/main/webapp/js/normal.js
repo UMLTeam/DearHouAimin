@@ -134,11 +134,13 @@ function Rendering(){
 					<li class=\"title\" onmouseover=\"extend('5')\" onmouseout=\"out('5')\">\
 						<a href=\"../courseWareServlet?type=show&page=1&pageSize=3\">教学资源</a>\
 						<ul style=\"display: none;\" id=\"fifth\">\
+    						<li class=\"detail\"><a href=\"../courseWareServlet?type=show&page=1&pageSize=3\" style=\"color: #fff;\">课程课件</a></li>\
+							<li class=\"detail\"><a href=\"/videoServlet?type=show&page=1&pageSize=3\" style=\"color: #fff;\">教学录像</a></li>\
     						<li class=\"detail\"><a href=\"/courseWareServlet?type=show&page=1&pageSize=3\" style=\"color: #fff;\">课程课件</a></li>\
 							<li class=\"detail\"><a href=\"/videoServlet?type=show&page=1&pageSize=3\" style=\"color: #fff;\">教学录像</a></li>\
     						<li class=\"detail\"><a href=\"/ExerciseServlet.do?type=front-list\" style=\"color: #fff;\">习题库</a></li>\
-    						<li class=\"detail\"><a href=\"/html/CheckResourceServlet.do?type=4\" style=\"color: #fff;\">案例库</a></li>\
-    						<li class=\"detail\"><a href=\"/experimentalTaskServlet?type=showPages&page=1&pageSize=4\" style=\"color: #fff;\">实验任务</a></li>\
+    						<li class=\"detail\"><a href=\"teachResDetail-4.html\" style=\"color: #fff;\">案例库</a></li>\
+    						<li class=\"detail\"><a href=\"../experimentalTaskServlet?type=showPages&page=1&pageSize=4\" style=\"color: #fff;\">实验任务</a></li>\
     					</ul>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('6')\" onmouseout=\"out('6')\">\
