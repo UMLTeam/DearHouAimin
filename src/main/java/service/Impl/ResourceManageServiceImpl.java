@@ -29,7 +29,7 @@ public class ResourceManageServiceImpl implements IResourceManageService {
         ResourceManageDaoImpl resourceManageDao = new ResourceManageDaoImpl();
         return resourceManageDao.findResourceByType(type);
     }
-
+  
     @Override
     public List<Resource> getOnePage(PageInformation pageInformation){
         DataBaseConnectionImpl databaseDao=new DataBaseConnectionImpl();

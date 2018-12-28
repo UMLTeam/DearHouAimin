@@ -19,6 +19,35 @@ function Preview(e) {
         "<embed src=\""+src+"\" width=\"800\" height=\"800\">\n" +
         "</div>";
 }
+function getOnePage(type,orderFieldName){
+    var url1;
+    var page=document.getElementById("page");
+    var pageSize=document.getElementById("pageSize");
+    var totalPageCount=document.getElementById("totalPageCount");
+
+    var order=document.getElementById("order");
+    var orderField=document.getElementById("orderField");
+    order.value="asc";
+    orderField.value = "id"
+    if(orderFieldName!=""){//切换排序
+        page.value=1;//排序后从第一页开始显示
+    }
+
+    pageValue=parseInt(page.value);
+    if(type=="first")
+        page.value="1";
+    else if(type=="pre"){
+        pageValue-=1;
+        page.value=pageValue.toString();
+    }else if(type=="next"){
+        pageValue+=1;
+        page.value=pageValue.toString();
+    }else if(type=="last"){
+        page.value=totalPageCount.value;
+    }
+    //提交
+    document.getElementById('myform').submit();
+}
 
 function upPage_hover(e) {
     var target=e.target;
