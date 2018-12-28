@@ -32,7 +32,7 @@
                     <ul>
                         <li><a href="/DearHouAimin/courseWareServlet?type=show&page=1&pageSize=3">课程课件</a></li>
                         <li class="current"><a href="/DearHouAimin/videoServlet?type=show&page=1&pageSize=3">教学录像</a></li>
-                        <li><a href="teachResDetail-3.jsp">习题库</a></li>
+                        <li><a href="/ExerciseServlet.do?type=front-list">习题库</a></li>
                         <li><a href="teachResDetail-4.html">案例库</a></li>
                         <li><a href="teachResDetail-5.html">实验任务</a></li>
                     </ul>
