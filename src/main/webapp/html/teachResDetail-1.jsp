@@ -5,29 +5,31 @@
   Time: 下午3:49
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
     <title>教学资源-课程课件</title>
     <meta charset="utf-8">
-    <link rel="icon" href="/images/dgut.jpg">
-    <link rel="stylesheet" type="text/css" href="../style/normal.css">
-    <link rel="stylesheet" type="text/css" href="../style/teachRes/normal.css">
-    <link rel="stylesheet" type="text/css" href="../style/teachRes/teachResDetail.css">
-    <link rel="stylesheet" type="text/css" href="../style/teachRes/teachResDetail-1.css">
-    <script type="text/javascript" src="../js/normal.js"></script>
-    <script type="text/javascript" src="../js/teachRes/teachResDetail-1.js"></script>
+    <link rel="icon" href="<c:url value='/images/dgut.jpg'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/normal.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/normal.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail-1.css'/>">
+    <%--<script type="text/javascript" src="<c:url value='/js/normal.js'/>"></script>--%>
+    <script type="text/javascript" src="<c:url value='/js/teachRes/teachResDetail-1.js'/>"></script>
 </head>
 <body onload="Rendering();">
 <!-- 通过js渲染，js代码在normal.js里 -->
-<div id="top"></div>
+<div id="top">
+    <jsp:include page="/html/top.jsp"/>
+</div>
 
 <article class="content">
 
     <section id="banner">
-        <img src="../images/index/abouttop_03.jpg">
+        <img src="<c:url value='/images/index/abouttop_03.jpg'/>">
     </section>
     <section class="mainWrap relative">
         <div class="detailContent">
@@ -37,7 +39,7 @@
                     <ul>
                         <li class="current"><a href="teachResDetail-1.html">课程课件</a></li>
                         <li><a href="teachResDetail-2.html">教学录像</a></li>
-                        <li><a href="teachResDetail-3.jsp">习题库</a></li>
+                        <li><a href="teachResDetail-3.html">习题库</a></li>
                         <li><a href="teachResDetail-4.html">案例库</a></li>
                         <li><a href="teachResDetail-5.html">实验任务</a></li>
                     </ul>
@@ -47,7 +49,7 @@
                 <article class="mainContent">
                     <header class="contentNav">
                         <nav class="nav">
-                            <a href="index.jsp">首页</a>·
+                            <a href="index.html">首页</a>·
                             <a href="teachResDetail-1.html">教学资源</a>·
                             <a href="teachResDetail-1.html">课程课件</a>
                         </nav>
@@ -58,7 +60,8 @@
                             <input class="searchInput" type="search" name="search">
                             <input class="searchSubmit" type="submit" value="文件搜索">
                         </form>
-                        <form id="myform" method="post">
+                        <%--<c:out value="${requestScope.pageInformation.allRecordCount}"/>--%>
+                        <form id="myform" method="post" action="/DearHouAimin/courseWareServlet?type=show">
                             <table class="table" border="0" width="800px" cellpadding="2" cellspacing="1">
                                 <tr class="firstRow">
                                     <td>序号</td>
@@ -84,9 +87,9 @@
                                                 <td><c:out value="${10000}"/></td>
                                                 <td><c:out value="${resource.resTime}"/></td>
                                                 <td>
-                                                    <a onclick="Preview(event)"><img src="../images/teachResource/preview.png"></a>
-                                                    <a href="../resource/《软件需求分析与设计》课程简介.pptx" download="《软件需求分析与设计》课程简介.pptx">
-                                                        <img src="../images/teachResource/download.png">
+                                                    <a onclick="Preview(event)"><img src="<c:url value='/images/teachResource/preview.png'/>"></a>
+                                                    <a href="/DearHouAimin<c:out value="${resource.resPath}"/>" download="<c:out value="${resource.resName}"/>">
+                                                        <img src="<c:url value='/images/teachResource/download.png'/>">
                                                     </a>
                                                 </td>
 
@@ -94,11 +97,15 @@
                                 </c:forEach>
                             </table>
                             <div class="tranPage">
-                                <img onmouseover="upPage_hover(event)" onmouseout="upPage_out(event)" src="..\images\teachResource\up.png">
-                                <img src="..\images\teachResource\1.png">
-                                <img src="..\images\teachResource\2.png">
-                                <img src="..\images\teachResource\ellipsis.png">
-                                <img onmouseover="downPage_hover(event)" onmouseout="downPage_out(event)" class="downPage" src="..\images\teachResource\down.png">
+                                <table>
+                                    <tr>
+                                        <td><a href="javascript:void(0);" onclick="getOnePage('first','');">首页</a></td>
+                                        <td><a href="javascript:void(0);" onclick="getOnePage('pre','');">上一页</a></td>
+                                        <td>[${requestScope.pageInformation.page}/${requestScope.pageInformation.totalPageCount}]</td>
+                                        <td><a href="javascript:void(0);" onclick="getOnePage('next','');">下一页</a></td>
+                                        <td><a href="javascript:void(0);" onclick="getOnePage('last','');">尾页</a></td>
+                                    </tr>
+                                </table>
                             </div>
                             <input type="hidden" name="page" id="page" value="${requestScope.pageInformation.page}">
                             <input type="hidden" name="pageSize" id="pageSize" value="${requestScope.pageInformation.pageSize}">
@@ -118,8 +125,12 @@
 </article>
 
 <!-- 通过js渲染，js代码在normal.js里 -->
-<div id="bottom"></div>
+<div id="bottom">
+    <jsp:include page="/html/bottom.jsp" />
+</div>
 <!-- 通过js渲染，js代码在normal.js里 -->
-<div id="copyrights"></div>
+<div id="copyrights">
+    <jsp:include page="/html/copyright.jsp" />
+</div>
 </body>
 </html>

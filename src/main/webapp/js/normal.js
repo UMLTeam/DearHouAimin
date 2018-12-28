@@ -84,7 +84,7 @@ function out(num){
 function Rendering(){
 	document.getElementById("top").innerHTML="<div class=\"header\"><div class=\"topLine\"></div>\
 			<section class=\"topwrap\">\
-				<a href=\"index.jsp\" class=\"logo\"><img src=\"../images/logo.png\"><h2 class=\"title\">在线开放课程平台</h2></a>\
+				<a href=\"index.html\" class=\"logo\"><img src=\"../images/logo.png\"><h2 class=\"title\">在线开放课程平台</h2></a>\
 			</section>\
 			<section class=\"logininAndUp\">\
 				<a href=\"login.html\">登录</a>\
@@ -92,7 +92,7 @@ function Rendering(){
 			</section>\
 			<section class=\"nav yahei\">\
 				<ul id=\"nav\">\
-					<li class=\"title\"><a href=\"index.jsp\">首页</a></li>\
+					<li class=\"title\"><a href=\"/DearHouAimin/html/index.html\">首页</a></li>\
 					<li class=\"title\" onmouseover=\"extend('1')\" onmouseout=\"out('1')\">\
 						<a href=\"courseDetail-1.html\">课程概况</a>\
 						<ul style=\"display: none;\" id=\"first\">\
@@ -132,11 +132,11 @@ function Rendering(){
 						</ul>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('5')\" onmouseout=\"out('5')\">\
-						<a href=\"courseWareServlet?type=show\">教学资源</a>\
+						<a href=\"../courseWareServlet?type=show&page=1&pageSize=3\">教学资源</a>\
 						<ul style=\"display: none;\" id=\"fifth\">\
-    						<li class=\"detail\"><a href=\"courseWareServlet?type=show\" style=\"color: #fff;\">课程课件</a></li>\
+    						<li class=\"detail\"><a href=\"../courseWareServlet?type=show&page=1&pageSize=3\" style=\"color: #fff;\">课程课件</a></li>\
 							<li class=\"detail\"><a href=\"teachResDetail-2.html\" style=\"color: #fff;\">教学录像</a></li>\
-    						<li class=\"detail\"><a href=\"/ExerciseServlet.do\" style=\"color: #fff;\">习题库</a></li>\
+    						<li class=\"detail\"><a href=\"teachResDetail-3.html\" style=\"color: #fff;\">习题库</a></li>\
     						<li class=\"detail\"><a href=\"teachResDetail-4.html\" style=\"color: #fff;\">案例库</a></li>\
     						<li class=\"detail\"><a href=\"../experimentalTaskServlet?type=showPages\" style=\"color: #fff;\">实验任务</a></li>\
     					</ul>\
@@ -209,9 +209,9 @@ function Rendering(){
                         <div><a href=\"educationReformDetail-4.html\">改革表彰和奖励</a></div>\
                     </div>\
 				</li>\
-				<li><a href=\"courseWareServlet?type=show\">教学资源</a>\
+				<li><a href=\"../courseWareServlet?type=show&page=1&pageSize=3\">教学资源</a>\
 					<div class=\"detail\">\
-						<div><a href=\"courseWareServlet?type=show\">课程课件</a></div>\
+						<div><a href=\"../courseWareServlet?type=show&page=1&pageSize=3\">课程课件</a></div>\
 						<div><a href=\"teachResDetail-2.html\">教学录像</a></div>\
 						<div><a href=\"teachResDetail-3.jsp\">习题库</a></div>\
 						<div><a href=\"CheckResourceServlet.do?type=4\">案例库</a></div>\
