@@ -19,13 +19,15 @@
     <script type="text/javascript" src="lib/html5shiv.js"></script>
     <script type="text/javascript" src="lib/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="../../static/h-ui/css/H-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/H-ui.admin.css" />
-    <link rel="stylesheet" type="text/css" href="../../lib/Hui-iconfont/1.0.8/iconfont.css" />
-    <link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/skin/default/skin.css" id="skin" />
-    <link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/DearHouAimin/static/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="/DearHouAimin/static/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="/DearHouAimin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="/DearHouAimin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="/DearHouAimin/static/h-ui.admin/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/normal.css'/>">
+    <script type="text/javascript" src="<c:url value='/js/teachRes/courseWare-list.js'/>"></script>
     <!--[if IE 6]>
-    <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script type="text/javascript" src="/DearHouAimin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
     <title>课件列表</title>
@@ -35,88 +37,101 @@
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 课程概况 <span class="c-gray en">&gt;</span>
     课程简介 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
             title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
-<div class="page-container">
-    <div class="text-c"> 日期范围：
-        <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}' })" id="logmin" class="input-text Wdate"
-               style="width:120px;">
-        -
-        <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d' })" id="logmax" class="input-text Wdate"
-               style="width:120px;">
-        <input type="text" name="courseWareName" id="courseWareName" placeholder=" 课件名称" style="width:250px" class="input-text">
-        <button name="searchCourseWare" id="searchCourseWare" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜课件</button>
-    </div>
-    <!-- TO-DO:实现批量删除 -->
-    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="data_del()" class="btn btn-danger radius"><i
-            class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="courseware_add('添加课件','courseware-add.html')"
-                                                          href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加课件</a></span> <span class="r">共有数据：<strong>2</strong> 条</span>
-    </div>
-    <div class="mt-20">
-        <table id="coursewrae-table" class="table table-border table-bordered table-bg table-hover table-sort">
-            <thead>
-            <tr class="text-c">
-                <th width="40"><input type="checkbox" name="box" value="1"></th>
-                <th width="80">ID</th>
-                <th width="70">课件类型</th>
-                <th width="70">课件大小</th>
-                <th width="70">上传用户</th>
-                <th>课件名称</th>
-                <th width="150">标签</th>
-                <th width="150">更新时间</th>
-                <th width="60">发布状态</th>
-                <th width="100">操作</th>
+    <form id="courseWare" method="post" action="/DearHouAimin/courseWareServlet?type=adminShow">
+        <div class="page-container">
+            <div class="text-c"> 日期范围：
+                <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}' })" id="logmin" class="input-text Wdate"
+                       style="width:120px;">
+                -
+                <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d' })" id="logmax" class="input-text Wdate"
+                       style="width:120px;">
+                <input type="text" name="courseWareName" id="courseWareName" placeholder=" 课件名称" style="width:250px" class="input-text">
+                <button name="searchCourseWare" id="searchCourseWare" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜课件</button>
+            </div>
+            <!-- TO-DO:实现批量删除 -->
+            <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="data_del()" class="btn btn-danger radius"><i
+                    class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="courseware_add('添加课件','courseware-add.html')"
+                                                                  href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加课件</a></span> <span class="r">共有数据：<strong><c:out value="${requestScope.pageInformation.allRecordCount}"/> </strong> 条</span>
+            </div>
+            <div class="mt-20">
+                <table id="coursewrae-table" class="table table-border table-bordered table-bg table-hover table-sort">
+                    <thead>
+                    <tr class="text-c">
+                        <th width="40"><input type="checkbox" name="box" value="1"></th>
+                        <th width="80">ID</th>
+                        <th width="70">课件类型</th>
+                        <th width="70">课件大小</th>
+                        <th width="70">上传用户</th>
+                        <th>课件名称</th>
+                        <th width="150">标签</th>
+                        <th width="150">更新时间</th>
+                        <th width="60">发布状态</th>
+                        <th width="100">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach items="${requestScope.resources}"  var="resource">
+                            <tr class="text-c">
+                                <td><input type="checkbox" name="box" value="1"></td>
+                                <td><c:out value="${resource.id}"/></td>
+                                <td>PPT</td>
+                                <td>1.1M</td>
+                                <td>侯爱民</td>
+                                <td class="text-l"><a href="https://view.officeapps.live.com/op/view.aspx?src=http://www.niracler.com/resource/《软件需求分析与设计》课程简介.pptx" target="_blank">《软件需求分析与设计》课程简介</a></td>
+                                <td class="text-c"><c:out value="${resource.resName}"/></td>
+                                <td><c:out value="${resource.resTime}"/></td>
+                                <td class="td-status"><span class="label label-success radius">已发布</span></td>
+                                <td class="td-manage">
+                                    <a style="text-decoration:none" onClick="courseware_stop(this,'10001')" href="javascript:;" title="下架">
+                                        <i class="Hui-iconfont">&#xe6de;</i>
+                                    </a>
+                                    <a style="text-decoration:none" class="ml-5" onClick="courseware_edit('图库编辑','courseware-add.html','10001')" href="javascript:;" title="编辑">
+                                        <i class="Hui-iconfont">&#xe6df;</i>
+                                    </a>
+                                    <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this,'002')"href="javascript:;" title="删除">
+                                        <i class="Hui-iconfont">&#xe6e2;</i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <%--<div class="tranPage">--%>
+        <table>
+            <tr>
+                <td><a href="javascript:void(0);" onclick="getOnePage('first','');">首页</a></td>
+                <td><a href="javascript:void(0);" onclick="getOnePage('pre','');">上一页</a></td>
+                <td>[${requestScope.pageInformation.page}/${requestScope.pageInformation.totalPageCount}]</td>
+                <td><a href="javascript:void(0);" onclick="getOnePage('next','');">下一页</a></td>
+                <td><a href="javascript:void(0);" onclick="getOnePage('last','');">尾页</a></td>
             </tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${requestScope.resources}"  var="resource">
-                <tr class="text-c">
-                    <td><input type="checkbox" name="box" value="1"></td>
-                    <td><c:out value="${resource.id}"/></td>
-                    <td>PPT</td>
-                    <td>1.1M</td>
-                    <td>侯爱民</td>
-                    <td class="text-l"><a href="https://view.officeapps.live.com/op/view.aspx?src=http://www.niracler.com/resource/《软件需求分析与设计》课程简介.pptx" target="_blank">《软件需求分析与设计》课程简介</a></td>
-                    <td class="text-c"><c:out value="${resource.resName}"/></td>
-                    <td><c:out value="${resource.resTime}"/></td>
-                    <td class="td-status"><span class="label label-success radius">已发布</span></td>
-                    <td class="td-manage">
-                        <a style="text-decoration:none" onClick="courseware_stop(this,'10001')" href="javascript:;" title="下架">
-                            <i class="Hui-iconfont">&#xe6de;</i>
-                        </a>
-                        <a style="text-decoration:none" class="ml-5" onClick="courseware_edit('图库编辑','courseware-add.html','10001')" href="javascript:;" title="编辑">
-                            <i class="Hui-iconfont">&#xe6df;</i>
-                        </a>
-                        <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this,'002')"href="javascript:;" title="删除">
-                            <i class="Hui-iconfont">&#xe6e2;</i>
-                        </a>
-                    </td>
-                </tr>
-            <%--<tr class="text-c">--%>
-                <%--<td><input name="box" type="checkbox" value="2"></td>--%>
-                <%--<td>002</td>--%>
-                <%--<td>pdf</td>--%>
-                <%--<td>1.3M</td>--%>
-                <%--<td>侯爱民</td>--%>
-                <%--<td class="text-l"><a href="https://view.officeapps.live.com/op/view.aspx?src=http://www.niracler.com/resource/《软件需求分析与设计》综合实践.pdf" target="_blank">《软件需求分析与设计》综合实践</a></td>--%>
-                <%--<td>UML 大纲</td>--%>
-                <%--<td>2018-6-11 11:11:42</td>--%>
-                <%--<td class="td-status"><span class="label label-success radius">草稿</span></td>--%>
-                <%--<td class="f-14 td-manage"><a style="text-decoration:none" onClick="courseware_shenhe(this,'002')" href="javascript:;" title="审核">审核</a> <a style="text-decoration:none" class="ml-5" onClick="courseware_edit('资讯编辑','courseware-add.html','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this,'002')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>--%>
-            <%--</tr>--%>
-            </tbody>
         </table>
+        <%--</div>--%>
+        <input type="hidden" name="page" id="page" value="${requestScope.pageInformation.page}">
+        <input type="hidden" name="pageSize" id="pageSize" value="${requestScope.pageInformation.pageSize}">
+        <input type="hidden" name="totalPageCount" id="totalPageCount" value="${requestScope.pageInformation.totalPageCount}">
+        <input type="hidden" name="allRecordCount" id="allRecordCount" value="${requestScope.pageInformation.allRecordCount}">
+        <input type="hidden" name="orderField" id="orderField" value="${requestScope.pageInformation.orderField}">
+        <input type="hidden" name="order" id="order" value="${requestScope.pageInformation.order}">
+        <input type="hidden" name="ids" id="ids" value="${requestScope.pageInformation.ids}">
+        <input type="hidden" name="searchSql" id="searchSql" value="${requestScope.pageInformation.searchSql}">
+        <input type="hidden" name="result" id="result" value="${requestScope.pageInformation.result}">
+    </form>
     </div>
 </div>
 <!-- TO-DO:将公共模块提出来在公共的js文件，简化操作 -->
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="../../lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="../../lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="../../static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="../../static/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="/DearHouAimin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/DearHouAimin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/DearHouAimin/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="/DearHouAimin/static/h-ui.admin/js/H-ui.admin.js"></script>
 <!--/_footer 作为公共模版分离出去-->
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="../../lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="../../lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="../../lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="/DearHouAimin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/DearHouAimin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/DearHouAimin/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
 
     $('.table-sort').dataTable({
