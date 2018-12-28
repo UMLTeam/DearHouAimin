@@ -90,9 +90,7 @@
                                             </tr>
                                 </c:forEach>
                             </table>
-                            <div class="tranPage">
-                            <c:set var="type" scope="session" value="${requestScope.type}"/>
-                            <c:if test="${type != searchByKey}">
+                            <div class="tranPage">                          
                                 <table>
                                     <tr>
                                         <td><a href="javascript:void(0);" onclick="getOnePage('pre','');">上一页</a></td>
@@ -100,7 +98,6 @@
                                         <td><a href="javascript:void(0);" onclick="getOnePage('next','');">下一页</a></td>
                                     </tr>
                                 </table>
-                            </c:if>
                             </div>
                             <input type="hidden" name="page" id="page" value="${requestScope.pageInformation.page}">
                             <input type="hidden" name="pageSize" id="pageSize" value="${requestScope.pageInformation.pageSize}">
