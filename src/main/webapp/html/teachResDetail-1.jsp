@@ -17,13 +17,12 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/normal.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail-1.css'/>">
-    <script type="text/javascript" src="<c:url value='/js/normal.js'/>"></script>
     <script type="text/javascript" src="<c:url value='/js/teachRes/teachResDetail-1.js'/>"></script>
 </head>
-<body onload="Rendering();">
-<!-- 通过js渲染，js代码在normal.js里 -->
+<body>
+
 <div id="top">
-    <%--<jsp:include page="/html/top.jsp"/>--%>
+    <jsp:include page="/html/top.jsp"/>
 </div>
 
 <article class="content">
@@ -35,14 +34,7 @@
         <div class="detailContent">
             <div class="column_1">
                 <section class="leftNav">
-                    <h3>教学资源</h3>
-                    <ul>
-                        <li class="current"><a href="teachResDetail-1.html">课程课件</a></li>
-                        <li><a href="/videoServlet?type=show&page=1&pageSize=3">教学录像</a></li>
-                        <li><a href="/ExerciseServlet.do?type=front-list">习题库</a></li>
-                        <li><a href="teachResDetail-4.html">案例库</a></li>
-                        <li><a href="teachResDetail-5.html">实验任务</a></li>
-                    </ul>
+                    <jsp:include page="/html/left.jsp"/>
                 </section>
             </div>
             <div class="column_2 ">
@@ -124,13 +116,18 @@
     </section>
 </article>
 
-<!-- 通过js渲染，js代码在normal.js里 -->
 <div id="bottom">
     <jsp:include page="/html/bottom.jsp" />
 </div>
-<!-- 通过js渲染，js代码在normal.js里 -->
 <div id="copyrights">
     <jsp:include page="/html/copyright.jsp" />
 </div>
 </body>
+<script>
+    var liList=document.getElementById("leftUl").children;
+    for(var i=0;i<liList.length;i++){
+        if(i==0)
+            liList[i].setAttribute("class","current");
+    }
+</script>
 </html>

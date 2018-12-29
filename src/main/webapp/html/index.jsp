@@ -9,12 +9,13 @@
 	<link rel="icon" href="/images/dgut.jpg">
 	<link rel="stylesheet" type="text/css" href="../style/normal.css">
 	<link rel="stylesheet" type="text/css" href="../style/index/index.css">
-	<script type="text/javascript" src="../js/normal.js"></script>
+	<%--<script type="text/javascript" src="../js/normal.js"></script>--%>
 </head>
 
-<body onload="Rendering();">
-	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="top"></div>
+<body>
+	<div id="top">
+		<jsp:include page="/html/top.jsp"/>
+	</div>
 
 	<div id="banner">
 		<!--<div class="bannerImg"><img src="../images/index/bigimg.jpg">-->
@@ -83,9 +84,13 @@
         </marquee>
     </div>
 
-	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="bottom"></div>
-	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="copyrights"></div>
+
+	<div id="bottom">
+		<jsp:include page="/html/bottom.jsp"/>
+	</div>
+
+	<div id="copyrights">
+		<jsp:include page="/html/bottom.jsp"/>
+	</div>
 </body>
 </html>
