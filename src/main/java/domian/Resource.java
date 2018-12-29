@@ -9,7 +9,6 @@ public class Resource {
     private Timestamp resTime;
     private String resPath;
     private String resType; //栏目类型, 例如习题库,
-//    private String resTag;  //后缀名,如ppt
     private String isCheck;
 
     public Resource(){}

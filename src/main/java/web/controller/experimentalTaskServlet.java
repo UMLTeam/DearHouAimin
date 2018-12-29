@@ -2,6 +2,7 @@ package web.controller;
 
 import java.io.IOException;
 
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -33,13 +34,18 @@ public class experimentalTaskServlet extends HttpServlet {
 		ResourceManageServiceImpl service = new ResourceManageServiceImpl();
 		if ("showPages".equals(type)) {
 			//获取浏览页的参数格式
-			List<Resource> resTaskList = service.find();
+//			List<Resource> resTaskList = null;
+//			try {
+//				resTaskList = service.findAll();
+//			} catch (SQLException e) {
+//				e.printStackTrace();
+//			}
 			//PageInformation pageInformation = new PageInformation();
 			//Tool.getPageInformation("resource", request, pageInformation);
 			// 找到所有实验资源
 			//List<Resource> resTaskList = service.getOnePage(pageInformation);
 			// 保存为全局
-			request.setAttribute("resTaskList", resTaskList);
+//			request.setAttribute("resTaskList", resTaskList);
 			//request.setAttribute("pageInformation", pageInformation);
 			// 重定向至实验任务浏览页面
 			String url = "../html/teachResDetail-5.jsp";
@@ -53,7 +59,7 @@ public class experimentalTaskServlet extends HttpServlet {
 			Resource res = new Resource();
 			res.setId(Integer.parseInt(id));
 			// 删除
-			service.delete(res);
+//			service.removeById(res);
 			// 重定向至实验任务浏览页面
 			String url = "../experimentalTaskServlet?type=showPages&manage=1";
 			this.getServletContext().getRequestDispatcher(url).forward(request, response);
@@ -65,7 +71,7 @@ public class experimentalTaskServlet extends HttpServlet {
 			res.setResName(resName);
 			res.setResPath(resPath);
 			// 更新
-			service.update(res);
+			service.change(res);
 			// 重定向至实验任务浏览页面
 			String url = "../experimentalTaskServlet?type=showPages&manage=1";
 			this.getServletContext().getRequestDispatcher(url).forward(request, response);
@@ -84,7 +90,7 @@ public class experimentalTaskServlet extends HttpServlet {
 			res.setResType(resType);
 			res.setResTime(resTime);
 			// 插入
-			service.insert(res);
+//			service.insert(res);
 			// 重定向至实验任务浏览页面
 			String url = "../experimentalTaskServlet?type=showPages&manage=1";
 			this.getServletContext().getRequestDispatcher(url).forward(request, response);

@@ -31,14 +31,14 @@ public class ExerciseServlet extends HttpServlet {
                 Date date = new Date();
                 Resource resource = new Resource(1, "hello2", new Timestamp(date.getTime()), "/", "习题库", "0");
                 logger.info(resource.toString());
-                resourceManageService.update(resource);
+                resourceManageService.change(resource);
                 break;
             }
             case "update": {
                 Date date = new Date();
                 Resource resource = new Resource(1, "hello1", new Timestamp(date.getTime()), "/", "习题库", "0");
                 logger.info(resource.toString());
-                resourceManageService.update(resource);
+                resourceManageService.change(resource);
 
                 break;
             }
@@ -46,14 +46,14 @@ public class ExerciseServlet extends HttpServlet {
                 Date date = new Date();
                 Resource resource = new Resource(1, "hello1", new Timestamp(date.getTime()), "/", "习题库", "1");
                 logger.info(resource.toString());
-                resourceManageService.update(resource);
+                resourceManageService.change(resource);
 
                 break;
             }
             case "delete": {
                 Resource resource = new Resource();
                 resource.setId(3);
-                resourceManageService.delete(resource);
+//                resourceManageService.removeById();
 
                 break;
             }
@@ -69,7 +69,7 @@ public class ExerciseServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Logger logger = LogManager.getLogger(ExerciseServlet.class);
         ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
-        List<Resource> resourceList = resourceManageService.find();
+        List<Resource> resourceList = resourceManageService.findAll();
         HttpSession session = request.getSession();
 
         if(resourceList == null) {
