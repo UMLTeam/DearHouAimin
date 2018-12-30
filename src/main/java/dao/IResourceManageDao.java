@@ -1,6 +1,7 @@
 package dao;
 
 import dao.Impl.DataBaseConnectionImpl;
+import domian.PageInfo;
 import domian.Resource;
 import tools.PageInformation;
 
@@ -16,6 +17,7 @@ public interface IResourceManageDao {
      * @return List<Resource>
      */
     List<Resource> findAllResource();
+    List<Resource> findResourceByType(String type);
 
     /**
      * 更新数据库的资源信息
@@ -50,5 +52,9 @@ public interface IResourceManageDao {
      */
     List<Resource> getOnePage(PageInformation pageInformation, DataBaseConnectionImpl databaseDao);
 
-    List<Resource> findResourceByType(String type);
+    /**
+     * 从数据库中查找一页相应资源的信息
+     * @return List<Resource>
+     */
+    List<Resource> findOnePage(PageInfo pageInfo);
 }
