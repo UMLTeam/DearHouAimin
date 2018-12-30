@@ -32,7 +32,7 @@ public class ResourceManageServiceImpl implements IResourceManageService {
 
     @Override
     public List<Resource> getOnePage(PageInformation pageInformation){
-        List<Resource> resources=new ArrayList<Resource>();
+        List<Resource>  resources;
         DataBaseConnectionImpl databaseDao=new DataBaseConnectionImpl();
         ResourceManageDaoImpl resourceManageDao = new ResourceManageDaoImpl();
         resources = resourceManageDao.getOnePage(pageInformation,databaseDao);
