@@ -1,60 +1,79 @@
 package service.Impl;
 
-import dao.Impl.DataBaseConnectionImpl;
 import dao.Impl.ResourceManageDaoImpl;
 import domian.Resource;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import service.IResourceManageService;
+import service.ResourceManageService;
 import tools.PageInformation;
 
-import java.util.ArrayList;
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
  * @Author: wt
  * @Date: 2018/12/24 22:41
  */
-public class ResourceManageServiceImpl implements IResourceManageService {
-    Logger logger = LogManager.getLogger(ResourceManageServiceImpl.class);
+public class ResourceManageServiceImpl implements ResourceManageService {
+    ResourceManageDaoImpl resourceManageDao = null;
+    
+    public ResourceManageServiceImpl(){
+        this.resourceManageDao = new ResourceManageDaoImpl();
+    }
 
     @Override
-    public List<Resource> find() {
-        ResourceManageDaoImpl resourceManageDao = new ResourceManageDaoImpl();
-        return resourceManageDao.findAllResource();
+    public List<Resource> findAll()  {
+        return resourceManageDao.selectAll();
     }
 
     @Override
     public List<Resource> findByType(String type) {
-        ResourceManageDaoImpl resourceManageDao = new ResourceManageDaoImpl();
-        return resourceManageDao.findResourceByType(type);
+        return resourceManageDao.selectByType(type);
     }
-
+    
     @Override
-    public List<Resource> getOnePage(PageInformation pageInformation){
-        List<Resource>  resources;
-        DataBaseConnectionImpl databaseDao=new DataBaseConnectionImpl();
-        ResourceManageDaoImpl resourceManageDao = new ResourceManageDaoImpl();
-        resources = resourceManageDao.getOnePage(pageInformation,databaseDao);
+    public List<Resource> findByDate(Timestamp date1, Timestamp date2, String resType) {
+        return resourceManageDao.selectByDate(date1,date2,resType);
+    }
+    
+    @Override
+    public List<Resource> findByPuzzyName(String name,String resType) {
+        return resourceManageDao.selectByFuzzyName(name,resType);
+    }
+    
+    @Override
+    public List<Resource> getOnePage(PageInformation pageInformation) {
+        List<Resource> resources;
+        resources = resourceManageDao.getOnePage(pageInformation);
         return resources;
     }
-
-
+    
     @Override
-    public boolean update(Resource resource) {
-        ResourceManageDaoImpl resourceManageDao = new ResourceManageDaoImpl();
-        return resourceManageDao.updateResource(resource);
+    public boolean change(Resource resource) {
+        return resourceManageDao.update(resource) > 0;
+    }
+    
+    @Override
+    public boolean changeCheck(Resource resource){
+        return resourceManageDao.updateCheck(resource) > 0;
+    }
+    
+    @Override
+    public boolean removeById(int id) {
+        return resourceManageDao.deleteById(id) > 0;
+    }
+    
+    @Override
+    public boolean removeMultiple(List list) {
+        int flag=0;
+        for (Object o : list) {
+            if (removeById((int) o)){
+                flag++;
+            }
+        }
+        return flag == list.size();
     }
 
     @Override
-    public boolean delete(Resource resource) {
-        ResourceManageDaoImpl resourceManageDao = new ResourceManageDaoImpl();
-        return resourceManageDao.deleteResource(resource);
-    }
-
-    @Override
-    public boolean insert(Resource resource) {
-        ResourceManageDaoImpl resourceManageDao = new ResourceManageDaoImpl();
-        return resourceManageDao.insertResource(resource);
+    public boolean create(Resource resource) {
+        return resourceManageDao.insert(resource) > 0;
     }
 }

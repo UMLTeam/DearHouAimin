@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: chm
-  Date: 18-12-25
-  Time: 下午3:49
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -17,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/normal.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail-1.css'/>">
+    <%--<script type="text/javascript" src="<c:url value='/js/normal.js'/>"></script>--%>
     <script type="text/javascript" src="<c:url value='/js/teachRes/teachResDetail-1.js'/>"></script>
 </head>
 <body>
@@ -41,28 +35,26 @@
                 <article class="mainContent">
                     <header class="contentNav">
                         <nav class="nav">
-                            <a href="index.html">首页</a>·
-                            <a href="teachResDetail-1.html">教学资源</a>·
-                            <a href="teachResDetail-1.html">课程课件</a>
+                            <a href="index.jsp">首页</a>·
+                            <a href="/courseWareServlet?type=show&page=1&pageSize=3">教学资源</a>·
+                            <a href="/videoServlet?type=show&page=1&pageSize=3">教学录像</a>
                         </nav>
-                        <h1>课程课件</h1>
+                        <h1>教学录像</h1>
                     </header>
-                    <div id="resource">
-                        <form class="search" action="/frontServlet.do?type=searchResRes&page=1&pageSize=10&resType=1" method="post">
+                   <div id="resource">
+                        <form class="search" action="/videoServlet?type=searchRes&page=1&pageSize=3" method="post">
                             <input class="searchInput" type="search" name="search">
                             <input class="searchSubmit" type="submit" value="文件搜索">
                         </form>
-                        <%--<c:out value="${requestScope.pageInformation.allRecordCount}"/>--%>
-                        <form id="myform" method="post" action="/frontServlet.do?type=show&resType=1">
-                            <table class="table" border="0" width="800px" cellpadding="2" cellspacing="1">
-                                <tr class="firstRow">
-                                    <td>序号</td>
-                                    <td>文件名称</td>
-                                    <td>文件大小</td>
-                                    <td>上传时间</td>
-                                    <td>操作</td>
-                                </tr>
-                                <c:set var="trType" scope="session" value="${0}"/>
+                        <table class="table" border="0" width="800px" cellpadding="2" cellspacing="1">
+                            <tr class="firstRow">
+                                <td>序号</td>
+                                <td>录像名称</td>
+                                <td>录像大小</td>
+                                <td>上传时间</td>
+                                <td>操作</td>
+                            </tr>                  
+                              <c:set var="trType" scope="session" value="${0}"/>
                                 <c:forEach items="${requestScope.resources}"  var="resource">
                                     <c:choose>
                                         <c:when test="${trType==0}">
@@ -79,7 +71,7 @@
                                                 <td><c:out value="${10000}"/></td>
                                                 <td><c:out value="${resource.resTime}"/></td>
                                                 <td>
-                                                    <a onclick="Preview(event)"><img src="<c:url value='/images/teachResource/preview.png'/>"></a>
+                                                    <a href="/html/teachResDetail-2-video.jsp?path=<c:out value="${resource.resPath}" />"><img src="<c:url value='/images/teachResource/preview.png'/>"></a>
                                                     <a href="<c:out value="${resource.resPath}"/>" download="<c:out value="${resource.resName}"/>">
                                                         <img src="<c:url value='/images/teachResource/download.png'/>">
                                                     </a>
@@ -108,10 +100,10 @@
                             <input type="hidden" name="ids" id="ids" value="${requestScope.pageInformation.ids}">
                             <input type="hidden" name="searchSql" id="searchSql" value="${requestScope.pageInformation.searchSql}">
                             <input type="hidden" name="result" id="result" value="${requestScope.pageInformation.result}">
-                        </form>
+                        </form>                    
                     </div>
                 </article>
-            </div>
+            </div>         
         </div>
     </section>
 </article>
@@ -119,6 +111,7 @@
 <div id="bottom">
     <jsp:include page="/html/bottom.jsp" />
 </div>
+
 <div id="copyrights">
     <jsp:include page="/html/copyright.jsp" />
 </div>
@@ -126,7 +119,7 @@
 <script>
     var liList=document.getElementById("leftUl").children;
     for(var i=0;i<liList.length;i++){
-        if(i==0)
+        if(i==1)
             liList[i].setAttribute("class","current");
     }
 </script>

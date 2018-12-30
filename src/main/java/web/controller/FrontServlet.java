@@ -1,6 +1,5 @@
 package web.controller;
 
-import domian.Message;
 import domian.Resource;
 import service.Impl.ResourceManageServiceImpl;
 import tools.PageInformation;
@@ -14,25 +13,36 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
 
-@WebServlet(name = "courseWareServlet")
-public class courseWareServlet extends HttpServlet {
+@WebServlet("/FrontServlet.do")
+public class FrontServlet extends HttpServlet {
 
-    public courseWareServlet(){
+    private String[] path = new String[]{
+            "/html/teachResDetail-1.jsp",
+            "/html/teachResDetail-2.jsp",
+            "/html/teachResDetail-3.jsp",
+            "/html/teachResDetail-4.jsp",
+            "/html/teachResDetail-5.jsp"
+    };
+
+    public FrontServlet() {
         super();
     }
 
-    public void destroy(){
+    public void destroy() {
         super.destroy();
     }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String operationType = request.getParameter("type");
         ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
-//        Message message = new Message();
 
-
+        //前台展示资源
         if ("show".equals(operationType)){
             PageInformation pageInformation=new PageInformation();
             Tool.getPageInformation("resource", request, pageInformation);
+
+            //选择对应资源类型的跳转页
+            String resType = request.getParameter("resType");
 
             //获取某页的资源信息
             List<Resource> resourceList = resourceManageService.getOnePage(pageInformation);
@@ -42,7 +52,7 @@ public class courseWareServlet extends HttpServlet {
             request.setAttribute("resources", resourceList);
 
             //跳转显示教学课件页面
-            getServletContext().getRequestDispatcher("/html/teachResDetail-1.jsp").forward(request,response);
+            getServletContext().getRequestDispatcher(path[Integer.parseInt(resType)-1]).forward(request,response);
         }
         //文件搜索
         else if ("searchRes".equals(operationType)){
@@ -52,6 +62,8 @@ public class courseWareServlet extends HttpServlet {
             //获取某页的资源信息
             List<Resource> resourceList = resourceManageService.getOnePage(pageInformation);
             List<Resource> resultList = new ArrayList<Resource>();
+            //选择对应资源类型的跳转页
+            String resType = request.getParameter("resType");
 
             String keyWord = request.getParameter("search");
             for(Resource resource : resourceList) {
@@ -60,7 +72,7 @@ public class courseWareServlet extends HttpServlet {
                 }
             }
             request.setAttribute("resources",resultList);
-            getServletContext().getRequestDispatcher("/html/teachResDetail-1.jsp").forward(request,response);
+            request.getRequestDispatcher(path[Integer.parseInt(resType)-1]).forward(request, response);
         }
     }
 

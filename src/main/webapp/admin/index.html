@@ -12,13 +12,13 @@
 <script type="text/javascript" src="lib/html5shiv.js"></script>
 <script type="text/javascript" src="lib/respond.min.js"></script>
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="../static/h-ui/css/H-ui.min.css" />
-<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/H-ui.admin.css" />
-<link rel="stylesheet" type="text/css" href="../lib/Hui-iconfont/1.0.8/iconfont.css" />
-<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/skin/default/skin.css" id="skin" />
-<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="/static/h-ui.admin/css/style.css" />
 <!--[if IE 6]>
-<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript" src="/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
 <title>后台管理系统</title>
@@ -129,11 +129,11 @@
 				<dt><i class="Hui-iconfont">&#xe620;</i> 教学资源<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 				<dd>
 					<ul>
-						<li><a data-href="courseware-list.html" data-title="教程课件" href="javascript:void(0)">教程课件</a></li>
-						<li><a data-href="teachingVideo-list.html" data-title="教学录像" href="javascript:void(0)">教学录像</a></li>
-						<li><a data-href="/ExerciseServlet.do?type=admin-list" data-title="习题库" href="javascript:void(0)">习题库</a></li>
-						<li><a data-href="example-list.html" data-title="案例库" href="javascript:void(0)">案例库</a></li>
-						<li><a data-href="experimentalTask-list.html" data-title="实验任务" href="javascript:void(0)">实验任务</a></li>
+						<li><a data-href="/ResourceServlet.do?type=findAll&resType=1" data-title="教程课件" href="javascript:void(0)">教程课件</a></li>
+						<li><a data-href="/ResourceServlet.do?type=findAll&resType=2" data-title="教学录像" href="javascript:void(0)">教学录像</a></li>
+						<li><a data-href="/ResourceServlet.do?type=findAll&resType=3" data-title="习题库" href="javascript:void(0)">习题库</a></li>
+						<li><a data-href="/ResourceServlet.do?type=findAll&resType=4" data-title="案例库" href="javascript:void(0)">案例库</a></li>
+						<li><a data-href="/ResourceServlet.do?type=findAll&resType=5" data-title="实验任务" href="javascript:void(0)">实验任务</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -201,13 +201,13 @@
 </ul>
 </div>
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="../lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="../static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="../static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="../lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
+<script type="text/javascript" src="/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
 <script type="text/javascript">
 $(function(){
 	/*$("#min_title_list li").contextMenu('Huiadminmenu', {
