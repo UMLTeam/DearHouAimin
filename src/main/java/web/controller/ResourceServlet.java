@@ -19,28 +19,28 @@ public class ResourceServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String type = request.getParameter("type");
-        Logger logger = LogManager.getLogger(ExerciseServlet.class);
-        ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
-
-        switch (type) {
-            case "insert": {
-                break;
-            }
-            case "update": {
-                break;
-            }
-            case "updateCheck": {
-                break;
-            }
-            case "delete": {
-                break;
-            }
-            case "deleteMuti":
-                break;
-        }
-
-        logger.info("end\n");
+//        String type = request.getParameter("type");
+//        Logger logger = LogManager.getLogger(ExerciseServlet.class);
+//        ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
+//
+//        switch (type) {
+//            case "insert": {
+//                break;
+//            }
+//            case "update": {
+//                break;
+//            }
+//            case "updateCheck": {
+//                break;
+//            }
+//            case "delete": {
+//                break;
+//            }
+//            case "deleteMuti":
+//                break;
+//        }
+//
+//        logger.info("end\n");
     }
 
     @Override
