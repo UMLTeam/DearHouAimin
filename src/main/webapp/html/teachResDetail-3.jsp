@@ -10,12 +10,14 @@
     <link rel="stylesheet" type="text/css" href="../style/normal.css">
     <link rel="stylesheet" type="text/css" href="../style/teachRes/normal.css">
     <link rel="stylesheet" type="text/css" href="../style/teachRes/teachResDetail.css">
-    <script type="text/javascript" src="../js/normal.js"></script>
+    <%--<script type="text/javascript" src="../js/normal.js"></script>--%>
     <script type="text/javascript" src="../js/teachRes/teachResDetail-3.js"></script>
 </head>
-<body onload="Rendering();">
-<!-- 通过js渲染，js代码在normal.js里 -->
-<div id="top"></div>
+<body>
+
+<div id="top">
+    <jsp:include page="/html/top.jsp"/>
+</div>
 
 <article class="content">
 
@@ -26,14 +28,7 @@
         <div class="detailContent">
             <div class="column_1">
                 <section class="leftNav">
-                    <h3>教学资源</h3>
-                    <ul>
-                        <li><a href="teachResDetail-1.html">课程课件</a></li>
-                        <li><a href="teachResDetail-2.html">教学录像</a></li>
-                        <li class="current"><a href="teachResDetail-3.jsp">习题库</a></li>
-                        <li><a href="teachResDetail-4.html">案例库</a></li>
-                        <li><a href="teachResDetail-5.html">实验任务</a></li>
-                    </ul>
+                    <jsp:include page="/html/left.jsp"/>
                 </section>
             </div>
             <div class="column_2 ">
@@ -81,7 +76,7 @@
                                 <td><c:out value="${resource.resTime}"/></td>
                                 <td>
                                     <a onclick="Preview(event)"><img src="/images/teachResource/preview.png"></a>
-                                    <a href="/resource/《软件需求分析与设计》课程简介.pptx" download="《软件需求分析与设计》课程简介.pptx">
+                                    <a href="${resource.resPath}" download="${resource.resName}">
                                         <img src="/images/teachResource/download.png">
                                     </a>
                                 </td>
@@ -97,9 +92,20 @@
     </section>
 </article>
 
-<!-- 通过js渲染，js代码在normal.js里 -->
-<div id="bottom"></div>
-<!-- 通过js渲染，js代码在normal.js里 -->
-<div id="copyrights"></div>
+
+<div id="bottom">
+    <jsp:include page="/html/bottom.jsp"/>
+</div>
+
+<div id="copyrights">
+    <jsp:include page="/html/copyright.jsp"/>
+</div>
 </body>
+<script>
+    var liList=document.getElementById("leftUl").children;
+    for(var i=0;i<liList.length;i++){
+        if(i==2)
+            liList[i].setAttribute("class","current");
+    }
+</script>
 </html>
