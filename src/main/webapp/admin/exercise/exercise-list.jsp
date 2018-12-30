@@ -111,10 +111,10 @@
 
 
                         </a>
-                        <a style="text-decoration:none" class="ml-5" onClick="courseware_edit('课件编辑','courseware-add.html')" href="javascript:;" title="编辑">
+                        <a style="text-decoration:none" class="ml-5" onClick="exercise_edit('课件编辑','exercise-add.html')" href="javascript:;" title="编辑">
                             <i class="Hui-iconfont">&#xe6df;</i>
                         </a>
-                        <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this)" href="javascript:;" title="删除">
+                        <a style="text-decoration:none" class="ml-5" onClick="exercise_del(this, ${resource.id})" href="javascript:;" title="删除">
                             <i class="Hui-iconfont">&#xe6e2;</i>
                         </a>
                     </td>
@@ -233,7 +233,7 @@
 
 
     /*文件-编辑*/
-    function courseware_edit(title, url, id) {
+    function exercise_edit(title, url, id) {
         var index = layer.open({
             type: 2,
             title: title,
@@ -243,10 +243,10 @@
     }
 
     /*文件-删除*/
-    function courseware_del(obj, id) {
+    function exercise_del(obj, id) {
         layer.confirm('确认要删除吗？', function (index) {
             $.ajax({
-                url: '/ExerciseServlet.do?type=delete&id='+id,
+                url: '/ResourceServlet.do?type=delete&id='+id,
                 method: 'POST',
                 success: function(res){
                     if(res.data){
@@ -261,7 +261,6 @@
                     }
                 }
             })
-
         });
     }
 </script>

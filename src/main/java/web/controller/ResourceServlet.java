@@ -67,7 +67,8 @@ public class ResourceServlet extends HttpServlet {
                 break;
             }
             case "delete": {
-                data = resourceManageService.removeById(10);
+                String id = request.getParameter("id");
+                data = resourceManageService.removeById(Integer.parseInt(id));
                 break;
             }
             case "deleteMuti":
