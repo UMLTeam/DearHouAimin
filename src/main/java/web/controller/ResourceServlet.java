@@ -20,8 +20,8 @@ import java.util.List;
  * @Author: niracler
  * @Date: 2018/12/27 22:36
  */
-@WebServlet(name = "resourceServlet", value = "/resourceServlet.do")
-public class resourceServlet extends HttpServlet {
+@WebServlet(name = "ResourceServlet", value = "/ResourceServlet.do")
+public class ResourceServlet extends HttpServlet {
 
     private String[] path = new String[]{
             "/admin/courseWare/courseWare-list.jsp",
@@ -58,7 +58,7 @@ public class resourceServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         /*
          * 资源查询接口
-         * http://localhost:8080/adminServlet.do?operationType=[操作类型]&resType=[资源种类名称]
+         * http://localhost:8080/adminServlet.do?type=[操作类型]&resType=[资源种类名称]
          */
 
         //选择对应资源类型的跳转页

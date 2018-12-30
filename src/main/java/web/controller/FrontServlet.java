@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
 
-@WebServlet("/frontServlet.do")
-public class frontServlet extends HttpServlet {
+@WebServlet("/FrontServlet.do")
+public class FrontServlet extends HttpServlet {
 
     private String[] path = new String[]{
             "/html/teachResDetail-1.jsp",
@@ -24,7 +24,7 @@ public class frontServlet extends HttpServlet {
             "/html/teachResDetail-5.jsp"
     };
 
-    public frontServlet() {
+    public FrontServlet() {
         super();
     }
 
