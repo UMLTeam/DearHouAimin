@@ -48,12 +48,12 @@
                         <h1>课程课件</h1>
                     </header>
                     <div id="resource">
-                        <form class="search" action="/courseWareServlet?type=searchResRes&page=1&pageSize=10" method="post">
+                        <form class="search" action="/frontServlet.do?type=searchResRes&page=1&pageSize=10&resType=1" method="post">
                             <input class="searchInput" type="search" name="search">
                             <input class="searchSubmit" type="submit" value="文件搜索">
                         </form>
                         <%--<c:out value="${requestScope.pageInformation.allRecordCount}"/>--%>
-                        <form id="myform" method="post" action="/courseWareServlet?type=show">
+                        <form id="myform" method="post" action="/frontServlet.do?type=show&resType=1">
                             <table class="table" border="0" width="800px" cellpadding="2" cellspacing="1">
                                 <tr class="firstRow">
                                     <td>序号</td>
