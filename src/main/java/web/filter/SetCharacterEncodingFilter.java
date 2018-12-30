@@ -44,6 +44,7 @@ public class SetCharacterEncodingFilter implements Filter {
         // place your code here
 
         // pass the request along the filter chain
+        response.setContentType("application/json");
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         chain.doFilter(request, response);

@@ -81,15 +81,40 @@
                     </td>
                     <td><c:out value="${10000}"/></td>
                     <td><c:out value="${resource.resTime}"/></td>
-                    <td class="td-status"><span class="label label-success radius">已发布</span></td>
+
+                    <td class="td-status">
+                        <c:choose>
+                            <c:when test="${resource.isCheck == '0'}">
+                                <span class="label label-default radius">下架</span>
+                            </c:when>
+                            <c:when test="${resource.isCheck == '1'}">
+                                <span class="label label-success radius">已发布</span>
+                            </c:when>
+                        </c:choose>
+                    </td>
+
                     <td class="td-manage">
-                        <a style="text-decoration:none" onClick="courseware_stop(this,${resource.id})" href="javascript:;" title="下架">
-                            <i class="Hui-iconfont">&#xe6de;</i>
+                        <a style="text-decoration:none" href="javascript:;" onClick="
+                            <c:choose>
+                                <c:when test="${resource.isCheck=='0'}">exercise_start(this, ${resource.id})"  title="发布"</c:when>
+                                <c:when test="${resource.isCheck=='1'}">exercise_stop(this, ${resource.id})"  title="下架"</c:when>
+                            </c:choose>
+                        >
+                        <c:choose>
+                            <c:when test="${resource.isCheck == '0'}">
+                                <i class="Hui-iconfont">&#xe603;</i>
+                            </c:when>
+                            <c:when test="${resource.isCheck == '1'}">
+                                <i class="Hui-iconfont">&#xe6de;</i>
+                            </c:when>
+                        </c:choose>
+
+
                         </a>
-                        <a style="text-decoration:none" class="ml-5" onClick="courseware_edit('图库编辑','/admin/exercise/exercise-add.jsp',${resource.id})" href="javascript:;" title="编辑">
+                        <a style="text-decoration:none" class="ml-5" onClick="courseware_edit('课件编辑','courseware-add.html')" href="javascript:;" title="编辑">
                             <i class="Hui-iconfont">&#xe6df;</i>
                         </a>
-                        <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this,${resource.id})" href="javascript:;" title="删除">
+                        <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this)" href="javascript:;" title="删除">
                             <i class="Hui-iconfont">&#xe6e2;</i>
                         </a>
                     </td>
@@ -153,55 +178,16 @@
         layer.full(index);
     }
 
-    /*文件-查看*/
-    function courseware_show(title, url, id) {
-        var index = layer.open({
-            type: 2,
-            title: title,
-            content: url
-        });
-        layer.full(index);
-    }
-
-    /*文件-审核*/
-    function courseware_shenhe(obj, id) {
-        layer.confirm('审核文章？', {
-                btn: ['通过', '不通过'],
-                shade: false
-            },
-            function () {
-                $(obj).parents("tr").find(".td-manage").prepend(
-                    '<a class="c-primary" onClick="courseware_start(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
-                $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
-                $(obj).remove();
-                layer.msg('已发布', {
-                    icon: 6,
-                    time: 1000
-                });
-            },
-            function () {
-                $(obj).parents("tr").find(".td-manage").prepend(
-                    '<a class="c-primary" onClick="courseware_shenqing(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
-                $(obj).parents("tr").find(".td-status").html('<span class="label label-danger radius">未通过</span>');
-                $(obj).remove();
-                layer.msg('未通过', {
-                    icon: 5,
-                    time: 1000
-                });
-            });
-    }
-
     /*文件-下架*/
-    function courseware_stop(obj, id) {
+    function exercise_stop(obj, id) {
         layer.confirm('确认要下架吗？', function (index) {
             $(obj).parents("tr").find(".td-manage").prepend(
-                '<a style="text-decoration:none" onClick="courseware_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>'
+                '<a style="text-decoration:none" onClick="exercise_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>'
             );
             $.ajax({
-                url: '/ExerciseServlet.do?type=updateCheck&id='+id,
+                url: '/ResourceServlet.do?type=updateCheck&id='+id+'&status=0',
                 method: 'POST',
                 success: function (res) {
-                    console.log(res)
                     if(res.data){
                         $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已下架</span>');
                         $(obj).remove();
@@ -219,13 +205,13 @@
     }
 
     /*文件-发布*/
-    function courseware_start(obj, id) {
+    function exercise_start(obj, id) {
         layer.confirm('确认要发布吗？', function (index) {
             $(obj).parents("tr").find(".td-manage").prepend(
                 '<a style="text-decoration:none" onClick="courseware_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>'
             );
             $.ajax({
-                url: '/ExerciseServlet.do?type=updateCheck&id='+id,
+                url: '/ResourceServlet.do?type=updateCheck&id='+id+'&status=1',
                 method: 'POST',
                 success: function (res) {
                     console.log(res)
@@ -245,15 +231,6 @@
         });
     }
 
-    /*文件-申请上线*/
-    function courseware_shenqing(obj, id) {
-        $(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">待审核</span>');
-        $(obj).parents("tr").find(".td-manage").html("");
-        layer.msg('已提交申请，耐心等待审核!', {
-            icon: 1,
-            time: 2000
-        });
-    }
 
     /*文件-编辑*/
     function courseware_edit(title, url, id) {

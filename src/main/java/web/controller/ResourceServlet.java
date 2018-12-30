@@ -1,6 +1,7 @@
 package web.controller;
 
 import domian.Resource;
+import net.sf.json.JSONObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import service.Impl.ResourceManageServiceImpl;
@@ -12,7 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
+
 
 /**
  * 后台资源统一接口
@@ -33,25 +36,46 @@ public class ResourceServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
         String type = request.getParameter("type");
         ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
-
+        JSONObject jsonObject = new JSONObject();
+        Boolean data=false;
         switch (type) {
             case "insert": {
+                Resource resource = new Resource();
+                resource.setIsCheck("0");
+                resource.setId(10);
+                data = resourceManageService.create(resource);
                 break;
             }
             case "update": {
+                Resource resource = new Resource();
+                resource.setIsCheck("0");
+                resource.setId(10);
+                data = resourceManageService.change(resource);
                 break;
             }
             case "updateCheck": {
+                String id = request.getParameter("id");
+                String status = request.getParameter("status");
+                Resource resource = new Resource();
+                resource.setIsCheck(status);
+                resource.setId(Integer.parseInt(id));
+                data = resourceManageService.changeCheck(resource);
+
                 break;
             }
             case "delete": {
+                data = resourceManageService.removeById(10);
                 break;
             }
             case "deleteMuti":
+//                resourceManageService.removeMultiple();
                 break;
         }
+        jsonObject.put("data",data);
+        out.print(jsonObject);
     }
 
     @Override
