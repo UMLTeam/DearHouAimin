@@ -1,17 +1,14 @@
 package dao;
 
-import dao.Impl.DataBaseConnectionImpl;
 import domian.Resource;
-import sun.util.calendar.BaseCalendar;
 import tools.PageInformation;
 
-import java.sql.Timestamp;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
- * @Author:
+ * @Author: team
  * @Date: 2018/12/24 23:48
  */
 public interface ResourceManageDao {

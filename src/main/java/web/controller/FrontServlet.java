@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
 
-@WebServlet("/FrontServlet.do")
+@WebServlet("/frontServlet.do")
 public class FrontServlet extends HttpServlet {
 
-    private String[] path = new String[]{
+    private final String[] path = new String[]{
             "/html/teachResDetail-1.jsp",
             "/html/teachResDetail-2.jsp",
             "/html/teachResDetail-3.jsp",
@@ -28,10 +28,12 @@ public class FrontServlet extends HttpServlet {
         super();
     }
 
+    @Override
     public void destroy() {
         super.destroy();
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String operationType = request.getParameter("type");
         ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
@@ -76,6 +78,7 @@ public class FrontServlet extends HttpServlet {
         }
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
     }

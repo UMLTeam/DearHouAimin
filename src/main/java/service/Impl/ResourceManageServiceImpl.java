@@ -9,11 +9,11 @@ import java.sql.Timestamp;
 import java.util.List;
 
 /**
- * @Author: wt
+ * @Author: team
  * @Date: 2018/12/24 22:41
  */
 public class ResourceManageServiceImpl implements ResourceManageService {
-    ResourceManageDaoImpl resourceManageDao = null;
+    private ResourceManageDaoImpl resourceManageDao;
     
     public ResourceManageServiceImpl(){
         this.resourceManageDao = new ResourceManageDaoImpl();

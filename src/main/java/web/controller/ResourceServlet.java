@@ -26,7 +26,7 @@ import java.util.List;
 @WebServlet(name = "ResourceServlet", value = "/ResourceServlet.do")
 public class ResourceServlet extends HttpServlet {
 
-    private String[] path = new String[]{
+    private final String[] PATH = new String[]{
             "/admin/courseWare/courseWare-list.jsp",
             "/admin/video/teachingVideo-list.jsp",
             "/admin/exercise/exercise-list.jsp",
@@ -40,7 +40,7 @@ public class ResourceServlet extends HttpServlet {
         String type = request.getParameter("type");
         ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
         JSONObject jsonObject = new JSONObject();
-        Boolean data=false;
+        boolean data = false;
         switch (type) {
             case "insert": {
                 Resource resource = new Resource();
@@ -74,6 +74,7 @@ public class ResourceServlet extends HttpServlet {
             case "deleteMuti":
 //                resourceManageService.removeMultiple();
                 break;
+                default:break;
         }
         jsonObject.put("data",data);
         out.print(jsonObject);
@@ -97,6 +98,6 @@ public class ResourceServlet extends HttpServlet {
         //送给jsp
         HttpSession session = request.getSession();
         session.setAttribute("resourceList", resourceList);
-        request.getRequestDispatcher(path[Integer.parseInt(resType)-1]).forward(request, response);
+        request.getRequestDispatcher(PATH[Integer.parseInt(resType)-1]).forward(request, response);
     }
 }
