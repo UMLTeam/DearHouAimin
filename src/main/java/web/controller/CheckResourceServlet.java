@@ -31,14 +31,14 @@ public class CheckResourceServlet extends HttpServlet {
          * 资源查询接口
          * http://localhost:8080/html/CheckResourceServlet.do?type=[资源种类编号]
          */
-        Logger logger = LogManager.getLogger(CheckResourceServlet.class);
-        String type = request.getParameter("type");
-        String[] path = new String[]{"teachResDetail-1.jsp", "teachResDetail-2.jsp", "teachResDetail-3.jsp", "teachResDetail-4.jsp", "teachResDetail-5.jsp"};
-        ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
-        List<Resource> resourceList = resourceManageService.findByType(type);
-        HttpSession session = request.getSession();
-        logger.info(resourceList.toString());
-        session.setAttribute("resourceList", resourceList);
-        request.getRequestDispatcher(path[Integer.parseInt(type)-1]).forward(request, response);
+//        Logger logger = LogManager.getLogger(CheckResourceServlet.class);
+//        String type = request.getParameter("type");
+//        String[] path = new String[]{"teachResDetail-1.jsp", "teachResDetail-2.jsp", "teachResDetail-3.jsp", "teachResDetail-4.jsp", "teachResDetail-5.jsp"};
+//        ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
+//        List<Resource> resourceList = resourceManageService.findByType(type);
+//        HttpSession session = request.getSession();
+//        logger.info(resourceList.toString());
+//        session.setAttribute("resourceList", resourceList);
+//        request.getRequestDispatcher(path[Integer.parseInt(type)-1]).forward(request, response);
     }
 }
