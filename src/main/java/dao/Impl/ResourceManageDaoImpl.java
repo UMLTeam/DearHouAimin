@@ -2,6 +2,7 @@ package dao.Impl;
 
 import dao.IResourceManageDao;
 import domian.ErrorMessageException;
+import domian.PageInfo;
 import domian.Resource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -148,6 +149,11 @@ public class ResourceManageDaoImpl implements IResourceManageDao {
         }
         return null;
 
+    }
+
+    @Override
+    public List<Resource> findOnePage(PageInfo pageInfo) {
+        return null;
     }
 
     @Override
