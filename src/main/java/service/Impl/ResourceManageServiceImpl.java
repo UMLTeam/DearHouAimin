@@ -47,63 +47,38 @@ public class ResourceManageServiceImpl implements ResourceManageService {
     
     @Override
     public List<Resource> getOnePage(PageInformation pageInformation) {
-        List<Resource> resources = new ArrayList<Resource>();
+        List<Resource> resources;
         resources = resourceManageDao.getOnePage(pageInformation);
         return resources;
     }
     
     @Override
     public boolean change(Resource resource) {
-        if(resourceManageDao.update(resource)>0){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return resourceManageDao.update(resource) > 0;
     }
     
     @Override
     public boolean changeCheck(Resource resource){
-        if(resourceManageDao.updateCheck(resource)>0){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return resourceManageDao.updateCheck(resource) > 0;
     }
     
     @Override
     public boolean removeById(int id) {
-        if(resourceManageDao.deleteById(id)>0){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return resourceManageDao.deleteById(id) > 0;
     }
     
     @Override
     public boolean removeMultiple(List list) {
         int flag=0;
-        for(int i=0; i<list.size(); i++){
-            if(removeById((int)list.get(i)))
+        for (Object o : list) {
+            if (removeById((int) o))
                 flag++;
         }
-        if(flag==list.size()){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return flag == list.size();
     }
 
     @Override
     public boolean create(Resource resource) {
-        if(resourceManageDao.insert(resource)>0){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return resourceManageDao.insert(resource) > 0;
     }
 }
