@@ -6,7 +6,7 @@ import dao.DataBaseConnectionDao;
 /**
  * Demo class
  *
- * @author wt
+ * @Author wt
  * @date 2018/12/24
  */
 public class DataBaseConnectionImpl implements DataBaseConnectionDao {

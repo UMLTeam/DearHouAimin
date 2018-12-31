@@ -29,9 +29,10 @@ public interface ResourceManageService {
      * 根据时间范围来查询
      * @param date1
      * @param date2
-     * @return
+     * @param resType
+     * @return List<Resource>
      */
-    List<Resource> findByDate(Timestamp date1, Timestamp date2,String resType) throws SQLException;
+    List<Resource> findByDate(Timestamp date1, Timestamp date2, String resType) throws SQLException;
     
     /**
      * 根据文件名模糊查询
@@ -70,6 +71,11 @@ public interface ResourceManageService {
      * @return
      */
     boolean change(Resource resource);
-    
+
+    /**
+     *
+     * @param resource
+     * @return
+     */
     boolean changeCheck(Resource resource);
 }

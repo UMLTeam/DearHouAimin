@@ -1,17 +1,55 @@
 package tools;
 
+/**
+ *
+ * @Author LaoCui
+ * @date 2018/12
+ */
 public class PageInformation {
-	private String type;			//操作类型
-	private String tableName;		//表名
-	private Integer page;			//第几页  页码
-	private Integer pageSize;		//每页最大记录数
-	private Integer totalPageCount;	//总页数
-	private Integer allRecordCount;	//总记录数
-	private String orderField;		//排序字段
-	private String order;			//升序还是降序
-	private String ids;				//主键id，逗号隔开，如：3,5,9  用于删除操作
-	private String searchSql;		//查询条件
-	private Integer result;			//更新操作是否成功
+	/**
+	 * 操作类型
+	 */
+	private String type;
+	/**
+	 * 表名
+	 */
+	private String tableName;
+	/**
+	 * 第几页  页码
+	 */
+	private Integer page;
+	/**
+	 * 每页最大记录数
+	 */
+	private Integer pageSize;
+	/**
+	 * 总页数
+	 */
+	private Integer totalPageCount;
+	/**
+	 * 总记录数
+	 */
+	private Integer allRecordCount;
+	/**
+	 * 排序字段
+	 */
+	private String orderField;
+	/**
+	 * 升序还是降序
+	 */
+	private String order;
+	/**
+	 * 主键id，逗号隔开，如：3,5,9  用于删除操作
+	 */
+	private String ids;
+	/**
+	 * 查询条件
+	 */
+	private String searchSql;
+	/**
+	 * 更新操作是否成功
+	 */
+	private Integer result;
 
 	public String getType() {
 		return type;

@@ -1,25 +1,19 @@
 package service.Impl;
 
-import dao.Impl.DataBaseConnectionImpl;
 import dao.Impl.ResourceManageDaoImpl;
 import domian.Resource;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import service.ResourceManageService;
-import sun.util.calendar.BaseCalendar;
 import tools.PageInformation;
 
-import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Author: wt
+ * @Author: team
  * @Date: 2018/12/24 22:41
  */
 public class ResourceManageServiceImpl implements ResourceManageService {
-    ResourceManageDaoImpl resourceManageDao = null;
+    private ResourceManageDaoImpl resourceManageDao;
     
     public ResourceManageServiceImpl(){
         this.resourceManageDao = new ResourceManageDaoImpl();
@@ -71,8 +65,9 @@ public class ResourceManageServiceImpl implements ResourceManageService {
     public boolean removeMultiple(List list) {
         int flag=0;
         for (Object o : list) {
-            if (removeById((int) o))
+            if (removeById((int) o)){
                 flag++;
+            }
         }
         return flag == list.size();
     }
