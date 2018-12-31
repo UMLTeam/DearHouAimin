@@ -2,6 +2,9 @@ package web.controller;
 
 import domian.Resource;
 import net.sf.json.JSONObject;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import service.Impl.ResourceManageServiceImpl;
@@ -25,6 +28,7 @@ import java.util.List;
  */
 @WebServlet(name = "ResourceServlet", value = "/ResourceServlet.do")
 public class ResourceServlet extends HttpServlet {
+    private static Logger logger = LogManager.getLogger(ResourceServlet.class);
 
     private final String[] PATH = new String[]{
             "/admin/courseWare/courseWare-list.jsp",
@@ -35,18 +39,38 @@ public class ResourceServlet extends HttpServlet {
     };
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         PrintWriter out = response.getWriter();
-        String type = request.getParameter("type");
+        String type = null;
+        // 检测是否为多媒体上传
+        if (ServletFileUpload.isMultipartContent(request)) {
+            type = "insert";
+        } else {
+            type = request.getParameter("type");
+        }
         ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
         JSONObject jsonObject = new JSONObject();
         boolean data = false;
         switch (type) {
             case "insert": {
+                try {
                 Resource resource = new Resource();
                 resource.setIsCheck("0");
                 resource.setId(10);
+                DiskFileItemFactory factory = new DiskFileItemFactory();
+                ServletFileUpload upload = new ServletFileUpload(factory);
+                //获取目录所在的路径
+                String path = request.getServletContext().getRealPath("/") + "resource";
+                logger.info("path " + path);
+                // 中文处理
+                upload.setHeaderEncoding("utf-8");
+                List<FileItem> formItems = upload.parseRequest(request);
+                resourceManageService.saveFile(formItems, path, resource);
                 data = resourceManageService.create(resource);
+                request.getRequestDispatcher(PATH[Integer.parseInt(resource.getResType())-1]).forward(request, response);
+                } catch (Exception e) {
+                    logger.error(e.toString());
+                }
                 break;
             }
             case "update": {

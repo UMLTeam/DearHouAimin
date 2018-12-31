@@ -1,8 +1,7 @@
 package service;
 
-import dao.Impl.DataBaseConnectionImpl;
 import domian.Resource;
-import sun.util.calendar.BaseCalendar;
+import org.apache.commons.fileupload.FileItem;
 import tools.PageInformation;
 
 import java.sql.SQLException;
@@ -78,4 +77,13 @@ public interface ResourceManageService {
      * @return
      */
     boolean changeCheck(Resource resource);
+
+    /**
+     *
+     * @param formItems
+     * @param path 项目路径
+     * @param resource
+     * @return 文件保存路径
+     */
+    String saveFile(List<FileItem> formItems, String path, Resource resource);
 }
