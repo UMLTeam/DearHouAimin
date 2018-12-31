@@ -18,6 +18,8 @@
     <link rel="stylesheet" type="text/css" href="/lib/Hui-iconfont/1.0.8/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/skin/default/skin.css" id="skin" />
     <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/normal.css'/>">
+    <script type="text/javascript" src="<c:url value='/js/teachRes/example-list.js'/>"></script>
     <!--[if IE 6]>
     <script type="text/javascript" src="/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
@@ -61,40 +63,44 @@
             </tr>
             </thead>
             <tbody>
-            <tr class="text-c">
-                <td><input type="checkbox" name="box" value="1"></td>
-                <td>001</td>
-                <td>PPT</td>
-                <td>1.1M</td>
-                <td>侯爱民</td>
-                <td class="text-l"><a href="https://view.officeapps.live.com/op/view.aspx?src=http://www.niracler.com/resource/《软件需求分析与设计》课程简介.pptx" target="_blank">《软件需求分析与设计》课程简介</a></td>
-                <td class="text-c">UML Web</td>
-                <td>2018-12-11 13:19:42</td>
-                <td class="td-status"><span class="label label-success radius">已发布</span></td>
-                <td class="td-manage">
-                    <a style="text-decoration:none" onClick="courseware_stop(this,'10001')" href="javascript:;" title="下架">
+            <c:forEach items="${requestScope.resources}"  var="resource">
+                <tr class="text-c">
+                    <td><input type="checkbox" name="box" value="1"></td>
+                    <td><c:out value="${resource.id}"/></td>
+                    <td>PPT</td>
+                    <td>1.1M</td>
+                    <td>侯爱民</td>
+                    <td class="text-l"><a href="https://view.officeapps.live.com/op/view.aspx?src=http://www.niracler.com/resource/《软件需求分析与设计》课程简介.pptx" target="_blank">《软件需求分析与设计》课程简介</a></td>
+                    <td class="text-c"><c:out value="${resource.resName}"/></td>
+                    <td><c:out value="${resource.resTime}"/></td>
+                    <td class="td-status">
+                        <c:choose>
+                            <c:when test="${resource.isCheck == '0'}">
+                                <span class="label label-default radius">下架</span>
+                            </c:when>
+                            <c:when test="${resource.isCheck == '1'}">
+                                <span class="label label-success radius">已发布</span>
+                            </c:when>
+                        </c:choose>
+                    </td>
+                    <td class="td-manage">
+                        <a style="text-decoration:none" href="javascript:;" onClick="
+                        <c:choose>
+                        <c:when test="${resource.isCheck=='0'}">courseware_start(this)"  title="发布"</c:when>
+                           <c:when test="${resource.isCheck=='1'}">courseware_stop(this)"  title="下架"</c:when>
+                        </c:choose>
+                        >
                         <i class="Hui-iconfont">&#xe6de;</i>
-                    </a>
-                    <a style="text-decoration:none" class="ml-5" onClick="courseware_edit('图库编辑','example-add.html','10001')" href="javascript:;" title="编辑">
-                        <i class="Hui-iconfont">&#xe6df;</i>
-                    </a>
-                    <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this,'002')"href="javascript:;" title="删除">
-                        <i class="Hui-iconfont">&#xe6e2;</i>
-                    </a>
-                </td>
-            </tr>
-            <tr class="text-c">
-                <td><input name="box" type="checkbox" value="2"></td>
-                <td>002</td>
-                <td>pdf</td>
-                <td>1.3M</td>
-                <td>侯爱民</td>
-                <td class="text-l"><a href="https://view.officeapps.live.com/op/view.aspx?src=http://www.niracler.com/resource/《软件需求分析与设计》综合实践.pdf" target="_blank">《软件需求分析与设计》综合实践</a></td>
-                <td>UML 大纲</td>
-                <td>2018-6-11 11:11:42</td>
-                <td class="td-status"><span class="label label-success radius">草稿</span></td>
-                <td class="f-14 td-manage"><a style="text-decoration:none" onClick="courseware_shenhe(this,'002')" href="javascript:;" title="审核">审核</a> <a style="text-decoration:none" class="ml-5" onClick="courseware_edit('资讯编辑','example-add.html','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this,'002')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-            </tr>
+                        </a>
+                        <a style="text-decoration:none" class="ml-5" onClick="courseware_edit('课件编辑','courseware-add.html')" href="javascript:;" title="编辑">
+                            <i class="Hui-iconfont">&#xe6df;</i>
+                        </a>
+                        <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this)" href="javascript:;" title="删除">
+                            <i class="Hui-iconfont">&#xe6e2;</i>
+                        </a>
+                    </td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
     </div>

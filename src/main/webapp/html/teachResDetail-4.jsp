@@ -6,14 +6,12 @@
 <head>
     <title>教学资源-案例库</title>
     <meta charset="utf-8">
-    <link rel="icon" href="/images/dgut.jpg">
-    <link rel="stylesheet" type="text/css" href="../style/normal.css">
-    <link rel="stylesheet" type="text/css" href="../style/teachRes/normal.css">
-    <link rel="stylesheet" type="text/css" href="../style/teachRes/teachResDetail.css">
-    <link rel="stylesheet" type="text/css" href="../style/teachRes/teachResDetail-4.css">
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-    <script type="text/javascript" src="../js/teachRes/teachResDetail-4.js"></script>
-    <%--<script type="text/javascript" src="../js/normal.js"></script>--%>
+    <link rel="icon" href="<c:url value='/images/dgut.jpg'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/normal.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/normal.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail-4.css'/>">
+    <script type="text/javascript" src="<c:url value='/js/teachRes/teachResDetail-4.js'/>"></script>
 </head>
 <body>
 <div id="top">
@@ -23,7 +21,7 @@
 <article class="content">
 
     <section id="banner">
-        <img src="../images/index/abouttop_03.jpg">
+        <img src="<c:url value='/images/index/abouttop_03.jpg'/>">
     </section>
     <section class="mainWrap relative">
         <div class="detailContent">
@@ -58,9 +56,9 @@
                             </tr>
                             <%--循环遍历资源--%>
                             <c:set var="trType" scope="session" value="${0}"/>
-                            <c:forEach items="${sessionScope.resourceList}" var="resource" varStatus="status">
+                            <c:forEach items="${requestScope.resources}"  var="resource">
                                 <c:choose>
-                                    <c:when test="${status.index%2==0}">
+                                    <c:when test="${trType==0}">
                                         <tr class="trOdd">
                                         <c:set var="trType" scope="session" value="${1}"/>
                                     </c:when>
@@ -69,20 +67,41 @@
                                         <c:set var="trType" scope="session" value="${0}"/>
                                     </c:otherwise>
                                 </c:choose>
-                                <td>${resource.id}</td>
-                                <td class="tll"><img src="/images/teachResource/PPT.png"><c:out
-                                        value="${resource.resName}"/></td>
+                                <td><c:out value="${resource.id}"/></td>
+                                <td><c:out value="${resource.resName}"/></td>
                                 <td><c:out value="${10000}"/></td>
                                 <td><c:out value="${resource.resTime}"/></td>
                                 <td>
-                                    <a onclick="Preview(event)"><img src="/images/teachResource/preview.png"></a>
-                                    <a href="${resource.resPath}" download="${resource.resName}">
-                                        <img src="/images/teachResource/download.png">
+                                    <a onclick="Preview(event)"><img src="<c:url value='/images/teachResource/preview.png'/>"></a>
+                                    <a href="<c:out value="${resource.resPath}"/>" download="<c:out value="${resource.resName}"/>">
+                                        <img src="<c:url value='/images/teachResource/download.png'/>">
                                     </a>
                                 </td>
+
                                 </tr>
                             </c:forEach>
                         </table>
+                        <div class="tranPage">
+                            <table>
+                                <tr>
+                                    <td><a href="javascript:void(0);" onclick="getOnePage('first','');">首页</a></td>
+                                    <td><a href="javascript:void(0);" onclick="getOnePage('pre','');">上一页</a></td>
+                                    <td>[${requestScope.pageInformation.page}/${requestScope.pageInformation.totalPageCount}]</td>
+                                    <td><a href="javascript:void(0);" onclick="getOnePage('next','');">下一页</a></td>
+                                    <td><a href="javascript:void(0);" onclick="getOnePage('last','');">尾页</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <input type="hidden" name="page" id="page" value="${requestScope.pageInformation.page}">
+                        <input type="hidden" name="pageSize" id="pageSize" value="${requestScope.pageInformation.pageSize}">
+                        <input type="hidden" name="totalPageCount" id="totalPageCount" value="${requestScope.pageInformation.totalPageCount}">
+                        <input type="hidden" name="allRecordCount" id="allRecordCount" value="${requestScope.pageInformation.allRecordCount}">
+                        <input type="hidden" name="orderField" id="orderField" value="${requestScope.pageInformation.orderField}">
+                        <input type="hidden" name="order" id="order" value="${requestScope.pageInformation.order}">
+                        <input type="hidden" name="ids" id="ids" value="${requestScope.pageInformation.ids}">
+                        <input type="hidden" name="searchSql" id="searchSql" value="${requestScope.pageInformation.searchSql}">
+                        <input type="hidden" name="result" id="result" value="${requestScope.pageInformation.result}">
+                        </form>
                     </div>
                 </article>
             </div>
