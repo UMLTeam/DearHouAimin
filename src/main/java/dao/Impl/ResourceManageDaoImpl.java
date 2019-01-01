@@ -119,7 +119,7 @@ public class ResourceManageDaoImpl implements ResourceManageDao {
     
     @Override
     public List<Resource> selectByFuzzyName(String name,String resType) {
-        List<Resource> resources = new ArrayList<Resource>();
+        List<Resource> resources = new ArrayList<>();
         Resource resource;
         String sql = "select * from resource where resType='"+resType+"' and resName like '%"+name+"%'";
         try{
