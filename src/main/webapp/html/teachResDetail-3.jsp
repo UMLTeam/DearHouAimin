@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: chm
-  Date: 18-12-25
-  Time: 下午3:49
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page import="domian.Resource" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -19,11 +12,10 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/normal.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/normal.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail.css'/>">
-    <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail-1.css'/>">
-    <script type="text/javascript" src="<c:url value='/js/teachRes/teachResDetail-1.js'/>"></script>
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail-4.css'/>">
+    <script type="text/javascript" src="<c:url value='/js/teachRes/teachResDetail-4.js'/>"></script>
 </head>
 <body>
-
 <!-- 分页操作-->
 <%
     ArrayList<Resource> list = (ArrayList<Resource>) request.getSession().getAttribute("resources");
@@ -42,7 +34,6 @@
     request.getSession().setAttribute("page_current", page_current); //保存到session中
     request.getSession().setAttribute("page_total", page_total);
 %>
-
 <div id="top">
     <jsp:include page="/html/top.jsp"/>
 </div>
@@ -63,64 +54,66 @@
                 <article class="mainContent">
                     <header class="contentNav">
                         <nav class="nav">
-                            <a href="index.html">首页</a>·
+                            <a href="index.jsp">首页</a>·
                             <a href="teachResDetail-1.jsp">教学资源</a>·
                             <a href="teachResDetail-3.jsp">习题库</a>
                         </nav>
-                        <h1>课程课件</h1>
+                        <h1>案例库</h1>
                     </header>
-                    <div id="resource">
-                        <form class="search" action="" method="post">
-                            <input class="searchInput" type="search" name="search">
-                            <input class="searchSubmit" type="submit" value="文件搜索">
-                        </form>
-                        <table class="table" border="0" width="800px" cellpadding="2" cellspacing="1">
-                            <tr class="firstRow">
-                                <td>序号</td>
-                                <td>文件名称</td>
-                                <td>文件大小</td>
-                                <td>上传时间</td>
-                                <td>操作</td>
-                            </tr>
-                            <%--循环遍历资源--%>
-                            <c:set var="trType" scope="session" value="${0}"/>
-                            <c:forEach items="${sessionScope.resources}"  var="resource" begin="<%=page_begin %>" end="<%=page_end %>">
-                                <c:choose>
-                                    <c:when test="${trType==0}">
-                                        <tr class="trOdd">
-                                        <c:set var="trType" scope="session" value="${1}"/>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <tr class="tr">
-                                        <c:set var="trType" scope="session" value="${0}"/>
-                                    </c:otherwise>
-                                </c:choose>
-                                <td><c:out value="${resource.id}"/></td>
-                                <td><c:out value="${resource.resName}"/></td>
-                                <td><c:out value="${10000}"/></td>
-                                <td><c:out value="${resource.resTime}"/></td>
-                                <td>
-                                    <a onclick="Preview(event)"><img src="<c:url value='/images/teachResource/preview.png'/>"></a>
-                                    <a href="<c:out value="${resource.resPath}"/>" download="<c:out value="${resource.resName}"/>">
-                                        <img src="<c:url value='/images/teachResource/download.png'/>">
-                                    </a>
-                                </td>
 
+                    <div id="resource">
+                        <form action="/ShowResourceServlet.do" class="search" action="" method="post">
+                            <input type="hidden" name="resType" value="4"/>
+                            <input class="searchInput" type="search" name="search" id="search"/>
+                            <input type="submit" name="search" id="" value="文件搜索"/>
+                        </form>
+                        <form id="myform" method="post" action="">
+                            <table class="table" border="0" width="800px" cellpadding="2" cellspacing="1">
+                                <tr class="firstRow">
+                                    <td>序号</td>
+                                    <td>文件名称</td>
+                                    <td>上传时间</td>
+                                    <td>操作</td>
                                 </tr>
-                            </c:forEach>
-                        </table>
+                                <%--循环遍历资源--%>
+                                <c:set var="trType" scope="session" value="${0}"/>
+                                <c:forEach items="${sessionScope.resources}"  var="resource" begin="<%=page_begin %>" end="<%=page_end %>">
+                                    <c:choose>
+                                        <c:when test="${trType==0}">
+                                            <tr class="trOdd">
+                                            <c:set var="trType" scope="session" value="${1}"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <tr class="tr">
+                                            <c:set var="trType" scope="session" value="${0}"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                    <td><c:out value="${resource.id}"/></td>
+                                    <td><c:out value="${resource.resName}"/></td>
+                                    <td><c:out value="${resource.resTime}"/></td>
+                                    <td>
+                                        <a onclick="Preview(event)"><img src="<c:url value='/images/teachResource/preview.png'/>"></a>
+                                        <a href="<c:out value="${resource.resPath}"/>" download="<c:out value="${resource.resName}"/>">
+                                            <img src="<c:url value='/images/teachResource/download.png'/>">
+                                        </a>
+                                    </td>
+
+                                    </tr>
+                                </c:forEach>
+                            </table>
+                        </form>
                         <div class="tranPage">
                             <table>
                                 <tr>
-                                    <td><a href="/html/teachResDetail-4.jsp?begin=1" onclick="getOnePage('first','');">首页</a></td>
+                                    <td><a href="/html/teachResDetail-3.jsp?begin=1" onclick="getOnePage('first','');">首页</a></td>
                                     <c:if test="${sessionScope.page_current != 1 }">
-                                        <td><a href="/html/teachResDetail-4.jsp?begin=${sessionScope.page_current - 1 }" onclick="getOnePage('pre','');">上一页</a></td>
+                                        <td><a href="/html/teachResDetail-3.jsp?begin=${sessionScope.page_current - 1 }" onclick="getOnePage('pre','');">上一页</a></td>
                                     </c:if>
                                     <td>[${sessionScope.page_current } / ${sessionScope.page_total }]</td>
                                     <c:if test="${sessionScope.page_current != sessionScope.page_total }">
-                                        <td><a href="/html/teachResDetail-4.jsp?begin=${sessionScope.page_current + 1 }">下一页</a></td>
+                                        <td><a href="/html/teachResDetail-3.jsp?begin=${sessionScope.page_current + 1 }">下一页</a></td>
                                     </c:if>
-                                    <td><a href="/html/teachResDetail-4.jsp?begin=${sessionScope.page_total }" onclick="getOnePage('last','');">尾页</a></td>
+                                    <td><a href="/html/teachResDetail-3.jsp?begin=${sessionScope.page_total }" onclick="getOnePage('last','');">尾页</a></td>
                                 </tr>
                             </table>
                         </div>
@@ -141,14 +134,17 @@
     </section>
 </article>
 
+
 <div id="bottom">
-    <jsp:include page="/html/bottom.jsp" />
+    <jsp:include page="/html/bottom.jsp"/>
 </div>
+
 <div id="copyrights">
-    <jsp:include page="/html/copyright.jsp" />
+    <jsp:include page="/html/bottom.jsp"/>
 </div>
 </body>
-<script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"type="text/javascript"></script>
+<script type="text/javascript">
     var liList=document.getElementById("leftUl").children;
     for(var i=0;i<liList.length;i++){
         if(i==2)

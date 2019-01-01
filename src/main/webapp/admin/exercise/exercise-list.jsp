@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page isELIgnored="false" %>
 <html>
 <head>
@@ -32,30 +33,25 @@
     <title>习题列表</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 课程概况 <span
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 教学资源 <span
         class="c-gray en">&gt;</span>
-    课程简介 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
-            href="javascript:location.replace(location.href);"
-            title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    习题库 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
+           href="javascript:location.replace(location.href);"
+           title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-    <div class="text-c"> 日期范围：
-        <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}' })" id="logmin"
-               class="input-text Wdate"
-               style="width:120px;">
-        -
-        <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d' })" id="logmax"
-               class="input-text Wdate"
-               style="width:120px;">
-        <input type="text" name="" placeholder=" 习题名称" style="width:250px" class="input-text">
-        <button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜习题</button>
-    </div>
+    <form action="/ResourceServlet.do" class="text-c" method="post">
+        <input type="hidden" name="resType" value="3"/>
+        <input type="hidden" name="type" value="selectByName"/>
+        <input type="text" name="search" placeholder=" 习题名称" style="width:250px" class="input-text">
+        <input name="" id="" class="btn btn-success" type="submit"></input>
+    </form>
     <!-- TO-DO:实现批量删除 -->
     <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="data_del()"
                                                                 class="btn btn-danger radius"><i
             class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius"
-                                                          onclick="courseware_add('添加习题','/admin/exercise/exercise-add.jsp')"
-                                                          href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加习题</a></span>
-        <span class="r">共有数据：<strong>2</strong> 条</span>
+                                                          onclick="courseware_add('添加习题','/admin/exercise/example.jsp')"
+                                                          href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加案例</a></span>
+        <span class="r">共有数据：<strong>${fn:length(sessionScope.resourceList)}</strong> 条</span>
     </div>
     <div class="mt-20">
         <table id="coursewrae-table" class="table table-border table-bordered table-bg table-hover table-sort">
@@ -64,7 +60,6 @@
                 <th width="40"><input type="checkbox" name="box" value="1"></th>
                 <th width="80">ID</th>
                 <th width="70">文件名称</th>
-                <th width="70">文件大小</th>
                 <th width="150">更新时间</th>
                 <th width="60">发布状态</th>
                 <th width="100">操作</th>
@@ -79,7 +74,6 @@
                         <img src="/images/teachResource/PPT.png">
                         <a href="${resource.resPath}" download="${resource.resName}">${resource.resName}</a>
                     </td>
-                    <td><c:out value="${10000}"/></td>
                     <td><c:out value="${resource.resTime}"/></td>
 
                     <td class="td-status">
@@ -95,10 +89,12 @@
 
                     <td class="td-manage">
                         <a style="text-decoration:none" href="javascript:;" onClick="
-                            <c:choose>
-                                <c:when test="${resource.isCheck=='0'}">exercise_start(this, ${resource.id})"  title="发布"</c:when>
-                                <c:when test="${resource.isCheck=='1'}">exercise_stop(this, ${resource.id})"  title="下架"</c:when>
-                            </c:choose>
+                        <c:choose>
+                        <c:when test="${resource.isCheck=='0'}">exercise_start(this, ${resource.id})"
+                           title="发布"</c:when>
+                           <c:when test="${resource.isCheck=='1'}">exercise_stop(this, ${resource.id})"
+                        title="下架"</c:when>
+                        </c:choose>
                         >
                         <c:choose>
                             <c:when test="${resource.isCheck == '0'}">
@@ -111,10 +107,12 @@
 
 
                         </a>
-                        <a style="text-decoration:none" class="ml-5" onClick="exercise_edit('课件编辑','exercise-add.html')" href="javascript:;" title="编辑">
+                        <a style="text-decoration:none" class="ml-5" onClick="exercise_edit('课件编辑','exercise-add.html')"
+                           href="javascript:;" title="编辑">
                             <i class="Hui-iconfont">&#xe6df;</i>
                         </a>
-                        <a style="text-decoration:none" class="ml-5" onClick="exercise_del(this, ${resource.id})" href="javascript:;" title="删除">
+                        <a style="text-decoration:none" class="ml-5" onClick="exercise_del(this, ${resource.id})"
+                           href="javascript:;" title="删除">
                             <i class="Hui-iconfont">&#xe6e2;</i>
                         </a>
                     </td>
@@ -185,10 +183,10 @@
                 '<a style="text-decoration:none" onClick="exercise_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>'
             );
             $.ajax({
-                url: '/ResourceServlet.do?type=updateCheck&id='+id+'&status=0',
+                url: '/ResourceServlet.do?type=updateCheck&id=' + id + '&status=0',
                 method: 'POST',
                 success: function (res) {
-                    if(res.data){
+                    if (res.data) {
                         $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已下架</span>');
                         $(obj).remove();
                         layer.msg('已下架!', {
@@ -196,7 +194,7 @@
                             time: 1000
                         });
                     }
-                    else{
+                    else {
 
                     }
                 }
@@ -211,11 +209,11 @@
                 '<a style="text-decoration:none" onClick="courseware_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>'
             );
             $.ajax({
-                url: '/ResourceServlet.do?type=updateCheck&id='+id+'&status=1',
+                url: '/ResourceServlet.do?type=updateCheck&id=' + id + '&status=1',
                 method: 'POST',
                 success: function (res) {
                     console.log(res)
-                    if(res.data){
+                    if (res.data) {
                         $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
                         $(obj).remove();
                         layer.msg('已发布!', {
@@ -223,7 +221,7 @@
                             time: 1000
                         });
                     }
-                    else{
+                    else {
 
                     }
                 }
@@ -246,17 +244,17 @@
     function exercise_del(obj, id) {
         layer.confirm('确认要删除吗？', function (index) {
             $.ajax({
-                url: '/ResourceServlet.do?type=delete&id='+id,
+                url: '/ResourceServlet.do?type=delete&id=' + id,
                 method: 'POST',
-                success: function(res){
-                    if(res.data){
+                success: function (res) {
+                    if (res.data) {
                         $(obj).parents("tr").remove();
                         layer.msg('已删除!', {
                             icon: 1,
                             time: 1000
                         });
                     }
-                    else{
+                    else {
 
                     }
                 }
