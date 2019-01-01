@@ -6,7 +6,6 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import service.ResourceManageService;
-import tools.PageInformation;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -51,12 +50,7 @@ public class ResourceManageServiceImpl implements ResourceManageService {
         return resourceManageDao.selectByFuzzyName(name, resType);
     }
 
-    @Override
-    public List<Resource> getOnePage(PageInformation pageInformation) {
-        List<Resource> resources;
-        resources = resourceManageDao.getOnePage(pageInformation);
-        return resources;
-    }
+
 
     @Override
     public boolean change(Resource resource) {

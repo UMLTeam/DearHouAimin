@@ -2,7 +2,6 @@ package service;
 
 import domian.Resource;
 import org.apache.commons.fileupload.FileItem;
-import tools.PageInformation;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -38,11 +37,6 @@ public interface ResourceManageService {
      */
     List<Resource> findByPuzzyName(String name,String resType);
 
-    /**
-     * 得到一页资源信息
-     *  @return List<Resource>
-     */
-    List<Resource> getOnePage(PageInformation pageInformation);
 
     /**
      * 删除资源信息
