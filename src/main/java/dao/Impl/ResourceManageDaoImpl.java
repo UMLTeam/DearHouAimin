@@ -183,15 +183,13 @@ public class ResourceManageDaoImpl implements ResourceManageDao {
     
     @Override
     public int insert(Resource resource) {
-        String sql = "INSERT INTO resource VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO resource(resName, resPath, resType, isCheck) VALUES(?,?,?,?)";
         try {
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, resource.getId());
-            preparedStatement.setString(2, resource.getResName());
-            preparedStatement.setTimestamp(3, resource.getResTime());
-            preparedStatement.setString(4, resource.getResPath());
-            preparedStatement.setString(5, resource.getResType());
-            preparedStatement.setString(6, resource.getIsCheck());
+            preparedStatement.setString(1, resource.getResName());
+            preparedStatement.setString(2, resource.getResPath());
+            preparedStatement.setString(3, resource.getResType());
+            preparedStatement.setString(4, resource.getIsCheck());
             return preparedStatement.executeUpdate();
         } catch (Exception e) {
             logger.error(e.toString());
