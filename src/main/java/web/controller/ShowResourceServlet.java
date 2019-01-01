@@ -1,10 +1,6 @@
 package web.controller;
 
 import domian.Resource;
-import net.sf.json.JSONObject;
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import service.Impl.ResourceManageServiceImpl;
@@ -16,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -38,7 +34,13 @@ public class ShowResourceServlet extends HttpServlet {
     };
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("search");
+        String resType = request.getParameter("resType");
+        ResourceManageServiceImpl resourceManageService = new ResourceManageServiceImpl();
+        List<Resource> results = resourceManageService.selectByName(resType, name);
+        request.getSession().setAttribute("resources", results);
+        request.getRequestDispatcher(PATH[Integer.parseInt(resType) - 1]).forward(request, response);
     }
 
     @Override
@@ -52,6 +54,6 @@ public class ShowResourceServlet extends HttpServlet {
         List<Resource> resourceList = resourceManageService.showResource(resType);
         HttpSession session = request.getSession();
         session.setAttribute("resources", resourceList);
-        request.getRequestDispatcher(PATH[Integer.parseInt(resType)-1]).forward(request, response);
+        request.getRequestDispatcher(PATH[Integer.parseInt(resType) - 1]).forward(request, response);
     }
 }

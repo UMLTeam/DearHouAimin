@@ -158,4 +158,9 @@ public class ResourceManageServiceImpl implements ResourceManageService {
     public List<Resource> showResource(String type) {
         return resourceManageDao.showResource(type);
     }
+
+    @Override
+    public List<Resource> selectByName(String type, String name) {
+        return resourceManageDao.selectByFuzzyName(name, type);
+    }
 }

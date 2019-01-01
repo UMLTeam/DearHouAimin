@@ -87,4 +87,12 @@ public interface ResourceManageService {
      * @return
      */
     List<Resource> showResource(String type);
+
+    /**
+     * 文件搜索
+     * @param type
+     * @param name
+     * @return
+     */
+    List<Resource> selectByName(String type, String name);
 }

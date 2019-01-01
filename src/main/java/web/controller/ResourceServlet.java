@@ -39,7 +39,7 @@ public class ResourceServlet extends HttpServlet {
     };
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         String type = null;
         // 检测是否为多媒体上传
@@ -54,19 +54,19 @@ public class ResourceServlet extends HttpServlet {
         switch (type) {
             case "insert": {
                 try {
-                Resource resource = new Resource();
-                resource.setIsCheck("0");
-                DiskFileItemFactory factory = new DiskFileItemFactory();
-                ServletFileUpload upload = new ServletFileUpload(factory);
-                //获取目录所在的路径
-                String path = request.getServletContext().getRealPath("/") + "resource";
-                logger.info("path " + path);
-                // 中文处理
-                upload.setHeaderEncoding("utf-8");
-                List<FileItem> formItems = upload.parseRequest(request);
-                resourceManageService.saveFile(formItems, path, resource);
-                data = resourceManageService.create(resource);
-                request.getRequestDispatcher(PATH[Integer.parseInt(resource.getResType())-1]).forward(request, response);
+                    Resource resource = new Resource();
+                    resource.setIsCheck("0");
+                    DiskFileItemFactory factory = new DiskFileItemFactory();
+                    ServletFileUpload upload = new ServletFileUpload(factory);
+                    //获取目录所在的路径
+                    String path = request.getServletContext().getRealPath("/") + "resource";
+                    logger.info("path " + path);
+                    // 中文处理
+                    upload.setHeaderEncoding("utf-8");
+                    List<FileItem> formItems = upload.parseRequest(request);
+                    resourceManageService.saveFile(formItems, path, resource);
+                    data = resourceManageService.create(resource);
+                    request.getRequestDispatcher(PATH[Integer.parseInt(resource.getResType()) - 1]).forward(request, response);
                 } catch (Exception e) {
                     logger.error(e.toString());
                 }
@@ -97,9 +97,18 @@ public class ResourceServlet extends HttpServlet {
             case "deleteMuti":
 //                resourceManageService.removeMultiple();
                 break;
-                default:break;
+            case "selectByName": {
+                String search = request.getParameter("search");
+                String resType = request.getParameter("resType");
+                List<Resource> list = resourceManageService.selectByName(resType, search);
+                request.getSession().setAttribute("resourceList", list);
+                request.getRequestDispatcher(PATH[Integer.parseInt(resType) - 1]).forward(request, response);
+                return;
+            }
+            default:
+                break;
         }
-        jsonObject.put("data",data);
+        jsonObject.put("data", data);
         out.print(jsonObject);
     }
 
@@ -121,6 +130,6 @@ public class ResourceServlet extends HttpServlet {
         //送给jsp
         HttpSession session = request.getSession();
         session.setAttribute("resourceList", resourceList);
-        request.getRequestDispatcher(PATH[Integer.parseInt(resType)-1]).forward(request, response);
+        request.getRequestDispatcher(PATH[Integer.parseInt(resType) - 1]).forward(request, response);
     }
 }

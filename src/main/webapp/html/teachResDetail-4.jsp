@@ -62,16 +62,16 @@
                     </header>
 
                     <div id="resource">
-                        <form class="search" action="" method="post">
-                            <input class="searchInput" type="search" name="search">
-                            <input class="searchSubmit" type="submit" value="文件搜索">
+                        <form action="/ShowResourceServlet.do" class="search" action="" method="post">
+                            <input type="hidden" name="resType" value="4"/>
+                            <input class="searchInput" type="search" name="search" id="search"/>
+                            <input type="submit" name="search" id="" value="文件搜索"/>
                         </form>
                         <form id="myform" method="post" action="">
                             <table class="table" border="0" width="800px" cellpadding="2" cellspacing="1">
                                 <tr class="firstRow">
                                     <td>序号</td>
                                     <td>文件名称</td>
-                                    <td>文件大小</td>
                                     <td>上传时间</td>
                                     <td>操作</td>
                                 </tr>
@@ -90,7 +90,6 @@
                                     </c:choose>
                                     <td><c:out value="${resource.id}"/></td>
                                     <td><c:out value="${resource.resName}"/></td>
-                                    <td><c:out value="${10000}"/></td>
                                     <td><c:out value="${resource.resTime}"/></td>
                                     <td>
                                         <a onclick="Preview(event)"><img src="<c:url value='/images/teachResource/preview.png'/>"></a>
@@ -144,7 +143,8 @@
     <jsp:include page="/html/bottom.jsp"/>
 </div>
 </body>
-<script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"type="text/javascript"></script>
+<script type="text/javascript">
     var liList=document.getElementById("leftUl").children;
     for(var i=0;i<liList.length;i++){
         if(i==3)
