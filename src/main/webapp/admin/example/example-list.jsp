@@ -27,7 +27,7 @@
     <title>案例列表</title>
 </head>
 
-<body>
+<form>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 课程概况 <span class="c-gray en">&gt;</span>
     课程简介 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
             title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
@@ -46,65 +46,87 @@
             class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="courseware_add('添加案例','example-add.html')"
                                                           href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加案例</a></span> <span class="r">共有数据：<strong>2</strong> 条</span>
     </div>
-    <div class="mt-20">
-        <table id="coursewrae-table" class="table table-border table-bordered table-bg table-hover table-sort">
-            <thead>
-            <tr class="text-c">
-                <th width="40"><input type="checkbox" name="box" value="1"></th>
-                <th width="80">ID</th>
-                <th width="70">文件类型</th>
-                <th width="70">文件大小</th>
-                <th width="70">上传用户</th>
-                <th>案例名称</th>
-                <th width="150">标签</th>
-                <th width="150">更新时间</th>
-                <th width="60">发布状态</th>
-                <th width="100">操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${requestScope.resources}"  var="resource">
+    <form id="example" method="post" action="">
+        <div class="mt-20">
+            <table id="coursewrae-table" class="table table-border table-bordered table-bg table-hover table-sort">
+                <thead>
                 <tr class="text-c">
-                    <td><input type="checkbox" name="box" value="1"></td>
-                    <td><c:out value="${resource.id}"/></td>
-                    <td>PPT</td>
-                    <td>1.1M</td>
-                    <td>侯爱民</td>
-                    <td class="text-l"><a href="https://view.officeapps.live.com/op/view.aspx?src=http://www.niracler.com/resource/《软件需求分析与设计》课程简介.pptx" target="_blank">《软件需求分析与设计》课程简介</a></td>
-                    <td class="text-c"><c:out value="${resource.resName}"/></td>
-                    <td><c:out value="${resource.resTime}"/></td>
-                    <td class="td-status">
-                        <c:choose>
-                            <c:when test="${resource.isCheck == '0'}">
-                                <span class="label label-default radius">下架</span>
-                            </c:when>
-                            <c:when test="${resource.isCheck == '1'}">
-                                <span class="label label-success radius">已发布</span>
-                            </c:when>
-                        </c:choose>
-                    </td>
-                    <td class="td-manage">
-                        <a style="text-decoration:none" href="javascript:;" onClick="
-                        <c:choose>
-                        <c:when test="${resource.isCheck=='0'}">courseware_start(this)"  title="发布"</c:when>
-                           <c:when test="${resource.isCheck=='1'}">courseware_stop(this)"  title="下架"</c:when>
-                        </c:choose>
-                        >
-                        <i class="Hui-iconfont">&#xe6de;</i>
-                        </a>
-                        <a style="text-decoration:none" class="ml-5" onClick="courseware_edit('课件编辑','courseware-add.html')" href="javascript:;" title="编辑">
-                            <i class="Hui-iconfont">&#xe6df;</i>
-                        </a>
-                        <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this)" href="javascript:;" title="删除">
-                            <i class="Hui-iconfont">&#xe6e2;</i>
-                        </a>
-                    </td>
+                    <th width="40"><input type="checkbox" name="box" value="1"></th>
+                    <th width="80">ID</th>
+                    <th width="70">文件类型</th>
+                    <th width="70">文件大小</th>
+                    <th width="70">上传用户</th>
+                    <th>案例名称</th>
+                    <th width="150">标签</th>
+                    <th width="150">更新时间</th>
+                    <th width="60">发布状态</th>
+                    <th width="100">操作</th>
                 </tr>
-            </c:forEach>
-            </tbody>
+                </thead>
+                <tbody>
+                <c:forEach items="${requestScope.resources}"  var="resource">
+                    <tr class="text-c">
+                        <td><input type="checkbox" name="box" value="1"></td>
+                        <td><c:out value="${resource.id}"/></td>
+                        <td>PPT</td>
+                        <td>1.1M</td>
+                        <td>侯爱民</td>
+                        <td class="text-l"><a href="https://view.officeapps.live.com/op/view.aspx?src=http://www.niracler.com/resource/《软件需求分析与设计》课程简介.pptx" target="_blank">《软件需求分析与设计》课程简介</a></td>
+                        <td class="text-c"><c:out value="${resource.resName}"/></td>
+                        <td><c:out value="${resource.resTime}"/></td>
+                        <td class="td-status">
+                            <c:choose>
+                                <c:when test="${resource.isCheck == '0'}">
+                                    <span class="label label-default radius">下架</span>
+                                </c:when>
+                                <c:when test="${resource.isCheck == '1'}">
+                                    <span class="label label-success radius">已发布</span>
+                                </c:when>
+                            </c:choose>
+                        </td>
+                        <td class="td-manage">
+                            <a style="text-decoration:none" href="javascript:;" onClick="
+                            <c:choose>
+                            <c:when test="${resource.isCheck=='0'}">courseware_start(this)"  title="发布"</c:when>
+                               <c:when test="${resource.isCheck=='1'}">courseware_stop(this)"  title="下架"</c:when>
+                            </c:choose>
+                            >
+                            <i class="Hui-iconfont">&#xe6de;</i>
+                            </a>
+                            <a style="text-decoration:none" class="ml-5" onClick="courseware_edit('课件编辑','courseware-add.html')" href="javascript:;" title="编辑">
+                                <i class="Hui-iconfont">&#xe6df;</i>
+                            </a>
+                            <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this)" href="javascript:;" title="删除">
+                                <i class="Hui-iconfont">&#xe6e2;</i>
+                            </a>
+                        </td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </div>
+        <%--<div class="tranPage">--%>
+        <table>
+            <tr>
+                <td><a href="javascript:void(0);" onclick="getOnePage('first','');">首页</a></td>
+                <td><a href="javascript:void(0);" onclick="getOnePage('pre','');">上一页</a></td>
+                <td>[${requestScope.pageInformation.page}/${requestScope.pageInformation.totalPageCount}]</td>
+                <td><a href="javascript:void(0);" onclick="getOnePage('next','');">下一页</a></td>
+                <td><a href="javascript:void(0);" onclick="getOnePage('last','');">尾页</a></td>
+            </tr>
         </table>
+        <%--</div>--%>
+        <input type="hidden" name="page" id="page" value="${requestScope.pageInformation.page}">
+        <input type="hidden" name="pageSize" id="pageSize" value="${requestScope.pageInformation.pageSize}">
+        <input type="hidden" name="totalPageCount" id="totalPageCount" value="${requestScope.pageInformation.totalPageCount}">
+        <input type="hidden" name="allRecordCount" id="allRecordCount" value="${requestScope.pageInformation.allRecordCount}">
+        <input type="hidden" name="orderField" id="orderField" value="${requestScope.pageInformation.orderField}">
+        <input type="hidden" name="order" id="order" value="${requestScope.pageInformation.order}">
+        <input type="hidden" name="ids" id="ids" value="${requestScope.pageInformation.ids}">
+        <input type="hidden" name="searchSql" id="searchSql" value="${requestScope.pageInformation.searchSql}">
+        <input type="hidden" name="result" id="result" value="${requestScope.pageInformation.result}">
     </div>
-</div>
+</form>
 <!-- TO-DO:将公共模块提出来在公共的js文件，简化操作 -->
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
@@ -251,5 +273,4 @@
     }
 </script>
 </body>
-
 </html>

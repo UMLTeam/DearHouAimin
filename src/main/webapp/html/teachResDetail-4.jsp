@@ -56,7 +56,7 @@
                         <nav class="nav">
                             <a href="index.html">首页</a>·
                             <a href="teachResDetail-1.html">教学资源</a>·
-                            <a href="teachResDetail-3.html">案例库</a>
+                            <a href="teachResDetail-4.html">案例库</a>
                         </nav>
                         <h1>案例库</h1>
                     </header>
@@ -66,41 +66,43 @@
                             <input class="searchInput" type="search" name="search">
                             <input class="searchSubmit" type="submit" value="文件搜索">
                         </form>
-                        <table class="table" border="0" width="800px" cellpadding="2" cellspacing="1">
-                            <tr class="firstRow">
-                                <td>序号</td>
-                                <td>文件名称</td>
-                                <td>文件大小</td>
-                                <td>上传时间</td>
-                                <td>操作</td>
-                            </tr>
-                            <%--循环遍历资源--%>
-                            <c:set var="trType" scope="session" value="${0}"/>
-                            <c:forEach items="${sessionScope.resources}"  var="resource" begin="<%=page_begin %>" end="<%=page_end %>">
-                                <c:choose>
-                                    <c:when test="${trType==0}">
-                                        <tr class="trOdd">
-                                        <c:set var="trType" scope="session" value="${1}"/>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <tr class="tr">
-                                        <c:set var="trType" scope="session" value="${0}"/>
-                                    </c:otherwise>
-                                </c:choose>
-                                <td><c:out value="${resource.id}"/></td>
-                                <td><c:out value="${resource.resName}"/></td>
-                                <td><c:out value="${10000}"/></td>
-                                <td><c:out value="${resource.resTime}"/></td>
-                                <td>
-                                    <a onclick="Preview(event)"><img src="<c:url value='/images/teachResource/preview.png'/>"></a>
-                                    <a href="<c:out value="${resource.resPath}"/>" download="<c:out value="${resource.resName}"/>">
-                                        <img src="<c:url value='/images/teachResource/download.png'/>">
-                                    </a>
-                                </td>
-
+                        <form id="myform" method="post" action="">
+                            <table class="table" border="0" width="800px" cellpadding="2" cellspacing="1">
+                                <tr class="firstRow">
+                                    <td>序号</td>
+                                    <td>文件名称</td>
+                                    <td>文件大小</td>
+                                    <td>上传时间</td>
+                                    <td>操作</td>
                                 </tr>
-                            </c:forEach>
-                        </table>
+                                <%--循环遍历资源--%>
+                                <c:set var="trType" scope="session" value="${0}"/>
+                                <c:forEach items="${sessionScope.resources}"  var="resource" begin="<%=page_begin %>" end="<%=page_end %>">
+                                    <c:choose>
+                                        <c:when test="${trType==0}">
+                                            <tr class="trOdd">
+                                            <c:set var="trType" scope="session" value="${1}"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <tr class="tr">
+                                            <c:set var="trType" scope="session" value="${0}"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                    <td><c:out value="${resource.id}"/></td>
+                                    <td><c:out value="${resource.resName}"/></td>
+                                    <td><c:out value="${10000}"/></td>
+                                    <td><c:out value="${resource.resTime}"/></td>
+                                    <td>
+                                        <a onclick="Preview(event)"><img src="<c:url value='/images/teachResource/preview.png'/>"></a>
+                                        <a href="<c:out value="${resource.resPath}"/>" download="<c:out value="${resource.resName}"/>">
+                                            <img src="<c:url value='/images/teachResource/download.png'/>">
+                                        </a>
+                                    </td>
+
+                                    </tr>
+                                </c:forEach>
+                            </table>
+                        </form>
                         <div class="tranPage">
                             <table>
                                 <tr>
