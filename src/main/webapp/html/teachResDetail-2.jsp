@@ -67,7 +67,8 @@
                         <h1>教学录像</h1>
                     </header>
                     <div id="resource">
-                        <form class="search" action="/videoServlet?type=searchRes&page=1&pageSize=3" method="post">
+                        <form class="search" action="/ShowResourceServlet.do" method="post">
+                            <input type="hidden" name="resType" value="2">
                             <input class="searchInput" type="search" name="search">
                             <input class="searchSubmit" type="submit" value="文件搜索">
                         </form>
