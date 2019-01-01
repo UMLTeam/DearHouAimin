@@ -1,7 +1,6 @@
 package dao;
 
 import domian.Resource;
-import tools.PageInformation;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -72,12 +71,6 @@ public interface ResourceManageDao {
      * @return
      */
     int getCount(String sql);
-
-    /**
-     * 从数据库中查找所有资源的信息
-     * @return List<Resource>
-     */
-    List<Resource> getOnePage(PageInformation pageInformation);
 
     /**
      * 查找审核通过的资源

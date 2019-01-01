@@ -43,7 +43,7 @@ public class ShowResourceServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /**
+        /*
          * 前端资源查询接口
          * http://localhost:8080/ShowResourceServlet.do?resType=[资源种类名称]
          */

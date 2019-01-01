@@ -5,8 +5,6 @@ import domian.Resource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import sun.util.calendar.BaseCalendar;
-import tools.PageInformation;
-import tools.Tool;
 
 
 import java.sql.*;
@@ -228,37 +226,6 @@ public class ResourceManageDaoImpl implements ResourceManageDao {
             dataBaseConnection.free(null, preparedStatement, null);
         }
         return 0;
-    }
-
-    @Override
-    public List<Resource> getOnePage(PageInformation pageInformation)  {
-        List<Resource> resources=new ArrayList<>();
-        String sqlCount= Tool.getSql(pageInformation,"count");
-        //符合条件的总记录数
-        Integer allRecordCount=this.getCount(sqlCount);
-        //更新pageInformation的总页数等
-        Tool.setPageInformation(allRecordCount, pageInformation);
-        String sqlSelect=Tool.getSql(pageInformation,"select");
-        try {
-            preparedStatement = connection.prepareStatement(sqlSelect);
-            resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                Resource resource=new Resource();
-                resource.setId(resultSet.getInt("id"));
-                resource.setResName(resultSet.getString("resName"));
-                resource.setResTime(resultSet.getTimestamp("resTime"));
-                resource.setResPath(resultSet.getString("resPath"));
-                resource.setResType(resultSet.getString("resType"));
-                resource.setIsCheck(resultSet.getString("isCheck"));
-                resources.add(resource);
-            }
-            return resources;
-        } catch (Exception e) {
-            logger.error(e.toString());
-            return null;
-        } finally {
-            dataBaseConnection.free(null, preparedStatement, resultSet);
-        }
     }
 
     @Override
