@@ -78,4 +78,11 @@ public interface ResourceManageDao {
      * @return List<Resource>
      */
     List<Resource> getOnePage(PageInformation pageInformation);
+
+    /**
+     * 查找审核通过的资源
+     * @param type
+     * @return
+     */
+    List<Resource> showResource(String type);
 }

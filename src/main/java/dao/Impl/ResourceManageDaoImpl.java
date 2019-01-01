@@ -260,4 +260,33 @@ public class ResourceManageDaoImpl implements ResourceManageDao {
             dataBaseConnection.free(null, preparedStatement, resultSet);
         }
     }
+
+    @Override
+    public List<Resource> showResource(String type) {
+        List<Resource> resources = new ArrayList<>();
+        Resource resource;
+        String sql = "select * from resource where resType like ? and isCheck like ?";
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, type);
+            preparedStatement.setString(2, "1");
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                resource = new Resource();
+                resource.setId(resultSet.getInt("id"));
+                resource.setResName(resultSet.getString("resName"));
+                resource.setResTime(resultSet.getTimestamp("resTime"));
+                resource.setResPath(resultSet.getString("resPath"));
+                resource.setResType(resultSet.getString("resType"));
+                resource.setIsCheck(resultSet.getString("isCheck"));
+                resources.add(resource);
+            }
+            return resources;
+        } catch (Exception e) {
+            logger.error(e.toString());
+            return null;
+        } finally {
+            dataBaseConnection.free(null, preparedStatement, resultSet);
+        }
+    }
 }

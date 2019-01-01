@@ -1,3 +1,5 @@
+<%@ page import="domian.Resource" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored="false" %>
@@ -14,6 +16,24 @@
     <script type="text/javascript" src="<c:url value='/js/teachRes/teachResDetail-4.js'/>"></script>
 </head>
 <body>
+<!-- 分页操作-->
+<%
+    ArrayList<Resource> list = (ArrayList<Resource>) request.getSession().getAttribute("resources");
+    int page_current = 1; //当前页数
+    int page_begin = 0; //起始点,注意:下标从0开始
+    int page_end = 9; //终点,每页十条信息
+    int total_count = 0;
+    if (list != null)
+        total_count = list.size(); //信息的总量
+    int page_total = total_count / 10 + (total_count % 10 != 0 ? 1 : 0);
+    if (request.getParameter("begin") != null) {
+        page_current = Integer.parseInt(request.getParameter("begin")); //获取当前页数
+    }
+    page_begin = (page_current - 1) * 10;
+    page_end = page_begin + 9 > total_count ? total_count : page_begin + 9;
+    request.getSession().setAttribute("page_current", page_current); //保存到session中
+    request.getSession().setAttribute("page_total", page_total);
+%>
 <div id="top">
     <jsp:include page="/html/top.jsp"/>
 </div>
@@ -56,7 +76,7 @@
                             </tr>
                             <%--循环遍历资源--%>
                             <c:set var="trType" scope="session" value="${0}"/>
-                            <c:forEach items="${requestScope.resources}"  var="resource">
+                            <c:forEach items="${sessionScope.resources}"  var="resource" begin="<%=page_begin %>" end="<%=page_end %>">
                                 <c:choose>
                                     <c:when test="${trType==0}">
                                         <tr class="trOdd">
@@ -84,11 +104,15 @@
                         <div class="tranPage">
                             <table>
                                 <tr>
-                                    <td><a href="javascript:void(0);" onclick="getOnePage('first','');">首页</a></td>
-                                    <td><a href="javascript:void(0);" onclick="getOnePage('pre','');">上一页</a></td>
-                                    <td>[${requestScope.pageInformation.page}/${requestScope.pageInformation.totalPageCount}]</td>
-                                    <td><a href="javascript:void(0);" onclick="getOnePage('next','');">下一页</a></td>
-                                    <td><a href="javascript:void(0);" onclick="getOnePage('last','');">尾页</a></td>
+                                    <td><a href="/html/teachResDetail-4.jsp?begin=1" onclick="getOnePage('first','');">首页</a></td>
+                                    <c:if test="${sessionScope.page_current != 1 }">
+                                    <td><a href="/html/teachResDetail-4.jsp?begin=${sessionScope.page_current - 1 }" onclick="getOnePage('pre','');">上一页</a></td>
+                                    </c:if>
+                                    <td>[${sessionScope.page_current } / ${sessionScope.page_total }]</td>
+                                    <c:if test="${sessionScope.page_current != sessionScope.page_total }">
+                                    <td><a href="/html/teachResDetail-4.jsp?begin=${sessionScope.page_current + 1 }">下一页</a></td>
+                                    </c:if>
+                                    <td><a href="/html/teachResDetail-4.jsp?begin=${sessionScope.page_total }" onclick="getOnePage('last','');">尾页</a></td>
                                 </tr>
                             </table>
                         </div>
