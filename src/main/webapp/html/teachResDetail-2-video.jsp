@@ -68,7 +68,7 @@
                             <a href="/ShowResourceServlet.do?resType=1">教学资源</a>·
                             <a href="/ShowResourceServlet.do?resType=2">教学录像</a>
                         </nav>
-                        <h1>教学录像: ${name}</h1>
+                        <h1>教学录像名称: ${name}</h1>
                     </header>
                    <div id="resource">
                         <a href="javascript:history.go(-1)"><img src="/images/teachResource/返回.png">返回</a><br><br>

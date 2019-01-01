@@ -92,7 +92,7 @@
                                     </c:otherwise>
                                 </c:choose>
                                 <td><c:out value="${resource.id}"/></td>
-                                <td><c:out value="${resource.resName}"/></td>
+                                <td><a href="/html/teachResDetail-2-video.jsp?path=<c:out value="${resource.resPath}"/>&name=<c:out value="${resource.resName}"/>"><c:out value="${resource.resName}"/></a></td>
                                 <td><c:out value="${10000}"/></td>
                                 <td><c:out value="${resource.resTime}"/></td>
                                 <td>
