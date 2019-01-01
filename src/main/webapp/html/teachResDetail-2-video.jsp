@@ -1,20 +1,30 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
+<%--
+  author: Heze
+  Date: 19-1-1
+  Time: 下午4:18
+--%>
+<%@ page import="domian.Resource" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <%
 	String path=request.getParameter("path");
+	String name = request.getParameter("name");
 	request.setAttribute("path", path);
+	request.setAttribute("name", name);
  %>
 <head>
     <title>教学资源-教学录像</title>
     <meta charset="utf-8">
-    <link rel="icon" href="/images/dgut.jpg">
-    <link rel="stylesheet" type="text/css" href="../style/normal.css">
-    <%--<link rel="stylesheet" type="text/css" href="../style/teachRes/normal.css">--%>
-    <link rel="stylesheet" type="text/css" href="../style/teachRes/teachResDetail.css">
-    <link rel="stylesheet" type="text/css" href="../style/teachRes/teachResDetail-2.css">
-    <script type="text/javascript" src="../js/normal.js"></script>
+    <link rel="icon" href="<c:url value='/images/dgut.jpg'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/normal.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/normal.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail-1.css'/>">
+    <script type="text/javascript" src="<c:url value='/js/teachRes/teachResDetail-1.js'/>"></script>
 
     <!--dplayer-->
     <link href="https://cdn.bootcss.com/dplayer/1.25.0/DPlayer.min.css" rel="stylesheet">
@@ -22,7 +32,7 @@
 	<script src="https://cdn.bootcss.com/flv.js/1.5.0/flv.js"></script>
     <style>
         .detailContent .column_2{
-            width: 620px;
+            width: 720px;
         }
         /*.dplayer_wrap{*/
             /*!*position: relative;*!*/
@@ -54,14 +64,14 @@
                 <article class="mainContent">
                     <header class="contentNav">
                         <nav class="nav">
-                            <a href="/html/index.jsp">首页</a>·
-                            <a href="/courseWareServlet?type=show&page=1&pageSize=3">教学资源</a>·
-                            <a href="/videoServlet?type=show&page=1&pageSize=3">教学录像</a>
+                            <a href="index.jsp">首页</a>·
+                            <a href="/ShowResourceServlet.do?resType=1">教学资源</a>·
+                            <a href="/ShowResourceServlet.do?resType=2">教学录像</a>
                         </nav>
-                        <h1>教学录像</h1>
+                        <h1>教学录像名称: ${name}</h1>
                     </header>
                    <div id="resource">
-                        <a href="teachResDetail-2.html"><img src="/images/teachResource/返回.png">返回</a><br><br>
+                        <a href="javascript:history.go(-1)"><img src="/images/teachResource/返回.png">返回</a><br><br>
                       	<div class="dplayer_wrap">
                             <div id="dplayer"></div>
                         </div>
