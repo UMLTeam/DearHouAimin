@@ -56,7 +56,6 @@ public class ResourceServlet extends HttpServlet {
                 try {
                 Resource resource = new Resource();
                 resource.setIsCheck("0");
-                resource.setId(10);
                 DiskFileItemFactory factory = new DiskFileItemFactory();
                 ServletFileUpload upload = new ServletFileUpload(factory);
                 //获取目录所在的路径

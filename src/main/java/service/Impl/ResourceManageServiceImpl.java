@@ -135,8 +135,6 @@ public class ResourceManageServiceImpl implements ResourceManageService {
             resource.setResName(fileName);
             resource.setResType(type);
             resource.setResPath(savePath.toString());
-            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            resource.setResTime((Timestamp.valueOf(df.format(new Date()))));
             // 创建文件输出流，用于向指定文件名的文件写入数据
             FileOutputStream fileOutputStream = new FileOutputStream(savePath.toString());
             int index = 0;
