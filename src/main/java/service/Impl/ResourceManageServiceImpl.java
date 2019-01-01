@@ -91,9 +91,11 @@ public class ResourceManageServiceImpl implements ResourceManageService {
 
     @Override
     public String saveFile(List<FileItem> formItems, String path, Resource resource) {
+        String title = null;
         String name = null;
         String fileName = null;
         String type = null;
+        String prefix = null;
         Path savePath = null;
         InputStream inputStream = null;
 
@@ -103,7 +105,7 @@ public class ResourceManageServiceImpl implements ResourceManageService {
                 if (item.isFormField()) {
                     name = item.getFieldName();
                     if ("title".equals(name)) {
-                        fileName = item.getString("UTF-8");
+                        title = item.getString("UTF-8");
                     } else {
                         type = item.getString("UTF-8");
                     }
@@ -117,10 +119,15 @@ public class ResourceManageServiceImpl implements ResourceManageService {
                         continue;
                     }
                     logger.info("上传的文件名：" + fileName);
-
+                    // 获取文件名后缀, 返回 "."在文件名最后出现的索引, 就是文件后缀名
+                    prefix = fileName.substring(fileName.lastIndexOf(".") + 1);
                     // 获取文件输入流
                     inputStream = item.getInputStream();
                 }
+            }
+            if (title != null) {
+                title += "." + prefix;
+                fileName = title;
             }
             File file = new File((Paths.get(path, type)).toString());
             if (!file.exists()) {
@@ -134,7 +141,7 @@ public class ResourceManageServiceImpl implements ResourceManageService {
             savePath = Paths.get(path, type, fileName); // 组合路径
             resource.setResName(fileName);
             resource.setResType(type);
-            resource.setResPath(savePath.toString());
+            resource.setResPath("/resource/" + type + "/" + fileName);
             // 创建文件输出流，用于向指定文件名的文件写入数据
             FileOutputStream fileOutputStream = new FileOutputStream(savePath.toString());
             int index = 0;
