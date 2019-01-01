@@ -86,4 +86,11 @@ public interface ResourceManageService {
      * @return 文件保存路径
      */
     String saveFile(List<FileItem> formItems, String path, Resource resource);
+
+    /**
+     * 前台展示资源查询
+     * @param type
+     * @return
+     */
+    List<Resource> showResource(String type);
 }

@@ -159,4 +159,9 @@ public class ResourceManageServiceImpl implements ResourceManageService {
         }
         return null;
     }
+
+    @Override
+    public List<Resource> showResource(String type) {
+        return resourceManageDao.showResource(type);
+    }
 }
