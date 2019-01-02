@@ -20,6 +20,11 @@ import javax.servlet.annotation.WebFilter;
         DispatcherType.ERROR
 }
         , urlPatterns = {"/*"})
+/**
+ *
+ * @Author: team
+ * @Date: 2018/12/27 22:36
+ */
 public class SetCharacterEncodingFilter implements Filter {
 
     /**
@@ -32,6 +37,7 @@ public class SetCharacterEncodingFilter implements Filter {
     /**
      * @see Filter#destroy()
      */
+    @Override
     public void destroy() {
         // TODO Auto-generated method stub
     }
@@ -39,11 +45,13 @@ public class SetCharacterEncodingFilter implements Filter {
     /**
      * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
      */
+    @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         // TODO Auto-generated method stub
         // place your code here
 
         // pass the request along the filter chain
+        response.setContentType("application/json");
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         chain.doFilter(request, response);
@@ -52,6 +60,7 @@ public class SetCharacterEncodingFilter implements Filter {
     /**
      * @see Filter#init(FilterConfig)
      */
+    @Override
     public void init(FilterConfig fConfig) throws ServletException {
         // TODO Auto-generated method stub
     }

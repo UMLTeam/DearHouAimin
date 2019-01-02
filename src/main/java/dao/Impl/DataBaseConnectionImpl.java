@@ -1,43 +1,40 @@
 package dao.Impl;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
-import dao.IDataBaseConnectionDao;
+import dao.DataBaseConnectionDao;
 /**
  * Demo class
  *
- * @author wt
+ * @Author wt
  * @date 2018/12/24
  */
-public class DataBaseConnectionImpl implements IDataBaseConnectionDao {
+public class DataBaseConnectionImpl implements DataBaseConnectionDao {
 
     private final static String URL = "jdbc:mysql://niracler.com:3307/uml_open_course_db?useUnicode=true&characterEncoding=UTF8";
     private final static String DRIVERNAME = "com.mysql.cj.jdbc.Driver";
     private final static String USER = "root";
     private final static String PASSWORD = "dgutdev#uml";
-
-    static {
+    private Connection connection=null;
+    
+    public DataBaseConnectionImpl(){
         try {
-            //加载JDBC驱动程序
             Class.forName(DRIVERNAME);
         } catch(ClassNotFoundException e) {
             e.printStackTrace();
         }
+    
+        try {
+            connection = DriverManager.getConnection(URL,USER,PASSWORD);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
     }
+   
     @Override
     public Connection getConnection() {
-        try {
-            //创建数据库连接
-            Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
-            return connection;
-        } catch(SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
+        return this.connection;
     }
 
     /**

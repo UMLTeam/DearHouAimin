@@ -31,25 +31,15 @@
 </head>
 <body>
 <div class="page-container">
-    <form class="form form-horizontal" id="form-article-add">
+    <form action="/ResourceServlet.do" method="post" class="form form-horizontal" id="form-article-add" enctype=multipart/form-data>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文件标题：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder="" id="" name="">
+                <input type="text" class="input-text" value="" placeholder="" id="" name="title">
             </div>
         </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文件类型：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-				<span class="select-box">
-				<select name="" class="select">
-					<option value="0">PDF</option>
-					<option value="1">PPT</option>
-					<option value="2">WORD</option>
-				</select>
-				</span>
-            </div>
-        </div>
+        <!--资源编号-->
+        <input type="hidden" name="type" value="3"/>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文件上传：</label>
             <div class="formControls col-xs-8 col-sm-9">
@@ -57,15 +47,8 @@
             </div>
         </div>
         <div class="row cl">
-            <!-- TO-DO:通过按钮增加标签输入框 -->
-            <label class="form-label col-xs-4 col-sm-2">标签（多个标签以空格隔开）：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder="" id="" name="">
-            </div>
-        </div>
-        <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-                <button onClick="article_save_submit();" class="btn btn-primary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
+                <input type="submit" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</input>
                 <button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i>保存草稿</button>
                 <button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
             </div>
@@ -105,9 +88,11 @@
 
     function article_save_submit(){
         $.ajax({
-            url: '/ExerciseServlet.do?type=insert',
+            url: '/ResourceServlet.do',
             method: 'POST',
-            data: $("#form-article-add").serialize(),
+            processData:false,
+            contentType:false,
+            data: new FormData($("#form-article-add")),
             success: function(res){
                 if(res.data){
                     window.parent.location.reload();
@@ -120,7 +105,8 @@
     }
 
 
-    $(function(){
+
+    /*$(function(){
         $('.skin-minimal input').iCheck({
             checkboxClass: 'icheckbox-blue',
             radioClass: 'iradio-blue',
@@ -224,9 +210,10 @@
                 uploader.upload();
             }
         });
-    });
+    });*/
 
-    (function( $ ){
+
+    /*(function( $ ){
         // 当domReady的时候开始初始化
         $(function() {
             var $wrap = $('.uploader-list-container'),
@@ -783,7 +770,7 @@
             updateTotalProgress();
         });
 
-    })( jQuery );
+    })( jQuery );*/
 </script>
 </body>
 </html>
