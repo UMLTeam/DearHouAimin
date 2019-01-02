@@ -47,9 +47,11 @@
         <input name="" id="" class="btn btn-success" type="submit">
     </form>
     <!-- TO-DO:实现批量删除 -->
-    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="data_del()" class="btn btn-danger radius"><i
-            class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="courseware_add('添加课件','/admin/courseWare/courseWare-add.jsp')"
-                                                          href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加课件</a></span> <span class="r">共有数据：<strong>${sessionScope.resourceList.size()}</strong> 条</span>
+    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l">
+        <%--<a href="javascript:;" onclick="data_del()" class="btn btn-danger radius"><i--%>
+            <%--class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> --%>
+        <a class="btn btn-primary radius" onclick="courseware_add('添加课件','/admin/courseWare/courseWare-add.jsp')"
+           href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加课件</a></span> <span class="r">共有数据：<strong>${sessionScope.resourceList.size()}</strong> 条</span>
     </div>
     <div class="mt-20">
         <table id="coursewrae-table" class="table table-border table-bordered table-bg table-hover table-sort">
@@ -88,7 +90,7 @@
                     </td>
 
                     <td class="td-manage">
-                        <a style="text-decoration:none" href="javascript:;" onClick="
+                        <a style="text-decoration:none" id="status" href="javascript:;" onClick="
                         <c:choose>
                         <c:when test="${resource.isCheck=='0'}">courseware_start(this, ${resource.id})"  title="发布"</c:when>
                            <c:when test="${resource.isCheck=='1'}">courseware_stop(this, ${resource.id})"  title="下架"</c:when>
@@ -102,8 +104,6 @@
                                 <i class="Hui-iconfont">&#xe6de;</i>
                             </c:when>
                         </c:choose>
-
-
                         </a>
                         <%--<a style="text-decoration:none" class="ml-5" onClick="courseware_edit('课件编辑','courseware-add.jsp')" href="javascript:;" title="编辑">--%>
                             <%--<i class="Hui-iconfont">&#xe6df;</i>--%>
@@ -206,19 +206,25 @@
     function courseware_stop(obj, id) {
         layer.confirm('确认要下架吗？', function (index) {
             $(obj).parents("tr").find(".td-manage").prepend(
-                '<a style="text-decoration:none" onClick="courseware_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>'
+                '<a style="text-decoration:none" onClick="courseware_start(this,'+id+')" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>'
             );
+            $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已下架</span>');
+            $(obj).remove();
+            layer.msg('已下架!', {
+                icon: 5,
+                time: 1000
+            });
             $.ajax({
                 url: '/ResourceServlet.do?type=updateCheck&id=' + id + '&status=0',
                 method: 'POST',
                 success: function (res) {
                     if (res.data) {
-                        $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已下架</span>');
-                        $(obj).remove();
-                        layer.msg('已下架!', {
-                            icon: 5,
-                            time: 1000
-                        });
+                        // $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已下架</span>');
+                        // $(obj).remove();
+                        // layer.msg('已下架!', {
+                        //     icon: 5,
+                        //     time: 1000
+                        // });
                     }
                     else {
 
@@ -232,20 +238,26 @@
     function courseware_start(obj, id) {
         layer.confirm('确认要发布吗？', function (index) {
             $(obj).parents("tr").find(".td-manage").prepend(
-                '<a style="text-decoration:none" onClick="courseware_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>'
+                '<a style="text-decoration:none" onClick="courseware_stop(this,'+id+')" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>'
             );
+            $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
+            $(obj).remove();
+            layer.msg('已发布!', {
+                icon: 1,
+                time: 1000
+            });
             $.ajax({
                 url: '/ResourceServlet.do?type=updateCheck&id=' + id + '&status=1',
                 method: 'POST',
                 success: function (res) {
                     console.log(res)
                     if (res.data) {
-                        $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
-                        $(obj).remove();
-                        layer.msg('已发布!', {
-                            icon: 1,
-                            time: 1000
-                        });
+                        // $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
+                        // $(obj).remove();
+                        // layer.msg('已发布!', {
+                        //     icon: 1,
+                        //     time: 1000
+                        // });
                     }
                     else {
 

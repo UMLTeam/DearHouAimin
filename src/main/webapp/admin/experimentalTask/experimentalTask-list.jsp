@@ -165,7 +165,7 @@
             },
             function () {
                 $(obj).parents("tr").find(".td-manage").prepend(
-                    '<a class="c-primary" onClick="experimentalTask_shenqing(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
+                    '<a class="c-primary" onClick="experimentalTask_shenqing(this,'+id+')" href="javascript:;" title="申请上线">申请上线</a>');
                 $(obj).parents("tr").find(".td-status").html('<span class="label label-danger radius">未通过</span>');
                 $(obj).remove();
                 layer.msg('未通过', {
@@ -179,7 +179,7 @@
     function experimentalTask_stop(obj, id) {
         layer.confirm('确认要下架吗？', function (index) {
             $(obj).parents("tr").find(".td-manage").prepend(
-                '<a style="text-decoration:none" onClick="experimentalTask_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>'
+                '<a style="text-decoration:none" onClick="experimentalTask_start(this,'+id+')" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>'
             );
             $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
             $(obj).remove();
@@ -194,7 +194,7 @@
     function experimentalTask_start(obj, id) {
         layer.confirm('确认要发布吗？', function (index) {
             $(obj).parents("tr").find(".td-manage").prepend(
-                '<a style="text-decoration:none" onClick="experimentalTask_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>'
+                '<a style="text-decoration:none" onClick="experimentalTask_stop(this,'+id+')" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>'
             );
             $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
             $(obj).remove();
