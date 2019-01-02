@@ -206,7 +206,7 @@
     function exercise_start(obj, id) {
         layer.confirm('确认要发布吗？', function (index) {
             $(obj).parents("tr").find(".td-manage").prepend(
-                '<a style="text-decoration:none" onClick="courseware_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>'
+                '<a style="text-decoration:none" onClick="exercise_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>'
             );
             $.ajax({
                 url: '/ResourceServlet.do?type=updateCheck&id=' + id + '&status=1',
