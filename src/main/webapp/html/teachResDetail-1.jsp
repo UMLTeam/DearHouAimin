@@ -51,7 +51,7 @@
                     <script type="text/javascript">
                         var liList=document.getElementById("leftUl").children;
                         for(var i=0;i<liList.length;i++){
-                            if(i==2)
+                            if(i==0)
                                 liList[i].setAttribute("class","current");
                         }
                     </script>
