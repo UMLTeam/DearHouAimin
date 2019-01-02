@@ -54,9 +54,9 @@
                 <article class="mainContent">
                     <header class="contentNav">
                         <nav class="nav">
-                            <a href="index.html">首页</a>·
-                            <a href="teachResDetail-1.html">教学资源</a>·
-                            <a href="teachResDetail-4.html">案例库</a>
+                            <a href="index.jsp">首页</a>·
+                            <a href="ShowResourceServlet.do?resType=1">教学资源</a>·
+                            <a href="ShowResourceServlet.do?resType=4">案例库</a>
                         </nav>
                         <h1>案例库</h1>
                     </header>
