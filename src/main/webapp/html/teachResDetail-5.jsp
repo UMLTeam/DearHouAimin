@@ -30,6 +30,13 @@
             <div class="column_1">
                 <section class="leftNav">
                     <jsp:include page="/html/left.jsp"/>
+                    <script type="text/javascript">
+                        var liList=document.getElementById("leftUl").children;
+                        for(var i=0;i<liList.length;i++){
+                            if(i==4)
+                                liList[i].setAttribute("class","current");
+                        }
+                    </script>
                 </section>
             </div>
             <div class="column_2 ">
@@ -118,11 +125,4 @@
     <jsp:include page="/html/copyright.jsp" />
 </div>
 </body>
-<script>
-    var liList=document.getElementById("leftUl").children;
-    for(var i=0;i<liList.length;i++){
-        if(i==4)
-            liList[i].setAttribute("class","current");
-    }
-</script>
 </html>

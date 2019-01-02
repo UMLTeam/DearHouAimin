@@ -48,15 +48,22 @@
             <div class="column_1">
                 <section class="leftNav">
                     <jsp:include page="/html/left.jsp"/>
+                    <script type="text/javascript">
+                        var liList=document.getElementById("leftUl").children;
+                        for(var i=0;i<liList.length;i++){
+                            if(i==3)
+                                liList[i].setAttribute("class","current");
+                        }
+                    </script>
                 </section>
             </div>
             <div class="column_2 ">
                 <article class="mainContent">
                     <header class="contentNav">
                         <nav class="nav">
-                            <a href="index.html">首页</a>·
-                            <a href="teachResDetail-1.html">教学资源</a>·
-                            <a href="teachResDetail-4.html">案例库</a>
+                            <a href="index.jsp">首页</a>·
+                            <a href="ShowResourceServlet.do?resType=1">教学资源</a>·
+                            <a href="ShowResourceServlet.do?resType=4">案例库</a>
                         </nav>
                         <h1>案例库</h1>
                     </header>
@@ -144,11 +151,4 @@
 </div>
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"type="text/javascript"></script>
-<script type="text/javascript">
-    var liList=document.getElementById("leftUl").children;
-    for(var i=0;i<liList.length;i++){
-        if(i==3)
-            liList[i].setAttribute("class","current");
-    }
-</script>
 </html>
