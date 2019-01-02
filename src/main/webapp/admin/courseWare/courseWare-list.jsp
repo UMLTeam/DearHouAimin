@@ -41,7 +41,7 @@
             title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
     <form action="/ResourceServlet.do" class="text-c" method="post">
-        <input type="hidden" name="resType" value="2"/>
+        <input type="hidden" name="resType" value="1"/>
         <input type="hidden" name="type" value="selectByName"/>
         <input type="text" name="search" placeholder="课件名称" style="width:250px" class="input-text">
         <input name="" id="" class="btn btn-success" type="submit">
@@ -105,9 +105,9 @@
 
 
                         </a>
-                        <a style="text-decoration:none" class="ml-5" onClick="courseware_edit('课件编辑','courseware-add.jsp')" href="javascript:;" title="编辑">
-                            <i class="Hui-iconfont">&#xe6df;</i>
-                        </a>
+                        <%--<a style="text-decoration:none" class="ml-5" onClick="courseware_edit('课件编辑','courseware-add.jsp')" href="javascript:;" title="编辑">--%>
+                            <%--<i class="Hui-iconfont">&#xe6df;</i>--%>
+                        <%--</a>--%>
                         <a style="text-decoration:none" class="ml-5" onClick="courseware_del(this, ${resource.id})" href="javascript:;" title="删除">
                             <i class="Hui-iconfont">&#xe6e2;</i>
                         </a>
@@ -202,33 +202,56 @@
             });
     }
 
-    /*课件-下架*/
-    function courseware_stop(obj) {
+    /*文件-下架*/
+    function courseware_stop(obj, id) {
         layer.confirm('确认要下架吗？', function (index) {
             $(obj).parents("tr").find(".td-manage").prepend(
-                '<a style="text-decoration:none" onClick="courseware_start(this)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>'
+                '<a style="text-decoration:none" onClick="courseware_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>'
             );
-            $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
-            $(obj).remove();
-            layer.msg('已下架!', {
-                icon: 5,
-                time: 1000
-            });
+            $.ajax({
+                url: '/ResourceServlet.do?type=updateCheck&id=' + id + '&status=0',
+                method: 'POST',
+                success: function (res) {
+                    if (res.data) {
+                        $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已下架</span>');
+                        $(obj).remove();
+                        layer.msg('已下架!', {
+                            icon: 5,
+                            time: 1000
+                        });
+                    }
+                    else {
+
+                    }
+                }
+            })
         });
     }
 
-    /*课件-发布*/
-    function courseware_start(obj) {
+    /*文件-发布*/
+    function courseware_start(obj, id) {
         layer.confirm('确认要发布吗？', function (index) {
             $(obj).parents("tr").find(".td-manage").prepend(
-                '<a style="text-decoration:none" onClick="courseware_stop(this)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>'
+                '<a style="text-decoration:none" onClick="courseware_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>'
             );
-            $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
-            $(obj).remove();
-            layer.msg('已发布!', {
-                icon: 6,
-                time: 1000
-            });
+            $.ajax({
+                url: '/ResourceServlet.do?type=updateCheck&id=' + id + '&status=1',
+                method: 'POST',
+                success: function (res) {
+                    console.log(res)
+                    if (res.data) {
+                        $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
+                        $(obj).remove();
+                        layer.msg('已发布!', {
+                            icon: 1,
+                            time: 1000
+                        });
+                    }
+                    else {
+
+                    }
+                }
+            })
         });
     }
 
@@ -252,14 +275,25 @@
         layer.full(index);
     }
 
-    /*课件-删除*/
-    function courseware_del(obj) {
+    /*文件-删除*/
+    function courseware_del(obj, id) {
         layer.confirm('确认要删除吗？', function (index) {
-            $(obj).parents("tr").remove();
-            layer.msg('已删除!', {
-                icon: 1,
-                time: 1000
-            });
+            $.ajax({
+                url: '/ResourceServlet.do?type=delete&id=' + id,
+                method: 'POST',
+                success: function (res) {
+                    if (res.data) {
+                        $(obj).parents("tr").remove();
+                        layer.msg('已删除!', {
+                            icon: 1,
+                            time: 1000
+                        });
+                    }
+                    else {
+
+                    }
+                }
+            })
         });
     }
 </script>
