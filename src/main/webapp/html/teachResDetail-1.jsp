@@ -49,8 +49,8 @@
                     <header class="contentNav">
                         <nav class="nav">
                             <a href="index.html">首页</a>·
-                            <a href="teachResDetail-1.html">教学资源</a>·
-                            <a href="teachResDetail-1.html">课程课件</a>
+                            <a href="teachResDetail-1.jsp">教学资源</a>·
+                            <a href="/ShowResourceServlet.do?resType=1">课程课件</a>
                         </nav>
                         <h1>课程课件</h1>
                     </header>
