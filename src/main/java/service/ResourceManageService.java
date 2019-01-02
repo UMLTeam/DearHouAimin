@@ -1,9 +1,7 @@
 package service;
 
-import dao.Impl.DataBaseConnectionImpl;
 import domian.Resource;
-import sun.util.calendar.BaseCalendar;
-import tools.PageInformation;
+import org.apache.commons.fileupload.FileItem;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -29,20 +27,16 @@ public interface ResourceManageService {
      * 根据时间范围来查询
      * @param date1
      * @param date2
-     * @return
+     * @param resType
+     * @return List<Resource>
      */
-    List<Resource> findByDate(Timestamp date1, Timestamp date2,String resType) throws SQLException;
+    List<Resource> findByDate(Timestamp date1, Timestamp date2, String resType) throws SQLException;
     
     /**
      * 根据文件名模糊查询
      */
     List<Resource> findByPuzzyName(String name,String resType);
 
-    /**
-     * 得到一页资源信息
-     *  @return List<Resource>
-     */
-    List<Resource> getOnePage(PageInformation pageInformation);
 
     /**
      * 删除资源信息
@@ -70,6 +64,35 @@ public interface ResourceManageService {
      * @return
      */
     boolean change(Resource resource);
-    
+
+    /**
+     *
+     * @param resource
+     * @return
+     */
     boolean changeCheck(Resource resource);
+
+    /**
+     *
+     * @param formItems
+     * @param path 项目路径
+     * @param resource
+     * @return 文件保存路径
+     */
+    String saveFile(List<FileItem> formItems, String path, Resource resource);
+
+    /**
+     * 前台展示资源查询
+     * @param type
+     * @return
+     */
+    List<Resource> showResource(String type);
+
+    /**
+     * 文件搜索
+     * @param type
+     * @param name
+     * @return
+     */
+    List<Resource> selectByName(String type, String name);
 }

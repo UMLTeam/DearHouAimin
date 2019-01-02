@@ -138,13 +138,13 @@
                 </ul>
             </li>
             <li class="title" onmouseover="extend('5')" onmouseout="out('5')">
-                <a href="<c:url value='/courseWareServlet?type=show&page=1&pageSize=3'/> ">教学资源</a>
+                <a href="<c:url value='/ShowResourceServlet.do?resType=1'/> ">教学资源</a>
                 <ul style="display: none;" id="fifth">
-                    <li class="detail"><a href="<c:url value='/courseWareServlet?type=show&page=1&pageSize=3'/>" style="color: #fff;">课程课件</a></li>
-                    <li class="detail"><a href="<c:url value='/videoServlet?type=show&page=1&pageSize=3'/>" style="color: #fff;">教学录像</a></li>
-                    <li class="detail"><a href="<c:url value='/ExerciseServlet.do?type=front-list'/>" style="color: #fff;">习题库</a></li>
-                    <li class="detail"><a href="<c:url value='/html/CheckResourceServlet.do?type=4'/>" style="color: #fff;">案例库</a></li>
-                    <li class="detail"><a href="<c:url value='/experimentalTaskServlet?type=showPages&page=1&pageSize=4'/>" style="color: #fff;">实验任务</a></li>
+                    <li class="detail"><a href="<c:url value='/ShowResourceServlet.do?resType=1'/>" style="color: #fff;">课程课件</a></li>
+                    <li class="detail"><a href="<c:url value='/ShowResourceServlet.do?resType=2'/>" style="color: #fff;">教学录像</a></li>
+                    <li class="detail"><a href="<c:url value='/ShowResourceServlet.do?resType=3'/>" style="color: #fff;">习题库</a></li>
+                    <li class="detail"><a href="<c:url value='/ShowResourceServlet.do?resType=4'/>" style="color: #fff;">案例库</a></li>
+                    <li class="detail"><a href="<c:url value='/ShowResourceServlet.do?resType=5'/>" style="color: #fff;">实验任务</a></li>
                 </ul>
             </li>
             <li class="title" onmouseover="extend('6')" onmouseout="out('6')">

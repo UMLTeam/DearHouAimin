@@ -1,17 +1,13 @@
 package dao;
 
-import dao.Impl.DataBaseConnectionImpl;
 import domian.Resource;
-import sun.util.calendar.BaseCalendar;
-import tools.PageInformation;
 
-import java.sql.Timestamp;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
- * @Author:
+ * @Author: team
  * @Date: 2018/12/24 23:48
  */
 public interface ResourceManageDao {
@@ -77,8 +73,9 @@ public interface ResourceManageDao {
     int getCount(String sql);
 
     /**
-     * 从数据库中查找所有资源的信息
-     * @return List<Resource>
+     * 查找审核通过的资源
+     * @param type
+     * @return
      */
-    List<Resource> getOnePage(PageInformation pageInformation);
+    List<Resource> showResource(String type);
 }

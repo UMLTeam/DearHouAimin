@@ -1,3 +1,5 @@
+<%@ page import="domian.Resource" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored="false" %>
@@ -6,15 +8,32 @@
 <head>
     <title>教学资源-习题库</title>
     <meta charset="utf-8">
-    <link rel="icon" href="/images/dgut.jpg">
-    <link rel="stylesheet" type="text/css" href="../style/normal.css">
-    <link rel="stylesheet" type="text/css" href="../style/teachRes/normal.css">
-    <link rel="stylesheet" type="text/css" href="../style/teachRes/teachResDetail.css">
-    <%--<script type="text/javascript" src="../js/normal.js"></script>--%>
-    <script type="text/javascript" src="../js/teachRes/teachResDetail-3.js"></script>
+    <link rel="icon" href="<c:url value='/images/dgut.jpg'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/normal.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/normal.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail-4.css'/>">
+    <script type="text/javascript" src="<c:url value='/js/teachRes/teachResDetail-4.js'/>"></script>
 </head>
 <body>
-
+<!-- 分页操作-->
+<%
+    ArrayList<Resource> list = (ArrayList<Resource>) request.getSession().getAttribute("resources");
+    int page_current = 1; //当前页数
+    int page_begin = 0; //起始点,注意:下标从0开始
+    int page_end = 9; //终点,每页十条信息
+    int total_count = 0;
+    if (list != null)
+        total_count = list.size(); //信息的总量
+    int page_total = total_count / 10 + (total_count % 10 != 0 ? 1 : 0);
+    if (request.getParameter("begin") != null) {
+        page_current = Integer.parseInt(request.getParameter("begin")); //获取当前页数
+    }
+    page_begin = (page_current - 1) * 10;
+    page_end = page_begin + 9 > total_count ? total_count : page_begin + 9;
+    request.getSession().setAttribute("page_current", page_current); //保存到session中
+    request.getSession().setAttribute("page_total", page_total);
+%>
 <div id="top">
     <jsp:include page="/html/top.jsp"/>
 </div>
@@ -22,7 +41,7 @@
 <article class="content">
 
     <section id="banner">
-        <img src="../images/index/abouttop_03.jpg">
+        <img src="<c:url value='/images/index/abouttop_03.jpg'/>">
     </section>
     <section class="mainWrap relative">
         <div class="detailContent">
@@ -36,56 +55,79 @@
                     <header class="contentNav">
                         <nav class="nav">
                             <a href="index.jsp">首页</a>·
-                            <a href="teachResDetail-1.html">教学资源</a>·
+                            <a href="teachResDetail-1.jsp">教学资源</a>·
                             <a href="teachResDetail-3.jsp">习题库</a>
                         </nav>
-                        <h1>习题库</h1>
+                        <h1>案例库</h1>
                     </header>
 
                     <div id="resource">
-                        <form class="search" action="" method="post">
-                            <input class="searchInput" type="search" name="search">
-                            <input class="searchSubmit" type="submit" value="文件搜索">
+                        <form action="/ShowResourceServlet.do" class="search" action="" method="post">
+                            <input type="hidden" name="resType" value="4"/>
+                            <input class="searchInput" type="search" name="search" id="search"/>
+                            <input type="submit" name="search" id="" value="文件搜索"/>
                         </form>
-                        <table class="table" border="0" width="800px" cellpadding="2" cellspacing="1">
-                            <tr class="firstRow">
-                                <td>序号</td>
-                                <td>文件名称</td>
-                                <td>文件大小</td>
-                                <td>上传时间</td>
-                                <td>操作</td>
-                            </tr>
-
-                            <%--循环遍历资源--%>
-                            <c:set var="trType" scope="session" value="${0}"/>
-                            <c:forEach items="${sessionScope.resourceList}" var="resource" varStatus="status">
-                                <c:choose>
-                                    <c:when test="${status.index%2==0}">
-                                        <tr class="trOdd">
-                                        <c:set var="trType" scope="session" value="${1}"/>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <tr class="tr">
-                                        <c:set var="trType" scope="session" value="${0}"/>
-                                    </c:otherwise>
-                                </c:choose>
-                                <td>${resource.id}</td>
-                                <td class="tll"><img src="/images/teachResource/PPT.png"><c:out
-                                        value="${resource.resName}"/></td>
-                                <td><c:out value="${10000}"/></td>
-                                <td><c:out value="${resource.resTime}"/></td>
-                                <td>
-                                    <a onclick="Preview(event)"><img src="/images/teachResource/preview.png"></a>
-                                    <a href="${resource.resPath}" download="${resource.resName}">
-                                        <img src="/images/teachResource/download.png">
-                                    </a>
-                                </td>
+                        <form id="myform" method="post" action="">
+                            <table class="table" border="0" width="800px" cellpadding="2" cellspacing="1">
+                                <tr class="firstRow">
+                                    <td>序号</td>
+                                    <td>文件名称</td>
+                                    <td>上传时间</td>
+                                    <td>操作</td>
                                 </tr>
-                            </c:forEach>
+                                <%--循环遍历资源--%>
+                                <c:set var="trType" scope="session" value="${0}"/>
+                                <c:forEach items="${sessionScope.resources}"  var="resource" begin="<%=page_begin %>" end="<%=page_end %>">
+                                    <c:choose>
+                                        <c:when test="${trType==0}">
+                                            <tr class="trOdd">
+                                            <c:set var="trType" scope="session" value="${1}"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <tr class="tr">
+                                            <c:set var="trType" scope="session" value="${0}"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                    <td><c:out value="${resource.id}"/></td>
+                                    <td><c:out value="${resource.resName}"/></td>
+                                    <td><c:out value="${resource.resTime}"/></td>
+                                    <td>
+                                        <a onclick="Preview(event)"><img src="<c:url value='/images/teachResource/preview.png'/>"></a>
+                                        <a href="<c:out value="${resource.resPath}"/>" download="<c:out value="${resource.resName}"/>">
+                                            <img src="<c:url value='/images/teachResource/download.png'/>">
+                                        </a>
+                                    </td>
 
-                        </table>
+                                    </tr>
+                                </c:forEach>
+                            </table>
+                        </form>
+                        <div class="tranPage">
+                            <table>
+                                <tr>
+                                    <td><a href="/html/teachResDetail-3.jsp?begin=1" onclick="getOnePage('first','');">首页</a></td>
+                                    <c:if test="${sessionScope.page_current != 1 }">
+                                        <td><a href="/html/teachResDetail-3.jsp?begin=${sessionScope.page_current - 1 }" onclick="getOnePage('pre','');">上一页</a></td>
+                                    </c:if>
+                                    <td>[${sessionScope.page_current } / ${sessionScope.page_total }]</td>
+                                    <c:if test="${sessionScope.page_current != sessionScope.page_total }">
+                                        <td><a href="/html/teachResDetail-3.jsp?begin=${sessionScope.page_current + 1 }">下一页</a></td>
+                                    </c:if>
+                                    <td><a href="/html/teachResDetail-3.jsp?begin=${sessionScope.page_total }" onclick="getOnePage('last','');">尾页</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <input type="hidden" name="page" id="page" value="${requestScope.pageInformation.page}">
+                        <input type="hidden" name="pageSize" id="pageSize" value="${requestScope.pageInformation.pageSize}">
+                        <input type="hidden" name="totalPageCount" id="totalPageCount" value="${requestScope.pageInformation.totalPageCount}">
+                        <input type="hidden" name="allRecordCount" id="allRecordCount" value="${requestScope.pageInformation.allRecordCount}">
+                        <input type="hidden" name="orderField" id="orderField" value="${requestScope.pageInformation.orderField}">
+                        <input type="hidden" name="order" id="order" value="${requestScope.pageInformation.order}">
+                        <input type="hidden" name="ids" id="ids" value="${requestScope.pageInformation.ids}">
+                        <input type="hidden" name="searchSql" id="searchSql" value="${requestScope.pageInformation.searchSql}">
+                        <input type="hidden" name="result" id="result" value="${requestScope.pageInformation.result}">
+                        </form>
                     </div>
-
                 </article>
             </div>
         </div>
@@ -98,10 +140,11 @@
 </div>
 
 <div id="copyrights">
-    <jsp:include page="/html/copyright.jsp"/>
+    <jsp:include page="/html/bottom.jsp"/>
 </div>
 </body>
-<script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"type="text/javascript"></script>
+<script type="text/javascript">
     var liList=document.getElementById("leftUl").children;
     for(var i=0;i<liList.length;i++){
         if(i==2)
