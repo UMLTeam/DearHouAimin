@@ -50,7 +50,7 @@
                                                                 class="btn btn-danger radius"><i
             class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius"
                                                           onclick="courseware_add('添加习题','/admin/exercise/exercise-add.jsp')"
-                                                          href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加案例</a></span>
+                                                          href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加习题</a></span>
         <span class="r">共有数据：<strong>${fn:length(sessionScope.resourceList)}</strong> 条</span>
     </div>
     <div class="mt-20">
