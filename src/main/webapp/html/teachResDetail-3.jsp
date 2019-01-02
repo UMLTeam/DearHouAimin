@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/normal.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachRes/teachResDetail-4.css'/>">
-    <script type="text/javascript" src="<c:url value='/js/teachRes/teachResDetail-4.js'/>"></script>
+    <script type="text/javascript" src="<c:url value='/js/teachRes/teachResDetail-3.js'/>"></script>
 </head>
 <body>
 <!-- 分页操作-->
