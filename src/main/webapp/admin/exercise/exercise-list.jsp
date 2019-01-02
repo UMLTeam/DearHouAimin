@@ -49,8 +49,8 @@
     <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="data_del()"
                                                                 class="btn btn-danger radius"><i
             class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius"
-                                                          onclick="courseware_add('添加习题','/admin/exercise/example.jsp')"
-                                                          href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加案例</a></span>
+                                                          onclick="courseware_add('添加习题','/admin/exercise/exercise-add.jsp')"
+                                                          href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加习题</a></span>
         <span class="r">共有数据：<strong>${fn:length(sessionScope.resourceList)}</strong> 条</span>
     </div>
     <div class="mt-20">
@@ -180,7 +180,7 @@
     function exercise_stop(obj, id) {
         layer.confirm('确认要下架吗？', function (index) {
             $(obj).parents("tr").find(".td-manage").prepend(
-                '<a style="text-decoration:none" onClick="exercise_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>'
+                '<a style="text-decoration:none" onClick="exercise_start(this,'+id+')" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>'
             );
             $.ajax({
                 url: '/ResourceServlet.do?type=updateCheck&id=' + id + '&status=0',
@@ -206,7 +206,7 @@
     function exercise_start(obj, id) {
         layer.confirm('确认要发布吗？', function (index) {
             $(obj).parents("tr").find(".td-manage").prepend(
-                '<a style="text-decoration:none" onClick="courseware_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>'
+                '<a style="text-decoration:none" onClick="exercise_stop(this,'+ id +'" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>'
             );
             $.ajax({
                 url: '/ResourceServlet.do?type=updateCheck&id=' + id + '&status=1',
