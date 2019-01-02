@@ -1,4 +1,5 @@
-<!DOCTYPE HTML>
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -7,58 +8,41 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="lib/html5shiv.js"></script>
-    <script type="text/javascript" src="lib/respond.min.js"></script>
+    <script type="text/javascript" src="/lib/html5shiv.js"></script>
+    <script type="text/javascript" src="/lib/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="../static/h-ui/css/H-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/H-ui.admin.css" />
-    <link rel="stylesheet" type="text/css" href="../lib/Hui-iconfont/1.0.8/iconfont.css" />
-    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/skin/default/skin.css" id="skin" />
-    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/static/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/css/style.css" />
     <!--[if IE 6]>
-    <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script type="text/javascript" src="/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <title>添加实验任务</title>
-    <link href="lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+    <title>实验任务</title>
+    <link href="/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div class="page-container">
-    <form class="form form-horizontal" id="form-article-add">
+    <form action="/ResourceServlet.do" method="post" class="form form-horizontal" id="form-article-add" enctype=multipart/form-data>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>课件标题：</label>
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文件标题：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder="" id="" name="">
+                <input type="text" class="input-text" value="" placeholder="" id="" name="title">
             </div>
         </div>
+        <!--资源编号-->
+        <input type="hidden" name="type" value="5"/>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>课件类型：</label>
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文件上传：</label>
             <div class="formControls col-xs-8 col-sm-9">
-				<span class="select-box">
-				<select name="" class="select">
-					<option value="0">PDF</option>
-					<option value="1">PPT</option>
-					<option value="2">WORD</option>
-				</select>
-				</span>
-            </div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>课件上传：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="file" name="file" class="webuploader-element-invisible" multiple="multiple">
-            </div>
-        </div>
-        <div class="row cl">
-            <!-- TO-DO:通过按钮增加标签输入框 -->
-            <label class="form-label col-xs-4 col-sm-2">标签（多个标签以空格隔开）：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder="" id="" name="">
+                <input type="file" name="file" class="" multiple="multiple" placeholder="选择文件" />
             </div>
         </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-                <button onClick="article_save_submit();" class="btn btn-primary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
+                <input type="submit" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</input>
                 <button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i>保存草稿</button>
                 <button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
             </div>
@@ -68,23 +52,55 @@
 
 
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="../lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="../static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="../static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer /作为公共模版分离出去-->
+<script type="text/javascript" src="/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer /作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="../lib/jquery.validation/1.14.0/jquery.validate.js"></script>
-<script type="text/javascript" src="../lib/jquery.validation/1.14.0/validate-methods.js"></script>
-<script type="text/javascript" src="../lib/jquery.validation/1.14.0/messages_zh.js"></script>
-<script type="text/javascript" src="../lib/webuploader/0.1.5/webuploader.min.js"></script>
+<script type="text/javascript" src="/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="/lib/webuploader/0.1.5/webuploader.min.js"></script>
 <script type="text/javascript">
     function article_save(){
         alert("刷新父级的时候会自动关闭弹层。")
-        window.parent.location.reload();
+        $.ajax({
+            url: '/ExerciseServlet.do?type=save',
+            method: 'POST',
+            data: $("#form-article-add").serialize(),
+            success: function(res){
+                if(res.data){
+                    window.parent.location.reload();
+                }
+                else{
+                    alert("保存失败");
+                }
+            }
+        })
     }
 
-    $(function(){
+    function article_save_submit(){
+        $.ajax({
+            url: '/ResourceServlet.do',
+            method: 'POST',
+            processData:false,
+            contentType:false,
+            data: new FormData($("#form-article-add")),
+            success: function(res){
+                if(res.data){
+                    window.parent.location.reload();
+                }
+                else{
+                    alert("发布失败");
+                }
+            }
+        })
+    }
+
+
+
+    /*$(function(){
         $('.skin-minimal input').iCheck({
             checkboxClass: 'icheckbox-blue',
             radioClass: 'iradio-blue',
@@ -94,7 +110,6 @@
         $list = $("#fileList"),
             $btn = $("#btn-star"),
             state = "pending",
-            uploader;
 
         var uploader = WebUploader.create({
             auto: true,
@@ -189,10 +204,10 @@
                 uploader.upload();
             }
         });
+    });*/
 
-    });
 
-    (function( $ ){
+    /*(function( $ ){
         // 当domReady的时候开始初始化
         $(function() {
             var $wrap = $('.uploader-list-container'),
@@ -749,7 +764,7 @@
             updateTotalProgress();
         });
 
-    })( jQuery );
+    })( jQuery );*/
 </script>
 </body>
 </html>
