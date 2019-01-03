@@ -55,7 +55,7 @@ public class ResourceServlet extends HttpServlet {
             case "insert": {
                 try {
                     Resource resource = new Resource();
-                    resource.setIsCheck("0");
+                    resource.setIsCheck("1");
                     DiskFileItemFactory factory = new DiskFileItemFactory();
                     ServletFileUpload upload = new ServletFileUpload(factory);
                     //获取目录所在的路径
