@@ -1,6 +1,6 @@
 package web.controller;
 
-import domian.Resource;
+import domain.Resource;
 import net.sf.json.JSONObject;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;

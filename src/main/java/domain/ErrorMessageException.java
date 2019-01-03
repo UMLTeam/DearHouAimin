@@ -1,4 +1,4 @@
-package domian;
+package domain;
 
 /**
  * 自定义异常类

@@ -1,6 +1,6 @@
 package service;
 
-import domian.Resource;
+import domain.Resource;
 import org.apache.commons.fileupload.FileItem;
 
 import java.sql.SQLException;
