@@ -102,10 +102,10 @@
             <li class="title" onmouseover="extend('1')" onmouseout="out('1')">
                 <a href="courseDetail-1.html">课程概况</a>
                 <ul style="display: none;" id="first">
-                    <li class="detail"><a href="courseDetail-1.html" style="color: #fff;">课程简介</a></li>
-                    <li class="detail"><a href="courseDetail-2.html" style="color: #fff;">课程特色</a></li>
-                    <li class="detail"><a href="courseDetail-3.html" style="color: #fff;">教材与参考资料</a></li>
-                    <li class="detail"><a href="courseDetail-4.html" style="color: #fff;">历史沿革</a></li>
+                    <li class="detail"><a href="courseDetail-1.jsp" style="color: #fff;">课程简介</a></li>
+                    <li class="detail"><a href="courseDetail-2.jsp" style="color: #fff;">课程特色</a></li>
+                    <li class="detail"><a href="courseDetail-3.jsp" style="color: #fff;">教材与参考资料</a></li>
+                    <li class="detail"><a href="courseDetail-4.jsp" style="color: #fff;">历史沿革</a></li>
                 </ul>
             </li>
             <li class="title" onmouseover="extend('2')" onmouseout="out('2')">

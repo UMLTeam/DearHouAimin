@@ -101,10 +101,10 @@
         <ul>
             <li><a href="courseDetail-1.html">课程概况</a>
                 <div class="detail">
-                    <div><a href="courseDetail-1.html">课程简介</a></div>
-                    <div><a href="courseDetail-2.html">课程特色</a></div>
-                    <div><a href="courseDetail-3.html">教材与参考资料</a></div>
-                    <div><a href="courseDetail-4.html">历史沿革</a></div>
+                    <div><a href="courseDetail-1.jsp">课程简介</a></div>
+                    <div><a href="courseDetail-2.jsp">课程特色</a></div>
+                    <div><a href="courseDetail-3.jsp">教材与参考资料</a></div>
+                    <div><a href="courseDetail-4.jsp">历史沿革</a></div>
                 </div>
             </li>
             <li><a href="teacherTeam.html">教师队伍</a>
