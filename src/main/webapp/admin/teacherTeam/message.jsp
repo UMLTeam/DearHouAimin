@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*,domian.Message" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*,domain.Message" pageEncoding="UTF-8"%>
 <%	
 	Message message=(Message) request.getAttribute("message");
 	response.setHeader("refresh", message.getRedirectTime()+";URL="+message.getRedirectUrl());
