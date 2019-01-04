@@ -3,14 +3,14 @@ package dao.Impl;
 
 import domain.Class_List;
 import utils.BeanUtil;
-import utils.JDBCutil;
+import utils.JDBCutils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class grade_list_Dao {
-JDBCutil jdbcutil=new JDBCutil();
+JDBCutils jdbcutil=new JDBCutils();
 	
 	//?界面显示添加的信息-》返回值    ！！分页等下再来
 	public int add(Class_List class_list){

@@ -90,7 +90,11 @@ public class social_evalution_servlet extends BaseServlet {
         evalutionService.editStatus(evalutionId,status);
         return "r:/admin/social_evalution.jsp";
     }
-
-
+    public String getSocialevalutionById(HttpServletRequest request, HttpServletResponse response){
+        String evalutionId=request.getParameter("evalutionId");
+        social_evalution evalution=evalutionService.getSocialevalutionById(evalutionId);
+        request.setAttribute("social_evalution",evalution);
+        return "f:/html/social_evalution_show.jsp";
+    }
 
 }

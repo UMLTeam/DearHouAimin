@@ -4,7 +4,7 @@ package dao.Impl;
 
 import domain.Class_List;
 import utils.BeanUtil;
-import utils.JDBCutil;
+import utils.JDBCutils;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import java.util.Map;
 
 ////
 public class class_list_Dao {
-	JDBCutil jdbcutil = new JDBCutil();
+	JDBCutils jdbcutil = new JDBCutils();
 
 	public Class_List getById(String class_id) throws SQLException {
 		String sql = "select * from class_list where class_id=?";

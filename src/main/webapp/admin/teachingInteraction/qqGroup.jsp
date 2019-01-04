@@ -1,6 +1,7 @@
 <%@ page import="java.util.List" %>
-<%@ page import="bean.QQGroup" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="domain.QQGroup" %>
+<%@ page import="java.util.ArrayList" %>
+<%--
   Created by IntelliJ IDEA.
   User: 刘楷川
   Date: 2018/12/25

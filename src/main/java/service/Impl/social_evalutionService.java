@@ -28,5 +28,7 @@ public class social_evalutionService {
     public boolean editStatus(int evalutionId, int status){
         return evalutionDao.editStatus(evalutionId,status);
     }
-
+    public social_evalution getSocialevalutionById(String id){
+        return evalutionDao.getSocialevalutionById(id);
+    }
 }

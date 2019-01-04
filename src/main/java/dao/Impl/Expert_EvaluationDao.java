@@ -1,7 +1,7 @@
 package dao.Impl;
 
 import domain.Expert_Evaluation;
-import utils.JDBCutil;
+import utils.JDBCutils;
 
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Expert_EvaluationDao {
-    JDBCutil jdbcutil = new JDBCutil();
+    JDBCutils jdbcutil = new JDBCutils();
 
     public int addContent(Expert_Evaluation evaluation) {
         String sql = "insert into expert_evaluation values(?,?,?,?,?)";

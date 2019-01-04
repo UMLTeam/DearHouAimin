@@ -1,7 +1,7 @@
 package dao.Impl;
 
 import domain.Online_Evalator;
-import utils.JDBCutil;
+import utils.JDBCutils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.Map;
 
 //
 public class EvalatorDao {
-    JDBCutil jdbcutil=new JDBCutil();
+    JDBCutils jdbcutil=new JDBCutils();
     public List<Online_Evalator> getEvalatorList(int QueryPage) {
         String sql="select * from online_evalator limit ?,5";
         try {
