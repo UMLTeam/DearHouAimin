@@ -40,7 +40,7 @@
                 <article class="mainContent">
                     <header class="contentNav">
                         <nav class="nav">
-                            <a href="/html/index.html">首页</a>·
+                            <a href="/html/index.jsp">首页</a>·
                             <a href="/teacherTeam?type=courseManager">教师队伍</a>·
                             <a href="/teacherTeam?type=trainingPlan">青年教师培养</a>
                         </nav>

@@ -10,9 +10,9 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import domian.CourseManager;
-import domian.Teacher;
-import domian.TrainingPlan;
+import domain.CourseManager;
+import domain.Teacher;
+import domain.TrainingPlan;
 
 public class TeacherTeamDao {
 	

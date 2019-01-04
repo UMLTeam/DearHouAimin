@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import domian.CourseManager;
-import domian.Teacher;
-import domian.TrainingPlan;
+import domain.CourseManager;
+import domain.Teacher;
+import domain.TrainingPlan;
 import service.Impl.TeacherTeamService;
 
 

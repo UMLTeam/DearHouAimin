@@ -1,7 +1,8 @@
 package service.Impl;
 
 import dao.Impl.ResourceManageDaoImpl;
-import domian.Resource;
+import domain.Resource;
+
 import org.apache.commons.fileupload.FileItem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

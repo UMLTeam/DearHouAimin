@@ -1,7 +1,8 @@
 package dao.Impl;
 
 import dao.ResourceManageDao;
-import domian.Resource;
+import domain.Resource;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import sun.util.calendar.BaseCalendar;
