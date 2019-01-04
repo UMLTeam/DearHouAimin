@@ -160,7 +160,7 @@
                             style="color: #fff;">学生成绩</a></li>
                     <li class="detail"><a href="<c:url value ='/class_list_Servlet?method=LoadStudentClassList&classListpageQuery=1'/>"
                                           style="color: #fff;">班级名册</a></li>
-                    <li class="detail"><a href="<c:url value ='/TeachFileServlet?method=LoadHomework&TeachFilepageQuery=1'/>" style="color: #fff;">学生作业案例</a>
+                    <li class="detail"><a href="<c:url value ='/HomeworkServlet?method=LoadHomework&HomeworkpageQuery=1'/>" style="color: #fff;">学生作业案例</a>
                     </li>
                 </ul>
             </li>

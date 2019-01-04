@@ -35,12 +35,13 @@
 	            <div class="column_1">
 	                <section class="leftNav">
 	                    <h3>教学管理</h3>
-	                    <ul>
-							<li class="current"><a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront">开课计划</a></li>
-							<li><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>">上课班级</a></li>
-							<li><a href="<c:url value='/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1'/>">学生成绩</a></li>
-							<li><a href="<c:url value ='/class_list_Servlet?method=LoadStudentClassList&classListpageQuery=1'/>">班级名册</a></li>
-							<li><a href="<c:url value ='/HomeworkServlet?method=LoadHomework&HomeworkpageQuery=1'/>">作业案例</a></li>
+						<ul>
+							<li><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1'/>">校外专家评价</a></li>
+							<li><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=1&n=2'/>">校内督导评价</a></li>
+							<li><a href="<c:url value='/teacher_evalution_servlet?method=LoadTeacherEvalator&EvalatorpageQuery=1'/>">教师自我评价</a></li>
+							<li><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1'/>">校内学生评价</a></li>
+							<li class="current"><a href="<c:url value='/social_evalution_servlet?method=LoadSocialEvalator&EvalatorpageQuery=1'/>">社会评价</a></li>
+							<li><a href="<c:url value='/TeachFileServlet?method=LoadHomework&TeachFilepageQuery=1'/>">教学评估及相关文件</a></li>
 						</ul>
 	                </section>
 	            </div>
@@ -50,19 +51,17 @@
 	                        <nav class="nav">
 								<a href="${pageContext.request.contextPath}/html/index.jsp">首页</a>·
 								<a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront">教学管理</a>·
-								<a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront">开课计划</a>·
+								<a href="${pageContext.request.contextPath}/social_evalution_servlet?method=LoadSocialEvalator&EvalatorpageQuery=1">社会评价</a>·
 								<a href="">查看详情</a>
 	                        </nav>
-	                        <h1>开课计划</h1>
+	                        <h1>社会评价</h1>
 	                    </header>
 	                    <section class="article">
 							<div class="itemDetail newItemContent">
-								<h2 style="color: black;">${requestScope.term}</h2>
-								<div id="my-pdf"></div>
-
+								<h2 style="color: black;">${social_evalution.evalutionTitle}</h2>
+								<div style="color: black;">${social_evalution.content}</div>
 							</div>
 	                    </section>
-	
 	                </article>
 	            </div>
 	        </div>
@@ -78,13 +77,5 @@
 		<jsp:include page="/html/copyright.jsp"/>
 	</div>
 
-<!-- 引入jq -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-<!-- 引入 显示pdf js组件 -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/pdfobject.min.js"></script>
-<script>
-var $container = $("#my-pdf");
-PDFObject.embed("${pageContext.request.contextPath}/${requestScope.path}", $container);
-</script>
 </body>
 </html>

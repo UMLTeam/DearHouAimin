@@ -65,7 +65,7 @@
                             <span>发布时间</span>
                         </td>
                         <td valign="top"  width="200">
-                            <span class="show"><a href="#">查看</a> </span>
+                            <span class="show">查看</span>
                         </td>
                     </tr>
 
@@ -79,7 +79,7 @@
                             </td>
                             <td valign="top">
                                     <%--<span>${evalator.content}</span>--%>
-                                <span><a href="#">查看</a> </span>
+                                        <span><a href="/social_evalution_servlet?method=getSocialevalutionById&evalutionId=${evalator.evalutionId}">查看</a> </span>
                             </td>
                         </tr>
                     </c:forEach>

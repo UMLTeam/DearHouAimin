@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/normal.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachEffect/normal.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachEffect/teachEffectDetail.css'/>">
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="<c:url value='/js/jquery-3.3.1.min.js'/>"></script>
 
 </head>
 <body onload="Rendering();">
@@ -80,7 +80,7 @@
                             </td>
                             <td valign="top">
                                 <%--<span>${evalator.content}</span>--%>
-                                    <span><a href="#" class="show">查看</a> </span>
+                                    <span><a href="<c:url value='/teacher_evalution_servlet?method=getEvalutionById&evalutionId=${evalator.evalutionId}'/>" class="show">查看</a> </span>
                             </td>
                         </tr>
                     </c:forEach>

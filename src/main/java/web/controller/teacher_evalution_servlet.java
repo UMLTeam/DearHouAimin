@@ -97,6 +97,11 @@ public class teacher_evalution_servlet extends BaseServlet {
         return "r:/admin/teacher_evaluation.jsp";
     }
 
-
+    public String getEvalutionById(HttpServletRequest request, HttpServletResponse response){
+        String id = request.getParameter("evalutionId");
+        teacher_evalution evalution = evalutionService.getEvalutionById(id);
+        request.setAttribute("evalution",evalution);
+        return "f:/html/teachEffectDetail-3-show1.jsp";
+    }
 
 }

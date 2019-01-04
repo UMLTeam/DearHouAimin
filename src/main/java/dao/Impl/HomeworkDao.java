@@ -3,7 +3,7 @@ package dao.Impl;
 
 import domain.FileBean;
 import utils.BeanUtil;
-import utils.JDBCutil;
+import utils.JDBCutils;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class HomeworkDao {
 	
-    JDBCutil jdbcutil=new JDBCutil();
+    JDBCutils jdbcutil=new JDBCutils();
     
     public List<FileBean> getHomeworkList(int QueryPage) {
         String sql="select * from resources limit ?,5";

@@ -2,14 +2,14 @@ package dao.Impl;
 
 
 import domain.Student_Score;
-import utils.JDBCutil;
+import utils.JDBCutils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class Student_ScoreDao {
-    JDBCutil jdbcutil=new JDBCutil();
+    JDBCutils jdbcutil=new JDBCutils();
     public List<Student_Score> getEvalatorList(int QueryPage) {
         String sql="select * from student_score limit ?,5";
         try {

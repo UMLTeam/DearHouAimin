@@ -32,5 +32,7 @@ public class teacher_evalutionService {
     public boolean editStatus(int evalutionId, int status){
         return evalutionDao.editStatus(evalutionId,status);
     }
-
+    public teacher_evalution getEvalutionById(String id){
+        return evalutionDao.getEvalutionById(id);
+    }
 }

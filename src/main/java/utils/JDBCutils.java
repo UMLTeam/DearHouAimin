@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class JDBCutil {
+public class JDBCutils {
     //数据库用户名
     private static final String USERNAME = "root";
 
@@ -22,7 +22,7 @@ public class JDBCutil {
     private Connection connection;
     private PreparedStatement pstmt;
     private ResultSet resultSet;
-    public JDBCutil() {
+    public JDBCutils() {
         // TODO Auto-generated constructor stub
         try{
             Class.forName(DRIVER);

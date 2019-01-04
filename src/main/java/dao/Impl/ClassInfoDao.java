@@ -1,14 +1,14 @@
 package dao.Impl;
 
 import domain.ClassInfo;
-import utils.JDBCutil;
+import utils.JDBCutils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class ClassInfoDao {
-    JDBCutil jdbcutil=new JDBCutil();
+    JDBCutils jdbcutil=new JDBCutils();
     public List<ClassInfo> getClassInfoList(int QueryPage) {
         String sql="select * from classInfo limit ?,5";
         try {
