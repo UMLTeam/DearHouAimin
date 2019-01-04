@@ -1,8 +1,9 @@
 package dao.Impl;
 
+import dao.DataBaseConnectionDao;
+
 import java.sql.*;
 
-import dao.DataBaseConnectionDao;
 /**
  * Demo class
  *
@@ -37,34 +38,34 @@ public class DataBaseConnectionImpl implements DataBaseConnectionDao {
         return this.connection;
     }
 
-	/**
-	 * 关闭JDBC对象
-	 */
-	@Override
-	public void free(Connection con, PreparedStatement ps, ResultSet rs) {
-		try {
-			if (con != null) {
-				con.close();
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (ps != null) {
-					ps.close();
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} finally {
-				try {
-					if (rs != null) {
-						rs.close();
-					}
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-	}
+    /**
+     *     关闭JDBC对象
+     */
+    @Override
+    public void free(Connection con , PreparedStatement ps , ResultSet rs) {
+        try {
+            if(con != null) {
+                con.close();
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(ps != null) {
+                    ps.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if(rs != null) {
+                        rs.close();
+                    }
+                } catch(SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
 }
