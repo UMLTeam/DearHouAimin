@@ -1,6 +1,6 @@
 package dao;
 
-import domian.Resource;
+import domain.Resource;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
