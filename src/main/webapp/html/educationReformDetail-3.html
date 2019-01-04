@@ -1,60 +1,230 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>教学研究改革-改革成果</title>
-    <meta charset="utf-8">
-    <link rel="icon" href="/images/dgut.jpg">
-    <link rel="stylesheet" type="text/css" href="../style/normal.css">
-    <link rel="stylesheet" type="text/css" href="../style/educationReform/normal.css">
-    <link rel="stylesheet" type="text/css" href="../style/educationReform/educationReformDetail.css">
-    <script type="text/javascript" src="../js/normal.js"></script>
+	<title>教学研究改革-改革成果</title>
+	<meta charset="utf-8">
+	<link rel="icon" href="/images/dgut.jpg">
+	<link rel="stylesheet" type="text/css" href="../style/normal.css">
+	<link rel="stylesheet" type="text/css" href="../style/educationReform/normal.css">
+	<link rel="stylesheet" type="text/css" href="../style/educationReform/educationReformDetail.css">
+	<script type="text/javascript" src="../js/normal.js"></script>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<style type="text/css">
+		.article_li {
+			padding: 1rem 0.5rem;
+			overflow: hidden;
+			border-bottom: 1px solid #999999;
+			cursor: pointer;
+		}
+
+		.article_li:hover {
+			background-color: #F0F0F0;
+		}
+
+		.article_li>a>div>ul>li {
+			padding: 5px;
+		}
+
+		.page_li {
+			display: inline-block;
+			float: left;
+			margin: 0.1rem;
+			padding: 0.5rem 1rem;
+			border: none;
+			border-radius: 50px;
+			color: #04837e;
+		}
+
+		.page_li:hover {
+			background-color: #04837e;
+			color: #ffffff;
+		}
+
+		.page_active {
+			background-color: #04837e;
+			color: #ffffff;
+		}
+	</style>
+	<script type="text/javascript">
+		
+        //获取后端的值
+        var pageNo=0 ;// 当前页码,初始值为第一页;
+        var lastPage; //记录上一页的内容
+        var totalPage=0;//总页数
+        var data;
+        var totalCurrentPageNum=7;//最多显示页数
+        $(function () {
+
+            //ajax获取后端的值
+            $.ajax({
+                url: "/educationReformDetail3Action?type=all",
+                type: "GET",
+                async :false,//取消异步 否则复制失败
+                data: {
+                    "type":"all"
+                },
+                dataType:"json",
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                //   contentType: "application/json;charset=UTF-8",
+                success: function (result) {
+                    //   data=result.data;
+                    // totalPage=result.data[0].length;//设置总页数
+                    console.log(result);
+                    console.log(result.status);
+                    data=result;
+                },
+                error : function(result) {
+                    alert("获取失败");
+                },
+            });
+            for(var key in data){
+                totalPage++;
+            }
+            console.log(totalPage);
+            //初始化时首页内容
+            for(var i=0;i<data[pageNo].length;i++) {
+                $("#article").append("" +
+                    "<li class=\"article_li\"> <a href=\"" + data[pageNo][i]["address"] + "\"><div>" +
+                    " <ul> <li style=\"font-size: 16px;color: #333333;\">" + data[pageNo][i]["title"] + "</li>" +
+                    " <li style=\"font-size: 14px;color: #999999;\">发布时间：" + data[pageNo][i]["time"] + "</li> </ul> </div> </a> </li>");
+            }
+            //第一页选项，初始化为高亮
+            $("#page").append("<li id=\"0\" class=\"article_li page_li page_active\">1</li>");
+			// var mostPage=pageNo%7;
+			var mostPage=totalCurrentPageNum;
+            console.log(mostPage);
+            for(var i=1;i<totalPage;i++) {
+                //最多显示totalCurrentPageNum页
+                if((i+1)>mostPage){
+                    break;
+                }
+                $("#page").append("<li id=\""+i+"\" class=\"article_li page_li\">"+(i+1)+"</li>");
+            }
+            //点击页数时触发该函数
+            $("#page").on("click","li",function () {
+                if(pageNo==$(this).attr("id")&&$("#article li").length!=1){
+
+				}else {
+                    // if((pageNo+1)%7==0){
+                    lastPage = pageNo;
+                    pageNo = $(this).attr("id");//获取点击页
+                    console.log(Number(pageNo) + 1);
+                    console.log("lastpage" + lastPage);
+                    var flag = new Boolean(false);
+                    if ((((Number(pageNo) + 2) % totalCurrentPageNum == 0&&(Number(pageNo)+2)>totalCurrentPageNum)|| Number(pageNo) ==Number(totalCurrentPageNum)-1 )&&Number(pageNo)!=0) {
+                        flag == true;
+                        if (Number(lastPage) < Number(pageNo)) {
+                            mostPage = (Number(pageNo)) * 2;
+                            console.log("<" + mostPage);
+                            $("#page").html("<li id=\"" + pageNo + "\" class=\"article_li page_li page_active\">" + (Number(pageNo) + 1) + "</li>");
+                            for (var i = Number(pageNo) + 1; i < totalPage; i++) {
+                                //最多显示totalCurrentPageNum页
+                                if ((Number(i)) > mostPage) {
+                                    break;
+                                }
+                                $("#page").append("<li id=\"" + i + "\" class=\"article_li page_li\">" + (Number(i) + 1) + "</li>");
+
+                            }
+                        } else {
+                            // mostPage=pageNo-7;
+                            mostPage = Number(pageNo) - Number(totalCurrentPageNum) + 1;
+                            console.log("<" + mostPage);
+                            $("#page").html("<li id=\"" + mostPage + "\" class=\"article_li page_li \">" + (Number(mostPage) + 1) + "</li>");
+                            for (var i = Number(mostPage) + 1; i < totalPage; i++) {
+                                //最多显示totalCurrentPageNum页
+                                if ((Number(i)) == pageNo) {
+                                    $("#page").append("<li id=\"" + i + "\" class=\"article_li page_li page_active\">" + (Number(i) + 1) + "</li>");
+                                    break;
+                                }
+                                $("#page").append("<li id=\"" + i + "\" class=\"article_li page_li\">" + (Number(i) + 1) + "</li>");
+
+                            }
+                        }
+                        lastPage = mostPage;
+                    }
+
+                    //先把#article下已有的目录清除替换为点击页的第一条目录
+                    $("#article").html("" +
+                        "<li class=\"article_li\"> <a href=\"" + data[pageNo][0]["address"] + "\"><div>" +
+                        " <ul> <li style=\"font-size: 16px;color: #333333;\">" + data[pageNo][0]["title"] + "</li>" +
+                        " <li style=\"font-size: 14px;color: #999999;\">发布时间：" + data[pageNo][0]["time"] + "</li> </ul> </div> </a> </li>"
+                    );
+                    //清除上一页目录内容和添加该页第一条目录之后其它目录选项追加
+                    for (var i = 1; i < data[pageNo].length; i++) {
+                        $("#article").append("" +
+                            "<li class=\"article_li\"> <a href=\"" + data[pageNo][i]["address"] + "\"><div>" +
+                            " <ul> <li style=\"font-size: 16px;color: #333333;\">" + data[pageNo][i]["title"] + "</li>" +
+                            " <li style=\"font-size: 14px;color: #999999;\">发布时间：" + data[pageNo][i]["time"] + "</li> </ul> </div> </a> </li>");
+                    }
+                    console.log("this" + $(this).attr("id"));
+                    $(this).addClass("page_active");
+                    console.log("add  " + lastPage);
+                    // $("#" + lastPage).removeClass("page_active");
+                    $(this).siblings().removeClass("page_active");
+                    console.log("remove  " + lastPage);
+                }
+            })
+        })
+	</script>
 </head>
+
 <body onload="Rendering();">
 <!-- 通过js渲染，js代码在normal.js里 -->
 <div id="top"></div>
 
 <article class="content">
 
-    <section id="banner">
-        <img src="../images/index/abouttop_03.jpg">
-    </section>
-    <section class="mainWrap relative">
-        <div class="detailContent">
-            <div class="column_1">
-                <section class="leftNav">
-                    <h3>教学研究改革</h3>
-                    <ul>
-                        <li><a href="educationReformDetail-1.html">改革措施</a></li>
-                        <li><a href="educationReformDetail-2.html">改革立项</a></li>
-                        <li class="current"><a href="educationReformDetail-3.html">改革成果</a></li>
-                        <li><a href="educationReformDetail-4.html">改革表彰和奖励</a></li>
-                    </ul>
-                </section>
-            </div>
-            <div class="column_2 ">
-                <article class="mainContent">
-                    <header class="contentNav">
-                        <nav class="nav">
-                            <a href="index.jsp">首页</a>·
-                            <a href="educationReformDetail-1.html">教学研究改革</a>·
-                            <a href="educationReformDetail-3.html">改革成果</a>
-                        </nav>
-                        <h1>改革成果</h1>
-                    </header>
-                    <section class="article">
-                        <figure class="present">
-                            <img src="../images/educationReform/reformResult.jpeg" width="864" height="648" class="portrait">
-                            <!--<img src="../images/index/President-z.gif">-->
-                        </figure>
-                    </section>
+	<section id="banner">
+		<img src="../images/index/abouttop_03.jpg">
+	</section>
+	<section class="mainWrap relative">
+		<div class="detailContent">
+			<div class="column_1">
+				<section class="leftNav">
+					<h3>教学研究改革</h3>
+					<ul>
+						<li>
+							<a href="educationReformDetail-1.html">改革措施</a>
+						</li>
+						<li>
+							<a href="educationReformDetail-2.html">改革立项</a>
+						</li>
+						<li class="current">
+							<a href="educationReformDetail-3.html">改革成果</a>
+						</li>
+						<li>
+							<a href="educationReformDetail-4.html">改革表彰和奖励</a>
+						</li>
+					</ul>
+				</section>
+			</div>
+			<div class="column_2 ">
+				<article class="mainContent">
+					<header class="contentNav">
+						<nav class="nav">
+							<a href="index.html">首页</a>·
+							<a href="educationReformDetail-1.html">教学研究改革</a>·
+							<a href="educationReformDetail-3.html">改革成果</a>
+						</nav>
+					</header>
+				</article>
+			</div>
+			<div class="column_2 ">
+				<section id="article" class="article" style="color: #000000;">
+					<ul>
 
-                </article>
-            </div>
-            <div class="column_3">
+					</ul>
+				</section>
+			</div>
+			<div class="column_2" style="margin-top: 2rem;">
+				<section id="pageSelect" class="article" style="color: #000000;overflow: hidden;width: 50%;height:42px;float: right;">
+					<ul id="page" style="width: 100%;text-overflow: ellipsis;white-space: nowrap;">
 
-            </div>
-        </div>
-    </section>
+					</ul>
+				</section>
+			</div>
+		</div>
+	</section>
 </article>
 
 <!-- 通过js渲染，js代码在normal.js里 -->
@@ -62,4 +232,5 @@
 <!-- 通过js渲染，js代码在normal.js里 -->
 <div id="copyrights"></div>
 </body>
+
 </html>

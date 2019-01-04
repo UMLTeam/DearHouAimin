@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>教学研究改革-改革措施</title>
+		<meta charset="utf-8">
+		<link rel="icon" href="../../images/dgut.jpg">
+		<link rel="stylesheet" type="text/css" href="../../style/normal.css">
+	    <link rel="stylesheet" type="text/css" href="../../style/educationReform/normal.css">
+	    <link rel="stylesheet" type="text/css" href="../../style/educationReform/educationReformDetail.css">
+	    <script type="text/javascript" src="../../js/educationReformDetail/normal.js" ></script>
+	</head>
+
+	<body onload="Rendering();">
+		<!-- 通过js渲染，js代码在normal.js里 -->
+		<div id="top"></div>
+		<article class="content">
+
+			<section id="banner">
+				<img src="../../images/index/abouttop_03.jpg">
+			</section>
+			<section class="mainWrap relative">
+				<div class="detailContent">
+					<div class="column_1">
+						<section class="leftNav">
+							<h3>教学研究改革</h3>
+							<ul style="padding-left:0;">
+								<li class="current">
+									<a href="../educationReformDetail-1.html">改革措施</a>
+								</li>
+								<li>
+									<a href="../educationReformDetail-2.html">改革立项</a>
+								</li>
+								<li>
+									<a href="../educationReformDetail-3.html">改革成果</a>
+								</li>
+								<li>
+									<a href="../educationReformDetail-4.html">改革表彰和奖励</a>
+								</li>
+							</ul>
+						</section>
+					</div>
+					<div class="column_2 ">
+						<article class="mainContent">
+							<header class="contentNav">
+								<nav class="nav">
+									<a href="../index.html">首页</a>·
+									<a href="../educationReformDetail-1.html">教学研究改革</a>·
+									<a href="../educationReformDetail-1.html">改革措施</a>
+								</nav>
+							</header>
+						</article>
+					</div>
+					<div class="column_2 " id="article">
+						<section class="article" style="color: #000000;">
+							<div class="main">
+								<div class="cen-main" style="margin-top: 0px;">
+									<div class="cen-div color" style="width: 100%;">
+										<div class="title_cen mar-t2 text" style="text-align: center;">
+											<h3>{{content.dguterd1_title}}</h3>
+										</div>
+										<div class="line mar-t2 con_div">
+											<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+												<tr>
+													<td align="center" width="30%">
+														<span>
+															{{content.dguterd1_date}}
+														</span>
+														</span>
+														&nbsp; &nbsp; &nbsp; &nbsp; 来源：{{content.dguterd1_origin}}
+														<span id="hits"></span>
+													</td>
+												</tr>
+											</table>
+											</CMSPRO_DOCUMENT>
+											</td>
+											</tr>
+											</table>
+										</div>
+										<div v-html='content.dguterd1_content' class="con_cen line mar-t2" id="zoom">
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+		</article>
+
+		<!-- 通过js渲染，js代码在normal.js里 -->
+		<div id="bottom"></div>
+		<!-- 通过js渲染，js代码在normal.js里 -->
+		<div id="copyrights"></div>
+		<script type="text/javascript" src="../../admin/lib/jquery/1.9.1/jquery.min.js" ></script>
+		<script type="text/javascript" src="../../js/educationReformDetail/vue.js" ></script>
+		<script src="../../js/educationReformDetail/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var href = window.location.href;
+			console.log(href);
+			var id = href.split("=")[1];
+			
+			var news_result = new Vue({
+				el:"#article",
+				data:{
+					content:"",
+				},
+			})
+			
+				axios.get('/educationReformDetail1Action?type=getContent&id='+id).then(function(response){ 
+				  if(response != "0" && response != 0){
+				  	news_result.content = response.data[0];
+				  }
+				}).catch(function (error) {
+				  	console.log(error);
+				});
+		</script>
+	</body>
+
+</html>
