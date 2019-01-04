@@ -20,9 +20,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript" src="${pageContext.request.contextPath }/js/normal.js"></script>
 </head>
 
-<body onload="Rendering();">
+<body>
     <!-- 通过js渲染，js代码在normal.js里 -->
-    <div id="top"></div>
+    <div id="top">
+        <jsp:include page="/html/top.jsp"/>
+    </div>
 
     <article class="content">
 
