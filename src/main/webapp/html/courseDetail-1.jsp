@@ -65,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </article>
                     <br>
                     <br>
-                    <a href="${pageContext.request.contextPath }//resource/面向对象分析与设计--课程简介.pdf">点击这里下载课程简介.pdf文件</a>
+                    <a href="${pageContext.request.contextPath }/resource/面向对象分析与设计--课程简介.pdf">点击这里下载课程简介.pdf文件</a>
                 </div>
                 <div class="column_3">
                     <figure class="present">
