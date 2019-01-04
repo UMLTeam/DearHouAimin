@@ -3,7 +3,7 @@
   Date: 19-1-1
   Time: 下午4:18
 --%>
-<%@ page import="domian.Resource" %>
+<%@ page import="domain.Resource" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>

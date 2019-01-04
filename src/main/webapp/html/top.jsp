@@ -109,12 +109,12 @@
                 </ul>
             </li>
             <li class="title" onmouseover="extend('2')" onmouseout="out('2')">
-                <a href="teacherTeamDetail-1.html">教师队伍</a>
+                <a href="/teacherTeam?type=courseManager">教师队伍</a>
                 <ul style="display: none;" id="second">
-                    <li class="detail"><a href="teacherTeamDetail-1.html" style="color: #fff;">课程负责人</a></li>
-                    <li class="detail"><a href="teacherTeamDetail-2.html" style="color: #fff;">课程教学团队</a></li>
-                    <li class="detail"><a href="teacherTeamDetail-3.html" style="color: #fff;">主讲教师</a></li>
-                    <li class="detail"><a href="teacherTeamDetail-4.html" style="color: #fff;">青年教师培养</a></li>
+                    <li class="detail"><a href="/teacherTeam?type=courseManager" style="color: #fff;">课程负责人</a></li>
+                    <li class="detail"><a href="/teacherTeam?type=teacherTeam" style="color: #fff;">课程教学团队</a></li>
+                    <li class="detail"><a href="/teacherTeam?type=lecturer" style="color: #fff;">主讲教师</a></li>
+                    <li class="detail"><a href="/teacherTeam?type=trainingPlan" style="color: #fff;">青年教师培养</a></li>
                 </ul>
             </li>
             <li class="title" onmouseover="extend('3')" onmouseout="out('3')">

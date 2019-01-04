@@ -1,4 +1,4 @@
-<%@ page import="domian.Resource" %>
+<%@ page import="domain.Resource" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -62,8 +62,9 @@
                     <header class="contentNav">
                         <nav class="nav">
                             <a href="index.jsp">首页</a>·
-                            <a href="teachResDetail-1.jsp">教学资源</a>·
-                            <a href="teachResDetail-1.jsp">课程课件</a>
+                            <a href="#">教学资源</a>·
+                            <a href="/ShowResourceServlet.do?resType=1">课程课件</a>
+
                         </nav>
                         <h1>课程课件</h1>
                     </header>
