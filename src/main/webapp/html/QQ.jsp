@@ -3,7 +3,6 @@
 <%@ page import="service.Impl.QQGroupService" %>
 <%@ page import="java.sql.SQLException" %>
 <!doctype html>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
@@ -73,7 +72,7 @@
                                 通过扫描二维码直接进入群聊
                             </p>
 
-                            <image src="${requestScope.qqGroup.QRcode}" style="width:270px;height:370"/>
+                            <image src="${requestScope.qqGroup.QRcode}" style="width:270px;height"/>
                         </c:if>
                     </section>
                     <c:if test="${!(empty requestScope.qqGroup.idkey)}">

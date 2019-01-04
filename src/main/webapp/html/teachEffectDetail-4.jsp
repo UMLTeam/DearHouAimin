@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachEffect/normal.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachEffect/teachEffectDetail.css'/>">
 </head>
-<body onload="Rendering();">
+<body>
 <!-- 通过js渲染，js代码在normal.js里 -->
 <div id="top">
     <jsp:include page="/html/top.jsp"/>
