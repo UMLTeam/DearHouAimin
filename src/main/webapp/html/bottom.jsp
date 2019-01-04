@@ -101,10 +101,10 @@
         <ul>
             <li><a href="courseDetail-1.html">课程概况</a>
                 <div class="detail">
-                    <div><a href="courseDetail-1.html">课程简介</a></div>
-                    <div><a href="courseDetail-2.html">课程特色</a></div>
-                    <div><a href="courseDetail-3.html">教材与参考资料</a></div>
-                    <div><a href="courseDetail-4.html">历史沿革</a></div>
+                    <div><a href="courseDetail-1.jsp">课程简介</a></div>
+                    <div><a href="courseDetail-2.jsp">课程特色</a></div>
+                    <div><a href="courseDetail-3.jsp">教材与参考资料</a></div>
+                    <div><a href="courseDetail-4.jsp">历史沿革</a></div>
                 </div>
             </li>
             <li><a href="teacherTeam.html">教师队伍</a>
@@ -115,13 +115,14 @@
                     <div><a href="teacherTeamDetail-4.html">青年教师培养</a></div>
                 </div>
             </li>
-            <li><a href="educationalDetail-1.html">教学安排</a>
+            <li><a href="../html/educationalDetail-1.jsp">教学安排</a>
                 <div class="detail">
-                    <div><a href="educationalDetail-2.html">教学日历</a></div>
-                    <div><a href="educationalDetail-3.html">教学内容</a></div>
-                    <div><a href="educationalDetail-4.html">授课计划</a></div>
-                    <div><a href="educationalDetail-5.html">教学重难点</a></div>
-                    <div><a href="educationalDetail-6.html">教学方法与手段</a></div>
+                    <div><a href="../html/educationalDetail-1.jsp">教学大纲</a></div>
+                    <div><a href="../servlet/CalendarServlet?method=show">教学日历</a></div>
+                    <div><a href="../html/educationalDetail-3.jsp">教学内容</a></div>
+                    <div><a href="../html/educationalDetail-5.jsp" style="color: #fff;">教学难重点</a></div>
+                    <div><a href="../html/educationalDetail-5.jsp">教学重难点</a></div>
+                    <div><a href="../html/educationalDetail-6.jsp">教学方法与手段</a></div>
                 </div>
             </li>
             <li><a href="educationReformDetail-1.html">教学研究改革</a>
@@ -143,28 +144,28 @@
             </li>
             <li><a href="admission.html">教学管理</a>
                 <div class="detail">
-                    <div><a href="admissionDetail-1.html">开课计划</a></div>
+                    <div><a href="<c:url value='/OpenCoursePlanServlet?method=showFront'/>">开课计划</a></div>
                     <div><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>">上课班级</a></div>
                     <div><a href="<c:url value='/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1'/>">学生成绩</a></div>
-                    <div><a href="admissionDetail-4.html">班级名册</a></div>
-                    <div><a href="<c:url value='admissionDetail-4.html'/>">班级名册</a></div>
+                    <div><a href="<c:url value='/class_list_Servlet?method=LoadStudentClassList&classListpageQuery=1'/>">班级名册</a></div>
+                    <div><a href="<c:url value ='/TeachFileServlet?method=LoadHomework&TeachFilepageQuery=1'/>">学生作业案例</a></div>
                 </div>
             </li>
-            <li><a href="<c:url value ='employment.html'/>">教学效果</a>
+            <li><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1'/>">教学效果</a>
                 <div class="detail">
-                    <div><a href="<c:url value ='/html/teachEffectDetail-1.jsp'/>">校外专家评价</a></div>
-                    <div><a href="<c:url value ='/html/teachEffectDetail-2.jsp'/>">校内督导评价</a></div>
-                    <div><a href="<c:url value ='/html/teachEffectDetail-3.jsp'/>">教师自我评价</a></div>
+                    <div><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1'/>">校外专家评价</a></div>
+                    <div><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=1&n=2'/>">校内督导评价</a></div>
+                    <div><a href="<c:url value='/teacher_evalution_servlet?method=LoadTeacherEvalator&EvalatorpageQuery=1'/>">教师自我评价</a></div>
                     <div><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1'/>">校内学生评价</a></div>
-                    <div><a href="<c:url value ='/html/teachEffectDetail-1.jsp'/>">社会评价</a></div>
-                    <div><a href="<c:url value ='/html/teachEffectDetail-2.jsp'/>">教学评估及相关文件</a></div>
+                    <div><a href="<c:url value='/social_evalution_servlet?method=LoadSocialEvalator&EvalatorpageQuery=1'/>">社会评价</a></div>
+                    <div><a href="<c:url value='/TeachFileServlet?method=LoadHomework&TeachFilepageQuery=1'/>">教学评估及相关文件</a></div>
                 </div>
             </li>
-            <li><a href="QQ.html">教学互动</a>
+            <li><a href="../html/QQ.jsp">教学互动</a>
                 <div class="detail">
-                    <div><a href="QQ.html">QQ群</a></div>
-                    <div><a href="WeChat.html">微信群</a></div>
-                    <div><a href="leavenote.html">师生互动</a></div>
+                    <div><a href="../html/QQ.jsp">QQ群</a></div>
+                    <div><a href="../servlet/WeChatServlet?type=normalShow">微信群</a></div>
+                    <div><a href="../servlet/TeachingArrangementServlet?type=showLeaveMsg">师生互动</a></div>
                 </div>
             </li>
         </ul>
