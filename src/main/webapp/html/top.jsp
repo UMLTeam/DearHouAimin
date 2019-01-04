@@ -89,7 +89,7 @@
 <div class="header">
     <div class="topLine"></div>
     <section class="topwrap">
-        <a href="index.html" class="logo"><img src="<c:url value='/images/logo.png'/>">
+        <a href="index.jsp" class="logo"><img src="<c:url value='/images/logo.png'/>">
             <h2 class="title">在线开放课程平台</h2></a>
     </section>
     <section class="logininAndUp">
@@ -100,7 +100,7 @@
         <ul id="nav">
             <li class="title"><a href="index.jsp">首页</a></li>
             <li class="title" onmouseover="extend('1')" onmouseout="out('1')">
-                <a href="courseDetail-1.html">课程概况</a>
+                <a href="courseDetail-1.jsp">课程概况</a>
                 <ul style="display: none;" id="first">
                     <li class="detail"><a href="courseDetail-1.jsp" style="color: #fff;">课程简介</a></li>
                     <li class="detail"><a href="courseDetail-2.jsp" style="color: #fff;">课程特色</a></li>

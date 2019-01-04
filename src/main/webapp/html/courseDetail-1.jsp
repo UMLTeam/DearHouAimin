@@ -20,9 +20,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript" src="${pageContext.request.contextPath }/js/normal.js"></script>
 </head>
 
-<body onload="Rendering();">
+<body>
     <!-- 通过js渲染，js代码在normal.js里 -->
-    <div id="top"></div>
+    <div id="top">
+        <jsp:include page="/html/top.jsp"/>
+    </div>
 
     <article class="content">
 
@@ -63,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </article>
                     <br>
                     <br>
-                    <a href="${pageContext.request.contextPath }//resource/面向对象分析与设计--课程简介.pdf">点击这里下载课程简介.pdf文件</a>
+                    <a href="${pageContext.request.contextPath }/resource/面向对象分析与设计--课程简介.pdf">点击这里下载课程简介.pdf文件</a>
                 </div>
                 <div class="column_3">
                     <figure class="present">

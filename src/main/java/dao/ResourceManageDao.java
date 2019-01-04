@@ -1,10 +1,10 @@
 package dao;
 
-import domain.Resource;
-
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
+
+import domain.Resource;
 
 /**
  * @Author: team

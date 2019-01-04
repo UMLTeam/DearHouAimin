@@ -24,7 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/h-ui.admin/css/style.css" />
     <script type="text/javascript" src="${pageContext.request.contextPath }/js/normal.js"></script>
 </head>
-<body onload="Rendering();">
+<body>
 <%
 	request.setCharacterEncoding("utf-8");
    textbookService service=new textbookService();
@@ -32,7 +32,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    request.setAttribute("books", books);
  %>
 <!-- 通过js渲染，js代码在normal.js里 -->
-<div id="top"></div>
+<div id="top">
+    <jsp:include page="/html/top.jsp"/>
+</div>
 
 <article class="content">
 
