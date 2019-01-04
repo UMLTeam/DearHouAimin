@@ -38,7 +38,7 @@ public interface ResourceManageDao {
      * @param name
      * @return
      */
-    List<Resource> selectByFuzzyName(String name,String resType);
+    List<Resource> selectByFuzzyName(String name, String resType);
     /**
      * 更新数据库的资源信息
      * @param resource

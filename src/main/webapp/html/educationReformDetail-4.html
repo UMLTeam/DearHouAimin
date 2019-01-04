@@ -1,60 +1,208 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>教学研究改革-改革表彰和奖励</title>
-    <meta charset="utf-8">
-    <link rel="icon" href="/images/dgut.jpg">
-    <link rel="stylesheet" type="text/css" href="../style/normal.css">
-    <link rel="stylesheet" type="text/css" href="../style/educationReform/normal.css">
-    <link rel="stylesheet" type="text/css" href="../style/educationReform/educationReformDetail.css">
-    <script type="text/javascript" src="../js/normal.js"></script>
+	<title>教学研究改革-改革表彰和奖励</title>
+	<meta charset="utf-8">
+	<link rel="icon" href="/images/dgut.jpg">
+	<link rel="stylesheet" type="text/css" href="../style/normal.css">
+	<link rel="stylesheet" type="text/css" href="../style/educationReform/normal.css">
+	<link rel="stylesheet" type="text/css" href="../style/educationReform/educationReformDetail.css">
+	<script type="text/javascript" src="../js/normal.js"></script>
+	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	<style type="text/css">
+		.article_li {
+			padding: 1rem 0.5rem;
+			overflow: hidden;
+			border-bottom: 1px solid #999999;
+			cursor: pointer;
+		}
+
+		.article_li:hover {
+			background-color: #F0F0F0;
+		}
+
+		.article_li>a>div>ul>li {
+			padding: 5px;
+		}
+
+		.page_li {
+			display: inline-block;
+			float: left;
+			margin: 0.1rem;
+			padding: 0.5rem 1rem;
+			border: none;
+			border-radius: 50px;
+			color: #04837e;
+		}
+
+		.page_li:hover {
+			background-color: #04837e;
+			color: #ffffff;
+		}
+
+		.page_active {
+			background-color: #04837e;
+			color: #ffffff;
+		}
+	</style>
+	<script type="text/javascript">
+        //获取后端的值
+        var pageNo=0 ;// 当前页码,初始值为第一页;
+        var lastPage; //记录上一页的内容
+        var totalPage=0;//总页数
+        var data;
+        var totalCurrentPageNum=7;//最多显示页数
+        //ajax获取后端的值
+        $(function () {
+
+            //ajax获取后端的值
+            $.ajax({
+                url: "/educationReform4Servlet",
+                type: "GET",
+                async :false,//取消异步 否则复制失败
+                data: {
+                },
+                dataType:"json",
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+
+                success: function (result) {
+                    console.log(result);
+                    console.log(result.status);
+                    data=result;
+                },
+                error : function(result) {
+                    alert("获取失败");
+                },
+            });
+            for(var key in data){
+                totalPage++;
+            }
+            console.log(totalPage);
+            //初始化时首页内容
+            for(var i=0;i<data[pageNo].length;i++) {
+                $("#article").append("" +
+                    "<li class=\"article_li\"> <a href=\"/html/educationReformDetail4/1.html?address="+data[pageNo][i]["id"] +"\"><div>" +
+                    " <ul> <li style=\"font-size: 16px;color: #333333;\">" + data[pageNo][i]["title"] + "</li>" +
+                    " <li style=\"font-size: 14px;color: #999999;\">发布时间：" + data[pageNo][i]["time"] + "</li> </ul> </div> </a> </li>");
+            }
+            //第一页选项，初始化为高亮
+            $("#page").append("<li id=\"0\" class=\"article_li page_li page_active\">1</li>");
+            // var mostPage=pageNo%7;
+            var mostPage=totalCurrentPageNum;
+            console.log(mostPage);
+            for(var i=1;i<totalPage;i++) {
+                //最多显示totalCurrentPageNum页
+                if((i+1)>mostPage){
+                    break;
+                }
+                $("#page").append("<li id=\""+i+"\" class=\"article_li page_li\">"+(i+1)+"</li>");
+            }
+            //点击页数时触发该函数
+            $("#page").on("click","li",function () {
+
+                lastPage = pageNo;
+                pageNo = $(this).attr("id");//获取点击页
+                console.log(data[pageNo][0]["id"]);
+                //先把#article下已有的目录清除替换为点击页的第一条目录
+                $("#article").html("" +
+                    "<li class=\"article_li\"> <a href=\"/html/educationReformDetail4/1.html?address="+data[pageNo][0]["id"]+"\" ><div>" +
+                    " <ul> <li style=\"font-size: 16px;color: #333333;\">" + data[pageNo][0]["title"] + "</li>" +
+                    " <li style=\"font-size: 14px;color: #999999;\">发布时间：" + data[pageNo][0]["time"] + "</li> </ul> </div> </a> </li>"
+                );
+                //清除上一页目录内容和添加该页第一条目录之后其它目录选项追加
+                for (var i = 1; i < data[pageNo].length; i++) {
+                    $("#article").append("" +
+                        "<li class=\"article_li\"> <a href=\"/html/educationReformDetail4/1.html?address="+data[pageNo][i]["id	"] +"\"><div>" +
+                        " <ul> <li style=\"font-size: 16px;color: #333333;\">" + data[pageNo][i]["title"] + "</li>" +
+                        " <li style=\"font-size: 14px;color: #999999;\">发布时间：" + data[pageNo][i]["time"] + "</li> </ul> </div> </a> </li>");
+                }
+                $(this).addClass("page_active");
+                $(this).siblings().removeClass("page_active");
+            })
+        })
+	</script>
 </head>
+
 <body onload="Rendering();">
 <!-- 通过js渲染，js代码在normal.js里 -->
 <div id="top"></div>
 
 <article class="content">
-
-    <section id="banner">
-        <img src="../images/index/abouttop_03.jpg">
-    </section>
-    <section class="mainWrap relative">
-        <div class="detailContent">
-            <div class="column_1">
-                <section class="leftNav">
-                    <h3>教学研究改革</h3>
-                    <ul>
-                        <li><a href="educationReformDetail-1.html">改革措施</a></li>
-                        <li><a href="educationReformDetail-2.html">改革立项</a></li>
-                        <li><a href="educationReformDetail-3.html">改革成果</a></li>
-                        <li class="current"><a href="educationReformDetail-4.html">改革表彰和奖励</a></li>
-                    </ul>
-                </section>
-            </div>
-            <div class="column_2 ">
-                <article class="mainContent">
-                    <header class="contentNav">
-                        <nav class="nav">
-                            <a href="index.jsp">首页</a>·
-                            <a href="educationReformDetail-1.html">教学研究改革</a>·
-                            <a href="educationReformDetail-4.html">改革表彰和奖励</a>
-                        </nav>
-                        <h1>改革表彰和奖励</h1>
-                    </header>
-                    <section class="article">
-                        <figure class="present">
-                            <img src="../images/educationReform/reformReward.jpeg" class="portrait">
-                            <!--<img src="../images/index/President-z.gif">-->
-                        </figure>
-                    </section>
-
-                </article>
-            </div>
-            <div class="column_3">
-
-            </div>
-        </div>
-    </section>
+	<section id="banner">
+		<img src="../images/index/abouttop_03.jpg">
+	</section>
+	<section class="mainWrap relative">
+		<div class="detailContent">
+			<div class="column_1">
+				<section class="leftNav">
+					<h3>教学研究改革</h3>
+					<ul>
+						<li>
+							<a href="educationReformDetail-1.html">改革措施</a>
+						</li>
+						<li>
+							<a href="educationReformDetail-2.html">改革立项</a>
+						</li>
+						<li>
+							<a href="educationReformDetail-3.html">改革成果</a>
+						</li>
+						<li class="current">
+							<a href="educationReformDetail-4.html">改革表彰和奖励</a>
+						</li>
+					</ul>
+				</section>
+			</div>
+			<div class="column_2 ">
+				<article class="mainContent">
+					<header class="contentNav">
+						<nav class="nav">
+							<a href="index.html">首页</a>·
+							<a href="educationReformDetail-1.html">教学研究改革</a>·
+							<a href="educationReformDetail-4.html">改革表彰和奖励</a>
+						</nav>
+					</header>
+				</article>
+			</div>
+			<div class="column_2 ">
+				<section id="article" class="article" style="color: #000000;">
+					<ul>
+						<!--<li class="article_li">-->
+						<!--<a href="educationReformDetail4/1.html">-->
+						<!--<div>-->
+						<!--<ul>-->
+						<!--<li style="font-size: 16px;color: #333333;">改革表彰</li>-->
+						<!--<li style="font-size: 14px;color: #999999;">发布时间：2018-12-16</li>-->
+						<!--</ul>-->
+						<!--</div>-->
+						<!--</a>-->
+						<!--</li>-->
+						<!--<li class="article_li">-->
+						<!--<a href="educationReformDetail4/2.html">-->
+						<!--<div>-->
+						<!--<ul>-->
+						<!--<li style="font-size: 16px;color: #333333;">奖励</li>-->
+						<!--<li style="font-size: 14px;color: #999999;">发布时间： 2018-12-16</li>-->
+						<!--</ul>-->
+						<!--</div>-->
+						<!--</a>-->
+						<!--</li>-->
+					</ul>
+				</section>
+			</div>
+			<div class="column_2" style="margin-top: 2rem;">
+				<section id="pageSelect" class="article" style="color: #000000;overflow: hidden;width: 50%;height:42px;float: right;">
+					<ul id="page" style="width: 100%;text-overflow: ellipsis;white-space: nowrap;">
+						<!--<li id="fristPage" class="article_li page_li page_active">1</li>-->
+						<!--<li class="article_li page_li">2</li>-->
+						<!--<li class="article_li page_li">3</li>-->
+						<!--<li class="article_li page_li">4</li>-->
+						<!--<li class="article_li page_li">5</li>-->
+						<!--<li class="article_li page_li">6</li>-->
+					</ul>
+				</section>
+			</div>
+		</div>
+	</section>
 </article>
 
 <!-- 通过js渲染，js代码在normal.js里 -->
@@ -62,4 +210,5 @@
 <!-- 通过js渲染，js代码在normal.js里 -->
 <div id="copyrights"></div>
 </body>
+
 </html>
