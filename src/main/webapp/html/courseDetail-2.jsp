@@ -12,7 +12,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/normal.js"></script>
 
 </head>
-<body onload="Rendering();">
+<body>
 	<%
 		String path = application.getRealPath("");
 		String ss;
@@ -22,7 +22,9 @@
 		ss = ex.getText().trim();
 		strs = ss.split("\n");
 	%>
-	<div id="top"></div>
+	<div id="top">
+		<jsp:include page="/html/top.jsp"/>
+	</div>
 
 	<article class="content">
 
