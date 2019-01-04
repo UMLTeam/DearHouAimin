@@ -7,10 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import domian.CourseManager;
-import domian.Message;
-import domian.Teacher;
-import domian.TrainingPlan;
+import domain.CourseManager;
+import domain.Message;
+import domain.Teacher;
+import domain.TrainingPlan;
 import service.Impl.TeacherTeamService;
 
 

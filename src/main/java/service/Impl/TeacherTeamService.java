@@ -3,9 +3,9 @@ package service.Impl;
 import java.util.List;
 
 import dao.Impl.TeacherTeamDao;
-import domian.CourseManager;
-import domian.Teacher;
-import domian.TrainingPlan;
+import domain.CourseManager;
+import domain.Teacher;
+import domain.TrainingPlan;
 
 
 
