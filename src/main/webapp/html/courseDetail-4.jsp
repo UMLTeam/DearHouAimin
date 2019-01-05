@@ -136,9 +136,12 @@ $('.table-sort').dataTable({
 });
 
 </script>
-<!-- 通过js渲染，js代码在normal.js里 -->
-<div id="bottom"></div>
-<!-- 通过js渲染，js代码在normal.js里 -->
-<div id="copyrights"></div>
+	<div id="bottom">
+		<jsp:include page="/html/bottom.jsp"/>
+	</div>
+
+	<div id="copyrights">
+		<jsp:include page="/html/bottom.jsp"/>
+	</div>
 </body>
 </html>

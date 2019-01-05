@@ -87,11 +87,13 @@
 			</div>
 		</section>
 	</article>
+	<div id="bottom">
+		<jsp:include page="/html/bottom.jsp"/>
+	</div>
 
-	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="bottom"></div>
-	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="copyrights"></div>
+	<div id="copyrights">
+		<jsp:include page="/html/bottom.jsp"/>
+	</div>
 </body>
 <script type="text/javascript">
 
