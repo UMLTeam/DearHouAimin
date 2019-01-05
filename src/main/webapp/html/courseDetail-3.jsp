@@ -1,4 +1,4 @@
-<%@page import="domian.textbook,service.Impl.*"%>
+<%@page import="domain.textbook,service.Impl.*"%>
 <%@ page language="java" import="java.util.*,service.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
