@@ -1,14 +1,14 @@
 package dao.Impl;
 
 import domain.teacher_evalution;
-import utils.JDBCutil;
+import utils.JDBCutils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class teacher_evalutionDao {
-    JDBCutil jdbcutil = new JDBCutil();
+    JDBCutils jdbcutil = new JDBCutils();
 
     public int addEvalution(teacher_evalution evaluation){
         String sql = "insert into teacher_evalution values(NULL,?,?,?,?,0)";
@@ -100,6 +100,24 @@ public class teacher_evalutionDao {
         }
 
     }
-
+    public teacher_evalution getEvalutionById(String id){
+        String sql="select * from teacher_evalution where evalutionId=?";
+        try {
+            List<Object> params=new ArrayList<>();
+            params.add(id);
+            teacher_evalution evalution = new teacher_evalution();
+            Map<String, Object> map = (Map<String, Object>)jdbcutil.findSimpleResult(sql,params);
+            evalution.setEvalutionId((int)map.get("evalutionId"));
+            evalution.setEvalutionTime((String)map.get("evalutionTime"));
+            evalution.setContent((String)map.get("content"));
+            evalution.setEvalutionTitle((String)map.get("evalutionTitle"));
+            evalution.setStatus((int)map.get("status"));
+            evalution.setTeacherName((String)map.get("teacherName"));
+            return evalution;
+        }catch (Exception e){
+            e.printStackTrace();
+            throw new RuntimeException(e.getMessage());
+        }
+    }
 
 }

@@ -1,7 +1,7 @@
 package dao.Impl;
 
 import domain.OpenCoursePlan;
-import utils.JDBCutil;
+import utils.JDBCutils;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class OpenCoursePlanDao {
-    private JDBCutil jdbcutil = new JDBCutil();
+    private JDBCutils jdbcutil = new JDBCutils();
 
     @Override
     protected void finalize() throws Throwable {
