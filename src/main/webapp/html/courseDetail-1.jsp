@@ -81,7 +81,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 
 	<div id="copyrights">
-		<jsp:include page="/html/bottom.jsp"/>
+		<jsp:include page="/html/copyright.jsp"/>
 	</div>
 </body>
 

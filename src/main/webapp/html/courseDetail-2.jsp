@@ -92,7 +92,7 @@
 	</div>
 
 	<div id="copyrights">
-		<jsp:include page="/html/bottom.jsp"/>
+		<jsp:include page="/html/copyright.jsp"/>
 	</div>
 </body>
 <script type="text/javascript">
