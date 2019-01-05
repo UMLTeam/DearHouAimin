@@ -100,12 +100,12 @@
         <ul id="nav">
             <li class="title"><a href="index.jsp">首页</a></li>
             <li class="title" onmouseover="extend('1')" onmouseout="out('1')">
-                <a href="courseDetail-1.jsp">课程概况</a>
+                <a href="/html/courseDetail-1.jsp">课程概况</a>
                 <ul style="display: none;" id="first">
-                    <li class="detail"><a href="courseDetail-1.jsp" style="color: #fff;">课程简介</a></li>
-                    <li class="detail"><a href="courseDetail-2.jsp" style="color: #fff;">课程特色</a></li>
-                    <li class="detail"><a href="courseDetail-3.jsp" style="color: #fff;">教材与参考资料</a></li>
-                    <li class="detail"><a href="courseDetail-4.jsp" style="color: #fff;">历史沿革</a></li>
+                    <li class="detail"><a href="/html/courseDetail-1.jsp" style="color: #fff;">课程简介</a></li>
+                    <li class="detail"><a href="/html/courseDetail-2.jsp" style="color: #fff;">课程特色</a></li>
+                    <li class="detail"><a href="/html/courseDetail-3.jsp" style="color: #fff;">教材与参考资料</a></li>
+                    <li class="detail"><a href="/html/courseDetail-4.jsp" style="color: #fff;">历史沿革</a></li>
                 </ul>
             </li>
             <li class="title" onmouseover="extend('2')" onmouseout="out('2')">
@@ -118,23 +118,23 @@
                 </ul>
             </li>
             <li class="title" onmouseover="extend('3')" onmouseout="out('3')">
-                <a href="../html/educationalDetail-1.jsp">教学安排</a>
+                <a href="/html/educationalDetail-1.jsp">教学安排</a>
                 <ul style="display: none;" id="third">
-                    <li class="detail"><a href="../html/educationalDetail-1.jsp" style="color: #fff;">教学大纲</a></li>
-                    <li class="detail"><a href="../servlet/CalendarServlet?method=show" style="color: #fff;">教学日历</a></li>
-                    <li class="detail"><a href="../html/educationalDetail-3.jsp" style="color: #fff;">教学内容</a></li>
-                    <li class="detail"><a href="../html/educationalDetail-4.jsp" style="color: #fff;">授课计划</a></li>
-                    <li class="detail"><a href="../html/educationalDetail-5.jsp" style="color: #fff;">教学难重点</a></li>
-                    <li class="detail"><a href="../html/educationalDetail-6.jsp" style="color: #fff;">教学方法与手段</a></li>
+                    <li class="detail"><a href="/html/educationalDetail-1.jsp" style="color: #fff;">教学大纲</a></li>
+                    <li class="detail"><a href="/servlet/CalendarServlet?method=show" style="color: #fff;">教学日历</a></li>
+                    <li class="detail"><a href="/html/educationalDetail-3.jsp" style="color: #fff;">教学内容</a></li>
+                    <li class="detail"><a href="/html/educationalDetail-4.jsp" style="color: #fff;">授课计划</a></li>
+                    <li class="detail"><a href="/html/educationalDetail-5.jsp" style="color: #fff;">教学难重点</a></li>
+                    <li class="detail"><a href="/html/educationalDetail-6.jsp" style="color: #fff;">教学方法与手段</a></li>
                 </ul>
             </li>
             <li class="title" onmouseover="extend('4')" onmouseout="out('4')">
-                <a href="educationReformDetail-1.html">教学研究改革</a>
+                <a href="/html/educationReformDetail-1.html">教学研究改革</a>
                 <ul style="display: none;" id="fourth">
-                    <li class="detail"><a href="educationReformDetail-1.html" style="color: #fff;">教学改革措施</a></li>
-                    <li class="detail"><a href="educationReformDetail-2.html" style="color: #fff;">教学改革立项</a></li>
-                    <li class="detail"><a href="educationReformDetail-3.html" style="color: #fff;">教学改革成果</a></li>
-                    <li class="detail"><a href="educationReformDetail-4.html" style="color: #fff;">教学改革表彰和奖励</a></li>
+                    <li class="detail"><a href="/html/educationReformDetail-1.html" style="color: #fff;">教学改革措施</a></li>
+                    <li class="detail"><a href="/html/educationReformDetail-2.html" style="color: #fff;">教学改革立项</a></li>
+                    <li class="detail"><a href="/html/educationReformDetail-3.html" style="color: #fff;">教学改革成果</a></li>
+                    <li class="detail"><a href="/html/educationReformDetail-4.html" style="color: #fff;">教学改革表彰和奖励</a></li>
                 </ul>
             </li>
             <li class="title" onmouseover="extend('5')" onmouseout="out('5')">
