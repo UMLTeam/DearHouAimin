@@ -1,70 +1,496 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>教学研究改革-改革措施</title>
-    <meta charset="utf-8">
-    <link rel="icon" href="/images/dgut.jpg">
-    <link rel="stylesheet" type="text/css" href="../style/normal.css">
-    <link rel="stylesheet" type="text/css" href="../style/educationReform/normal.css">
-    <link rel="stylesheet" type="text/css" href="../style/educationReform/educationReformDetail.css">
-    <script type="text/javascript" src="../js/normal.js"></script>
-</head>
-<body onload="Rendering();">
-<!-- 通过js渲染，js代码在normal.js里 -->
-<div id="top"></div>
 
-<article class="content">
+	<head>
+		<title>教学研究改革-改革措施</title>
+		<meta charset="utf-8">
+		<link rel="icon" href="/images/dgut.jpg">
+		<link rel="stylesheet" type="text/css" href="/style/normal.css">
+		<link rel="stylesheet" type="text/css" href="/style/index.css">
+		<link rel="stylesheet" type="text/css" href="/style/educationReform/normal.css">
+		<link rel="stylesheet" type="text/css" href="/style/educationReform/educationReformDetail.css">
 
-    <section id="banner">
-        <img src="../images/index/abouttop_03.jpg">
+		<style type="text/css">
+			.article_li {
+				padding: 1rem 0.5rem;
+				overflow: hidden;
+				border-bottom: 1px solid #999999;
+				cursor: pointer;
+			}
+			
+			.article_li:hover {
+				background-color: #F0F0F0;
+			}
+			
+			.article_li>a>div>ul>li {
+				padding: 5px;
+			}
+			
+			.page_li {
+				display: inline-block;
+				float: left;
+				margin: 0.1rem;
+				padding: 0.5rem 1rem;
+				border: none;
+				border-radius: 50px;
+				color: #04837e;
+			}
+			
+			.page_li:hover {
+				background-color: #04837e;
+				color: #ffffff;
+			}
+			
+			.page_active {
+				background-color: #04837e;
+				color: #ffffff;
+			}
+		</style>
+		
+		
+		<script>
+        function extend(num) {
+
+            if (num == 1) {
+                var obj = document.getElementById('first');
+                obj.style.display = "block";
+            }
+            else if (num == 2) {
+                var obj = document.getElementById('second');
+                obj.style.display = "block";
+            }
+            else if (num == 3) {
+                var obj = document.getElementById('third');
+                obj.style.display = "block";
+            }
+            else if (num == 4) {
+                var obj = document.getElementById('fourth');
+                obj.style.display = "block";
+            }
+            else if (num == 5) {
+                var obj = document.getElementById('fifth');
+                obj.style.display = "block";
+            }
+            else if (num == 6) {
+                var obj = document.getElementById('sixth');
+                obj.style.display = "block";
+            }
+            else if (num == 7) {
+                var obj = document.getElementById('seven');
+                obj.style.display = "block";
+            }
+            else {
+                var obj = document.getElementById('eighth');
+                obj.style.display = "block";
+            }
+
+        }
+
+        function out(num) {
+            if (num == 1) {
+                var obj = document.getElementById('first');
+                obj.style.display = "none";
+            }
+            else if (num == 2) {
+                var obj = document.getElementById('second');
+                obj.style.display = "none";
+            }
+            else if (num == 3) {
+                var obj = document.getElementById('third');
+                obj.style.display = "none";
+            }
+            else if (num == 4) {
+                var obj = document.getElementById('fourth');
+                obj.style.display = "none";
+            }
+            else if (num == 5) {
+                var obj = document.getElementById('fifth');
+                obj.style.display = "none";
+            }
+            else if (num == 6) {
+                var obj = document.getElementById('sixth');
+                obj.style.display = "none";
+            }
+            else if (num == 7) {
+                var obj = document.getElementById('seven');
+                obj.style.display = "none";
+            }
+            else {
+                var obj = document.getElementById('eighth');
+                obj.style.display = "none";
+            }
+        }
+    </script>
+	</head>
+
+	<body>
+	
+	
+	<div id="top">
+	<div class="header">
+    <div class="topLine"></div>
+    <section class="topwrap">
+        <a href="index.jsp" class="logo"><img src="/images/logo.png">
+            <h2 class="title">在线开放课程平台</h2></a>
     </section>
-    <section class="mainWrap relative">
-        <div class="detailContent">
-            <div class="column_1">
-                <section class="leftNav">
-                    <h3>教学研究改革</h3>
-                    <ul>
-                        <li class="current"><a href="educationReformDetail-1.html">改革措施</a></li>
-                        <li><a href="educationReformDetail-2.html">改革立项</a></li>
-                        <li><a href="educationReformDetail-3.html">改革成果</a></li>
-                        <li><a href="educationReformDetail-4.html">改革表彰和奖励</a></li>
-                    </ul>
-                </section>
-            </div>
-            <div class="column_2 ">
-                <article class="mainContent">
-                    <header class="contentNav">
-                        <nav class="nav">
-                            <a href="index.jsp">首页</a>·
-                            <a href="educationReformDetail-1.html">教学研究改革</a>·
-                            <a href="educationReformDetail-1.html">改革措施</a>
-                        </nav>
-                        <h1>改革措施</h1>
-                    </header>
-                    <section class="article">
-                        为贯彻落实《教育部关于全面提高高等教育质量的若干意见》精神，着力构建高素质应用型人才培养体系，深化教育教学改革，加快推进学校高水平理工科大学建设，特提出如下实施意见。<br>
-                        一、指导思想与总体目标<br>
-                        （一）指导思想<br>
-                        全面贯彻落实中央和省委、省政府关于教育教学改革的部署和要求，围绕立德树人根本任务，坚持教学为中心，质量是生命，创新是灵魂的理念；牢固树立“以卓越的创新教育与实践造福社会”的价值追求，着力推进科教融合、创新育人，促进学生全面发展；加快内涵发展，立足学校办学优势与特色，以“成果导向”引导教育教学改革，加强教学管理工作，不断提高办学水平和人才培养质量。<br>
-                        （二）总体目标<br>
-                        通过师资队伍建设、专业结构调整优化、教学管理体制改革、数字化教学资源建设、实践教学体系建设、教风学风建设、教学质量评价与激励机制完善、国际化战略推进等一系列改革与建设举措的实施，到 2020 年，全面形成特色鲜明的高素质应用型人才培养模式、严格规范的教学管理体系、符合创新实践能力培养目标的实践教学体系、科学有效的教学质量监控与保障机制，形成一批教学改革成果和品牌特色专业，力争学校本科教学水平和人才培养质量位居国内同类高校前列。<br>
-                    </section>
-
-                </article>
-            </div>
-            <div class="column_3">
-                <figure class="present">
-                    <img src="../images/educationReform/reform.jpeg" class="portrait">
-                    <!--<img src="../images/index/President-z.gif">-->
-                </figure>
-            </div>
-        </div>
+    <section class="logininAndUp">
+        <a href="login.html">登录</a>
+        <a href="register.html">注册</a>
     </section>
-</article>
+    <section class="nav yahei">
+        <ul id="nav">
+            <li class="title"><a href="index.jsp">首页</a></li>
+            <li class="title" onmouseover="extend('1')" onmouseout="out('1')">
+                <a href="/html/courseDetail-1.jsp">课程概况</a>
+                <ul style="display: none;" id="first">
+                    <li class="detail"><a href="/html/courseDetail-1.jsp" style="color: #fff;">课程简介</a></li>
+                    <li class="detail"><a href="/html/courseDetail-2.jsp" style="color: #fff;">课程特色</a></li>
+                    <li class="detail"><a href="/html/courseDetail-3.jsp" style="color: #fff;">教材与参考资料</a></li>
+                    <li class="detail"><a href="/html/courseDetail-4.jsp" style="color: #fff;">历史沿革</a></li>
+                </ul>
+            </li>
+            <li class="title" onmouseover="extend('2')" onmouseout="out('2')">
+                <a href="/teacherTeam?type=courseManager">教师队伍</a>
+                <ul style="display: none;" id="second">
+                    <li class="detail"><a href="/teacherTeam?type=courseManager" style="color: #fff;">课程负责人</a></li>
+                    <li class="detail"><a href="/teacherTeam?type=teacherTeam" style="color: #fff;">课程教学团队</a></li>
+                    <li class="detail"><a href="/teacherTeam?type=lecturer" style="color: #fff;">主讲教师</a></li>
+                    <li class="detail"><a href="/teacherTeam?type=trainingPlan" style="color: #fff;">青年教师培养</a></li>
+                </ul>
+            </li>
+            <li class="title" onmouseover="extend('3')" onmouseout="out('3')">
+                <a href="/html/educationalDetail-1.jsp">教学安排</a>
+                <ul style="display: none;" id="third">
+                    <li class="detail"><a href="/html/educationalDetail-1.jsp" style="color: #fff;">教学大纲</a></li>
+                    <li class="detail"><a href="/servlet/CalendarServlet?method=show" style="color: #fff;">教学日历</a></li>
+                    <li class="detail"><a href="/html/educationalDetail-3.jsp" style="color: #fff;">教学内容</a></li>
+                    <li class="detail"><a href="/html/educationalDetail-4.jsp" style="color: #fff;">授课计划</a></li>
+                    <li class="detail"><a href="/html/educationalDetail-5.jsp" style="color: #fff;">教学难重点</a></li>
+                    <li class="detail"><a href="/html/educationalDetail-6.jsp" style="color: #fff;">教学方法与手段</a></li>
+                </ul>
+            </li>
+            <li class="title" onmouseover="extend('4')" onmouseout="out('4')">
+                <a href="/html/educationReformDetail-1.html">教学研究改革</a>
+                <ul style="display: none;" id="fourth">
+                    <li class="detail"><a href="/html/educationReformDetail-1.html" style="color: #fff;">教学改革措施</a></li>
+                    <li class="detail"><a href="/html/educationReformDetail-2.html" style="color: #fff;">教学改革立项</a></li>
+                    <li class="detail"><a href="/html/educationReformDetail-3.html" style="color: #fff;">教学改革成果</a></li>
+                    <li class="detail"><a href="/html/educationReformDetail-4.html" style="color: #fff;">教学改革表彰和奖励</a></li>
+                </ul>
+            </li>
+            <li class="title" onmouseover="extend('5')" onmouseout="out('5')">
+                <a href="/ShowResourceServlet.do?resType=1">教学资源</a>
+                <ul style="display: none;" id="fifth">
+                    <li class="detail"><a href="/ShowResourceServlet.do?resType=1" style="color: #fff;">课程课件</a></li>
+                    <li class="detail"><a href="/ShowResourceServlet.do?resType=2" style="color: #fff;">教学录像</a></li>
+                    <li class="detail"><a href="/ShowResourceServlet.do?resType=3" style="color: #fff;">习题库</a></li>
+                    <li class="detail"><a href="/ShowResourceServlet.do?resType=4" style="color: #fff;">案例库</a></li>
+                    <li class="detail"><a href="/ShowResourceServlet.do?resType=5" style="color: #fff;">实验任务</a></li>
+                </ul>
+            </li>
+            <li class="title" onmouseover="extend('6')" onmouseout="out('6')">
+                <a href="/OpenCoursePlanServlet?method=showFront">教学管理</a>
+                <ul style="display: none; " id="sixth">
+                    <li class="detail"><a href="/OpenCoursePlanServlet?method=showFront"
+                                          style="color: #fff;">开课计划</a></li>
+                    <li class="detail"><a
+                            href="/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1"
+                            style="color: #fff;">上课班级</a></li>
+                    <li class="detail"><a
+                            href="/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1"
+                            style="color: #fff;">学生成绩</a></li>
+                    <li class="detail"><a href="/class_list_Servlet?method=LoadStudentClassList&classListpageQuery=1"
+                                          style="color: #fff;">班级名册</a></li>
+                    <li class="detail"><a href="/HomeworkServlet?method=LoadHomework&HomeworkpageQuery=1" style="color: #fff;">学生作业案例</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="title" onmouseover="extend('7')" onmouseout="out('7')">
+                <a href="/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1">教学效果</a>
+                <ul style="display: none; " id="seven">
+                    <li class="detail"><a href="/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1" style="color: #fff;">校外专家评价</a>
+                    </li>
+                    <li class="detail"><a href="/Expert_EvaluationServlet?method=getOneContent&number=0&type=1&n=2" style="color: #fff;">校内督导评价</a>
+                    </li>
+                    <li class="detail"><a href="/teacher_evalution_servlet?method=LoadTeacherEvalator&EvalatorpageQuery=1" style="color: #fff;">教师自我评价</a>
+                    </li>
+                    <li class="detail"><a
+                            href="/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1"
+                            style="color: #fff;">校内学生评价</a></li>
+                    <li class="detail"><a href="/social_evalution_servlet?method=LoadSocialEvalator&EvalatorpageQuery=1" style="color: #fff;">社会评价</a>
+                    </li>
+                    <li class="detail"><a href="/TeachFileServlet?method=LoadHomework&TeachFilepageQuery=1">教学评估及相关文件</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="title" onmouseover="extend('8')" onmouseout="out('8')">
+                <a href="../html/QQ.jsp">教学互动</a>
+                <ul style="display: none;" id="eighth">
+                    <li class="detail"><a href="../html/QQ.jsp" style="color: #fff;">QQ群</a></li>
+                    <li class="detail"><a href="../servlet/WeChatServlet?type=normalShow" style="color: #fff;">微信群</a></li>
+                    <li class="detail"><a href="../servlet/TeachingArrangementServlet?type=showLeaveMsg" style="color: #fff;">师生互动</a></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</div>
+	</div>
+		
 
-<!-- 通过js渲染，js代码在normal.js里 -->
-<div id="bottom"></div>
-<!-- 通过js渲染，js代码在normal.js里 -->
-<div id="copyrights"></div>
-</body>
+		<article class="content">
+			<section id="banner">
+				<img src="../images/index/abouttop_03.jpg">
+			</section>
+			<section id="vueSection" class="mainWrap relative">
+				<div class="detailContent">
+					<div class="column_1">
+						<section class="leftNav">
+							<h3>教学研究改革</h3>
+							<ul>
+								<li class="current">
+									<a href="/html/educationReformDetail-1.html">改革措施</a>
+								</li>
+								<li>
+									<a href="/html/educationReformDetail-2.html">改革立项</a>
+								</li>
+								<li>
+									<a href="/html/educationReformDetail-3.html">改革成果</a>
+								</li>
+								<li>
+									<a href="/html/educationReformDetail-4.html">改革表彰和奖励</a>
+								</li>
+							</ul>
+						</section>
+					</div>
+					<div class="column_2 ">
+						<article class="mainContent">
+							<header class="contentNav">
+								<nav class="nav">
+									<a href="index.html">首页</a>·
+									<a href="educationReformDetail-1.html">教学研究改革</a>·
+									<a href="educationReformDetail-1.html">改革措施</a>
+								</nav>
+							</header>
+						</article>
+					</div>
+					<div class="column_2 ">
+						<section class="article" style="color: #000000;">
+							<ul>
+								<li class="article_li" v-for="news in currNewsArr">
+									<a :href="'educationReformDetail1/display.html?id=' + news.dguterd1_id">
+										<div>
+											<ul>
+												<li style="font-size: 16px;color: #333333;">{{news.dguterd1_title}}</li>
+												<li style="font-size: 14px;color: #999999;">发布时间：{{news.dguterd1_date}}</li>
+											</ul>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</section>
+					</div>
+
+					<!--分页-->
+					<div class="column_2" style="margin-top: 2rem;">
+						<section class="article" style="color: #000000;overflow: hidden;width: 50%;height:42px;float: right;">
+							<ul style="width: 100%;text-overflow: ellipsis;white-space: nowrap;">
+								<template v-for="n in newspages">
+									<template v-if="n == 1">
+										<li class="article_li page_li page_active" @click="toPages(n)">{{n}}</li>
+									</template>
+									<template v-else>
+										<li class="article_li page_li" @click="toPages(n)">{{n}}</li>
+									</template>
+								</template>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+		</article>
+		
+		
+		<div id="bottom">
+   <div class="inner">
+        <ul>
+            <li><a href="courseDetail-1.html">课程概况</a>
+                <div class="detail">
+                    <div><a href="courseDetail-1.jsp">课程简介</a></div>
+                    <div><a href="courseDetail-2.jsp">课程特色</a></div>
+                    <div><a href="courseDetail-3.jsp">教材与参考资料</a></div>
+                    <div><a href="courseDetail-4.jsp">历史沿革</a></div>
+                </div>
+            </li>
+            <li><a href="teacherTeam.html">教师队伍</a>
+                <div class="detail">
+                    <div><a href="teacherTeamDetail-1.html">课程负责人</a></div>
+                    <div><a href="teacherTeamDetail-2.html">课程教学团队</a></div>
+                    <div><a href="teacherTeamDetail-3.html">主讲教师</a></div>
+                    <div><a href="teacherTeamDetail-4.html">青年教师培养</a></div>
+                </div>
+            </li>
+            <li><a href="../html/educationalDetail-1.jsp">教学安排</a>
+                <div class="detail">
+                    <div><a href="../html/educationalDetail-1.jsp">教学大纲</a></div>
+                    <div><a href="../servlet/CalendarServlet?method=show">教学日历</a></div>
+                    <div><a href="../html/educationalDetail-3.jsp">教学内容</a></div>
+                    <div><a href="../html/educationalDetail-5.jsp" style="color: #fff;">教学难重点</a></div>
+                    <div><a href="../html/educationalDetail-5.jsp">教学重难点</a></div>
+                    <div><a href="../html/educationalDetail-6.jsp">教学方法与手段</a></div>
+                </div>
+            </li>
+            <li><a href="educationReformDetail-1.html">教学研究改革</a>
+                <div class="detail">
+                    <div><a href="educationReformDetail-1.html">改革措施</a></div>
+                    <div><a href="educationReformDetail-2.html">改革立项</a></div>
+                    <div><a href="educationReformDetail-3.html">改革成果</a></div>
+                    <div><a href="educationReformDetail-4.html">改革表彰和奖励</a></div>
+                </div>
+            </li>
+            <li><a href="teachResDetail-1.html">教学资源</a>
+                <div class="detail">
+                    <div><a href="teachResDetail-1.html">课程课件</a></div>
+                    <div><a href="teachResDetail-2.html">教学录像</a></div>
+                    <div><a href="teachResDetail-3.html">习题库</a></div>
+                    <div><a href="ShowResourceServlet.do?resType=4">案例库</a></div>
+                    <div><a href="teachResDetail-5.html">实验任务</a></div>
+                </div>
+            </li>
+            <li><a href="admission.html">教学管理</a>
+                <div class="detail">
+                    <div><a href="/OpenCoursePlanServlet?method=showFront">开课计划</a></div>
+                    <div><a href="/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1">上课班级</a></div>
+                    <div><a href="/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1">学生成绩</a></div>
+                    <div><a href="/class_list_Servlet?method=LoadStudentClassList&classListpageQuery=1">班级名册</a></div>
+                    <div><a href="<c:url value ='/TeachFileServlet?method=LoadHomework&TeachFilepageQuery=1">学生作业案例</a></div>
+                </div>
+            </li>
+            <li><a href="/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1">教学效果</a>
+                <div class="detail">
+                    <div><a href="/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1">校外专家评价</a></div>
+                    <div><a href="/Expert_EvaluationServlet?method=getOneContent&number=0&type=1&n=2">校内督导评价</a></div>
+                    <div><a href="/teacher_evalution_servlet?method=LoadTeacherEvalator&EvalatorpageQuery=1">教师自我评价</a></div>
+                    <div><a href="/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1">校内学生评价</a></div>
+                    <div><a href="/social_evalution_servlet?method=LoadSocialEvalator&EvalatorpageQuery=1">社会评价</a></div>
+                    <div><a href="/TeachFileServlet?method=LoadHomework&TeachFilepageQuery=1">教学评估及相关文件</a></div>
+                </div>
+            </li>
+            <li><a href="../html/QQ.jsp">教学互动</a>
+                <div class="detail">
+                    <div><a href="../html/QQ.jsp">QQ群</a></div>
+                    <div><a href="../servlet/WeChatServlet?type=normalShow">微信群</a></div>
+                    <div><a href="../servlet/TeachingArrangementServlet?type=showLeaveMsg">师生互动</a></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="copyrights">
+   <div class="mainWrap">
+    <div class="link">
+        <ul>
+            <li>友情链接</li>
+            <li><a href="http://www.dgut.edu.cn">东莞理工学院</a></li>
+            <li><a href="http://jwc.dgut.edu.cn">东莞理工学院教务处</a></li>
+            <li><a href="http://sw.dgut.edu.cn">东莞理工学院计算机与网络安全学院</a></li>
+        </ul>
+    </div>
+    <div class="final">
+        <ul>
+            <li class="left">© 2018,UML Group 2</li>
+            <li class="right">联系我们</li>
+        </ul>
+    </div>
+</div>
+</div>
+
+		 
+    
+    
+    
+    
+    
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<script src="../js/educationReformDetail/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/educationReformDetail/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/educationReformDetail/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var aPageShowList = 5; //一个页面显示多少条
+			var news_result = new Vue({
+				el: "#vueSection",
+				data: {
+					newsArr: [],
+					currNewsArr: [],
+					nums: 0,
+					newspages: 0,
+				},
+				methods: {
+					initPages: function() {
+						var sum = this.newsArr.length;
+						this.nums = sum; //一共多少条新闻
+						if(parseInt(sum / aPageShowList) == sum / aPageShowList) { //如果能整除
+							this.newspages = parseInt(sum / aPageShowList); //一共有多少页
+						} else {
+							this.newspages = parseInt(sum / aPageShowList) + 1; //一共有多少页
+						}
+
+						if(sum > aPageShowList) {
+							this.currNewsArr = this.newsArr.slice(0, aPageShowList);
+						} else {
+							this.currNewsArr = this.newsArr.slice(0, sum);
+						}
+					},
+					toPages: function(res) {
+						var clickPage = res; //点击的页数
+						var sum = this.nums;
+						if(clickPage == 1) { //点击首页
+							if(sum > aPageShowList) {
+								this.currNewsArr = this.newsArr.slice(0, aPageShowList);
+							} else {
+								this.currNewsArr = this.newsArr.slice(0, sum);
+							}
+						} else {
+							var sliceIndex = (clickPage - 1) * aPageShowList; //从哪里开始切割
+							var sliceEnd = clickPage * aPageShowList; //剪切到哪
+							if(sliceEnd > sum) {
+								sliceEnd = sum;
+							}
+							this.currNewsArr = this.newsArr.slice(sliceIndex, sliceEnd);
+						}
+						$(".page_li").attr("class", "article_li page_li");
+						$(".page_li:eq(" + (parseInt(clickPage) - 1) + ")").attr("class", "article_li page_li page_active");
+					}
+				}
+			});
+			
+				axios.get("/educationReformDetail1Action?type=getAll").then(function(response){ 
+				  if(response != "0" && response != 0){
+				  	var data = response.data[0];
+				  	console.log(data.erd1List);
+				  	if(data.erd1List){
+				  		news_result.newsArr = data.erd1List;
+				  		news_result.initPages();
+					}
+				  }
+				  
+				}).catch(function (error) {
+				  	console.log(error);
+				});
+		</script>
+	</body>
+
 </html>

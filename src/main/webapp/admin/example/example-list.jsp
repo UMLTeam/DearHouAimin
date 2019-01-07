@@ -180,7 +180,7 @@
     function exercise_stop(obj, id) {
         layer.confirm('确认要下架吗？', function (index) {
             $(obj).parents("tr").find(".td-manage").prepend(
-                '<a style="text-decoration:none" onClick="exercise_start(this,'+id+'" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>'
+                '<a style="text-decoration:none" onClick="exercise_start(this,'+id+')" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>'
             );
             $.ajax({
                 url: '/ResourceServlet.do?type=updateCheck&id=' + id + '&status=0',

@@ -38,3 +38,4 @@ catalina.*/
 target/
 classes/
 srv/db/*
+/bin/

@@ -407,3 +407,34 @@ a,a:link{
 	background: rgba(204,204,204,0.3);
 	margin: 20px 0px 60px 0px;
 }
+
+/*搜索框6*/
+
+.bar6{
+	float: right;
+}
+.bar6 input {
+	border:2px solid  #04837e;
+	border-radius:5px;
+	background:transparent;
+	top:0;
+	right:0;
+}
+.bar6 button {
+	background: #04837e;
+	border-radius:0 5px 5px 0;
+	width:60px;
+	top:0;
+	right:0;
+}
+.bar6 button:before {
+	content:"find";
+	font-size:13px;
+	color:#F9F0DA;
+}
+.pages{
+	text-align:center;
+	margin:0 auto;
+	width:400px;
+	height:100px;
+}
