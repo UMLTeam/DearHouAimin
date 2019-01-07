@@ -46,9 +46,9 @@
         <input name="" id="" class="btn btn-success" type="submit"></input>
     </form>
     <!-- TO-DO:实现批量删除 -->
-    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="data_del()"
+    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><!--<a href="javascript:;" onclick="data_del()"
                                                                 class="btn btn-danger radius"><i
-            class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius"
+            class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>--> <a class="btn btn-primary radius"
                                                           onclick="courseware_add('添加习题','../admin/example/example-add.jsp')"
                                                           href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加案例</a></span>
         <span class="r">共有数据：<strong>${fn:length(sessionScope.resourceList)}</strong> 条</span>
@@ -107,10 +107,10 @@
 
 
                         </a>
-                        <a style="text-decoration:none" class="ml-5" onClick="exercise_edit('课件编辑','exercise-add.html')"
+                        <!--<a style="text-decoration:none" class="ml-5" onClick="exercise_edit('课件编辑','exercise-add.html')"
                            href="javascript:;" title="编辑">
                             <i class="Hui-iconfont">&#xe6df;</i>
-                        </a>
+                        </a>-->
                         <a style="text-decoration:none" class="ml-5" onClick="exercise_del(this, ${resource.id})"
                            href="javascript:;" title="删除">
                             <i class="Hui-iconfont">&#xe6e2;</i>
