@@ -1,10 +1,10 @@
 package dao;
 
-import domian.Resource;
-
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
+
+import domain.Resource;
 
 /**
  * @Author: team
@@ -38,7 +38,7 @@ public interface ResourceManageDao {
      * @param name
      * @return
      */
-    List<Resource> selectByFuzzyName(String name,String resType);
+    List<Resource> selectByFuzzyName(String name, String resType);
     /**
      * 更新数据库的资源信息
      * @param resource

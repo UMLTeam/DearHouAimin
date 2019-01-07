@@ -1,13 +1,14 @@
 package dao.Impl;
 
 import dao.ResourceManageDao;
-import domian.Resource;
+import domain.Resource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import sun.util.calendar.BaseCalendar;
 
-
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,7 +92,7 @@ public class ResourceManageDaoImpl implements ResourceManageDao {
     }
     
     @Override
-    public List<Resource> selectByDate(Timestamp date1, Timestamp date2,String resType) {
+    public List<Resource> selectByDate(Timestamp date1, Timestamp date2, String resType) {
         List<Resource> resources = new ArrayList<Resource>();
         Resource resource;
         String sql = "select id,resName,resTime,resPath,resType,isCheck from resource where resType='"+resType+"' and resTime between date1 and date2";
@@ -118,7 +119,7 @@ public class ResourceManageDaoImpl implements ResourceManageDao {
     }
     
     @Override
-    public List<Resource> selectByFuzzyName(String name,String resType) {
+    public List<Resource> selectByFuzzyName(String name, String resType) {
         List<Resource> resources = new ArrayList<>();
         Resource resource;
         String sql = "select * from resource where resType='"+resType+"' and resName like '%"+name+"%'";

@@ -1,8 +1,9 @@
 package dao.Impl;
 
+import dao.DataBaseConnectionDao;
+
 import java.sql.*;
 
-import dao.DataBaseConnectionDao;
 /**
  * Demo class
  *
@@ -11,7 +12,7 @@ import dao.DataBaseConnectionDao;
  */
 public class DataBaseConnectionImpl implements DataBaseConnectionDao {
 
-    private final static String URL = "jdbc:mysql://niracler.com:3307/uml_open_course_db?useUnicode=true&characterEncoding=UTF8";
+    private final static String URL = "jdbc:mysql://niracler.com:3307/uml_open_course_db?useUnicode=true&characterEncoding=UTF8&autoReconnect=true";
     private final static String DRIVERNAME = "com.mysql.cj.jdbc.Driver";
     private final static String USER = "root";
     private final static String PASSWORD = "dgutdev#uml";
