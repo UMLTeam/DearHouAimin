@@ -79,7 +79,6 @@
 			<groupId>net.sf.json-lib</groupId>
 			<artifactId>json-lib</artifactId>
 			<version>2.4</version>
-			<!--<exclusions>jdk15</exclusions> -->
 			<classifier>jdk15</classifier>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
