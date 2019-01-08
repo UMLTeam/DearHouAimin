@@ -3,7 +3,7 @@
   Date: 19-1-1
   Time: 下午4:18
 --%>
-<%@ page import="domian.Resource" %>
+<%@ page import="domain.Resource" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -54,6 +54,13 @@
             <div class="column_1">
                 <section class="leftNav">
                     <jsp:include page="/html/left.jsp"/>
+                    <script>
+                        var liList=document.getElementById("leftUl").children;
+                        for(var i=0;i<liList.length;i++){
+                            if(i==1)
+                                liList[i].setAttribute("class","current");
+                        }
+                    </script>
                 </section>
             </div>
             <div class="column_2 ">
@@ -146,11 +153,4 @@
     <jsp:include page="/html/copyright.jsp" />
 </div>
 </body>
-<script>
-    var liList=document.getElementById("leftUl").children;
-    for(var i=0;i<liList.length;i++){
-        if(i==1)
-            liList[i].setAttribute("class","current");
-    }
-</script>
 </html>
