@@ -47,8 +47,8 @@
                 <article class="mainContent" style="width: 600px">
                     <header class="contentNav">
                         <nav class="nav">
-                            <a href="index.jsp">首页</a>·
-                            <a href="educationalDetail-1.jsp">教学安排</a>·
+                            <a href="/html/index.jsp">首页</a>·
+                            <a href="/html/educationalDetail-1.jsp">教学安排</a>·
                             <a href="">教学日历</a>
                         </nav>
                         <h1>教学日历</h1>

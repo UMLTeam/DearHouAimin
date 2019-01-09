@@ -93,12 +93,12 @@
             <h2 class="title">在线开放课程平台</h2></a>
     </section>
     <section class="logininAndUp">
-        <a href="login.html">登录</a>
-        <a href="register.html">注册</a>
+        <a href="/html/login.jsp">登录</a>
+        <a href="/html/register.jsp">注册</a>
     </section>
     <section class="nav yahei">
         <ul id="nav">
-            <li class="title"><a href="index.jsp">首页</a></li>
+            <li class="title"><a href="/html/index.jsp">首页</a></li>
             <li class="title" onmouseover="extend('1')" onmouseout="out('1')">
                 <a href="/html/courseDetail-1.jsp">课程概况</a>
                 <ul style="display: none;" id="first">

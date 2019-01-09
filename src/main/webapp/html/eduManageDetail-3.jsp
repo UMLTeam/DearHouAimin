@@ -47,8 +47,8 @@
 					<article class="mainContent">
 						<header class="contentNav">
 							<nav class="nav">
-								<a href="index.html">首页</a>·
-								<a href="eduManageDetail-1.jsp">教学管理</a>·
+								 <a href="${pageContext.request.contextPath}/html/index.jsp">首页</a>·
+								<a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront">教学管理</a>·
 								<a href="<c:url value='/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1'/>">学生成绩</a>
 							</nav>
 							<h1>学生成绩</h1>

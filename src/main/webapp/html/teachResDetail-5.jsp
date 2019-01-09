@@ -61,7 +61,7 @@
                 <article class="mainContent">
                     <header class="contentNav">
                         <nav class="nav">
-                            <a href="index.jsp">首页</a>·
+                           <a href="/html/index.jsp">首页</a>·
                             <a href="/ShowResourceServlet.do?resType=1">教学资源</a>·
                             <a href="/ShowResourceServlet.do?resType=5">实验任务</a>
                         </nav>
@@ -100,7 +100,7 @@
                                     <td><c:out value="${resource.resTime}"/></td>
                                     <td>
                                         <a onclick="Preview(event)"><img src="<c:url value='/images/teachResource/preview.png'/>"></a>
-                                        <a href="<c:out value="${resource.resPath}"/>" download="<c:out value="${resource.resName}"/>">
+                                        <a href="<c:out value="${resource.resPath}"/>" download="<c:out value="${resource.resPath}"/>">
                                             <img src="<c:url value='/images/teachResource/download.png'/>">
                                         </a>
                                     </td>

@@ -39,8 +39,8 @@
 	                <article class="mainContent">
 	                    <header class="contentNav">
 	                        <nav class="nav">
-	                            <a href="index.html">首页</a>·
-	                            <a href="eduManageDetail-1.jsp">教学管理</a>·
+	                            <a href="${pageContext.request.contextPath}/html/index.jsp">首页</a>·
+	                            <a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront">教学管理</a>·
 	                            <a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>">上课班级</a>
 	                        </nav>
 	                        <h1>上课班级</h1>
