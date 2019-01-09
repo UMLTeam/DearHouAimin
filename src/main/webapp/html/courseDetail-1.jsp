@@ -1,4 +1,4 @@
-<%@page import="domian.*"%>
+<%@page import="domain.*"%>
 <%@ page language="java" import="java.util.*,service.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -76,10 +76,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </section>
     </article>
 
-    <!-- 通过js渲染，js代码在normal.js里 -->
-    <div id="bottom"></div>
-    <!-- 通过js渲染，js代码在normal.js里 -->
-    <div id="copyrights"></div>
+	<div id="bottom">
+		<jsp:include page="/html/bottom.jsp"/>
+	</div>
+
+	<div id="copyrights">
+		<jsp:include page="/html/copyright.jsp"/>
+	</div>
 </body>
 
 </html>

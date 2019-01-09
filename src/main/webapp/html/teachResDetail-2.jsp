@@ -67,7 +67,7 @@
                 <article class="mainContent">
                     <header class="contentNav">
                         <nav class="nav">
-                            <a href="index.jsp">首页</a>·
+                             <a href="/html/index.jsp">首页</a>·
                             <a href="/ShowResourceServlet.do?resType=1">教学资源</a>·
                             <a href="/ShowResourceServlet.do?resType=2">教学录像</a>
                         </nav>

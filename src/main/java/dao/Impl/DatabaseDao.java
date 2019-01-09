@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 public class DatabaseDao {
 	public static String drv = "com.mysql.jdbc.Driver";//数据库类型
 	//	public static String url ="jdbc:mysql://cdb-0f80y4kv.gz.tencentcdb.com:10075/UML_open_course_db?characterEncoding=UTF-8";
-	public static String url ="jdbc:mysql://niracler.com:3307/uml_open_course_db?characterEncoding=UTF-8";
+	public static String url ="jdbc:mysql://niracler.com:3307/uml_open_course_db?characterEncoding=UTF-8&autoReconnect=true";
 	public static String user = "root";//用户名
 	//	public static String pwd = "hbd17817781227";//密码
 	public static String pwd = "dgutdev#uml";//密码

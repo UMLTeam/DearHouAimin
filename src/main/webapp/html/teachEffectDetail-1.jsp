@@ -41,7 +41,7 @@
                 <article class="mainContent">
                     <header class="contentNav">
                         <nav class="nav">
-                            <a href="index.html">首页</a>·
+                            <a href="/html/index.jsp">首页</a>·
                             <a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1'/>">教学效果</a>·
                             <a href="#">校外专家评价</a>
                         </nav>
