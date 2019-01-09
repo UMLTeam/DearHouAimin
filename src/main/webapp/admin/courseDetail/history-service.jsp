@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*,
 javax.servlet.ServletConfig,
@@ -18,9 +18,9 @@ private class Dao{
 	private Connection connection;
 	private Statement statement;
 	private LinkedHashMap<Long,Bean> beanMap=new LinkedHashMap<Long,Bean>();
-	private final String url="jdbc:mysql://139.199.203.40:3306/news?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
-	private final String user="can";
-	private final String password="654321";
+	private final String url="jdbc:mysql://niracler.com:3307/uml_open_course_db?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
+	private final String user="root";
+	private final String password="dgutdev#uml";
 	private long id;
 	private String detail;
 	private String date;

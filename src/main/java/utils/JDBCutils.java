@@ -17,7 +17,7 @@ public class JDBCutils {
     //驱动信息
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     //数据库地址
-    private static final String URL = "jdbc:mysql://niracler.com:3307/uml_open_course_db?useUnicode=true&characterEncoding=utf8";
+    private static final String URL = "jdbc:mysql://niracler.com:3307/uml_open_course_db?useUnicode=true&characterEncoding=utf8&autoReconnect=true";
 
     private Connection connection;
     private PreparedStatement pstmt;

@@ -6,7 +6,7 @@ public class JDBCUtil {
     static Connection conn = null;
     static String driver = "com.mysql.jdbc.Driver";
     //    static String ip = "jdbc:mysql://cdb-0f80y4kv.gz.tencentcdb.com:10075/UML_open_course_db";
-    public static String ip ="jdbc:mysql://niracler.com:3307/uml_open_course_db?characterEncoding=UTF-8";
+    public static String ip ="jdbc:mysql://niracler.com:3307/uml_open_course_db?characterEncoding=UTF-8&autoReconnect=true";
     public static String userName = "root";//用户名
     //	public static String password = "hbd17817781227";//密码
     public static String password = "dgutdev#uml";//密码
