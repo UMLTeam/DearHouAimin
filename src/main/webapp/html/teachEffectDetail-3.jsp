@@ -110,12 +110,5 @@
 <div id="bottom"><jsp:include page="/html/bottom.jsp"/></div>
 <div id="copyright"><jsp:include page="/html/copyright.jsp"/></div>
 </body>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.show').click(function () {
-            confirm(${evalator.content}); //在页面上弹出确认对话框
-        });
-    });
-</script>
 
 </html>

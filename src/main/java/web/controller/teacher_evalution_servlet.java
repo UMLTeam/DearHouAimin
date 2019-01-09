@@ -80,10 +80,8 @@ public class teacher_evalution_servlet extends BaseServlet {
         //获取查询页的全部评论
         EvalatorpageQuery.setItems(evalutionService.getEvalatorList(EvalatorpageQuery.getCurrentfirst()));
         EvalatorpageQuery.setTotalRows(evalutionService.getEvalatorTotal());
-        System.out.println(EvalatorpageQuery);
-        System.out.println("abc");
+
         request.getSession().setAttribute("EvalatorpageQuery",EvalatorpageQuery);
-        System.out.println("dlf");
 
         return "r:/admin/teacher_evaluation.jsp";
     }

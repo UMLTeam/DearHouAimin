@@ -27,7 +27,7 @@
 </head>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 教学效果 <span
-        class="c-gray en">&gt;</span> 专家评价
+        class="c-gray en">&gt;</span> 教师自我评价
 </nav>
 
 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"

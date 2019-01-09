@@ -24,7 +24,7 @@
     <title>专家评价</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 教学效果 <span class="c-gray en">&gt;</span> 专家评价 </nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 教学效果 <span class="c-gray en">&gt;</span> 社会评价 </nav>
 
 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="<c:url value='/social_evalution_servlet?method=Admin_LoadSocialEvalator&EvalatorpageQuery=1'/>" title="刷新" >
     <i class="Hui-iconfont">&#xe68f;</i>
