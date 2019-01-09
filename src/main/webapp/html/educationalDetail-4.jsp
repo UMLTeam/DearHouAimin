@@ -55,7 +55,7 @@
                 <article class="mainContent">
                     <header class="contentNav">
                         <nav class="nav">
-                            <a href="index.jsp">首页</a>·
+                            <a href="/html/index.jsp">首页</a>·
                             <a href="educationalDetail-1.jsp">教学安排</a>·
                             <a href="">授课计划</a>
                         </nav>

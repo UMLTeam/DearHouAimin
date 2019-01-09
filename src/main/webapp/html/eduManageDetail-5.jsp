@@ -52,8 +52,8 @@
                 <article class="mainContent">
                     <header class="contentNav">
                         <nav class="nav">
-                            <a href="index.jsp">首页</a>·
-                            <a href="<c:url value ='/html/eduManageDetail-1.jsp'/>">教学管理</a>·
+                            <a href="${pageContext.request.contextPath}/html/index.jsp">首页</a>·
+                            <a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront">教学管理</a>·
                             <a href="<c:url value ='/html/eduManageDetail-5.jsp'/>">作业案例</a>
                         </nav>
                         <h1>作业案例</h1>

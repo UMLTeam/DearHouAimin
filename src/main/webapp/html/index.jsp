@@ -33,31 +33,31 @@
 	<div id="summary">
 		<div class="summaryTitle">在线开放课程平台</div>
 		<div class="summaryItem">
-			<a class="item1" href="teacherTeamDetail-1.html">
+			<a class="item1" href="/teacherTeam?type=courseManager">
 				<img src="../images/index/about_03.jpg">
 				<div class="itemTitle">课程负责人</div>
 				<div class="itemDetail">所有课程负责人的简要信息。</div>
 			</a>
 
-			<a class="item2" href="courseDetail-1.html">
+			<a class="item2" href="courseDetail-1.jsp">
 				<img src="../images/index/about_05.jpg">
 				<div class="itemTitle">课程简介</div>
 				<div class="itemDetail">课程的一些信息，如课程名称，学习内容，先修课程，学时学分等等。</div>
 			</a>
 
-			<a class="item3" href="courseDetail-2.html">
+			<a class="item3" href="courseDetail-2.jsp">
 				<img src="../images/index/about_07.jpg">
 				<div class="itemTitle">课程特色</div>
 				<div class="itemDetail">课程的特色和优势所在，具有怎样的竞争力。</div>
 			</a>
 
-			<a class="item4" href="leavenote.html">
+			<a class="item4" href="leavenote.jsp">
 				<img src="../images/index/about_12.jpg">
 				<div class="itemTitle">课程动态</div>
 				<div class="itemDetail">记录下来的课程的开展之中一些活动、进展以及成果等等。</div>
 			</a>
 
-			<a class="item5" href="teacherTeamDetail-1.html">
+			<a class="item5" href="/teacherTeam?type=trainingPlan">
 				<img src="../images/index/about13.jpg">
 				<div class="itemTitle">教师团队</div>
 				<div class="itemDetail">展示我校强大的师资水平。</div>
