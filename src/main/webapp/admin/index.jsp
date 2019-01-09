@@ -182,7 +182,7 @@
                            data-title="校内督导评价" href="javascript:void(0)">校内督导评价</a></li>
                     <li>
                         <a data-href="<c:url value='/teacher_evalution_servlet?method=Admin_LoadTeacherEvalator&EvalatorpageQuery=1'/>"
-                           data-title="产品管理" href="javascript:void(0)">教师自我评价</a></li>
+                           data-title="教师自我评价" href="javascript:void(0)">教师自我评价</a></li>
                     <li>
                         <a data-href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=1'/>"
                            data-title="学生评价管理"
@@ -191,8 +191,8 @@
 
                     <li>
                         <a data-href="<c:url value='/social_evalution_servlet?method=Admin_LoadSocialEvalator&EvalatorpageQuery=1'/>"
-                           data-title="产品管理" href="javascript:void(0)">社会评价</a></li>
-                    <li><a data-href="<c:url value='/TeachFileServlet?method=Admin_LoadHomework&TeachFilepageQuery=1'/>" data-title="产品管理" href="javascript:void(0)">教学评估及相关文件</a></li>
+                           data-title="社会评价" href="javascript:void(0)">社会评价</a></li>
+                    <li><a data-href="<c:url value='/TeachFileServlet?method=Admin_LoadHomework&TeachFilepageQuery=1'/>" data-title="教学评估及相关文件" href="javascript:void(0)">教学评估及相关文件</a></li>
                 </ul>
             </dd>
         </dl>

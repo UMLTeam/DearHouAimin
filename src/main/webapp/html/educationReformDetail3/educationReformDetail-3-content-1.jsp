@@ -290,7 +290,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <div><a href="/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1">上课班级</a></div>
                     <div><a href="/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1">学生成绩</a></div>
                     <div><a href="/class_list_Servlet?method=LoadStudentClassList&classListpageQuery=1">班级名册</a></div>
-                    <div><a href="/TeachFileServlet?method=LoadHomework&TeachFilepageQuery=1">学生作业案例</a></div>
+                    <div><a href="<c:url value ='/HomeworkServlet?method=LoadHomework&HomeworkpageQuery=1'/>">学生作业案例</a></div>
                 </div>
             </li>
             <li><a href="/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1">教学效果</a>
