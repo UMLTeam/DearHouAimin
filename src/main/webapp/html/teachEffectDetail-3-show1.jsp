@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,8 +53,8 @@
             </div>
             <div class="column_3" style="width: 550px;">
 
-                <h3>侯爱民自我评价</h3>
-                <p style="text-align: left;">从2007-2008学年第1学期开始，至2018-2019学年第1学期止，总共为12届的学生讲授《面向对象分析与设计(UML)》、《软件需求分析与设计》课程。累计学生人数1300，累计学时700。</p>
+                <h3>${evalution.evalutionTitle}</h3>
+                <p style="text-align: left;">${evalution.content}</p>
                 <br>
             </div>
         </div>
