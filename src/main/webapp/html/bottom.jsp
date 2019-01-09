@@ -120,7 +120,7 @@
                     <div><a href="/html/educationalDetail-1.jsp">教学大纲</a></div>
                     <div><a href="/servlet/CalendarServlet?method=show">教学日历</a></div>
                     <div><a href="/html/educationalDetail-3.jsp">教学内容</a></div>
-                    <div><a href="/html/educationalDetail-5.jsp" style="color: #fff;">教学难重点</a></div>
+                    <div><a href="/html/educationalDetail-4.jsp"">授课计划</a></div>
                     <div><a href="/html/educationalDetail-5.jsp">教学重难点</a></div>
                     <div><a href="/html/educationalDetail-6.jsp">教学方法与手段</a></div>
                 </div>
