@@ -1,0 +1,44 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	background: #f1f1f1;
+	font-family: "Microsoft Yahei";
+}
+
+.yahei{
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, figure, figcaption, code, del, dfn, em, image, q, dl, dt, dd, ol, ul, li, fieldset, form, legend, table, tr, th{
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+	font-family: inherit;
+	font-weight: normal;
+}
+
+.nav ul{
+	margin-left: -30px;
+}
+
+ul,li{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+a,a:link{
+	color: #04837e;
+}
+
+img{
+	border: 0px;
+	vertical-align: bottom;
+}
+
+p{
+	text-indent: 2em;
+}
+

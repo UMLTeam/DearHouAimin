@@ -1,0 +1,82 @@
+@charset "utf-8";
+.outlineDiv {
+	width: 500px;
+	height: 600px;
+	border-style: solid;
+	border-color: #D9D9D9;
+	background-color: #FFFFFF;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+}
+
+.titleDiv {
+	height: 80px;
+	text-align: center;
+	font-size: 35px;
+	line-height: 80px;
+	width: auto;
+}
+.partDiv {
+	width: 450px;
+	height: 60px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+}
+.login {
+	width: 350px;
+	height: 40px;
+	margin-left: 100px;
+	background-color: #04837ed1;
+	color: #FFFFFF;
+	font-size: large;
+	border-radius: 5PX;
+	text-align: center;
+}
+.bottom {
+	margin-left: 100px;
+	width: 350px;
+	height: 30px;
+	margin-top: 10px;
+	background-color: #B4B4B4;
+}
+
+
+.input {
+	width: 350px;
+	height: 40px;
+	font-size: 18px;
+}
+
+.partLeft {
+	float: left;
+	width: 90px;
+	height: 40px;
+	text-align: right;
+	font-size: large;
+	line-height: 40px;
+	font-weight: bold;
+	margin-right: 5px;
+}
+.select {
+	width: 120px;
+	height: 40px;
+	text-align: left;
+	font-size: large;
+}
+
+.partRight {
+	float: left;
+	width: 350px;
+	height: 50px;
+}
+::-webkit-input-placeholder{/*修改placeholder样式*/
+    font-size: 15px;
+	color:#B4B4B4;
+}
+.partRight span {
+	color: #F23838;
+	font-size: small;
+	font-weight: bold;
+}
