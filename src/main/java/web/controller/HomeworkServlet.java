@@ -99,7 +99,7 @@ public class HomeworkServlet extends BaseServlet {
     				 File parentFile = new File(uploadpath, randompath);
     				 if(!parentFile.exists())
     					 parentFile.mkdirs();//创建文件保存的目录
-    				 map.put("savepath", new String[] {uploadpath+randompath});//封装上传文件的保存路径
+    				 map.put("savepath", new String[] {"WEB-INF/upload"+randompath});//封装上传文件的保存路径
 
     				 
     				 //上传文件
@@ -152,8 +152,8 @@ public class HomeworkServlet extends BaseServlet {
 		try {
 			 System.out.println(id); 
 			FileBean fileBean = homeworkService.getById(id);
-			
-			File file = new File(fileBean.getSavepath(), fileBean.getUuidname());
+			String uploadpath = request.getServletContext().getRealPath(fileBean.getSavepath());
+			File file = new File(uploadpath, fileBean.getUuidname());
 			if(file.exists()) {
 				String filename = fileBean.getRealname();
 				String mimeType = this.getServletContext().getMimeType(filename);
