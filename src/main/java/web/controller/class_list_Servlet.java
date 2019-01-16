@@ -113,7 +113,7 @@ public class class_list_Servlet extends BaseServlet {
 					File parentFile = new File(uploadpath, randompath);
 					if(!parentFile.exists())
 						parentFile.mkdirs();//创建文件保存的目录
-					map.put("class_file", new String[] {uploadpath+randompath});//封装上传文件的保存路径
+					map.put("class_file", new String[] {"WEB-INF/upload"+randompath});//封装上传文件的保存路径
 
 
 					//上传文件
@@ -193,8 +193,8 @@ public class class_list_Servlet extends BaseServlet {
 		try {
 			System.out.println(class_id);
 			Class_List class_List=class_list_Service.getById(class_id);
-
-			File file = new File(class_List.getClass_file(), class_List.getClass_file_uuidname());
+			String uploadpath = request.getServletContext().getRealPath(class_List.getClass_file());
+			File file = new File(uploadpath, class_List.getClass_file_uuidname());
 			if(file.exists()) {
 				String filename = class_List.getClass_file_name();
 				String mimeType = this.getServletContext().getMimeType(filename);
