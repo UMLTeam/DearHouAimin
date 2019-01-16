@@ -39,5 +39,5 @@ classes/
 srv/db/*
 /bin/
 
-server/work/Catalina/localhost/
+!server/
 
