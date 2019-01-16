@@ -40,4 +40,4 @@ classes/
 srv/db/*
 /bin/
 
-!server/
+!server/*
