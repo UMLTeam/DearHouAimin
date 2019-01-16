@@ -39,3 +39,5 @@ target/
 classes/
 srv/db/*
 /bin/
+
+!server/
