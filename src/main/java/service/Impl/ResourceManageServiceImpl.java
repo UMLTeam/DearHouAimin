@@ -122,6 +122,7 @@ public class ResourceManageServiceImpl implements ResourceManageService {
                 fileName = title;
             }
             File file = new File((Paths.get(path, type)).toString());
+            System.out.println((Paths.get(path, type)).toString());
             if (!file.exists()) {
                 // 如果不存在则创建此路径的目录
                 if (!file.mkdir()) {
@@ -134,6 +135,7 @@ public class ResourceManageServiceImpl implements ResourceManageService {
             resource.setResName(fileName);
             resource.setResType(type);
             resource.setResPath("/resource/" + type + "/" + fileName);
+            //resource.setResPath("C:/Users/HuChuanfuOffice/Desktop/upload/" + type + "/" + fileName);
             // 创建文件输出流，用于向指定文件名的文件写入数据
             FileOutputStream fileOutputStream = new FileOutputStream(savePath.toString());
             int index = 0;

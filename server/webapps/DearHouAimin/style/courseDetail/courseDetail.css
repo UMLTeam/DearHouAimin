@@ -1,0 +1,162 @@
+/*内容样式*/
+
+.content{
+    background: #fff;
+    min-width: 320px;
+    padding-bottom: 160px;
+}
+
+.content #banner{
+    text-align: center;
+    background: #f3f3f3;
+    overflow: hidden;
+}
+#banner{
+    width: 100%;
+    margin: 0 auto;
+}
+
+#banner img{
+    width: 100%;
+    height: 150px;
+}
+
+.mainWrap{
+    width: 1000px;
+    margin: auto;
+    min-width: 320px;
+}
+
+.relative{
+    position: relative;
+}
+
+.detailContent{
+    display: table;
+}
+.column_1{
+    width: 200px;
+}
+
+.detailContent .column_1,.detailContent .column_2,.detailContent .column_3{
+    float: left;
+    display: inline;
+}
+
+.detailContent .leftNav{
+    border-left: 12px solid #04837e;
+    position: relative;
+    top: -34px;
+    left: -12px;
+    width: 100%;
+}
+
+.detailContent .leftNav h3{
+    background: #04837e;
+    color: #fff;
+    font-size: 22px;
+    line-height: 68px;
+    padding: 0px 22px;
+}
+
+.detailContent .leftNav ul{
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+}
+
+.detailContent .leftNav li{
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    line-height: 22px;
+    position: relative;
+    /* margin-left: 30px;*/
+}
+
+.detailContent .leftNav li a{
+    color: #22132d;
+    display: block;
+    padding: 1em 0 1em 22px;
+    margin-right: 28px;
+}
+
+.detailContent .leftNav li a:hover{
+    color: #04837e;
+}
+
+.detailContent .leftNav li.current a{
+    position: relative;
+    border-left: 4px solid #a5a5af;
+    left: -4px;
+    color: #04837e;
+}
+
+.detailContent .column_2{
+    margin: 0 0 0 30px;
+    width: 550px;
+}
+.detailContent .contentNav{
+    padding-top: 20px;
+}
+
+.contentNav{
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+.contentNav .nav{
+    color: #999;
+    font-family: sans-serif;
+    border-top: 0;
+}
+
+.contentNav .nav a{
+    color: #04837e;
+    font-size: 12px;
+}
+a,a:link{
+    text-decoration: none;
+    color: #04837e;
+}
+
+.detailContent .contentNav h1{
+    line-height: 1em;
+    padding: 0.7em 0 0.7em;
+}
+
+.contentNav h1{
+    font-size: 28px;
+    color: #04837e;
+    line-height: 1.25em;
+    padding: 0.4em 0 0.6em 0;
+}
+
+.content .mainContent .article {
+    font-size: 14px;
+    line-height: 24px;
+    color: #444;
+}
+
+.content .mainContent .article p {
+    padding: 0.75em 0;
+}
+
+.detailContent .column_3 {
+    width: 190px;
+    margin: 160px 0px 0px 30px;
+    background: #f2f2f2;
+    text-align: center;
+}
+
+.detailContent .president {
+    background: #f2f2f2;
+    text-align: center;
+}
+
+.detailContent .president .portrait {
+    width: 100%;
+}
+
+.detailContent .president img {
+    margin:0px 0px 15px 0px;
+}

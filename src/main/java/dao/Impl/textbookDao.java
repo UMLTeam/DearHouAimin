@@ -2,7 +2,8 @@ package dao.Impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import domian.*;
+
+import domain.textbook;
 
 public class textbookDao {
 	private dataDao dao;

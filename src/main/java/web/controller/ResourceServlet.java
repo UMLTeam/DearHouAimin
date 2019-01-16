@@ -1,12 +1,13 @@
 package web.controller;
 
-import domain.Resource;
 import net.sf.json.JSONObject;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import domain.Resource;
 import service.Impl.ResourceManageServiceImpl;
 
 import javax.servlet.ServletException;
@@ -60,6 +61,7 @@ public class ResourceServlet extends HttpServlet {
                     ServletFileUpload upload = new ServletFileUpload(factory);
                     //获取目录所在的路径
                     String path = request.getServletContext().getRealPath("/") + "resource";
+                    //String path = "C:\\Users\\HuChuanfuOffice\\Desktop\\upload";
                     logger.info("path " + path);
                     // 中文处理
                     upload.setHeaderEncoding("utf-8");

@@ -14,7 +14,7 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import dao.Impl.*;
-import domian.textbook;
+import domain.textbook;
 
 public class textbookService {
 	private textbookDao textdao=new textbookDao();
@@ -73,7 +73,7 @@ public class textbookService {
 					String filename = item.getName();
 					String savefilename = makeFileName(filename);//得到保存在硬盘的文件名
 					InputStream in = item.getInputStream();
-					FileOutputStream out = new FileOutputStream(savePath + "\\" + savefilename);
+					FileOutputStream out = new FileOutputStream(savePath + "/" + savefilename);
 					int len = 0;
 					byte buffer[] = new byte[1024];
 					while((len = in.read(buffer)) > 0){

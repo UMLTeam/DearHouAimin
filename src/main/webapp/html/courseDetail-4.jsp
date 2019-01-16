@@ -61,9 +61,11 @@ try {
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/h-ui.admin/css/style.css" />
     <script type="text/javascript" src="${pageContext.request.contextPath }/js/normal.js"></script>
 </head>
-<body onload="Rendering();">
+<body>
 <!-- 通过js渲染，js代码在normal.js里 -->
-<div id="top"></div>
+<div id="top">
+    <jsp:include page="/html/top.jsp"/>
+</div>
 
 <article class="content">
 
@@ -87,9 +89,9 @@ try {
                 <article class="mainContent">
                     <header class="contentNav">
                         <nav class="nav">
-                            <a href="index.html">首页</a>
-                            <a href="courseDetail-1.jsp">课程概况</a>
-                            <a href="courseDetail-3.jsp">历史沿革</a>
+                            <a href="index.jsp">首页</a>.
+                            <a href="courseDetail-1.jsp">课程概况</a>.
+                            <a href="courseDetail-3.jsp">历史沿革</a>.
                         </nav>
                         <h1>UML需求分析</h1>
                             <div class="inner">
@@ -134,9 +136,12 @@ $('.table-sort').dataTable({
 });
 
 </script>
-<!-- 通过js渲染，js代码在normal.js里 -->
-<div id="bottom"></div>
-<!-- 通过js渲染，js代码在normal.js里 -->
-<div id="copyrights"></div>
+	<div id="bottom">
+		<jsp:include page="/html/bottom.jsp"/>
+	</div>
+
+	<div id="copyrights">
+		<jsp:include page="/html/copyright.jsp"/>
+	</div>
 </body>
 </html>

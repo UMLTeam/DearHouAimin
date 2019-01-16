@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class dataDao {
 	private static String drv="com.mysql.jdbc.Driver";//数据库类型
-	private static String url="jdbc:mysql://niracler.com:3307/uml_open_course_db?useSSL=false&useUnicode=true&characterEncoding=UTF-8";//数据库网址
+	private static String url="jdbc:mysql://niracler.com:3307/uml_open_course_db?useSSL=false&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true";//数据库网址
 	private static String usr="root";//用户名
 	private static String pwd="dgutdev#uml";//密码
 	Connection connect = null;

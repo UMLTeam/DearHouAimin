@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -80,7 +79,6 @@
 			<groupId>net.sf.json-lib</groupId>
 			<artifactId>json-lib</artifactId>
 			<version>2.4</version>
-			<!--<exclusions>jdk15</exclusions> -->
 			<classifier>jdk15</classifier>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
@@ -129,6 +127,17 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.17</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.el/el-api -->
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>el-api</artifactId>
+			<version>2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20160810</version>
 		</dependency>
 
 	</dependencies>
