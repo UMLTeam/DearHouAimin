@@ -99,7 +99,7 @@ public class TeachFileServlet extends BaseServlet {
     				 File parentFile = new File(uploadpath, randompath);
     				 if(!parentFile.exists())
     					 parentFile.mkdirs();//创建文件保存的目录
-    				 map.put("savepath", new String[] {uploadpath+randompath});//封装上传文件的保存路径
+    				 map.put("savepath", new String[] {"WEB-INF/uploadfile"+randompath});//封装上传文件的保存路径
 
     				 
     				 //上传文件
@@ -152,8 +152,8 @@ public class TeachFileServlet extends BaseServlet {
 		try {
 			 System.out.println(id); 
 			TeachEvalFile TeachEvalFile = TeachFileService.getById(id);
-			
-			File file = new File(TeachEvalFile.getSavepath(), TeachEvalFile.getUuidname());
+			String uploadpath = request.getServletContext().getRealPath(TeachEvalFile.getSavepath());
+			File file = new File(uploadpath, TeachEvalFile.getUuidname());
 			if(file.exists()) {
 				String filename = TeachEvalFile.getRealname();
 				String mimeType = this.getServletContext().getMimeType(filename);
