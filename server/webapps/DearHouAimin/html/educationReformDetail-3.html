@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>教学研究改革-改革成果</title>
+	<meta charset="utf-8">
+	<link rel="icon" href="/images/dgut.jpg">
+	<link rel="stylesheet" type="text/css" href="/style/normal.css">
+	<link rel="stylesheet" type="text/css" href="/style/educationReform/normal.css">
+	<link rel="stylesheet" type="text/css" href="/style/educationReform/educationReformDetail.css">
+	<script type="text/javascript" src="../js/normal.js"></script>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<style type="text/css">
+		.article_li {
+			padding: 1rem 0.5rem;
+			overflow: hidden;
+			border-bottom: 1px solid #999999;
+			cursor: pointer;
+		}
+
+		.article_li:hover {
+			background-color: #F0F0F0;
+		}
+
+		.article_li>a>div>ul>li {
+			padding: 5px;
+		}
+
+		.page_li {
+			display: inline-block;
+			float: left;
+			margin: 0.1rem;
+			padding: 0.5rem 1rem;
+			border: none;
+			border-radius: 50px;
+			color: #04837e;
+		}
+
+		.page_li:hover {
+			background-color: #04837e;
+			color: #ffffff;
+		}
+
+		.page_active {
+			background-color: #04837e;
+			color: #ffffff;
+		}
+	</style>
+	
+	
+	<script>
+        function extend(num) {
+
+            if (num == 1) {
+                var obj = document.getElementById('first');
+                obj.style.display = "block";
+            }
+            else if (num == 2) {
+                var obj = document.getElementById('second');
+                obj.style.display = "block";
+            }
+            else if (num == 3) {
+                var obj = document.getElementById('third');
+                obj.style.display = "block";
+            }
+            else if (num == 4) {
+                var obj = document.getElementById('fourth');
+                obj.style.display = "block";
+            }
+            else if (num == 5) {
+                var obj = document.getElementById('fifth');
+                obj.style.display = "block";
+            }
+            else if (num == 6) {
+                var obj = document.getElementById('sixth');
+                obj.style.display = "block";
+            }
+            else if (num == 7) {
+                var obj = document.getElementById('seven');
+                obj.style.display = "block";
+            }
+            else {
+                var obj = document.getElementById('eighth');
+                obj.style.display = "block";
+            }
+
+        }
+
+        function out(num) {
+            if (num == 1) {
+                var obj = document.getElementById('first');
+                obj.style.display = "none";
+            }
+            else if (num == 2) {
+                var obj = document.getElementById('second');
+                obj.style.display = "none";
+            }
+            else if (num == 3) {
+                var obj = document.getElementById('third');
+                obj.style.display = "none";
+            }
+            else if (num == 4) {
+                var obj = document.getElementById('fourth');
+                obj.style.display = "none";
+            }
+            else if (num == 5) {
+                var obj = document.getElementById('fifth');
+                obj.style.display = "none";
+            }
+            else if (num == 6) {
+                var obj = document.getElementById('sixth');
+                obj.style.display = "none";
+            }
+            else if (num == 7) {
+                var obj = document.getElementById('seven');
+                obj.style.display = "none";
+            }
+            else {
+                var obj = document.getElementById('eighth');
+                obj.style.display = "none";
+            }
+        }
+    </script>
+	
+	
+	<script type="text/javascript">
+		
+        //获取后端的值
+        var pageNo=0 ;// 当前页码,初始值为第一页;
+        var lastPage; //记录上一页的内容
+        var totalPage=0;//总页数
+        var data;
+        var totalCurrentPageNum=7;//最多显示页数
+        $(function () {
+
+            //ajax获取后端的值
+            $.ajax({
+                url: "/educationReformDetail3Action?type=all",
+                type: "GET",
+                async :false,//取消异步 否则复制失败
+                data: {
+                    "type":"all"
+                },
+                dataType:"json",
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                //   contentType: "application/json;charset=UTF-8",
+                success: function (result) {
+                    //   data=result.data;
+                    // totalPage=result.data[0].length;//设置总页数
+                    console.log(result);
+                    console.log(result.status);
+                    data=result;
+                },
+                error : function(result) {
+                    alert("获取失败");
+                },
+            });
+            for(var key in data){
+                totalPage++;
+            }
+            console.log(totalPage);
+            //初始化时首页内容
+            for(var i=0;i<data[pageNo].length;i++) {
+                $("#article").append("" +
+                    "<li class=\"article_li\"> <a href=\"" + data[pageNo][i]["address"] + "\"><div>" +
+                    " <ul> <li style=\"font-size: 16px;color: #333333;\">" + data[pageNo][i]["title"] + "</li>" +
+                    " <li style=\"font-size: 14px;color: #999999;\">发布时间：" + data[pageNo][i]["time"] + "</li> </ul> </div> </a> </li>");
+            }
+            //第一页选项，初始化为高亮
+            $("#page").append("<li id=\"0\" class=\"article_li page_li page_active\">1</li>");
+			// var mostPage=pageNo%7;
+			var mostPage=totalCurrentPageNum;
+            console.log(mostPage);
+            for(var i=1;i<totalPage;i++) {
+                //最多显示totalCurrentPageNum页
+                if((i+1)>mostPage){
+                    break;
+                }
+                $("#page").append("<li id=\""+i+"\" class=\"article_li page_li\">"+(i+1)+"</li>");
+            }
+            //点击页数时触发该函数
+            $("#page").on("click","li",function () {
+                if(pageNo==$(this).attr("id")&&$("#article li").length!=1){
+
+				}else {
+                    // if((pageNo+1)%7==0){
+                    lastPage = pageNo;
+                    pageNo = $(this).attr("id");//获取点击页
+                    console.log(Number(pageNo) + 1);
+                    console.log("lastpage" + lastPage);
+                    var flag = new Boolean(false);
+                    if ((((Number(pageNo) + 2) % totalCurrentPageNum == 0&&(Number(pageNo)+2)>totalCurrentPageNum)|| Number(pageNo) ==Number(totalCurrentPageNum)-1 )&&Number(pageNo)!=0) {
+                        flag == true;
+                        if (Number(lastPage) < Number(pageNo)) {
+                            mostPage = (Number(pageNo)) * 2;
+                            console.log("<" + mostPage);
+                            $("#page").html("<li id=\"" + pageNo + "\" class=\"article_li page_li page_active\">" + (Number(pageNo) + 1) + "</li>");
+                            for (var i = Number(pageNo) + 1; i < totalPage; i++) {
+                                //最多显示totalCurrentPageNum页
+                                if ((Number(i)) > mostPage) {
+                                    break;
+                                }
+                                $("#page").append("<li id=\"" + i + "\" class=\"article_li page_li\">" + (Number(i) + 1) + "</li>");
+
+                            }
+                        } else {
+                            // mostPage=pageNo-7;
+                            mostPage = Number(pageNo) - Number(totalCurrentPageNum) + 1;
+                            console.log("<" + mostPage);
+                            $("#page").html("<li id=\"" + mostPage + "\" class=\"article_li page_li \">" + (Number(mostPage) + 1) + "</li>");
+                            for (var i = Number(mostPage) + 1; i < totalPage; i++) {
+                                //最多显示totalCurrentPageNum页
+                                if ((Number(i)) == pageNo) {
+                                    $("#page").append("<li id=\"" + i + "\" class=\"article_li page_li page_active\">" + (Number(i) + 1) + "</li>");
+                                    break;
+                                }
+                                $("#page").append("<li id=\"" + i + "\" class=\"article_li page_li\">" + (Number(i) + 1) + "</li>");
+
+                            }
+                        }
+                        lastPage = mostPage;
+                    }
+
+                    //先把#article下已有的目录清除替换为点击页的第一条目录
+                    $("#article").html("" +
+                        "<li class=\"article_li\"> <a href=\"" + data[pageNo][0]["address"] + "\"><div>" +
+                        " <ul> <li style=\"font-size: 16px;color: #333333;\">" + data[pageNo][0]["title"] + "</li>" +
+                        " <li style=\"font-size: 14px;color: #999999;\">发布时间：" + data[pageNo][0]["time"] + "</li> </ul> </div> </a> </li>"
+                    );
+                    //清除上一页目录内容和添加该页第一条目录之后其它目录选项追加
+                    for (var i = 1; i < data[pageNo].length; i++) {
+                        $("#article").append("" +
+                            "<li class=\"article_li\"> <a href=\"" + data[pageNo][i]["address"] + "\"><div>" +
+                            " <ul> <li style=\"font-size: 16px;color: #333333;\">" + data[pageNo][i]["title"] + "</li>" +
+                            " <li style=\"font-size: 14px;color: #999999;\">发布时间：" + data[pageNo][i]["time"] + "</li> </ul> </div> </a> </li>");
+                    }
+                    console.log("this" + $(this).attr("id"));
+                    $(this).addClass("page_active");
+                    console.log("add  " + lastPage);
+                    // $("#" + lastPage).removeClass("page_active");
+                    $(this).siblings().removeClass("page_active");
+                    console.log("remove  " + lastPage);
+                }
+            })
+        })
+	</script>
+</head>
+
+<body>
+
+<div id="top">
+	<div class="header">
+    <div class="topLine"></div>
+    <section class="topwrap">
+        <a href="index.jsp" class="logo"><img src="/images/logo.png">
+            <h2 class="title">在线开放课程平台</h2></a>
+    </section>
+    <section class="logininAndUp">
+        <a href="login.html">登录</a>
+        <a href="register.html">注册</a>
+    </section>
+    <section class="nav yahei">
+        <ul id="nav">
+            <li class="title"><a href="index.jsp">首页</a></li>
+            <li class="title" onmouseover="extend('1')" onmouseout="out('1')">
+                <a href="/html/courseDetail-1.jsp">课程概况</a>
+                <ul style="display: none;" id="first">
+                    <li class="detail"><a href="/html/courseDetail-1.jsp" style="color: #fff;">课程简介</a></li>
+                    <li class="detail"><a href="/html/courseDetail-2.jsp" style="color: #fff;">课程特色</a></li>
+                    <li class="detail"><a href="/html/courseDetail-3.jsp" style="color: #fff;">教材与参考资料</a></li>
+                    <li class="detail"><a href="/html/courseDetail-4.jsp" style="color: #fff;">历史沿革</a></li>
+                </ul>
+            </li>
+            <li class="title" onmouseover="extend('2')" onmouseout="out('2')">
+                <a href="/teacherTeam?type=courseManager">教师队伍</a>
+                <ul style="display: none;" id="second">
+                    <li class="detail"><a href="/teacherTeam?type=courseManager" style="color: #fff;">课程负责人</a></li>
+                    <li class="detail"><a href="/teacherTeam?type=teacherTeam" style="color: #fff;">课程教学团队</a></li>
+                    <li class="detail"><a href="/teacherTeam?type=lecturer" style="color: #fff;">主讲教师</a></li>
+                    <li class="detail"><a href="/teacherTeam?type=trainingPlan" style="color: #fff;">青年教师培养</a></li>
+                </ul>
+            </li>
+            <li class="title" onmouseover="extend('3')" onmouseout="out('3')">
+                <a href="/html/educationalDetail-1.jsp">教学安排</a>
+                <ul style="display: none;" id="third">
+                    <li class="detail"><a href="/html/educationalDetail-1.jsp" style="color: #fff;">教学大纲</a></li>
+                    <li class="detail"><a href="/servlet/CalendarServlet?method=show" style="color: #fff;">教学日历</a></li>
+                    <li class="detail"><a href="/html/educationalDetail-3.jsp" style="color: #fff;">教学内容</a></li>
+                    <li class="detail"><a href="/html/educationalDetail-4.jsp" style="color: #fff;">授课计划</a></li>
+                    <li class="detail"><a href="/html/educationalDetail-5.jsp" style="color: #fff;">教学难重点</a></li>
+                    <li class="detail"><a href="/html/educationalDetail-6.jsp" style="color: #fff;">教学方法与手段</a></li>
+                </ul>
+            </li>
+            <li class="title" onmouseover="extend('4')" onmouseout="out('4')">
+                <a href="/html/educationReformDetail-1.html">教学研究改革</a>
+                <ul style="display: none;" id="fourth">
+                    <li class="detail"><a href="/html/educationReformDetail-1.html" style="color: #fff;">教学改革措施</a></li>
+                    <li class="detail"><a href="/html/educationReformDetail-2.html" style="color: #fff;">教学改革立项</a></li>
+                    <li class="detail"><a href="/html/educationReformDetail-3.html" style="color: #fff;">教学改革成果</a></li>
+                    <li class="detail"><a href="/html/educationReformDetail-4.html" style="color: #fff;">教学改革表彰和奖励</a></li>
+                </ul>
+            </li>
+            <li class="title" onmouseover="extend('5')" onmouseout="out('5')">
+                <a href="/ShowResourceServlet.do?resType=1">教学资源</a>
+                <ul style="display: none;" id="fifth">
+                    <li class="detail"><a href="/ShowResourceServlet.do?resType=1" style="color: #fff;">课程课件</a></li>
+                    <li class="detail"><a href="/ShowResourceServlet.do?resType=2" style="color: #fff;">教学录像</a></li>
+                    <li class="detail"><a href="/ShowResourceServlet.do?resType=3" style="color: #fff;">习题库</a></li>
+                    <li class="detail"><a href="/ShowResourceServlet.do?resType=4" style="color: #fff;">案例库</a></li>
+                    <li class="detail"><a href="/ShowResourceServlet.do?resType=5" style="color: #fff;">实验任务</a></li>
+                </ul>
+            </li>
+            <li class="title" onmouseover="extend('6')" onmouseout="out('6')">
+                <a href="/OpenCoursePlanServlet?method=showFront">教学管理</a>
+                <ul style="display: none; " id="sixth">
+                    <li class="detail"><a href="/OpenCoursePlanServlet?method=showFront"
+                                          style="color: #fff;">开课计划</a></li>
+                    <li class="detail"><a
+                            href="/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1"
+                            style="color: #fff;">上课班级</a></li>
+                    <li class="detail"><a
+                            href="/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1"
+                            style="color: #fff;">学生成绩</a></li>
+                    <li class="detail"><a href="/class_list_Servlet?method=LoadStudentClassList&classListpageQuery=1"
+                                          style="color: #fff;">班级名册</a></li>
+                    <li class="detail"><a href="/HomeworkServlet?method=LoadHomework&HomeworkpageQuery=1" style="color: #fff;">学生作业案例</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="title" onmouseover="extend('7')" onmouseout="out('7')">
+                <a href="/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1">教学效果</a>
+                <ul style="display: none; " id="seven">
+                    <li class="detail"><a href="/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1" style="color: #fff;">校外专家评价</a>
+                    </li>
+                    <li class="detail"><a href="/Expert_EvaluationServlet?method=getOneContent&number=0&type=1&n=2" style="color: #fff;">校内督导评价</a>
+                    </li>
+                    <li class="detail"><a href="/teacher_evalution_servlet?method=LoadTeacherEvalator&EvalatorpageQuery=1" style="color: #fff;">教师自我评价</a>
+                    </li>
+                    <li class="detail"><a
+                            href="/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1"
+                            style="color: #fff;">校内学生评价</a></li>
+                    <li class="detail"><a href="/social_evalution_servlet?method=LoadSocialEvalator&EvalatorpageQuery=1" style="color: #fff;">社会评价</a>
+                    </li>
+                    <li class="detail"><a href="/TeachFileServlet?method=LoadHomework&TeachFilepageQuery=1">教学评估及相关文件</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="title" onmouseover="extend('8')" onmouseout="out('8')">
+                <a href="../html/QQ.jsp">教学互动</a>
+                <ul style="display: none;" id="eighth">
+                    <li class="detail"><a href="../html/QQ.jsp" style="color: #fff;">QQ群</a></li>
+                    <li class="detail"><a href="../servlet/WeChatServlet?type=normalShow" style="color: #fff;">微信群</a></li>
+                    <li class="detail"><a href="../servlet/TeachingArrangementServlet?type=showLeaveMsg" style="color: #fff;">师生互动</a></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</div>
+	</div>
+
+<article class="content">
+
+	<section id="banner">
+		<img src="../images/index/abouttop_03.jpg">
+	</section>
+	<section class="mainWrap relative">
+		<div class="detailContent">
+			<div class="column_1">
+				<section class="leftNav">
+					<h3>教学研究改革</h3>
+				<ul>
+								<li class="current">
+									<a href="/html/educationReformDetail-1.html">改革措施</a>
+								</li>
+								<li>
+									<a href="/html/educationReformDetail-2.html">改革立项</a>
+								</li>
+								<li>
+									<a href="/html/educationReformDetail-3.html">改革成果</a>
+								</li>
+								<li>
+									<a href="/html/educationReformDetail-4.html">改革表彰和奖励</a>
+								</li>
+							</ul>
+				</section>
+			</div>
+			<div class="column_2 ">
+				<article class="mainContent">
+					<header class="contentNav">
+						<nav class="nav">
+							<a href="index.jsp">首页</a>·
+							<a href="educationReformDetail-1.html">教学研究改革</a>·
+							<a href="educationReformDetail-3.html">改革成果</a>
+						</nav>
+					</header>
+				</article>
+			</div>
+			<div class="column_2 ">
+				<section id="article" class="article" style="color: #000000;">
+					<ul>
+
+					</ul>
+				</section>
+			</div>
+			<div class="column_2" style="margin-top: 2rem;">
+				<section id="pageSelect" class="article" style="color: #000000;overflow: hidden;width: 50%;height:42px;float: right;">
+					<ul id="page" style="width: 100%;text-overflow: ellipsis;white-space: nowrap;">
+
+					</ul>
+				</section>
+			</div>
+		</div>
+	</section>
+</article>
+	<div id="bottom">
+    <div class="inner">
+        <ul>
+            <li><a href="/html/courseDetail-1.jsp">课程概况</a>
+                <div class="detail">
+                    <div><a href="/html/courseDetail-1.jsp">课程简介</a></div>
+                    <div><a href="/html/courseDetail-2.jsp">课程特色</a></div>
+                    <div><a href="/html/courseDetail-3.jsp">教材与参考资料</a></div>
+                    <div><a href="/html/courseDetail-4.jsp">历史沿革</a></div>
+                </div>
+            </li>
+            <li><a href="/teacherTeam?type=courseManager">教师队伍</a>
+                <div class="detail">
+                    <div><a href="/teacherTeam?type=courseManager">课程负责人</a></div>
+                    <div><a href="/teacherTeam?type=teacherTeam">课程教学团队</a></div>
+                    <div><a href="/teacherTeam?type=lecturer">主讲教师</a></div>
+                    <div><a href="/teacherTeam?type=trainingPlan">青年教师培养</a></div>
+                </div>
+            </li>
+            <li><a href="/html/educationalDetail-1.jsp">教学安排</a>
+                <div class="detail">
+                    <div><a href="/html/educationalDetail-1.jsp">教学大纲</a></div>
+                    <div><a href="/servlet/CalendarServlet?method=show">教学日历</a></div>
+                    <div><a href="/html/educationalDetail-3.jsp">教学内容</a></div>
+                    <div><a href="/html/educationalDetail-5.jsp" style="color: #fff;">教学难重点</a></div>
+                    <div><a href="/html/educationalDetail-5.jsp">教学重难点</a></div>
+                    <div><a href="/html/educationalDetail-6.jsp">教学方法与手段</a></div>
+                </div>
+            </li>
+            <li><a href="educationReformDetail-1.html">教学研究改革</a>
+                <div class="detail">
+                    <div><a href="/html/educationReformDetail-1.html">改革措施</a></div>
+                    <div><a href="/html/educationReformDetail-2.html">改革立项</a></div>
+                    <div><a href="/html/educationReformDetail-3.html">改革成果</a></div>
+                    <div><a href="/html/educationReformDetail-4.html">改革表彰和奖励</a></div>
+                </div>
+            </li>
+            <li><a href="/ShowResourceServlet.do?resType=1">教学资源</a>
+                <div class="detail">
+                    <div><a href="/ShowResourceServlet.do?resType=1">课程课件</a></div>
+                    <div><a href="/ShowResourceServlet.do?resType=2">教学录像</a></div>
+                    <div><a href="/ShowResourceServlet.do?resType=3">习题库</a></div>
+                    <div><a href="/ShowResourceServlet.do?resType=4">案例库</a></div>
+                    <div><a href="/ShowResourceServlet.do?resType=5">实验任务</a></div>
+                </div>
+            </li>
+              <li><a href="/OpenCoursePlanServlet?method=showFront">教学管理</a>
+                <div class="detail">
+                    <div><a href="/OpenCoursePlanServlet?method=showFront">开课计划</a></div>
+                    <div><a href="/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1">上课班级</a></div>
+                    <div><a href="/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1">学生成绩</a></div>
+                    <div><a href="/class_list_Servlet?method=LoadStudentClassList&classListpageQuery=1">班级名册</a></div>
+                    <div><a href="/HomeworkServlet?method=LoadHomework&HomeworkpageQuery=1">学生作业案例</a></div>
+                </div>
+            </li>
+            <li><a href="/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1">教学效果</a>
+                <div class="detail">
+                    <div><a href="/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1">校外专家评价</a></div>
+                    <div><a href="/Expert_EvaluationServlet?method=getOneContent&number=0&type=1&n=2">校内督导评价</a></div>
+                    <div><a href="/teacher_evalution_servlet?method=LoadTeacherEvalator&EvalatorpageQuery=1">教师自我评价</a></div>
+                    <div><a href="/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1">校内学生评价</a></div>
+                    <div><a href="/social_evalution_servlet?method=LoadSocialEvalator&EvalatorpageQuery=1">社会评价</a></div>
+                    <div><a href="/TeachFileServlet?method=LoadHomework&TeachFilepageQuery=1">教学评估及相关文件</a></div>
+                </div>
+            </li>
+            <li><a href="/html/QQ.jsp">教学互动</a>
+                <div class="detail">
+                    <div><a href="/html/QQ.jsp">QQ群</a></div>
+                    <div><a href="/servlet/WeChatServlet?type=normalShow">微信群</a></div>
+                    <div><a href="/servlet/TeachingArrangementServlet?type=showLeaveMsg">师生互动</a></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="copyrights">
+   <div class="mainWrap">
+    <div class="link">
+        <ul>
+            <li>友情链接</li>
+            <li><a href="http://www.dgut.edu.cn">东莞理工学院</a></li>
+            <li><a href="http://jwc.dgut.edu.cn">东莞理工学院教务处</a></li>
+            <li><a href="http://sw.dgut.edu.cn">东莞理工学院计算机与网络安全学院</a></li>
+        </ul>
+    </div>
+    <div class="final">
+        <ul>
+            <li class="left">© 2018,UML Group 2</li>
+            <li class="right">联系我们</li>
+        </ul>
+    </div>
+</div>
+</div>
+
+		 
+</body>
+
+</html>
