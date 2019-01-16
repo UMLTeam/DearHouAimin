@@ -12,7 +12,6 @@
 
 # Package Files #
 *.jar
-*.war
 *.nar
 *.ear
 *.zip
@@ -40,4 +39,5 @@ classes/
 srv/db/*
 /bin/
 
-!server/*
+server/work/Catalina/localhost/
+
